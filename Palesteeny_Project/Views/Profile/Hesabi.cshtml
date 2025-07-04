@@ -1,0 +1,138 @@
+﻿@model Palesteeny_Project.Models.UserPal
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>حسابي</title>
+    <link rel="stylesheet" href="~/css/Hesabi.css" />
+</head>
+<body>
+    <div class="hesabi-page">
+        <div class="hesabi-title">
+            <a asp-action="Hesabi" asp-controller="Profile" class="h-title">حسابي</a>
+            <a asp-action="Hesabi" asp-controller="Profile"><img src="~/images/left-arrow.png" width="54.5px" height="54.5px"></a>
+        </div>
+        <div class=" container">
+            <div class="profile-box">
+                <div class="profile-up">
+                    <div class="profile-img-div">
+                        <div class="overlay" id="overlay">
+                            <img src="~/images/camera-icon.png" alt="تغيير الصورة" class="camera-icon" />
+                        </div>
+                        <input type="file" id="imageUpload" accept="image/*" class="hidden" />
+                        <img id="profileImg" src="@(!string.IsNullOrEmpty(Model.ImagePath) ? Model.ImagePath : Url.Content("~/images/profileDef.png"))" alt="الصورة الشخصية" class="profile-img">
+                        <div id="imageMenu" class="image-menu hidden">
+                            <div class="image-option" data-action="upload">📂 رفع صورة</div>
+                            <div class="image-option" data-action="view">👁️ عرض الصورة</div>
+                        </div>
+                    </div>
+                    <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-modal="true">
+                        <div class="lightbox-content" role="document">
+                            <button id="closeLightbox" class="close-lightbox" aria-label="إغلاق الصورة">&times;</button>
+                            <img id="lightboxImg" class="lightbox-img" src="" alt="الصورة الشخصية مكبرة" />
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <p><strong>اسمي: </strong> @Model.FirstName @Model.LastName</p>
+                        <p><strong>مرحلتي الدراسية: </strong>@Model.Grade</p>
+                        <p><strong>الفصل الدراسي: </strong>@Model.Semester</p>
+                        <p><strong>بريدي الالكتروني: </strong>@Model.Email</p>
+                    </div>
+                </div>
+                <div class="profile-down">
+                    <button class="edit-btn">تعديل</button>
+                </div>
+            </div>
+            <div id="editDialog" class="dialog-overlay hidden">
+                <div class="dialog-box">
+                    <h3>تعديل المعلومات</h3>
+                    <label for="editFirstName">الاسم الأول:</label>
+                    <input type="text" id="editFirstName" />
+                    <label for="editLastName">الاسم الثاني:</label>
+                    <input type="text" id="editLastName" />
+
+
+                    <label for="editGrade">المرحلة الدراسية: </label>
+                    <select id="editGrade">
+                        <option value="">اختر المرحلة</option>
+                        <option value="الأول ابتدائي">الأول ابتدائي</option>
+                        <option value="الثاني ابتدائي">الثاني ابتدائي</option>
+                        <option value="الثالث ابتدائي">الثالث ابتدائي</option>
+                        <option value="الرابع ابتدائي">الرابع ابتدائي</option>
+                    </select>
+                    <label for="editSem">الفصل الدراسي: </label>
+                    <select id="editSem">
+                        <option value="">اختر الفصل</option>
+                        <option value="الفصل الأول">الفصل الأول</option>
+                        <option value="الفصل الثاني">الفصل الثاني</option>
+                    </select>
+
+                    <div class="dialog-actions">
+                        <button id="applyBtn">تطبيق</button>
+                        <button id="cancelBtn">إلغاء</button>
+                    </div>
+                    <p id="dialogError" class="error-msg"></p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="hesabi-title"><p class="h-title">مساعدي</p></div>
+        <div class=" container">
+
+            <div class="assistant-box">
+                <div class="assistant">
+                    <img src="~/images/TeenyGreen.png" alt="مساعدي" class="assistant-img">
+                    <p class="assistant-name"><strong id="assistantName">تيني</strong></p>
+                </div>
+                <div class="assistant-info">
+                    <div class="assistant-gender">
+                        <label for="gender">الجنس:</label>
+                        <select id="gender" class="assistant-gender-sel" placeholder="الجنس">
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                    <div class="assistant-color">
+                        <label>اللون:</label>
+                        <img class="assistant-colors" src="~/images/blue-color.png" />
+                        <img src="~/images/pink-color.png" class="assistant-colors" />
+                        <img src="~/images/green-color.png" class="assistant-colors" />
+                        <img src="~/images/red-color.png" class="assistant-colors" />
+                        <img src="~/images/yellow-color.png" class="assistant-colors" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="hesabi-bottom">
+                <div class="lang">
+                    <img src="~/images/Langicon.png" class="langicon" />
+                    <label for="lang" class="lang-wr">اللغة:</label>
+                    <select id="lang" class="lang-sel" placeholder="اللغة">
+                        <option value="ar">العربية</option>
+                        <option value="en">English(US)</option>
+                    </select>
+
+
+                </div>
+                <form asp-controller="Account" asp-action="Logout" method="post" class="hesabi-logout-form">
+                    <button type="submit" class="logout-btn">تسجيل الخروج</button>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/js/Hesabi.js"></script>
+
+</body>
+</html>

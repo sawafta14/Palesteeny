@@ -7,14 +7,13 @@ body {
     font-family: 'DG3asomi', sans-serif;
     background-color: #fff;
     margin: 0;
-    padding: 20px;
-    direction: rtl;
     color: #333;
 }
 
 .container {
     max-width: 900px;
     margin: auto;
+    direction:rtl;
 }
 
 .section {

@@ -1,0 +1,62 @@
+{
+  "id": "palestine_quiz_1",
+  "pages": [
+    {
+      "questionOverlay": true,
+      "id": "q1",
+      "type": "multiple_choice",
+      "question": "ما هي عاصمة فلسطين؟",
+      "options": [ "القدس", "غزة", "رام الله" ],
+      "image":"/images/ques-background.png",
+      "answer": "القدس"
+    },
+    {
+      "id": "q2",
+      "type": "select_option",
+      "question": "اختر سنة النكبة:",
+      "options": [ "1945", "1948", "1967" ],
+      "questionOverlay": true,
+      "image": "/images/ques-background.png",
+      "answer": "1948"
+    },
+    {
+      "id": "q3",
+      "type": "text_input",
+      "question": "من هو مؤسس منظمة التحرير الفلسطينية؟",
+      "questionOverlay": false,
+      "image": "/images/orga.svg",
+      "answer": "ياسر عرفات"
+    },
+    {
+      "id": "q4",
+      "type": "drag_drop",
+      "question": "صل المدينة بالصورة الصحيحة:",
+      "questionOverlay": true,
+      "image": "/images/ques-background.png",
+      "items": [
+        {
+          "option": "القدس",
+          "match": {
+            "label": "قبة الصخرة",
+            "image": "/images/dotr.png"
+          }
+        },
+        {
+          "option": "بيت لحم",
+          "match": {
+            "label": "كنيسة المهد",
+            "image": "/images/church.jpg"
+          }
+        },
+        {
+          "option": "الخليل",
+          "match": {
+            "label": "الحرم الإبراهيمي",
+            "image": "/images/ibrahimi.jpg"
+          }
+        }
+      ]
+    }
+
+  ]
+}

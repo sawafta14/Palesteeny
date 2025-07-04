@@ -6,7 +6,10 @@ body {
     font-family: 'DG3asomi', sans-serif;
     background-color: #fff;
     text-align: right;
-    direction: rtl;
+    direction:ltr;
+}
+.hesabi-page {
+        direction: rtl;
 }
 .hesabi-title {
     display:flex;
@@ -47,23 +50,78 @@ body {
     
 }
 .profile-img-div {
+    width:270px;
+    height:270px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     padding: 10px;
-    margin: 60px 60px 0px 60px;
+    margin: 50px 60px 0px 60px;
     background-color: white;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 .profile-img {
     border-radius: 50% ;
-    max-width:250px;
-    max-height: 250px;
+    width:250px;
+    height: 250px;
+}
+.image-option {
+    margin-right:40px;
+    background-color: white;
+    padding: 15px 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+    .image-option:hover {
+        background-color: darkgray;
+    }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* transparent black */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Show overlay on hover */
+.profile-img-div:hover .overlay {
+    opacity: 1;
+}
+
+.camera-icon {
+    width: 40px;
+    height: 40px;
+    filter: invert(1); /* white icon on black bg, adjust if needed */
+    pointer-events: none; /* so clicks go to overlay div */
+}
+
+.hidden {
+    display: none;
+}
+.image-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 100;
+    font-size: 14px;
+    direction: rtl;
 }
 .profile-info {
     font-size: 32px;
-
+    margin-top:80px;
 }
 .profile-info strong {
         text-shadow: 3px 3px 0px black, -3px -3px 0px black, -3px 3px 0px black, 3px -3px 0px black, 3px 0px 0px black, -3px 0px 0px black, 0px 3px 0px black, 0px -3px 0px black;
@@ -92,6 +150,53 @@ body {
         background-color: green;
         border-color:green;
 }
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    direction: rtl;
+    text-align: right;
+}
+
+    .dialog-box input,
+    .dialog-box select {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+.dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-msg {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 .assistant-box {
     display:flex;
     flex-direction:row;
@@ -161,6 +266,12 @@ body {
     font-size: 32px;
     text-shadow: 3px 3px 0px black, -3px -3px 0px black, -3px 3px 0px black, 3px -3px 0px black, 3px 0px 0px black, -3px 0px 0px black, 0px 3px 0px black, 0px -3px 0px black;
 }
+.assistant-color img {
+    cursor:pointer;
+    width:50px;
+    height:50px;
+}
+
 .hesabi-bottom{
     gap:300px;
 /*    margin:50px;*/
@@ -205,3 +316,76 @@ body {
     background-color: darkred;
     border-color: darkred;
 }
+.selected-color {
+    outline: 1px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+}
+/* Lightbox Background Overlay */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+}
+
+/* Hide Lightbox */
+.hidden {
+    display: none !important;
+}
+
+/* Lightbox Content Container */
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lightbox Image */
+.lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 0 20px black;
+}
+
+/* Close Button */
+.close-lightbox {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    font-size: 48px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    user-select: none;
+    filter: drop-shadow(0 0 2px black);
+    transition: color 0.3s ease;
+}
+
+    .close-lightbox:hover {
+        color: #f33;
+    }
+
+    /* Accessibility focus styles */
+    .close-lightbox:focus {
+        outline: 2px solid #f33;
+        outline-offset: 3px;
+    }
+

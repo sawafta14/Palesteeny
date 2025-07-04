@@ -1,0 +1,46 @@
+﻿@model Palesteeny_Project.Models.ChatMessage
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تيني</title>
+    <link rel="stylesheet" href="~/css/teeny.css" />
+</head>
+
+<body>
+    <input type="hidden" name="CurrentPage" value="AiAssistant" />
+    <input type="hidden" name="UserId" value="@User.Identity.Name" />
+    <form method="post" class="chat-form">
+        <div class="images">
+            <div class="cloud-wrapper">
+                <img src="~/images/thinking.png" alt="cloud" class="cloud-img" />
+                <div class="cloud-text">شو حابب تسألنا يا شطور؟ 😊</div>
+            </div>
+
+            <img src="~/images/teeny.png" alt="teeny" class="teeny-img" />
+        </div>
+
+        <input asp-for="UserMessage" class="form-control" autocomplete="off" placeholder="اكتب سؤالك هنا..." />
+        <br />
+        <button type="submit" class="btn-submit">اسأل تيني وتينا</button>
+    </form>
+
+    @if (ViewBag.Reply != null)
+    {
+        <p class="reply-text">@ViewBag.Reply</p>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="error-text">@ViewBag.Error</p>
+    }
+</body>
+
+</html>

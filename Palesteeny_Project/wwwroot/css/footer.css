@@ -4,36 +4,41 @@
 }
 
 body {
-    font-family: 'DG3asomi', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+    padding-bottom: 650px;
 }
 
-.main-content {
-    flex: 1;
+.container {
+    flex: 1 !important;
+    
 }
-
-/* Footer wrapper */
 .footer {
     width: 100%;
     background: url('/images/palfooter.png') no-repeat center center;
     background-size: cover;
-    padding: 300px 50px 50px;
+    padding: 100px 40px 30px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+    font-family: 'DG3asomi', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
+
 
 /* Footer inner content layout */
 .custom-footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1250px;
     flex-wrap: wrap;
     gap: 30px;
 }
@@ -43,13 +48,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top:60px;
 }
 
 .social-icon {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 10px 0;
+    margin-top: 20px ;
     padding: 0;
 }
 
@@ -63,12 +69,12 @@ body {
 
 .social-link {
     text-decoration: none;
-    color: #fff;
+    color: #fff !important;
 }
 
 .social-icon__link {
     font-size: 2rem;
-    color: #fff;
+    color: #fff !important;
     transition: 0.5s;
 }
 
@@ -76,17 +82,23 @@ body {
         transform: translateY(-10px);
     }
 
+.footer-cell {
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    padding-top: 20px;
+    opacity: 0.8;
+}
 .x-logo {
     width: 30px;
     height: 30px;
 }
 
-/* MENU SECTION */
 .menu-div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 .menu-container {
@@ -107,7 +119,7 @@ body {
 
 .menu__link {
     font-size: 1.2rem;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     transition: 0.5s;
     opacity: 0.75;

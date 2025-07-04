@@ -7,15 +7,12 @@
 
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'DG 3asomy', sans-serif;
 }
 
 body {
-    background-color: #f9f9f9;
     color: #1A1F2C;
-    padding: 15px;
 }
 
 .container {
@@ -37,41 +34,26 @@ a {
 .h2decoration {
     text-align: right;
     font-size: 48px;
-    /* كبرنا الخط */
-    text-shadow:
-        -3px -3px 0 black,
-        3px -3px 0 black,
-        -3px 3px 0 black,
-        3px 3px 0 black,
-        -4px 0 0 black,
-        4px 0 0 black,
-        0 4px 0 black,
-        0 -4px 0 black;
-
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
 }
 
 .arrow-text {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* خففنا المسافة شوي */
 }
 
 .link-text {
     text-decoration: none;
     color: hsla(98, 78%, 60%, 1);
     font-size: 48px;
-    /* نفس حجم h2 */
     font-weight: bold;
-    /* خليه أثقل شوي لو تحب */
     position: relative;
-    /* Enable relative positioning */
     top: -20px;
 }
 
 .arrow-text img {
     width: 100px;
-    /* كبرنا السهم */
     height: auto;
     position: relative;
     bottom: -10px;
@@ -90,18 +72,43 @@ a {
     display: inline-block;
 }
 
-.library-btn:hover {
-    background-color: green;
-}
+    .library-btn:hover {
+        background-color: green;
+    }
 
-.library-btn.outline {
-    background-color: hsla(98, 78%, 60%, 1);
+    .library-btn.outline {
+        background-color: hsla(98, 78%, 60%, 1);
+        color: black;
+    }
+
+        .library-btn.outline:hover {
+            background-color: green;
+        }
+
+.trash-btn {
+    background-color: red;
     color: black;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
 }
 
-.library-btn.outline:hover {
-    background-color: green;
-}
+    .trash-btn:hover {
+        background-color: darkred;
+    }
+
+    .trash-btn.outline {
+        background-color: red;
+        color: black;
+    }
+
+        .trash-btn.outline:hover {
+            background-color: darkred;
+        }
 
 /* تنسيقات صفحة المكتبة */
 .library-header {
@@ -129,9 +136,9 @@ a {
     cursor: pointer;
 }
 
-.story-item:hover {
-    transform: translateY(-5px);
-}
+    .story-item:hover {
+        transform: translateY(-5px);
+    }
 
 .story-image-container {
     position: relative;
@@ -142,7 +149,6 @@ a {
 .story-image {
     width: 100%;
     height: 100%;
-    /* object-fit: cover; */
 }
 
 .story-info {
@@ -168,36 +174,107 @@ a {
     padding: 3rem 1rem;
 }
 
-.empty-library h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
+    .empty-library h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
 
-.empty-library p {
-    color: #666;
-    margin-bottom: 1.5rem;
-}
+    .empty-library p {
+        color: #666;
+        margin-bottom: 1.5rem;
+    }
 
-/* توست */
-.toast {
+/* نافذة التأكيد المخصصة */
+.custom-confirm-dialog {
     position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background-color: #333;
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
 }
 
-.toast.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+.dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+.dialog-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+    .dialog-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #1A1F2C;
+    }
+
+.dialog-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.dialog-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+    .confirm-btn:hover {
+        background-color: #e60000;
+    }
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+    .cancel-btn:hover {
+        background-color: #e0e0e0;
+    }
+
+/* رسالة التوست */
+.toast-message {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(130, 130, 130, 0.3);
+    color: #333333;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+    .toast-message.show {
+        opacity: 1;
+    }
 
 /* رسبونسيف */
 @media (max-width: 768px) {
@@ -206,4 +283,24 @@ a {
         gap: 1rem;
         text-align: center;
     }
+
+    .h2decoration {
+        font-size: 36px;
+    }
+
+    .link-text {
+        font-size: 36px;
+    }
+
+    .arrow-text img {
+        width: 80px;
+    }
+
+    .dialog-content {
+        padding: 1.5rem;
+    }
+
+        .dialog-content h3 {
+            font-size: 1.25rem;
+        }
 }

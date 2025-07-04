@@ -1,0 +1,95 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>كتابي</title>
+    <link rel="stylesheet" href="~/css/Ketabi.css">
+</head>
+<body class="ketabi-page">
+    <div class="mybook-container">
+        <div class="tdiv">
+            <a class="section-title" asp-controller="Home" asp-action="Ketabi">كتابي <img src="~/images/Arrow.png" /></a>
+        </div>
+        <p class="section-description">هنا يمكنك استخدام كتابك المدرسي و الأنشطة بطريقة تفاعلية و المزيدا</p>
+        <div class="progress-container">
+            <div class="progress-bar" id="lesson-progress-bar"></div>
+        </div>
+
+        <div class="selectors">
+            <select id="classDropdown">
+                <option value="1">الصف الأول</option>
+                <option value="2">الصف الثاني</option>
+                <option value="3">الصف الثالث</option>
+                <option value="4">الصف الرابع</option>
+            </select>
+
+            <div>
+                <div class="lesson-select">
+                    <select id="lessonDropdown">
+                        <option value="6" data-lesson="1">الدرس الأول</option>
+                        <option value="24" data-lesson="2">الدرس الثاني</option>
+                        <option value="35" data-lesson="3">الدرس الثالث</option>
+                    </select>
+
+                    <select id="semDropdown">
+                        <option value="1">الفصل الأول</option>
+                        <option value="2">الفصل الثاني</option>
+                    </select>
+                </div>
+
+                <!-- Top bar container holding tabs left & bookmarks right -->
+                <div class="top-bar">
+                    <div class="tab-buttons">
+                        <button class="tab active" data-tab="book">الكتاب<img src="~/images/Book-icon.png" alt="كتاب"> </button>
+                        <button class="tab" data-tab="video">فيديو<img src="~/images/Video-icon.png" alt="فيديو"> </button>
+                        <button class="tab" data-tab="quiz">أنشطة الكتاب<img src="~/images/Activity-icon.png" alt="أنشطة"> </button>
+                    </div>
+                    <div class="bookmark-buttons">
+                        <button id="go-to-bookmark-btn" class="tab bookmark-icon" title="اذهب إلى العلامة">
+                            <img src="~/images/bookmark-add.png" alt="Go to Bookmark" />
+                        </button>
+                        <button id="set-bookmark-btn" class="tab bookmark-icon" title="حفظ علامة">
+                            <img src="~/images/bookmark-empty.png" alt="Set Bookmark" />
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Modal for choosing which lesson to bookmark -->
+                <div id="bookmark-modal" class="modal-overlay" style="display: none;">
+                    <div class="modal-content">
+                        <h2>اختيار درس لوضع علامة عليه</h2>
+                        <select id="bookmarkLessonSelect">
+                            <option value="6" data-lesson="1">الدرس الأول</option>
+                            <option value="24" data-lesson="2">الدرس الثاني</option>
+                            <option value="35" data-lesson="3">الدرس الثالث</option>
+                        </select>
+                        <div class="modal-actions">
+                            <button id="save-bookmark-btn">حفظ العلامة</button>
+                            <button id="cancel-bookmark-btn">إلغاء</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="display-area">
+                <iframe src="~/books/class1book1.pdf#page=1"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="~/js/Ketabi.js"></script>
+</body>
+</html>

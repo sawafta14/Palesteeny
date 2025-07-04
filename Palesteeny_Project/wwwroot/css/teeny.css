@@ -1,0 +1,150 @@
+﻿/* ===========================
+   AI Assistant Floating Box
+=========================== */
+#ai-assistant-container {
+    position: fixed;
+    top: 200px;
+    left: -88px; /* mostly hidden */
+    transition: left 0.4s ease;
+    z-index: 9999;
+    background: transparent;
+}
+
+    #ai-assistant-container:hover,
+    #ai-assistant-container.active {
+        left: 0;
+    }
+
+/* ===========================
+   Teeny Icon and Toggle
+=========================== */
+#ai-toggle-wrapper {
+    position: relative;
+    transition: transform 0.6s ease;
+    transform: translateX(0);
+}
+
+#ai-assistant-container.suggesting #ai-toggle-wrapper {
+    transform: translateX(80px); /* slide out Teeny + cloud */
+}
+
+#ai-toggle-area {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    z-index: 10000;
+}
+
+.teeny-icon {
+    width: 180%;
+    height: auto;
+    transform: rotate(90deg);
+    transition: transform 0.4s ease;
+}
+
+#ai-assistant-container.active .teeny-icon {
+    transform: rotate(0deg);
+}
+
+/* ===========================
+   Chat Box Styles
+=========================== */
+#ai-chat-box {
+    margin-top:-100px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid #ffc0cb;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-left: 70px;
+    max-height: 70vh;
+    overflow-y: auto;
+    display: none;
+    text-align:right;
+}
+
+.form-control,
+.reply-text,
+.error-text {
+    width: 100%;
+    margin-top: 8px;
+    text-align: right;
+}
+.btn-submit {
+    width: 100%;
+    margin-top: 8px;
+}
+/* ===========================
+   Cloud Wrapper (static prompt)
+=========================== */
+.cloud-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.cloud-img {
+    width: 100%;
+}
+
+.cloud-text {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+    width: 120px;
+    text-align:center;
+}
+
+.cloud-suggestion-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #444;
+    width: 120px;
+    text-align: center;
+}
+
+#ai-assistant-container.active .cloud-suggestion-text {
+    display: none;
+}
+
+/* ===========================
+   Animated Suggestion Cloud
+=========================== */
+.cloud-suggestion {
+    position: absolute;
+    top: 35px;
+    left: 110px;
+    width: auto;
+    max-width: 220px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 10000;
+    pointer-events: none;
+    color: #444; /* Keep readable text color */
+    font-weight: bold;
+    transform: rotate(50deg);
+}
+
+    .cloud-suggestion .cloud-img {
+        width: 150px; /* or whatever width the cloud should have */
+        height: auto;
+        display: block;
+    }
+
+#ai-assistant-container.suggesting .cloud-suggestion {
+    opacity: 1;
+}

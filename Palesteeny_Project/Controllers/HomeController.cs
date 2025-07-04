@@ -35,10 +35,6 @@ namespace Palesteeny_Project.Controllers
         {
             return View();
         }
-        public IActionResult Hesabi()
-        {
-            return View();
-        }
         public IActionResult BunnyGlasses()
         {
             return View();

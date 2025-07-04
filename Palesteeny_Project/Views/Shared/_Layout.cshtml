@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,41 +11,121 @@
     <link href="@Url.Content("~/fonts/DG-3asomy-Regular.ttf")" rel="stylesheet">
     <link rel="stylesheet" href="~/css/navbar.css" />
     <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/teeny.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="main-container">
             <div class="nav-container">
-                <a asp-controller="Home" asp-action="Hesabi" class="profile-pic-container">
-                    <img src="@Url.Content("~/images/profileDef.png")" alt="Profile" class="profile-pic" />
-                </a>
+                <div class="profile-pic-container" style="position: relative;">
+                    @await Component.InvokeAsync("ProfilePicture")
+
+                    <div id="profileDropdown" class="dropdown-menu-custom hidden">
+                        <a class="dropdown-item" asp-controller="Profile" asp-action="Hesabi"><i class="fa fa-user"></i> عرض الملف الشخصي</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
+                        <form asp-controller="Account" asp-action="Logout" method="post" >
+                            <button type="submit" class="dropdown-item" style="border-top: solid 1px gray;"><i class="fa fa-sign-out-alt"></i> تسجيل الخروج</button>
+                        </form>
+                    </div>
+                </div>
+
 
                 <div class="input-wrapper">
                     <input type="text" placeholder="ابحث عن ما تريده" />
                     <i class="fa fa-search input-icon"></i>
+                    <div class="search-results"></div>
                 </div>
+                
+
 
                 <nav class="nav-links">
-                    <a asp-controller="PalMap" asp-action="PalMap">خريطتي</a>
+                    <a asp-controller="Home" asp-action="PalMap">خريطتي</a>
+                    <a asp-controller="Home" asp-action="Ketabi">كتابي</a>
                     <div class="logo-container">
-                        <img src="@Url.Content("~/images/Palesteeny-logo 5.png")" alt="Logo" class="logo" />
+                        <a asp-controller="Home" asp-action="Index"><img src="@Url.Content("~/images/Palesteeny-logo-5.png")" alt="Logo" class="logo"/></a>
                     </div>
                     <a asp-controller="Home" asp-action="Tasali">تسالي</a>
                     <a asp-controller="Home" asp-action="Qisas">قصص</a>
-                    <a asp-controller="Books" asp-action="Index">كتابي</a>
+                    <a asp-controller="Home" asp-action="Maktabati">مكتبتي</a>
                     <a asp-controller="Home" asp-action="about">من نحن</a>
                 </nav>
             </div>
         </div>
     </header>
+    @await Html.PartialAsync("_AiAssistant", new Palesteeny_Project.Models.ChatMessage())
 
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+        <footer class="footer">
+        <div class="custom-footer">
+            <div class="social-div">
+                <h3 class="h">تواصل معنا</h3>
+                <ul class="social-icon">
+                    <li class="social-icon__item">
+                        <a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#" class="social-link">Palesteeny Facebook</a>
+                    </li>
+                    <li class="social-icon__item">
+                        <a class="social-icon__link" href="#"><img src="~/images/Frame.png" class="x-logo" alt="X logo" /></a>
+                        <a href="#" class="social-link">Palesteeny X</a>
+                    </li>
+                    <li class="social-icon__item">
+                        <a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                        <a href="#" class="social-link">Palesteeny LinkedIn</a>
+                    </li>
+                    <li class="social-icon__item">
+                        <a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#" class="social-link"> Palesteeny Instagram</a>
+                    </li>
+                </ul>
+            </div>
 
+            
+            <div class="menu-div">
+                <h3 class="h">القوائم</h3>
+                <table class="menu-container">
+                    <tr>
+                       
+                        <td class="menu__item"><a class="menu__link" <a asp-controller="Home" asp-action="Index">الرئيسية</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="about">من نحن</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="Tasali">تسالي</a></td>
+                       
+
+                    </tr>
+                    <tr>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="PalMap">خريطتي</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="Ketabi">كتابي</a></td>
+                        <td class="menu__item"><a class="menu__link" href="#">رسام</a></td>                        
+                    </tr>
+                    <tr>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="Qisas">قصص</a></td>
+                        <td class="menu__item"><a class="menu__link" href="#">العاب</a></td>
+                        <td class="menu__item"><a class="menu__link" href="#">اختبارات</a></td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item"><a class="menu__link" href="#">مكتبتي</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Profile" asp-action="Hesabi">حسابي</a></td>
+                        <td class="menu__item"><a class="menu__link" href="#">مساعدة</a></td>
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <td class="menu__item" colspan="3" class="footer-cell"><a class="menu__link" href="#">تسجيل الدخول</a></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -53,6 +133,11 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="~/js/Search.js"></script>
+    <script src="~/js/Navbar.js"></script>
+    <script src="~/js/teeny.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

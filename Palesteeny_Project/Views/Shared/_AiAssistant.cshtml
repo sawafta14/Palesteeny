@@ -1,0 +1,27 @@
+﻿@model Palesteeny_Project.Models.ChatMessage
+
+<div id="ai-assistant-container">
+    <div id="ai-toggle-wrapper">
+        <div id="ai-toggle-area">
+            <img src="~/images/GreenTallTeena.svg" alt="Teeny" class="teeny-icon" />
+        </div>
+        <div class="cloud-suggestion" id="cloud-suggestion">
+            <img src="~/images/thinking.png" class="cloud-img" />
+            <div class="cloud-suggestion-text">حابب أساعدك بشي؟ 🌟</div>
+        </div>
+    </div>
+    <div id="ai-chat-box" style="display: none;">
+        <form method="post" id="ai-form">
+            <div class="cloud-wrapper">
+                <img src="~/images/cloud.svg" class="cloud-img" />
+                <div class="cloud-text">شو حابب تسألنا يا شطور؟ 😊</div>
+            </div>
+
+            <input asp-for="UserMessage" class="form-control" placeholder="اكتب سؤالك هنا..." autocomplete="off" />
+            <button type="submit" class="btn-submit">اسأل تيني وتينا</button>
+        </form>
+
+        <div id="ai-reply" class="reply-text"></div>
+        <div id="ai-error" class="error-text"></div>
+    </div>
+</div>

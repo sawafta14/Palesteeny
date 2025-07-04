@@ -1,0 +1,305 @@
+﻿@font-face {
+    font-family: 'DG3asomi';
+    src: url('DG-3asomy-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'DG3asomi', sans-serif;
+    background-color: #fff;
+    margin: 0;
+}
+
+.tdiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.mybook-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    text-align: center;
+    direction: rtl;
+}
+
+.section-title {
+    color: hsla(98, 78%, 60%, 1);
+    font-size: 50px;
+    margin-bottom: 10px;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+    text-decoration:none;
+}
+
+    .section-title img {
+        width: 48px;
+        height: 48px;
+    }
+
+#pdfCanvas {
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: gray;
+    max-width: 100%;
+}
+
+.section-description {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.display-header{
+    display:flex;
+    justify-content:space-between;
+}
+.tab-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0px;
+    margin-bottom: -5px;
+    margin-left: 5px;
+    position: relative;
+
+}
+
+.tab {
+    background-color: #84E849;
+    border: 4px solid #599D3194;
+    border-radius: 20px 20px 0px 0px;
+    padding: 8px 14px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+}
+
+    .tab img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tab.active {
+        background-color: #59B424;
+    }
+
+.lesson-select {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0px;
+    margin-bottom: -5px;
+    margin-left: 5px;
+    position: relative;
+}
+
+    .lesson-select image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lesson-select select {
+        background-color: #C7000ED1;
+        color: white;
+        border: 3px solid #C6000E;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        appearance: none;
+    }
+
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.display-area {
+    border: 2px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
+    transition: height 0.3s ease;
+    height: 1040px;
+}
+
+    .display-area.video-mode {
+        height: 540px;
+    }
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.bookmark-tab {
+    background-color: #84E849;
+    border: 3px solid #599D3194;
+    border-radius: 25px;
+    padding: 10px 16px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+}
+
+    .bookmark-tab img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .bookmark-tab:hover {
+        background-color: #59B424;
+    }
+.bookmark-float {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    z-index: 2000;
+    cursor: pointer;
+    width:20px;
+    
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+}
+
+.display-area:hover .bookmark-float {
+    opacity: 1;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    font-family: 'DG3asomi', sans-serif;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2d8700;
+}
+
+.modal-content select {
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #84E849;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.modal-actions button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#save-bookmark-btn {
+    background-color: #59B424;
+    color: white;
+}
+
+#cancel-bookmark-btn {
+    background-color: #aaa;
+    color: white;
+}
+/* Parent flex container holding left tabs and right bookmark buttons */
+.top-bar {
+    display: flex;
+    justify-content: space-between; /* left tabs left, bookmark buttons right */
+    align-items: center;
+    margin-bottom: -3px; /* spacing below */
+    margin-top:10px;
+    direction:ltr;
+}
+
+/* Keep the original tabs container unchanged */
+/* .tab-buttons styles stay as-is */
+
+/* New container for bookmark buttons on the right */
+.bookmark-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom:7px;
+    margin-right:15px;
+    justify-content:flex-start;
+}
+
+/* Bookmark buttons use existing .tab styles + these */
+.bookmark-icon {
+    padding: 8px 10px; /* smaller padding */
+    border-radius: 50%; /* round */
+    width: 40px;
+    height: 40px;
+    justify-content: center; /* center icon */
+    background-color: #84E849; /* same green */
+    border: 4px solid #599D3194;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .bookmark-icon img {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+
+    .bookmark-icon:hover {
+        background-color: #59B424;
+    }
+
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom:20px;
+    height: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #59B424;
+    transition: width 0.5s ease;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    }
