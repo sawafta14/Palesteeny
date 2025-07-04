@@ -1,0 +1,281 @@
+﻿@model Palesteeny_Project.Controllers.QusaViewModel
+
+@{
+    var qusi = Model.Qusi;
+    var images = qusi.Images.OrderBy(img => img.Order).ToList();
+    var userId = Model.UserId;
+    var isFavorite = Model.IsFavorite;
+    var bookmarkOrder = Model.BookmarkOrder; // رقم الصورة الأخيرة المفعلة بالبوك مارك
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@qusi.Title</title>
+    <link rel="stylesheet" href="~/css/Qusa.css" />
+   
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h3 style="text-align: left;">
+            <a asp-controller="Home" asp-action="Maktabati"><img src="~/images/MyLibraryLogo.png" alt="مكتبتي" /></a>
+        </h3>
+
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <a asp-controller="Home" asp-action="@qusi.Link" class="link-text">@qusi.Title</a>
+            <img src="~/images/Arrow.png" alt="سهم" style="width: 50px;" />
+            <a asp-controller="Home" asp-action="Qisas" class="link-text">قصص</a>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="story-card">
+        <div class="story-header">
+            <img src="~/images/@qusi.CoverImage" alt="@qusi.Title" class="story-cover" />
+            <div>
+                <h2 style="color: red; text-shadow:
+                    -2px -2px 0 black,
+                    2px -2px 0 black,
+                    -2px 2px 0 black,
+                    2px 2px 0 black,
+                    -3px 0 0 black,
+                    3px 0 0 black,
+                    0 3px 0 black,
+                    0 -3px 0 black;">
+                    @qusi.Title
+                </h2>
+                <p class="category">@qusi.Category</p>
+            </div>
+        </div>
+
+        <div class="story-container">
+            <button class="prev-btn"><img src="~/images/Left.png" alt="السابق" /></button>
+
+            @for (int i = 0; i < images.Count; i++)
+            {
+                var img = images[i];
+                <div class="story-slide @(i == 0 ? "active" : "")" data-order="@img.Order" data-index="@i">
+                    <div class="fixed-bookmark-btn @(img.Order == bookmarkOrder ? "active" : "")" onclick="toggleBookmark(this)">
+                        <svg class="bookmark-icon-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                             fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <img src="~/images/@img.ImageUrl" alt="@qusi.Title" />
+                </div>
+            }
+
+            <button class="next-btn"><img src="~/images/Right.png" alt="التالي" /></button>
+        </div>
+
+        <div class="actions">
+            <button class="add-button"><a asp-controller="Home" asp-action="Qisas">قراءة قصة جديدة</a></button>
+
+            <button id="addToLibraryBtn" class="add-button" aria-pressed="@(isFavorite ? "true" : "false")">
+                <span>@(isFavorite ? "حذف من المكتبة" : "إضافة إلى مكتبتي")</span>
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     style="@(isFavorite ? "fill: red;" : "fill: none;")">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+            </button>
+
+            <button id="bookmarkBtn" class="add-button bookmark-button @(bookmarkOrder > 0 ? "active" : "")" aria-pressed="@(bookmarkOrder > 0 ? "true" : "false")">
+                <span>أكمل القراءة</span>
+                <svg class="bookmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">
+        <div class="toast-content"></div>
+    </div>
+
+    <script>
+        (() => {
+            const slides = document.querySelectorAll('.story-slide');
+            const nextBtn = document.querySelector('.next-btn');
+            const prevBtn = document.querySelector('.prev-btn');
+            const addToLibraryBtn = document.getElementById('addToLibraryBtn');
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            const toast = document.getElementById('toast');
+
+            // تحويل userId من int? إلى string بأمان
+            const userId = '@(userId.HasValue ? userId.Value.ToString() : "")';
+            const isUserLoggedIn = userId !== "";
+
+            const qusiId = parseInt('@qusi.Id');
+            const bookmarkOrder = parseInt('@bookmarkOrder');
+
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                slides.forEach(s => s.classList.remove('active'));
+                slides[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                showSlide(currentSlide + 1);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                showSlide(currentSlide - 1);
+            });
+
+            function saveBookmark(order) {
+                if (!isUserLoggedIn) {
+                    showToast('يجب تسجيل الدخول لحفظ البوك مارك', true);
+                    return;
+                }
+                fetch('/Qusiss/SaveBookmark', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        QusiId: qusiId,
+                        UserId: userId,
+                        ImageOrder: order
+                    })
+                })
+                    .then(res => {
+                        if (!res.ok) throw new Error('خطأ في حفظ البوك مارك');
+                        return res.json();
+                    })
+                    .then(data => {
+                        showToast('تم حفظ مكان القراءة');
+                        bookmarkBtn.classList.add('active');
+                        bookmarkBtn.setAttribute('aria-pressed', 'true');
+                    })
+                    .catch(() => {
+                        showToast('فشل في حفظ البوك مارك');
+                    });
+            }
+
+            window.toggleBookmark = function (el) {
+                if (!isUserLoggedIn) {
+                    showToast('يجب تسجيل الدخول لحفظ البوك مارك', true);
+                    return;
+                }
+
+                if (el.classList.contains('active')) {
+                    el.classList.remove('active');
+                    saveBookmark(0); // إزالة البوك مارك
+                } else {
+                    document.querySelectorAll('.fixed-bookmark-btn').forEach(btn => btn.classList.remove('active'));
+                    el.classList.add('active');
+                    const order = parseInt(el.closest('.story-slide').getAttribute('data-order'));
+                    saveBookmark(order);
+                }
+            }
+
+            bookmarkBtn.addEventListener('click', () => {
+                if (bookmarkBtn.classList.contains('active')) {
+                    let targetIndex = 0;
+                    slides.forEach((slide, idx) => {
+                        const order = parseInt(slide.getAttribute('data-order'));
+                        if (order === bookmarkOrder) {
+                            targetIndex = idx;
+                        }
+                    });
+                    showSlide(targetIndex);
+                } else {
+                    showToast('لا يوجد مكان محفوظ للعودة إليه');
+                }
+            });
+
+            addToLibraryBtn.addEventListener('click', () => {
+                if (!isUserLoggedIn) {
+                    showToast('يجب تسجيل الدخول لإدارة مكتبتي', true);
+                    return;
+                }
+                fetch('/Qusiss/ToggleFavorite', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        QusiId: qusiId,
+                        UserId: userId
+                    })
+                })
+                    .then(res => {
+                        if (!res.ok) throw new Error('فشل في تحديث المكتبة');
+                        return res.json();
+                    })
+                    .then(data => {
+                        if (data.isFavorite) {
+                            addToLibraryBtn.querySelector('span').textContent = 'حذف من المكتبة';
+                            addToLibraryBtn.querySelector('.heart-icon').style.fill = 'red';
+                            showToast('تمت إضافة القصة إلى مكتبتك');
+                        } else {
+                            addToLibraryBtn.querySelector('span').textContent = 'إضافة إلى مكتبتي';
+                            addToLibraryBtn.querySelector('.heart-icon').style.fill = 'none';
+                            showToast('تم حذف القصة من مكتبتك');
+                        }
+                    })
+                    .catch(() => {
+                        showToast('حدث خطأ أثناء العملية');
+                    });
+            });
+
+            // تعديل دالة showToast لعرض رسالة خطأ خارج زر تسجيل الدخول تحته
+            function showToast(message, showLoginLink = false) {
+                const toastContent = toast.querySelector('.toast-content');
+                if (showLoginLink) {
+                     toastContent.innerHTML = `
+            <div style="color: Black; font-weight: bold; margin-bottom: 8px; text-align: center;">
+                ${message}
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <button style="
+                    background-color: #d32f2f;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-weight: bold;
+                        " onclick="window.location.href='/Account/Login'">
+                            اضغط لتسجيل الدخول 
+                        </button>
+                    `;
+                } else {
+                    toastContent.textContent = message;
+                }
+
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, showLoginLink ? 7000 : 3000);
+            }
+
+            window.addEventListener('load', () => {
+                let initialIndex = 0;
+                slides.forEach((slide, idx) => {
+                    const order = parseInt(slide.getAttribute('data-order'));
+                    if (order === bookmarkOrder) {
+                        initialIndex = idx;
+                    }
+                });
+                showSlide(initialIndex);
+            });
+        })();
+    </script>
+
+
+
+
+
+</body>
+
+</html>

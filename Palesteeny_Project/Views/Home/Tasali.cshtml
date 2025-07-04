@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسالي</title>
+    <link rel="stylesheet" href="~/css/Tasali.css">
+    <link href="DG-3asomy-Regular.ttf" rel="stylesheet">
+    <script>
+         fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+
+    </script>
+</head>
+<body>
+    <img src="~/images/decorL.png" class="decoration-left">
+    <img src="~/images/decorR.png" class="decoration-right">
+    <div class="tasa-title">
+        <a href="" class="tasa-title-wr">تسالي</a>
+        <a><img src="~/images/left-arrow.png" width="54.5px" height="54.5px"></a>
+    </div>
+    <div class="tasa-container">
+
+        <div class="tasa-item">
+            <a href="Games.html">
+                <img src="~/images/drawing.png" alt="رسم" class="tasa-image" width="512px" height="400px" top="431px" left="508px"
+                     border-radius="318px">
+            </a>
+            <button class="tasa-btn" style="font-family:'DG3asomi', sans-serif;">رسام</button>
+        </div>
+
+        <div class="tasa-item">
+            <a href="Games.html">
+                <img src="~/images/games.png" alt="العاب" class="tasa-image" width="508px" height="508px" top="980px">
+            </a>
+            <button class="tasa-btn" style="font-family:'DG3asomi', sans-serif;">العاب</button>
+        </div>
+
+        <div class="tasa-item">
+            <a href="Quiz.html"><img src="~/images/quiz.png" alt="اختبار" class="tasa-image" width="453px" height="412px" left="610px"></a>
+            <button class="tasa-btn" style="font-family:'DG3asomi', sans-serif;">اختبار</button>
+        </div>
+    </div>
+</body>
+</html>

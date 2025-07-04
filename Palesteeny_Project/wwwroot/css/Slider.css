@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+.swiper-container {
+    width: 1350px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    overflow: visible !important;
+}
+
+.swiper-slide {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    width: 450px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Hide default arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+
+/* Style your custom SVG arrows */
+.swiper-button-next img,
+.swiper-button-prev img {
+    width: 40px;
+    height: 40px;
+}
+
+.swiper-pagination-bullet {
+    background: #000;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    background: #007aff;
+    opacity: 1;
+}
+
+.slide-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    display: none;
+    border-radius: 0 0 15px 15px;
+}
+
+.swiper-slide.show-name .slide-name {
+    display: block;
+}

@@ -1,0 +1,222 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>@Model.Name</title>
+    <style>
+        body {
+            font-family: 'DG 3asomy', sans-serif;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 4px 4px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .section {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            width: 80%;
+            min-height: 140px;
+            border-radius: 35px;
+            box-shadow: 0 4px 4px rgba(0,0,0,0.25), inset 0 4px 4px rgba(0,0,0,0.25);
+            position: relative;
+            cursor: pointer;
+            border: 2px solid #e2dfdf;
+            font-size: 32px;
+            text-decoration: none;
+            color: hsla(98, 78%, 60%, 1);
+            font-weight: bold;
+            text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+        }
+
+
+        .icon {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .content {
+            display: none;
+            text-align: right;
+            color: #fdfafa;
+            font-style: normal;
+            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
+            padding: 70px;
+            font-size: 20px;
+        }
+
+        .arrow {
+            position: absolute;
+            left: 70px;
+            top: 34px;
+            font-size: 30px;
+        }
+
+        .arrow1 {
+            position: absolute;
+            right: 70px;
+            top: 23px;
+        }
+
+        .section.open .content {
+            display: block;
+        }
+
+        .section.open .arrow {
+            transform: rotate(0deg);
+        }
+
+        .link-text {
+            text-decoration: none;
+            color: hsla(98, 78%, 60%, 1);
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+        }
+
+        p {
+            color: #fdfafa;
+            font-style: normal;
+            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
+        }
+
+        .draw-jenin-section {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .paint-icon {
+            width: 100px;
+            height: 100px;
+        }
+
+        .draw-text {
+            font-family: 'DG 3asomy', sans-serif;
+            font-size: 28px;
+            color: #fdfafa;
+            font-style: normal;
+            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
+            padding: 10px 20px;
+        }
+
+        .draw-button {
+            font-size: 25px;
+            color: #FCF1FD;
+            background-color: #FF0013;
+            padding: 10px 30px;
+            border-radius: 60px;
+            border: 4px solid black;
+            text-decoration: none;
+            box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+            .draw-button:hover {
+                background-color: #d60010;
+            }
+
+    </style>
+</head>
+<body>
+
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <a asp-controller="PalMap" asp-action="PalMap" class="link-text"> خريطتي</a>
+        <img src="~/images/s.png" alt="سهم" style="width: 50px;">
+        <a asp-controller="PalMap" asp-action="City" class="link-text">@Model.Name</a>
+
+    </div>
+    <p style="display: flex; align-items: center; gap: 20px; font-size: 24px;  margin-top: 20px;">جاهز للاستكشاف ؟ اختر عنوانًا ، واضغط على السهم لتعرف المزيد عن مدينتك المختارة!</p>
+
+    <div class="section" onclick="toggleSection(this)">
+        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
+        معنى اسم المدينة
+        <div class="content">
+
+            <div>
+                @Model.NameMeaning
+            </div>
+            <br />
+            <div style="text-align: center;">
+                <img src="~/images/@Model.ImageNameMeaning" alt="@Model.Name Meaning" width="400" height="300">
+            </div>
+        </div>
+        <div class="arrow1"><img src="~/images/city name icon.png" alt="" top: 20px; width="125" height="100"></div>
+    </div>
+
+    <div class="section" onclick="toggleSection(this)">
+        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
+        تاريخ المدينة
+        <div class="content">
+            <div>
+                @Model.History
+            </div>
+            <br />
+
+            <div style="text-align: center;">
+                <img src="~/images/@Model.ImageHistory" alt="تاريخ المدينة" width="400" height="300">
+            </div>
+        </div>
+        <div class="arrow1"><img src="~/images/city history icon.png" alt="" width="125" height="auto"></div>
+    </div>
+
+    <div class="section" onclick="toggleSection(this)">
+        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
+        مناخ المدينة
+        <div class="content">
+            @Model.Climate
+        </div>
+        <div class="arrow1"><img src="~/images/city climate icon.png" alt="" width="125" height="auto"></div>
+    </div>
+
+    <div class="section" onclick="toggleSection(this)">
+        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
+        طعام المدينة
+        <div class="content">
+            <div>
+                @Model.Food
+            </div>
+            <br />
+            <div style="text-align: center;">
+                <img src="~/images/@Model.ImageFood" alt="طعام المدينة" width="400" height="300">
+            </div>
+        </div>
+        <div class="arrow1"><img src="~/images/city food.png" alt="" width="90" height="101"></div>
+    </div>
+    <div class="draw-jenin-section">
+        <img src="~/images/mdi_paint-outline.png" alt="رسم" class="paint-icon">
+
+        <div class="draw-text">ارسم خريطة @Model.Name !</div>
+
+        <a href="page-you-want.html" class="draw-button">ارسم الآن !</a>
+    </div>
+
+    <script>
+        function toggleSection(section) {
+          section.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

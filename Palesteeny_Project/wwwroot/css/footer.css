@@ -1,0 +1,125 @@
+﻿@font-face {
+    font-family: 'DG3asomi';
+    src: url('/fonts/DG-3asomy-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'DG3asomi', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Footer wrapper */
+.footer {
+    width: 100%;
+    background: url('/images/palfooter.png') no-repeat center center;
+    background-size: cover;
+    padding: 300px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Footer inner content layout */
+.custom-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* SOCIAL SECTION */
+.social-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.social-icon__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    list-style: none;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    transition: 0.5s;
+}
+
+    .social-icon__link:hover {
+        transform: translateY(-10px);
+    }
+
+.x-logo {
+    width: 30px;
+    height: 30px;
+}
+
+/* MENU SECTION */
+.menu-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.menu-container {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+    .menu-container td {
+        width: 33.33%;
+        height: 60px;
+        text-align: center;
+        vertical-align: middle;
+        color: #fff;
+    }
+
+.menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+    .menu__link:hover {
+        opacity: 1;
+    }
+
+/* Shared styles */
+.h {
+    color: hsla(98, 78%, 60%, 1);
+    margin-top: 50px;
+}

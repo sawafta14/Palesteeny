@@ -1,0 +1,61 @@
+﻿@model List<Palesteeny_Project.Models.Qusi>
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maktabati</title>
+    <link rel="stylesheet" href="~/css/Maktabati.css">
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h1 class="library-header">
+            <a asp-controller="Home" asp-action="Qisas" class="library-btn outline">قراءة قصة جديدة</a>
+        </h1>
+        <h2 class="h2decoration">
+            <span class="arrow-text">
+                <a asp-controller="Home" asp-action="Maktabati" class="link-text">مكتبتي</a>
+                <a asp-controller="Home" asp-action="Maktabati"><img src="~/images/كتب.png" /></a>
+            </span>
+        </h2>
+    </div>
+
+    <div class="container">
+        <div id="storiesContainer" class="stories-grid">
+            @if (Model == null || !Model.Any())
+            {
+                <div class="empty-library">
+                    <h2>لم تقم بإضافة أية قصص بعد</h2>
+                    <p>قم بإضافة قصص إلى مكتبتك لتظهر هنا</p>
+                    <a asp-controller="Home" asp-action="Qisas" class="library-btn">إستكشف القصص</a>
+                </div>
+            }
+            else
+            {
+                foreach (var story in Model)
+                {
+                    <div class="story-item" data-id="@story.Id" onclick="window.location.href='@Url.Action("Qusa", "Qusiss", new { id = story.Id })'">
+                        <div class="story-image-container">
+                            <img src="~/images/@story.CoverImage" alt="@story.Title" class="story-image" />
+                        </div>
+                        <div class="story-info">
+                            <div class="story-title-container">
+                                <h3 class="story-title">@story.Title</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round" class="heart-icon" fill="red">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </div>
+                            <p class="category">@story.Category</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>

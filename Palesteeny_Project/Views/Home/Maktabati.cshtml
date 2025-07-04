@@ -1,0 +1,99 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maktabati</title>
+    <link rel="stylesheet" href="~/css/Maktabati.css">
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h1 class="library-header">
+            <a href="Qisas.html" class="library-btn outline">قراءة قصة جديدة</a>
+        </h1>
+        <h2 class="h2decoration">
+            <span class="arrow-text">
+                <a href="Maktabati.html" class="link-text">مكتبتي</a>
+                <a href="Maktabati.html"><img src="~/images/كتب.png"></a>
+            </span>
+        </h2>
+    </div>
+
+    <div class="container">
+        <div id="storiesContainer" class="stories-grid">
+            <div id="emptyLibrary" class="empty-library">
+                <h2>لم تقم بإضافة أية قصص بعد</h2>
+                <p>قم بإضافة قصص إلى مكتبتك لتظهر هنا</p>
+                <a href="Qisas.html" class="library-btn">إستكشف القصص</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // عندما يتم تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function () {
+            const storiesContainer = document.getElementById('storiesContainer');
+            const emptyLibrary = document.getElementById('emptyLibrary');
+
+            // جلب القصص من التخزين المحلي
+            const savedStories = JSON.parse(localStorage.getItem('myLibraryStories') || '[]');
+
+            // إظهار محتوى مناسب بناءً على وجود قصص
+            if (savedStories.length === 0) {
+                emptyLibrary.style.display = 'block';
+            } else {
+                emptyLibrary.style.display = 'none';
+
+                // عرض القصص
+                renderStories(savedStories);
+            }
+
+            function renderStories(stories) {
+                // إنشاء عنصر HTML لكل قصة
+                stories.forEach(story => {
+                    const storyElement = createStoryElement(story);
+                    storiesContainer.appendChild(storyElement);
+                });
+            }
+
+            function createStoryElement(story) {
+                const storyItem = document.createElement('div');
+                storyItem.className = 'story-item';
+                storyItem.dataset.id = story.id;
+
+                storyItem.innerHTML = `
+                    <div class="story-image-container">
+                        <img src="~/${story.coverImage}" alt="${story.title}" class="story-image">
+                    </div>
+                    <div class="story-info">
+                        <div class="story-title-container">
+                            <h3 class="story-title">${story.title}</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon" fill="red">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </div>
+                        <p class="category">${story.category}</p>
+                    </div>
+                `;
+
+                // إضافة الاستماع إلى حدث النقر لفتح صفحة القصة
+                storyItem.addEventListener('click', function () {
+                    window.location.href = story.link;
+                });
+
+
+
+                return storyItem;
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,864 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>تسالي الرسام</title>
+    <style>
+
+
+        :root {
+            --text-stroke: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black, 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black, 1.5px 0 black, -1.5px 0 black, 0 1.5px black, 0 -1.5px black, 1.5px 1.5px black, -1.5px 1.5px black, 1.5px -1.5px black, -1.5px -1.5px black;
+        }
+
+        /* يطبق على كل النصوص */
+        body, h1, h2, h3, h4, h5, h6, p, span, button, input, label, a {
+            font-family: 'DG3asomy', sans-serif;
+            color: white;
+            text-shadow: var(--text-stroke);
+        }
+
+        html, body {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background: #fff;
+        }
+
+        .tab-wrapper {
+            display: flex;
+            position: absolute;
+            top: 142px; /* same as canvas top margin */
+            right: calc(50% - 370px); /* 620px / 2 (canvas width) */
+            z-index: 2;
+        }
+
+        .tab {
+            background-color: rgb(132, 232, 73);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 25px 25px 0 0;
+            margin-left: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+        }
+
+            .tab.active {
+                background-color: #1f751c;
+            }
+
+        .drawing-area {
+            position: relative;
+            display: inline-block;
+            margin-top: 70px;
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 15px;
+            padding: 10px;
+            background-color: white;
+            width: 800px;
+            height: 460px;
+            vertical-align: top;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .download-tools {
+            position: absolute;
+            bottom: 15px;
+            right: 850px;
+            z-index: 10;
+            transform: none !important;
+            background: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .share-drawing {
+            position: absolute;
+            bottom: 15px;
+            left: 110px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+
+
+
+        canvas {
+            background-color: white;
+            cursor: crosshair;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #templateContainer {
+            position: absolute;
+            top: 10px;
+            right: calc(50% - -420px); /* 300px / 2 لتوسيطه */
+            width: 170px;
+            height: 350px;
+            border-radius: 30px;
+            border: 2px solid hwb(108 16% 20% / 0.259);
+            background: #ffffffc9;
+            padding: 10px;
+            display: none;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        #categoryView button {
+            margin: 55px auto 40px auto;
+            padding: 6px 10px;
+            font-size: 14px;
+            width: 70%;
+            max-width: 180px;
+            display: block;
+            text-align: center;
+            border-radius: 30px;
+            background: rgb(132, 232, 73);
+            border: 3px solid #4caf50;
+            color: rgb(255, 255, 255);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            justify-content: center; /* ← centers vertically */
+            height: 100%; /* make it fill the container */
+        }
+
+            #categoryView button:hover {
+                background: #1f751c; /* لون خلفية عند التمرير */
+                border-color: #388e3c; /* تغيير لون الحدود */
+                box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* ظل أكبر */
+                cursor: pointer; /* شكل اليد عند التمرير */
+            }
+
+        #templatesView {
+            margin-top: 10px;
+        }
+
+        #templatesList img {
+            width: 80px;
+            height: 60px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: border-color 0.2s;
+        }
+
+            #templatesList img:hover {
+                border-color: #4caf50;
+            }
+
+        #backToCategoriesBtn {
+            cursor: pointer;
+            background: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            width: 100%;
+            gap: 8px; /* مسافة بين الصورة والنص */
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+
+            #backToCategoriesBtn .icon {
+                width: 22px;
+                height: auto;
+            }
+
+            #backToCategoriesBtn:hover {
+                background: #cc0000; /* لون أغمق عند التمرير */
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+            }
+
+        .tools {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0; /* remove margin auto to avoid conflicts */
+            padding: 0 10px 2px;
+            background: #ffffffee;
+            border-radius: 23px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid #d0e7d2;
+            position: absolute; /* change from relative */
+            bottom: 15px; /* stick it 10px from bottom */
+            left: 50%; /* center horizontally */
+            transform: translateX(-50%); /* center exactly */
+            width: 800px; /*  زوّد العرض هون */
+            max-width: 100%;
+            z-index: 200;
+        }
+
+        .tool {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .size-slider {
+            position: absolute;
+            top: 45px;
+            right: 0;
+            display: none;
+        }
+
+        .tool.active .size-slider {
+            display: block;
+        }
+
+        .tool-icon {
+            width: 80px; /* أكبر شوي */
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            transition: transform 0.3s ease, filter 0.3s ease;
+            position: relative;
+            z-index: 2;
+            transform: translateY(-20px);
+        }
+
+
+        .tool:hover .tool-icon,
+        .tool.active .tool-icon {
+            transform: translateY(-18px) scale(1.2);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+
+
+        #colorPalette {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffffee;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 22px;
+            white-space: nowrap;
+            z-index: 3;
+            top: -450px;
+        }
+
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin: 2px;
+            border: 2px solid #00000011;
+            cursor: pointer;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        #colorCircle {
+            background-image: url('@Url.Content("~/images/colorwheel.png")');
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            border: 2px solid #00000011;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #colorPicker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #clearCanvas {
+            padding: 5px 15px;
+            font-size: 16px;
+        }
+
+        #templateImage {
+            display: none; /* تخفي الصورة بالبداية */
+            position: absolute !important;
+            top: 50px !important;
+            left: 100px !important;
+            width: 600px !important;
+            height: 400px !important;
+            opacity: 0.3 !important;
+            pointer-events: none !important;
+            z-index: 1 !important;
+            border-radius: 10px !important;
+        }
+
+
+
+
+        #brushSizeSlider {
+            position: absolute;
+            right: -70px;
+            top: 70%;
+            transform: rotate(90deg) translateY(-50%);
+            transform-origin: right center;
+            width: 300px;
+            height: 20px;
+            -webkit-appearance: none;
+            background: linear-gradient( to left, #1f751c 0%, /* filled start (dark green) */
+            #1f751c var(--slider-fill, 0%), /* filled end (dark green) */
+            rgba(132, 232, 73, 0.3) var(--slider-fill, 0%), /* unfilled start (light transparent green) */
+            rgba(132, 232, 73, 0.3) 100% /* unfilled end */
+            );
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+            z-index: 20;
+        }
+
+            /* Slider thumb (circle) */
+            #brushSizeSlider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 20px;
+                height: 20px;
+                background: #1f751c; /* dark green circle */
+                border-radius: 50%;
+                border: 2px solid #144711; /* darker green border */
+                cursor: pointer;
+                position: relative;
+                z-index: 30;
+            }
+
+            #brushSizeSlider:-moz-range-thumb {
+                width: 20px;
+                height: 20px;
+                background: #1f751c;
+                border-radius: 50%;
+                border: 2px solid #144711;
+                cursor: pointer;
+                position: relative;
+                z-index: 30;
+            }
+
+
+        #clearCanvas {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgb(255, 0, 19);
+            color: white;
+            font-size: 16px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'DG3asomy', sans-serif;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+            pointer-events: auto;
+        }
+
+            #clearCanvas:hover {
+                background-color: rgb(193, 0, 13);
+
+            }
+
+            #clearCanvas .btn-icon {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+            }
+
+    </style>
+</head>
+<body>
+
+    <div class="tab-wrapper">
+        <button class="tab active" data-mode="free">رسم حر</button>
+        <button class="tab" data-mode="template">رسم مع قالب</button>
+    </div>
+
+    <div class="drawing-area">
+        <canvas id="canvas" width="780" height="460"></canvas>
+
+        <img id="templateImage" src="" style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 600px;
+    height: 400px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+  border-radius: 10px;
+" />
+
+
+        <input type="range" id="brushSizeSlider" min="1" max="50" value="5">
+
+
+
+        <div id="templateContainer">
+            <div id="categoryView">
+                <button class="category-btn" data-cat="maps">خرائط</button>
+                <button class="category-btn" data-cat="place">معالم</button>
+                <button class="category-btn" data-cat="randoms">عشوائيات</button>
+            </div>
+
+
+            <div id="templatesView" style="display:none;">
+                <button id="backToCategoriesBtn">
+                    رجوع إلى التصنيفات
+                    <img src="@Url.Content("~/images/ion_arrow-undo.png")" alt="رجوع" class="icon" />
+
+                </button>
+                <div id="templatesList"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="tools download-tools">
+        <button class="tool" onclick="saveDrawing()">
+            <img src="@Url.Content("~/images/downloadicon.png")" alt="download" class="tool-icon" />
+
+            <span style="display: block; font-size: 14px; margin-top: -10px; color: rgb(132, 232, 73);flex-direction: column; align-items: center;">
+                احفظ رسمتي
+            </span>
+        </button>
+    </div>
+
+    <div class="share-drawing">
+        <button class="tool" onclick="shareDrawing()">
+            <img src="@Url.Content("~/images/uploadicon.png")" alt="upload" class="tool-icon" />
+
+            <span style="display: block; font-size: 14px; margin-top: -10px; color: rgb(255, 0, 0); flex-direction: column; align-items: center;">
+                شارك رسمتي
+            </span>
+        </button>
+    </div>
+
+
+
+
+    <div class="tools">
+        <button class="tool" id="pencilBtn" onclick="setBrush('normal', this)">
+            <img src="@Url.Content("~/images/pencil.png")" alt="Pencil" class="tool-icon" />
+
+        </button>
+
+        <button class="tool" onclick="setBrush('marker', this)">
+            <img src="@Url.Content("~/images/marker.png")" alt="Pencil" class="tool-icon" />
+
+
+        </button>
+        <button class="tool" onclick="setBrush('spray', this)">
+            <img src="@Url.Content("~/images/spray.png")" alt="Pencil" class="tool-icon" />
+
+
+        </button>
+        <button class="tool" onclick="setBrush('eraser', this)">
+            <img src="@Url.Content("~/images/eraser.png")" alt="Pencil" class="tool-icon" />
+
+
+        </button>
+
+   
+    <div id="colorPalette">
+        <div id="colorCircle">
+            <input type="color" id="colorPicker" title="اختر لون">
+        </div>
+    </div>
+
+
+    <button class="tool" onclick="redo()">
+
+        <img src="@Url.Content("~/images/ion_arrow-redo.png")" alt="redo" class="tool-icon" />
+    </button>
+    <button class="tool" onclick="undo()">
+        <img src="@Url.Content("~/images/ion_arrow-undo.png")" alt="undo" class="tool-icon" />
+
+
+    </button>
+
+
+    <button id="clearCanvas">
+        <img src="@Url.Content("~/images/newdraw.png")" alt="بدء جديد" class="btn-icon" />
+
+        بدء رسمة جديدة
+    </button>
+    </div>
+
+
+    <script>
+            function hexToRgba(hex, alpha) {
+              if (hex.length === 4) {
+                hex = "#" + hex[1]+hex[1] + hex[2]+hex[2] + hex[3]+hex[3];
+              }
+              const r = parseInt(hex.slice(1,3),16),
+                    g = parseInt(hex.slice(3,5),16),
+                    b = parseInt(hex.slice(5,7),16);
+              return `rgba(${r},${g},${b},${alpha})`;
+            }
+
+            const canvas = document.getElementById("canvas"),
+                  ctx = canvas.getContext("2d");
+            let painting = false,
+                brush = "normal",
+                currentColor = "#000000",
+                lineWidth = 5,
+                undoStack = [],
+                redoStack = [];
+
+            const colors = ["#000","#f00","#0f0","#00f","#ff0","#f0f","#0ff"],
+                  palette = document.getElementById("colorPalette");
+
+            colors.forEach(col => {
+              const sw = document.createElement("div");
+              sw.className = "color-swatch";
+              sw.style.backgroundColor = col;
+              sw.onclick = () => {
+                currentColor = col;
+                colorCircle.style.backgroundImage = "none";
+                colorCircle.style.backgroundColor = col;
+                updateCursor();
+              };
+              palette.appendChild(sw);
+            });
+        const states = {
+          free: { imageData: null, templateSrc: "", undoStack: [], redoStack: [] },
+          template: { imageData: null, templateSrc: "", undoStack: [], redoStack: [] }
+        };
+
+        let currentMode = "free";
+        function saveCurrentState() {
+          states[currentMode].imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          states[currentMode].templateSrc = document.getElementById("templateImage").src;
+        }
+
+        function loadState(mode) {
+          if (states[mode].imageData) {
+            ctx.putImageData(states[mode].imageData, 0, 0);
+          } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
+          document.getElementById("templateImage").src = states[mode].templateSrc || "";
+        }
+
+            function startPos(e) { painting = true; saveState(); draw(e); }
+            function endPos()   { painting = false; ctx.beginPath(); }
+            function draw(e) {
+              if (!painting) return;
+              const rect = canvas.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+              if (brush === "normal") {
+                ctx.lineWidth = lineWidth;
+                ctx.lineCap   = "round";
+                ctx.strokeStyle = currentColor;
+                ctx.lineTo(x,y); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(x,y);
+              } else if (brush === "marker") {
+                ctx.fillStyle = hexToRgba(currentColor, 0.3);
+                ctx.beginPath();
+                ctx.arc(x,y,lineWidth,0,Math.PI*2);
+                ctx.fill();
+              } else if (brush === "spray") {
+                ctx.fillStyle = currentColor;
+                for (let i=0; i<10; i++){
+                  const offX = Math.random()*lineWidth*2 - lineWidth;
+                  const offY = Math.random()*lineWidth*2 - lineWidth;
+                  ctx.fillRect(x+offX,y+offY,1,1);
+                }
+              } else if (brush === "eraser") {
+                ctx.clearRect(x-lineWidth/2,y-lineWidth/2,lineWidth,lineWidth);
+              }
+            }
+
+            function setBrush(type, el) {
+              brush = type;
+              document.querySelectorAll(".tool").forEach(b=>b.classList.remove("active"));
+              el.classList.add("active");
+
+              updateCursor();
+            }
+
+            function saveState() {
+          const undoStack = states[currentMode].undoStack;
+          const redoStack = states[currentMode].redoStack;
+
+          undoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+          if (undoStack.length > 20) undoStack.shift();
+          states[currentMode].redoStack = []; // نفضّي التراجع الأمامي
+        }
+
+            function undo() {
+          const undoStack = states[currentMode].undoStack;
+          const redoStack = states[currentMode].redoStack;
+
+          if (!undoStack.length) return;
+          redoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+          ctx.putImageData(undoStack.pop(), 0, 0);
+        }
+
+           function redo() {
+          const undoStack = states[currentMode].undoStack;
+          const redoStack = states[currentMode].redoStack;
+
+          if (!redoStack.length) return;
+          undoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+          ctx.putImageData(redoStack.pop(), 0, 0);
+        }
+
+
+            function updateCursor() {
+              let svg, encoded;
+
+              if (brush === "normal") {
+                svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="${currentColor}" viewBox="0 0 512 512">
+                  <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/>
+                </svg>`;
+              } else if (brush === "marker") {
+                svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="${currentColor}" viewBox="0 0 576 512">
+                  <path d="M315 315l158.4-215L444.1 70.6 229 229 315 315zm-187 5s0 0 0 0l0-71.7c0-15.3 7.2-29.6 19.5-38.6L420.6 8.4C428 2.9 437 0 446.2 0c11.4 0 22.4 4.5 30.5 12.6l54.8 54.8c8.1 8.1 12.6 19 12.6 30.5c0 9.2-2.9 18.2-8.4 25.6L334.4 396.5c-9 12.3-23.4 19.5-38.6 19.5L224 416l-25.4 25.4c-12.5 12.5-32.8 12.5-45.3 0l-50.7-50.7c-12.5-12.5-12.5-32.8 0-45.3L128 320zM7 466.3l63-63 70.6 70.6-31 31c-4.5 4.5-10.6 7-17 7L24 512c-13.3 0-24-10.7-24-24l0-4.7c0-6.4 2.5-12.5 7-17z"/>
+                </svg>`;
+              } else if (brush === "spray") {
+                svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="${currentColor}" viewBox="0 0 512 512">
+                <g transform="scale(-1,1) translate(-512,0)">
+                  <path d="M96 0H160V64H96V0zM64 96H192C209.7 96 224 110.3 224 128V352C224 369.7 209.7 384 192 384H64C46.3 384 32 369.7 32 352V128C32 110.3 46.3 96 64 96zM320 192A32 32 0 1 1 384 192A32 32 0 1 1 320 192zM320 96A32 32 0 1 1 384 96A32 32 0 1 1 320 96zM416 288A32 32 0 1 1 480 288A32 32 0 1 1 416 288zM320 288A32 32 0 1 1 384 288A32 32 0 1 1 320 288zM416 192A32 32 0 1 1 480 192A32 32 0 1 1 416 192z"/>
+                </g>
+              </svg>`;
+              } else if (brush === "eraser") {
+                svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="${currentColor}" viewBox="0 0 576 512">
+                <path d="M290.7 57.4L57.4 290.7c-25 25-25 65.5 0 90.5l80 80c12 12 28.3 18.7 45.3 18.7L288 480l9.4 0L512 480c17.7 0 32-14.3 32-32s-14.3-32-32-32l-124.1 0L518.6 285.3c25-25 25-65.5 0-90.5L381.3 57.4c-25-25-65.5-25-90.5 0zM297.4 416l-9.4 0-105.4 0-80-80L227.3 211.3 364.7 348.7 297.4 416z"/>
+              </svg>`;
+              } else {
+                canvas.style.cursor = "crosshair";
+                return;
+              }
+
+              encoded = encodeURIComponent(svg).replace(/'/g, "%27").replace(/"/g, "%22");
+              canvas.style.cursor = `url("data:image/svg+xml,${encoded}") 0 32, auto`;
+            }
+
+            canvas.addEventListener("mousedown", startPos);
+            canvas.addEventListener("mouseup",   endPos);
+            canvas.addEventListener("mousemove", draw);
+
+            const colorPicker = document.getElementById("colorPicker"),
+                  colorCircle = document.getElementById("colorCircle");
+            colorPicker.addEventListener("input", () => {
+              currentColor = colorPicker.value;
+              colorCircle.style.backgroundImage = "none";
+              colorCircle.style.backgroundColor = currentColor;
+              updateCursor();
+            });
+
+            document.getElementById("clearCanvas")
+              .addEventListener("click", ()=>{ ctx.clearRect(0, 0, canvas.width, canvas.height);
+        states[currentMode].undoStack = [];
+        states[currentMode].redoStack = [];
+         });
+
+          document.querySelectorAll(".tab").forEach(tab => {
+          tab.addEventListener("click", () => {
+            saveCurrentState();
+            currentMode = tab.dataset.mode;
+            loadState(currentMode);
+
+            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            const templateImage = document.getElementById("templateImage");
+
+            if (currentMode === "template") {
+              document.getElementById("templateContainer").style.display = "block";
+              if (templateImage.src && templateImage.src !== window.location.href) {
+                // لو الصورة موجودة وغير فارغة، نظهرها
+                templateImage.style.display = "block";
+              } else {
+                // لو ما فيه صورة، نخليها مخفية
+                templateImage.style.display = "none";
+              }
+            } else {
+              document.getElementById("templateContainer").style.display = "none";
+              templateImage.style.display = "none";
+              templateImage.src = "";
+            }
+          });
+        });
+
+        const brushSizeSlider = document.getElementById("brushSizeSlider");
+        brushSizeSlider.addEventListener("input", () => {
+          lineWidth = +brushSizeSlider.value;
+          updateCursor(); // refresh cursor with new size
+        });
+        const slider = document.getElementById('brushSizeSlider');
+
+        function updateSlider() {
+          const min = slider.min;
+          const max = slider.max;
+          const val = slider.value;
+
+          // Calculate percent (0 to 100)
+          const percent = ((val - min) / (max - min)) * 100;
+
+          // Because slider is rotated 90deg, fill direction is 'to left'
+          // We adjust fill stop exactly at percent%
+          slider.style.background = `linear-gradient(to left, #4caf50 0%, #4caf50 ${percent}%, #c8e6c9 ${percent}%, #c8e6c9 100%)`;
+        }
+
+        slider.addEventListener('input', () => {
+          updateSlider();
+          // also update your lineWidth or other logic
+        });
+
+        updateSlider(); // initial fill
+
+
+
+            // خيارات القوالب
+            const templates = {
+              maps: [
+                "maps/jeninmap.svg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Dog_siberian_husky.jpg/120px-Dog_siberian_husky.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Fox_in_snow.jpg/120px-Fox_in_snow.jpg"
+              ],
+              place: [
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/2018_Tesla_Model_3_Performance_Front.jpg/120px-2018_Tesla_Model_3_Performance_Front.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/2019_Toyota_Corolla_1.8_VVT-i_Design_2019.jpg/120px-2019_Toyota_Corolla_1.8_VVT-i_Design_2019.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/2018_Audi_A4_Sport_Quattro_TDI_Avant.jpg/120px-2018_Audi_A4_Sport_Quattro_TDI_Avant.jpg"
+              ],
+              randoms: [
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tropical_beach%2C_Punta_Cana%2C_Dominican_Republic.jpg/120px-Tropical_beach%2C_Punta_Cana%2C_Dominican_Republic.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Moraine_Lake_17092005.jpg/120px-Moraine_Lake_17092005.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Autumn_forest_in_Germany.jpg/120px-Autumn_forest_in_Germany.jpg"
+              ]
+            };
+
+            const categoryView = document.getElementById("categoryView");
+            const templatesView = document.getElementById("templatesView");
+            const templatesList = document.getElementById("templatesList");
+            const backToCategoriesBtn = document.getElementById("backToCategoriesBtn");
+
+            categoryView.querySelectorAll(".category-btn").forEach(btn => {
+              btn.addEventListener("click", () => {
+                const cat = btn.dataset.cat;
+                templatesList.innerHTML = "";
+                templates[cat].forEach(src => {
+                  const img = document.createElement("img");
+                  img.src = src;
+                  img.className = "template-option";
+                  templatesList.appendChild(img);
+
+          document.querySelectorAll(".template-option").forEach(img => {
+          img.addEventListener("click", () => {
+            const templateImage = document.getElementById("templateImage");
+            templateImage.src = img.src;
+            templateImage.style.display = "block";  // لما يختار صورة نعرضها
+          });
+        });
+
+
+                });
+                categoryView.style.display = "none";
+                templatesView.style.display = "block";
+              });
+            });
+
+            backToCategoriesBtn.addEventListener("click", () => {
+              templatesView.style.display = "none";
+              categoryView.style.display = "block";
+            });
+
+            // تفعيل قلم عادي كبداية
+            setBrush("normal", document.getElementById("pencilBtn"));
+
+
+
+        function saveDrawing() {
+          const tempCanvas = document.createElement("canvas");
+          const tempCtx = tempCanvas.getContext("2d");
+
+          tempCanvas.width = canvas.width;
+          tempCanvas.height = canvas.height;
+
+          // Fill with white background
+          tempCtx.fillStyle = "#ffffff";
+          tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+          // Draw the current canvas on top
+          tempCtx.drawImage(canvas, 0, 0);
+
+          // Save
+          const link = document.createElement("a");
+          link.download = "my_drawing.png";
+          link.href = tempCanvas.toDataURL("image/png");
+          link.click();
+        }
+
+        async function shareDrawing() {
+          try {
+            const imageData = canvas.toDataURL("image/png");
+            const blob = dataURLtoBlob(imageData);
+            const fileName = `drawing_${Date.now()}.png`;
+
+            // رفع إلى Firebase Storage
+            const storageRef = firebase.storage().ref().child(`drawings/${fileName}`);
+            await storageRef.put(blob);
+
+            // الحصول على الرابط
+            const downloadURL = await storageRef.getDownloadURL();
+
+            // حفظ الرابط في Realtime Database
+            const dbRef = firebase.database().ref("gallery");
+            await dbRef.push({ image: downloadURL });
+
+            alert("تمت المشاركة بنجاح 🎉");
+          } catch (error) {
+            console.error("مشكلة في المشاركة:", error);
+            alert("صار خطأ 😢");
+          }
+        }
+
+        // تحويل base64 إلى Blob
+        function dataURLtoBlob(dataurl) {
+          const arr = dataurl.split(",");
+          const mime = arr[0].match(/:(.*?);/)[1];
+          const bstr = atob(arr[1]);
+          let n = bstr.length;
+          const u8arr = new Uint8Array(n);
+          while (n--) u8arr[n] = bstr.charCodeAt(n);
+          return new Blob([u8arr], { type: mime });
+        }
+
+        // تفعيل الزر
+        document.querySelector(".share-drawing").addEventListener("click", shareDrawing);
+
+
+    </script>
+</body>
+</html>

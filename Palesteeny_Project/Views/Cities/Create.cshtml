@@ -1,0 +1,73 @@
+﻿@model Palesteeny_Project.Models.City
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>City</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameMeaning" class="control-label"></label>
+                <input asp-for="NameMeaning" class="form-control" />
+                <span asp-validation-for="NameMeaning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="History" class="control-label"></label>
+                <input asp-for="History" class="form-control" />
+                <span asp-validation-for="History" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Climate" class="control-label"></label>
+                <input asp-for="Climate" class="form-control" />
+                <span asp-validation-for="Climate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Food" class="control-label"></label>
+                <input asp-for="Food" class="form-control" />
+                <span asp-validation-for="Food" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageNameMeaning" class="control-label"></label>
+                <input asp-for="ImageNameMeaning" class="form-control" />
+                <span asp-validation-for="ImageNameMeaning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageHistory" class="control-label"></label>
+                <input asp-for="ImageHistory" class="form-control" />
+                <span asp-validation-for="ImageHistory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageClimate" class="control-label"></label>
+                <input asp-for="ImageClimate" class="form-control" />
+                <span asp-validation-for="ImageClimate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFood" class="control-label"></label>
+                <input asp-for="ImageFood" class="form-control" />
+                <span asp-validation-for="ImageFood" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

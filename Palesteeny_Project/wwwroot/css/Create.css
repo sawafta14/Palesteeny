@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'DG3asomy';
+    src: url('DG-3asomy-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DG3asomy', sans-serif;
+    background: white;
+    direction: rtl;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h4 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+    max-width: 1000px;
+    width: 500px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+label {
+    flex: 0 0 150px;
+    background-color: rgb(196, 244, 160);
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input.form-control {
+    flex: 1;
+    padding: 18px;
+    width: 250px; /* ✅ زيادة الطول */
+    border-radius: 15px;
+    border: 2px solid #828282;
+    outline: none;
+    font-size: 18px;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+}
+
+
+input[type="submit"] {
+    background-color: rgb(255, 79, 79);
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+    font-family: 'DG3asomy', sans-serif;
+}
+
+    input[type="submit"]:hover {
+        background-color: rgb(200, 30, 30);
+        transform: scale(1.05);
+    }
+
+.text-danger {
+    font-size: 14px;
+    margin-top: 5px;
+    color: red;
+    display: block;
+}
+
+a {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    color: rgb(132, 232, 73);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: rgb(88, 159, 44);
+    }

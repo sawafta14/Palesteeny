@@ -1,0 +1,91 @@
+﻿@font-face {
+    font-family: 'DG3asomi';
+    src: url(DG-3asomy-Regular.ttf) format('truetype');
+}
+
+body {
+    font-family: 'DG3asomi', sans-serif;
+    /* text-align: center; */
+    background-color: #fff;
+
+}
+
+.tasa-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+.tasa-title{
+    display:flex;
+    flex-direction:row-reverse;
+    margin-bottom: 40px;
+    margin-right: 150px;
+    margin-top:40px;
+    align-items:center;
+}
+.tasa-title-wr {
+    color: hsla(98, 78%, 60%, 1);
+    font-size: 48px;
+    text-shadow: 3px 3px 0px black, -3px -3px 0px black, -3px 3px 0px black, 3px -3px 0px black, 3px 0px 0px black, -3px 0px 0px black, 0px 3px 0px black, 0px -3px 0px black;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.tasa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tasa-image {
+    margin: 10px;
+}
+
+.tasa-btn {
+    display: flex;
+    padding-bottom: 10px;
+    /* padding: 20px; */
+    background-color: red;
+    color: white;
+    border-radius: 63px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 70px;
+    border: red;
+    font-family: 'DG3asomi', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 3px 3px 0px black, -3px -3px 0px black, -3px 3px 0px black, 3px -3px 0px black, 3px 0px 0px black, -3px 0px 0px black, 0px 3px 0px black, 0px -3px 0px black, 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 10px rgb(0, 0, 0);
+    /* -webkit-text-stroke: 2px black; */
+}
+
+    .tasa-btn:hover {
+        background-color: darkred;
+    }
+.tasa-image:hover {
+    transform: scale(1.05);
+    transition: ease 0.5s;
+}
+.decoration-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2200px;
+    width: auto;
+    /* z-index: -1; */
+    /* Ensures it stays behind other elements */
+}
+
+.decoration-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2200px;
+    width: auto;
+    /* z-index: -1; */
+}

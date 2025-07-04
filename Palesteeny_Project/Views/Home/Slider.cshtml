@@ -1,0 +1,174 @@
+﻿
+
+<head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* مهم */
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+
+
+        .swiper-container {
+            width: 100%;
+            max-width: 1350px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+
+        .swiper-wrapper {
+            overflow: visible !important;
+        }
+
+        .swiper-slide {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            width: 450px;
+            height: 250px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Hide default arrows */
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            display: none;
+        }
+
+        /* Style your custom SVG arrows */
+        .swiper-button-next img,
+        .swiper-button-prev img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .swiper-pagination-bullet {
+            background: #000;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #007aff;
+            opacity: 1;
+        }
+
+        .slide-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 12px 0;
+            color: #fff;
+            font-size: 16px;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            display: none;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .swiper-slide.show-name .slide-name {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('https://picsum.photos/id/1018/450/250')">
+                <div class="slide-name">Image 1018</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('https://picsum.photos/id/1015/450/250')">
+                <div class="slide-name">Image 1015</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('https://picsum.photos/id/1019/450/250')">
+                <div class="slide-name">Image 1019</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('https://picsum.photos/id/1020/450/250')">
+                <div class="slide-name">Image 1020</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('https://picsum.photos/id/1021/450/250')">
+                <div class="slide-name">Image 1021</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('https://picsum.photos/id/1022/450/250')">
+                <div class="slide-name">Image 1022</div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <!-- Custom Navigation Buttons -->
+        <div class="swiper-button-prev">
+            <img src="~/images/arrowleft.svg" alt="Previous">
+        </div>
+        <div class="swiper-button-next">
+            <img src="~/images/arrowright.svg" alt="Next">
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+          effect: 'coverflow',
+          centeredSlides: false,
+          slidesPerView: 3,
+          loop: false,
+          speed: 600,
+          autoplay: {
+            delay: 3000,
+          },
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          spaceBetween: 0,
+          on: {
+            slideChange: function () {
+              document.querySelectorAll('.swiper-slide').forEach(slide => {
+                slide.classList.remove('show-name');
+              });
+              const midIndex = this.activeIndex + 1;
+              const slides = this.slides;
+              if (slides[midIndex]) {
+                slides[midIndex].classList.add('show-name');
+              }
+            }
+          }
+        });
+
+        // Show the name for the middle slide on load
+        swiper.emit('slideChange');
+    </script>
+
+
+</body>
+

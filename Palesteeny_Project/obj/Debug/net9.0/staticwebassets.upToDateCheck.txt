@@ -1,0 +1,481 @@
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\PalMap.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\القمر والقبعة.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\navbar.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\footer.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\alliddmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\beeralsabi3map.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery\dist\jquery.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Draw.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\alkhaleelmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\nabulsmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\js\site.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery\dist\jquery.slim.min.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Create.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\akkamap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\toulkarimmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Maktabati.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\safadmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\puzzlepal\Build\puzzlepal.loader.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\locationicon.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\decor2.4main.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\arrowleft.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\palesteeny GREEN dashed line down.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\nasrahmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\puzzlepal\TemplateData\favicon.ico
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\فانيلَّتي بيضاء.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\tabaryamap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\hayfamap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\picmaindraw.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\alqudsmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\!ما هذه النظارة يا أرنوب؟.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation\dist\additional-methods.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\puzzleicon.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\mainpagepal.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Slider.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\puzzlepal\Build\puzzlepal.framework.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\puzzlepal\Build\puzzlepal.wasm
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Hesabi.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\About.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\bgherored.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation\LICENSE.md
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\alramlahmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\puzzlepal\index.html
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\palesteeny GREEN dashed line up.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\paintpaletteicon.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\puzzlepal\TemplateData\style.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\arrowright.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\ramallahmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\jeninmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery\dist\jquery.slim.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\أين عُمر؟.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\thedeadseamap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\decor3.4main.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\العمَّة زيُّون وشجرة الزَّيتون.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery\dist\jquery.slim.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Tasali.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\palesteeny RED dashed line up.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Qisas.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\yafamap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery\LICENSE.txt
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\خيال بلا عنان.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\palesteeny RED dashed line down.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\gazamap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\js\palmap.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\tabler_award.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\site.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\decor1.4main.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery\dist\jquery.min.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery\dist\jquery.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\mapinmainpage.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\loginpal.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\favicon.ico
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\Qusa.css
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\js\mainpagepal.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\images\maps\besaanmap.svg
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\wwwroot\css\signuppal.css
+wwwroot\css\!ما هذه النظارة يا أرنوب؟.css
+wwwroot\css\About.css
+wwwroot\css\Create.css
+wwwroot\css\DG-3asomy-Regular.ttf
+wwwroot\css\Draw.css
+wwwroot\css\footer.css
+wwwroot\css\Hesabi.css
+wwwroot\css\loginpal.css
+wwwroot\css\mainpagepal.css
+wwwroot\css\Maktabati.css
+wwwroot\css\navbar.css
+wwwroot\css\PalMap.css
+wwwroot\css\Qisas.css
+wwwroot\css\Qusa.css
+wwwroot\css\signuppal.css
+wwwroot\css\site.css
+wwwroot\css\Slider.css
+wwwroot\css\Tasali.css
+wwwroot\css\العمَّة زيُّون وشجرة الزَّيتون.css
+wwwroot\css\القمر والقبعة.css
+wwwroot\css\أين عُمر؟.css
+wwwroot\css\خيال بلا عنان.css
+wwwroot\css\فانيلَّتي بيضاء.css
+wwwroot\DG-3asomy-Regular.ttf
+wwwroot\favicon.ico
+wwwroot\fonts\DG-3asomy-Regular.ttf
+wwwroot\images\a.jpg
+wwwroot\images\a22.jpg
+wwwroot\images\a33.jpg
+wwwroot\images\Arrow.png
+wwwroot\images\arrowleft.svg
+wwwroot\images\arrowright.svg
+wwwroot\images\bgherored.svg
+wwwroot\images\blue-color.png
+wwwroot\images\bunnyend.webp
+wwwroot\images\bunnyslide1.webp
+wwwroot\images\bunnyslide10.webp
+wwwroot\images\bunnyslide11.webp
+wwwroot\images\bunnyslide12.webp
+wwwroot\images\bunnyslide13.webp
+wwwroot\images\bunnyslide2.webp
+wwwroot\images\bunnyslide3.webp
+wwwroot\images\bunnyslide4.webp
+wwwroot\images\bunnyslide5.webp
+wwwroot\images\bunnyslide6.webp
+wwwroot\images\bunnyslide7.webp
+wwwroot\images\bunnyslide8.webp
+wwwroot\images\bunnyslide9.webp
+wwwroot\images\city climate icon.png
+wwwroot\images\city food - Copy.png
+wwwroot\images\city food.png
+wwwroot\images\city history icon.png
+wwwroot\images\city name icon.png
+wwwroot\images\colorsend.webp
+wwwroot\images\colorsslide1.webp
+wwwroot\images\colorsslide10.webp
+wwwroot\images\colorsslide11.webp
+wwwroot\images\colorsslide12.webp
+wwwroot\images\colorsslide13.webp
+wwwroot\images\colorsslide2.webp
+wwwroot\images\colorsslide3.webp
+wwwroot\images\colorsslide4.webp
+wwwroot\images\colorsslide5.webp
+wwwroot\images\colorsslide6.webp
+wwwroot\images\colorsslide7.webp
+wwwroot\images\colorsslide8.webp
+wwwroot\images\colorsslide9.webp
+wwwroot\images\colorwheel.png
+wwwroot\images\decor1.4main.svg
+wwwroot\images\decor2.4main.svg
+wwwroot\images\decor3.4main.svg
+wwwroot\images\decor3.png
+wwwroot\images\decor31.png
+wwwroot\images\decorL.png
+wwwroot\images\decorR.png
+wwwroot\images\DG-3asomy-Regular.ttf
+wwwroot\images\downloadicon.png
+wwwroot\images\drawing.png
+wwwroot\images\email-icon.png
+wwwroot\images\ep.png
+wwwroot\images\ep_arrow-up-bold.png
+wwwroot\images\ep_arrow-up-bold@2x.png
+wwwroot\images\eraser.png
+wwwroot\images\fluent_library-20-filled.png
+wwwroot\images\foxend.webp
+wwwroot\images\foxslide1.webp
+wwwroot\images\foxslide2.webp
+wwwroot\images\foxslide3.webp
+wwwroot\images\foxslide4.webp
+wwwroot\images\foxslide5.webp
+wwwroot\images\foxslide6.webp
+wwwroot\images\foxslide7.webp
+wwwroot\images\foxslide8.webp
+wwwroot\images\foxslide9.webp
+wwwroot\images\Frame.png
+wwwroot\images\games.png
+wwwroot\images\green-color.png
+wwwroot\images\h.jpg
+wwwroot\images\h2.jpg
+wwwroot\images\h3.jpg
+wwwroot\images\hatend.webp
+wwwroot\images\hatslide1.webp
+wwwroot\images\hatslide10.webp
+wwwroot\images\hatslide11.webp
+wwwroot\images\hatslide2.webp
+wwwroot\images\hatslide3.webp
+wwwroot\images\hatslide4.webp
+wwwroot\images\hatslide5.webp
+wwwroot\images\hatslide6.webp
+wwwroot\images\hatslide7.webp
+wwwroot\images\hatslide8.webp
+wwwroot\images\hatslide9.webp
+wwwroot\images\imaginationslide1.webp
+wwwroot\images\imaginationslide10.webp
+wwwroot\images\imaginationslide11.webp
+wwwroot\images\imaginationslide12.webp
+wwwroot\images\imaginationslide13.webp
+wwwroot\images\imaginationslide14.webp
+wwwroot\images\imaginationslide15.webp
+wwwroot\images\imaginationslide16.webp
+wwwroot\images\imaginationslide17.webp
+wwwroot\images\imaginationslide18.webp
+wwwroot\images\imaginationslide19.webp
+wwwroot\images\imaginationslide2.webp
+wwwroot\images\imaginationslide3.webp
+wwwroot\images\imaginationslide4.webp
+wwwroot\images\imaginationslide5.webp
+wwwroot\images\imaginationslide6.webp
+wwwroot\images\imaginationslide7.webp
+wwwroot\images\imaginationslide8.webp
+wwwroot\images\imaginationslide9.webp
+wwwroot\images\insta-icon.png
+wwwroot\images\ion_arrow-redo.png
+wwwroot\images\ion_arrow-undo.png
+wwwroot\images\j.png
+wwwroot\images\j2.jpg
+wwwroot\images\j3.jpg
+wwwroot\images\kid1.jpg
+wwwroot\images\kid2.jpg
+wwwroot\images\kid3.jpg
+wwwroot\images\Langicon.png
+wwwroot\images\Left.png
+wwwroot\images\left-arrow.png
+wwwroot\images\locationicon.svg
+wwwroot\images\mapinmainpage.svg
+wwwroot\images\maps\akkamap.svg
+wwwroot\images\maps\alkhaleelmap.svg
+wwwroot\images\maps\alliddmap.svg
+wwwroot\images\maps\alqudsmap.svg
+wwwroot\images\maps\alramlahmap.svg
+wwwroot\images\maps\beeralsabi3map.svg
+wwwroot\images\maps\besaanmap.svg
+wwwroot\images\maps\gazamap.svg
+wwwroot\images\maps\hayfamap.svg
+wwwroot\images\maps\jeninmap.svg
+wwwroot\images\maps\nabulsmap.svg
+wwwroot\images\maps\nasrahmap.svg
+wwwroot\images\maps\ramallahmap.svg
+wwwroot\images\maps\safadmap.svg
+wwwroot\images\maps\tabaryamap.svg
+wwwroot\images\maps\thedeadseamap.svg
+wwwroot\images\maps\toulkarimmap.svg
+wwwroot\images\maps\yafamap.svg
+wwwroot\images\marker.png
+wwwroot\images\mdi_paint-outline.png
+wwwroot\images\MyLibraryLogo.png
+wwwroot\images\n.jpg
+wwwroot\images\n2.jpg
+wwwroot\images\n3.jpg
+wwwroot\images\newdraw.png
+wwwroot\images\omarend.webp
+wwwroot\images\omarslide1.webp
+wwwroot\images\omarslide10.webp
+wwwroot\images\omarslide11.webp
+wwwroot\images\omarslide2.webp
+wwwroot\images\omarslide3.webp
+wwwroot\images\omarslide4.webp
+wwwroot\images\omarslide5.webp
+wwwroot\images\omarslide6.webp
+wwwroot\images\omarslide7.webp
+wwwroot\images\omarslide8.webp
+wwwroot\images\omarslide9.webp
+wwwroot\images\paintpaletteicon.svg
+wwwroot\images\palesteeny GREEN dashed line down.svg
+wwwroot\images\palesteeny GREEN dashed line up.svg
+wwwroot\images\palesteeny RED dashed line down.svg
+wwwroot\images\palesteeny RED dashed line up.svg
+wwwroot\images\palesteeny-logo 5.png
+wwwroot\images\palfooter.png
+wwwroot\images\pencil.png
+wwwroot\images\phone-icon.png
+wwwroot\images\picmaindraw.svg
+wwwroot\images\pink-color.png
+wwwroot\images\places\alharaml_al_ibraheemi.png
+wwwroot\images\places\almasjidalaqusa.jpg
+wwwroot\images\places\khirbat_irtah.png
+wwwroot\images\places\manarahclock.png
+wwwroot\images\places\qasirhisham.png
+wwwroot\images\profileDef.png
+wwwroot\images\puzzleicon.svg
+wwwroot\images\quiz.png
+wwwroot\images\randoms\cat.png
+wwwroot\images\randoms\flower.jpg
+wwwroot\images\randoms\hanthalah.jfif
+wwwroot\images\randoms\heartpal.png
+wwwroot\images\randoms\Watermelon.png
+wwwroot\images\red-color.png
+wwwroot\images\Right.png
+wwwroot\images\s.jpg
+wwwroot\images\s.png
+wwwroot\images\s2.jpg
+wwwroot\images\s3.jpg
+wwwroot\images\ser1.png
+wwwroot\images\spray.png
+wwwroot\images\T.jpg
+wwwroot\images\t2.jpg
+wwwroot\images\t3.jpg
+wwwroot\images\tabler_award.svg
+wwwroot\images\tariqend.webp
+wwwroot\images\tariqslide1.jpg
+wwwroot\images\tariqslide10.webp
+wwwroot\images\tariqslide11.webp
+wwwroot\images\tariqslide12.webp
+wwwroot\images\tariqslide13.webp
+wwwroot\images\tariqslide14.webp
+wwwroot\images\tariqslide2.webp
+wwwroot\images\tariqslide3.webp
+wwwroot\images\tariqslide4.webp
+wwwroot\images\tariqslide5.webp
+wwwroot\images\tariqslide6.webp
+wwwroot\images\tariqslide7.webp
+wwwroot\images\tariqslide8.webp
+wwwroot\images\tariqslide9.webp
+wwwroot\images\teena waves.png
+wwwroot\images\teena waving.png
+wwwroot\images\TeenaAbout.PNG
+wwwroot\images\teenapassword.png
+wwwroot\images\teeny.png
+wwwroot\images\teenyAbout.PNG
+wwwroot\images\uploadicon.png
+wwwroot\images\w1.png
+wwwroot\images\w2.png
+wwwroot\images\w3.png
+wwwroot\images\w4.png
+wwwroot\images\yellow-color.png
+wwwroot\images\zaytoonend.png
+wwwroot\images\zaytoonslide1.jpg
+wwwroot\images\zaytoonslide10.jpg
+wwwroot\images\zaytoonslide12.jpg
+wwwroot\images\zaytoonslide13.jpg
+wwwroot\images\zaytoonslide14.jpg
+wwwroot\images\zaytoonslide15.jpg
+wwwroot\images\zaytoonslide16.jpg
+wwwroot\images\zaytoonslide17.jpg
+wwwroot\images\zaytoonslide18.jpg
+wwwroot\images\zaytoonslide19.jpg
+wwwroot\images\zaytoonslide2.jpg
+wwwroot\images\zaytoonslide20.jpg
+wwwroot\images\zaytoonslide21.jpg
+wwwroot\images\zaytoonslide22.jpg
+wwwroot\images\zaytoonslide3.jpg
+wwwroot\images\zaytoonslide4.jpg
+wwwroot\images\zaytoonslide5.jpg
+wwwroot\images\zaytoonslide6.jpg
+wwwroot\images\zaytoonslide7.jpg
+wwwroot\images\zaytoonslide8.jpg
+wwwroot\images\zaytoonslide9.jpg
+wwwroot\images\zoom-in.png
+wwwroot\images\zoom-out.png
+wwwroot\images\قصص.png
+wwwroot\images\كتب.png
+wwwroot\images\مكتبتي.png
+wwwroot\js\mainpagepal.js
+wwwroot\js\palmap.js
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\dist\jquery.slim.js
+wwwroot\lib\jquery\dist\jquery.slim.min.js
+wwwroot\lib\jquery\dist\jquery.slim.min.map
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\puzzlepal\Build\puzzlepal.data
+wwwroot\puzzlepal\Build\puzzlepal.framework.js
+wwwroot\puzzlepal\Build\puzzlepal.loader.js
+wwwroot\puzzlepal\Build\puzzlepal.wasm
+wwwroot\puzzlepal\index.html
+wwwroot\puzzlepal\TemplateData\favicon.ico
+wwwroot\puzzlepal\TemplateData\fullscreen-button.png
+wwwroot\puzzlepal\TemplateData\MemoryProfiler.png
+wwwroot\puzzlepal\TemplateData\progress-bar-empty-dark.png
+wwwroot\puzzlepal\TemplateData\progress-bar-empty-light.png
+wwwroot\puzzlepal\TemplateData\progress-bar-full-dark.png
+wwwroot\puzzlepal\TemplateData\progress-bar-full-light.png
+wwwroot\puzzlepal\TemplateData\style.css
+wwwroot\puzzlepal\TemplateData\unity-logo-dark.png
+wwwroot\puzzlepal\TemplateData\unity-logo-light.png
+wwwroot\puzzlepal\TemplateData\webgl-logo.png
+wwwroot\puzzlepal\TemplateData\webmemd-icon.png
+wwwroot\uploads\drawing_3c8c2f8c-4135-487e-aea7-23bc3c42fcb0.png
+wwwroot\uploads\drawing_6c43163c-4832-4f5c-9b9f-6424faa4aebd.png
+wwwroot\uploads\drawing_874e50e6-8e3f-4ff2-9377-26c6d6e5e5ab.png
+wwwroot\uploads\drawing_cd7e9e99-c1e8-4711-ad4d-a171ba9760bd.png

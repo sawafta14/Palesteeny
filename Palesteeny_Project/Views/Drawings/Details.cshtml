@@ -1,0 +1,56 @@
+﻿@model Palesteeny_Project.Models.Drawing
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Drawing</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.User)</dt>
+        <dd class="col-sm-10">
+            @if (Model.User != null)
+            {
+                @Model.User.Email
+            }
+            else
+            {
+                <em>لا يوجد مستخدم</em>
+            }
+        </dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.ImageUrl)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.ImageUrl)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Mode)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.Mode)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Template)</dt>
+        <dd class="col-sm-10">
+            @if (Model.Template != null)
+            {
+                @Model.Template.Id
+            }
+            else
+            {
+                <em>لا يوجد قالب</em>
+            }
+        </dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.BrushType)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.BrushType)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Color)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.Color)</dd>
+
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DrawingId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

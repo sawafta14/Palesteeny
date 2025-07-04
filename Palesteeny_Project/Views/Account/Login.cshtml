@@ -1,0 +1,119 @@
+﻿@using Palesteeny_Project.ViewModels
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+
+    // تحديد الحقل الذي نريده أن يكون عليه التركيز تلقائياً
+    string autofocusField = "Email";
+}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="~/css/loginpal.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- الزينة -->
+        <div class="decor">
+            <img src="~/images/palesteeny RED dashed line up.svg" alt="زينة" class="decor-image" />
+        </div>
+
+        <div class="blue-decor">
+            <img src="~/images/palesteeny RED dashed line down.svg" alt="زينة زرقاء" class="blue-decor-image" />
+        </div>
+
+        <div class="green-decor">
+            <img src="~/images/palesteeny GREEN dashed line down.svg" alt="زينة خضراء" class="green-decor-image" />
+        </div>
+
+        <div class="yellow-decor">
+            <img src="~/images/palesteeny GREEN dashed line up.svg" alt="زينة صفراء" class="yellow-decor-image" />
+        </div>
+
+        <!-- صندوق تسجيل الدخول -->
+        <div class="login-box">
+            <h2>تسجيل الدخول</h2>
+            <form asp-action="Login" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                @* حقل البريد الإلكتروني *@
+                @{
+                    var emailAttrs = new Dictionary<string, object>
+                {
+                { "class", "input-box" },
+                { "placeholder", "اكتب اسمك هنا 😊" },
+                { "autocomplete", "username" }
+                };
+                    if (autofocusField == "Email")
+                    {
+                        emailAttrs.Add("autofocus", "autofocus");
+                    }
+                }
+                <label>
+                    <span asp-for="Email" class="label-bg">اسمي:</span>
+                    @Html.TextBoxFor(m => m.Email, emailAttrs)
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </label>
+
+                @* حقل كلمة السر *@
+                @{
+                    var passwordAttrs = new Dictionary<string, object>
+                {
+                { "class", "input-box" },
+                { "placeholder", "اكتب كلمة السر 👀" },
+                { "type", "password" },
+                { "autocomplete", "current-password" }
+                };
+                    if (autofocusField == "Password")
+                    {
+                        passwordAttrs.Add("autofocus", "autofocus");
+                    }
+                }
+                <label>
+                    <span asp-for="Password" class="label-bg">كلمة السر:</span>
+                    @Html.TextBoxFor(m => m.Password, passwordAttrs)
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </label>
+
+                <p class="forgot"><a asp-controller="Account" asp-action="ChangePassword">هل نسيت كلمة السر؟</a></p>
+
+                <input type="submit" value="تسجيل!" />
+                <p class="signup">ليس لدي حساب؟ <a asp-controller="Account" asp-action="Register">أنشئ الآن</a></p>
+            </form>
+        </div>
+
+        <!-- شخصية تينا -->
+        <img src="~/images/teena waving.png" alt="شخصية" class="character" id="teena-img" />
+    </div>
+
+    <!-- سكربت تفاعل تينا -->
+    <script>
+        const passwordInput = document.querySelector('input[type="password"]');
+        const teenaImg = document.getElementById('teena-img');
+
+        if (passwordInput) {
+            passwordInput.addEventListener('focus', () => {
+                teenaImg.src = "/images/teenapassword.png";
+            });
+
+            passwordInput.addEventListener('blur', () => {
+                teenaImg.src = "/images/teena waving.png";
+            });
+        }
+    </script>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+        }
+    }
+</body>
+</html>
