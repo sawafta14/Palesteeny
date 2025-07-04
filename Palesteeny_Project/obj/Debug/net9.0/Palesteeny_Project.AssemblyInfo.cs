@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Palesteeny_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6836bb043c969772c7640e157335cd2fba6c168")]
 [assembly: System.Reflection.AssemblyProductAttribute("Palesteeny_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Palesteeny_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

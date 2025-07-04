@@ -3,6 +3,21 @@
   "WorkspaceRootPath": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\models\\userpal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\models\\userpal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.Cities.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\drawcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\drawcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -24,10 +39,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\models\\drawingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\models\\drawingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\models\\userpal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\models\\userpal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\draw.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -220,16 +231,52 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserPal.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\UserPal.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\UserPal.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\UserPal.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Models\\UserPal.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAcwDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T18:46:57.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "dbo.Cities [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.Cities.sql",
+              "ToolTip": "dbo.Cities [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-04T18:42:57.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAADwv90AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T13:24:09.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Draw.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Draw\\Draw.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Draw\\Draw.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Draw\\Draw.cshtml*",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Draw\\Draw.cshtml*",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Draw\\Draw.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Draw\\Draw.cshtml",
               "ViewState": "AgIAAHwDAAAAAAAAAAAmwI8DAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-04T11:17:45.068Z",
@@ -237,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -250,7 +297,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Program.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Program.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Program.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T18:05:55.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Draw.css",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Draw.css",
               "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Draw.css",
@@ -262,20 +322,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "DrawController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\DrawController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\DrawController.cs",
               "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\DrawController.cs",
               "RelativeToolTip": "Palesteeny_Project\\Controllers\\DrawController.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAUwHAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAEwB0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-04T11:15:24.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Bunny.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Home\\Bunny.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Home\\Bunny.cshtml",
@@ -288,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\HomeController.cs",
@@ -301,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "DrawingDto.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\DrawingDto.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\DrawingDto.cs",
@@ -313,19 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserPal.cs",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\UserPal.cs",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\UserPal.cs",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\UserPal.cs",
-              "RelativeToolTip": "Palesteeny_Project\\Models\\UserPal.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAcwDAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T12:57:01.564Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Drawing.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\Drawing.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\Drawing.cs",
@@ -337,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Template.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\Template.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\Template.cs",
@@ -349,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Hesabi.css",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Hesabi.css",
               "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Hesabi.css",
@@ -361,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Qisas.css",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Qisas.css",
               "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Qisas.css",
@@ -373,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "About.css",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\About.css",
               "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\About.css",
@@ -385,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "about.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Home\\about.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Home\\about.cshtml",
@@ -397,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "PalMap.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\PalMap\\PalMap.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\PalMap\\PalMap.cshtml",
@@ -409,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "City.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\City.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\City.cs",
@@ -421,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "CitiesController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\CitiesController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\CitiesController.cs",
@@ -433,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\ErrorViewModel.cs",
@@ -445,7 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "puzzleweb.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Home\\puzzleweb.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Home\\puzzleweb.cshtml",
@@ -457,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\ApplicationDbContext.cs",
@@ -469,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Drawings\\Delete.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Drawings\\Delete.cshtml",
@@ -481,7 +529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Drawings\\Details.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Drawings\\Details.cshtml",
@@ -493,7 +541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Drawings\\Index.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Drawings\\Index.cshtml",
@@ -505,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "TemplatesController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\TemplatesController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\TemplatesController.cs",
@@ -517,7 +565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "DrawingsController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\DrawingsController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\DrawingsController.cs",
@@ -529,7 +577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "20250702215059_AddDrawingAndTemplateFields.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Migrations\\20250702215059_AddDrawingAndTemplateFields.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Migrations\\20250702215059_AddDrawingAndTemplateFields.cs",
@@ -541,7 +589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Qusi.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\Qusi.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\Qusi.cs",
@@ -553,7 +601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "FavoriteStory.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\FavoriteStory.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\FavoriteStory.cs",
@@ -565,7 +613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "Qusa.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Qusiss\\Qusa.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Qusiss\\Qusa.cshtml",
@@ -577,7 +625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "QusisController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\QusisController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\QusisController.cs",
@@ -589,7 +637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "Qusa.css",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Qusa.css",
               "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Qusa.css",
@@ -601,7 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "QusissController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\QusissController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\QusissController.cs",
@@ -613,7 +661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "QusiDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Qusiss\\QusiDetails.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Qusiss\\QusiDetails.cshtml",
@@ -624,7 +672,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "Palesteeny_Project.csproj",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Palesteeny_Project.csproj",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Palesteeny_Project.csproj",
@@ -637,7 +685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "QusiImage.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\QusiImage.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\QusiImage.cs",
@@ -649,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "Qusis.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Qusiss\\Qusis.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Qusiss\\Qusis.cshtml",
@@ -661,7 +709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "QusiViewMode.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\ViewModels\\QusiViewMode.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\ViewModels\\QusiViewMode.cs",
@@ -673,7 +721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "StoryBookmark.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\StoryBookmark.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\StoryBookmark.cs",
@@ -685,7 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "Story.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\Story.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\Story.cs",
@@ -697,7 +745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "dbo.Qusis.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.Qusis.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.Qusis.sql",
@@ -706,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\StoryBookmarks\\Delete.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\StoryBookmarks\\Delete.cshtml",
@@ -718,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\FavoriteStories\\Delete.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\FavoriteStories\\Delete.cshtml",
@@ -730,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\QusiImages\\Index.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\QusiImages\\Index.cshtml",
@@ -742,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\FavoriteStories\\Details.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\FavoriteStories\\Details.cshtml",
@@ -754,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\QusiImages\\Delete.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\QusiImages\\Delete.cshtml",
@@ -766,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\FavoriteStories\\Index.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\FavoriteStories\\Index.cshtml",
@@ -778,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\StoryBookmarks\\Index.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\StoryBookmarks\\Index.cshtml",
@@ -790,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\StoryBookmarks\\Details.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\StoryBookmarks\\Details.cshtml",
@@ -802,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\QusiImages\\Details.cshtml",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\QusiImages\\Details.cshtml",
@@ -814,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "StoryBookmarksController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\StoryBookmarksController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\StoryBookmarksController.cs",
@@ -826,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "FavoriteStoriesController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\FavoriteStoriesController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\FavoriteStoriesController.cs",
@@ -838,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "QusiImagesController.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\QusiImagesController.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\QusiImagesController.cs",
@@ -850,7 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "20250701100801_UpdateStoryRelations.cs",
               "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Migrations\\20250701100801_UpdateStoryRelations.cs",
               "RelativeDocumentMoniker": "Palesteeny_Project\\Migrations\\20250701100801_UpdateStoryRelations.cs",

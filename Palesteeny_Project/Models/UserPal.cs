@@ -40,6 +40,7 @@ namespace Palesteeny_Project.Models
 
         public bool EmailConfirmed { get; set; } = false;
         public string? ConfirmationToken { get; set; }
+        public string? Semester { get; set; }
 
         // ✅ علاقات جديدة
         public List<FavoriteStory> FavoriteStories { get; set; } = new();

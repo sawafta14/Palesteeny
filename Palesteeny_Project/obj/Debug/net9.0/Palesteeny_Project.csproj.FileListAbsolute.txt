@@ -406,3 +406,4 @@ C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\obj\De
 C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\obj\Debug\net9.0\compressed\7peniqgzr7-64pevun6xj.gz
 C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\obj\Debug\net9.0\compressed\qgbw1z5cwq-a3kozijztd.gz
 C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\obj\Debug\net9.0\compressed\3i472uwh44-8981rt4d0z.gz
+C:\Users\Safaa Sawafta\source\repos\Palesteeny_Project\Palesteeny_Project\obj\Debug\net9.0\Palesteeny_Project.sourcelink.json
