@@ -1,0 +1,202 @@
+﻿@font-face {
+    font-family: 'DG 3asomy';
+    src: url('../fonts/DG-3asomy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DG 3asomy', sans-serif;
+}
+
+body {
+    background-color: white;
+    color: #1A1F2C;
+    text-align: right;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-text {
+    text-decoration: none;
+    color: hsla(98, 78%, 60%, 1);
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+}
+
+.flip-emoji {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+.help-container {
+    max-width: 900px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid hsla(98, 78%, 60%, 1);
+}
+
+    .help-container h1 {
+        color: red;
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+    }
+
+.intro {
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 3px dashed darkgreen;
+}
+
+    .intro p {
+        font-size: 18px;
+        color: black;
+        margin: 10px 0;
+        line-height: 1.6;
+    }
+
+section h2 {
+    font-size: 24px;
+    color: hsla(98, 78%, 60%, 1);
+    margin-bottom: 15px;
+    margin-top: 40px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, -3px 0 0 black, 3px 0 0 black, 0 3px 0 black, 0 -3px 0 black;
+}
+
+.character-icon {
+    width: 40px;
+    height: auto;
+    transform: rotate(-20deg) translateY(-10px);
+}
+
+.quick-questions button {
+    display: inline-block;
+    margin: 8px 5px;
+    padding: 12px 20px;
+    background-color: #eeeeee;
+    border: 2px solid hsla(98, 78%, 60%, 1);
+    color: black;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+    .quick-questions button:hover {
+        background-color: darkgreen;
+        color: white;
+    }
+
+.ask-btn {
+    background-color: #000000;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+    .ask-btn:hover {
+        background-color: #333333;
+    }
+
+.feedback-form form {
+    margin-top: 20px;
+}
+
+.feedback-form label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: black;
+    font-weight: bold;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    direction: rtl;
+    text-align: right;
+}
+
+    .feedback-form input:focus,
+    .feedback-form select:focus,
+    .feedback-form textarea:focus {
+        border-color: #0a7e30;
+        outline: none;
+    }
+
+.submit-btn {
+    margin-top: 25px;
+    background-color: red;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .submit-btn:hover {
+        background-color: darkred;
+    }
+
+#main-answer {
+    display: none;
+    background-color: darkred;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 30px 0 0 0;
+    font-size: 16px;
+    color: white;
+    direction: rtl;
+    text-align: right;
+    min-height: 60px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -17,7 +17,19 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
 
+        ("إضافة محتوى جديد", "Create", "QusiImages"),
+        ("التعديل على المحتوى", "Edit", "QusiImages"),
+        ("حذف المحتوى", "Delete", "QusiImages"),
+        ("عرض محتوى القصة", "Details", "QusiImages")
+    };
+
+            return View(adminActions);
+        }
         // GET: QusiImages
         public async Task<IActionResult> Index()
         {

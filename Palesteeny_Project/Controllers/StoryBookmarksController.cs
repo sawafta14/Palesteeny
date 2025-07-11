@@ -17,7 +17,19 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
 
+        
+       
+        
+        ("عرض الاشارات المرجعية ", "Details", "StoryBookmarks")
+    };
+
+            return View(adminActions);
+        }
         // GET: StoryBookmarks
         public async Task<IActionResult> Index()
         {

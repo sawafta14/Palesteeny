@@ -1,6 +1,6 @@
 ﻿@{
 
-    Layout = null;
+    
 
 
 }
@@ -9,24 +9,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="@Url.Content("~/css/PalMap.css")" />
+    <link rel="stylesheet" href="~/css/PalMap1.css">
     <title>رحلتي</title>
 
 </head>
 <body>
+
     <div class="top-text">
         <div class="header-with-image">
-            <h1>خريطتي</h1>
-            <a asp-controller="Home" asp-action="Index"><img src="@Url.Content("~/images/ep_arrow-up-bold.png")" alt="خريطة" class="title-image"></a>
+            <h1 style="font-size:50px">خريطتي</h1>
+            <a asp-controller="Home" asp-action="Index">
+                <img src="@Url.Content("~/images/ep_arrow-up-bold.png")" alt="خريطة" class="title-image">
+            </a>
         </div>
-        <p>اضغط على أي مدينة واكتشف خريطة فلسطين المليئة بالمفاجآت والكنوز المخفية!</p>
+        <p style="font-size:22px" class="description">اضغط على أي مدينة واكتشف خريطة فلسطين المليئة بالمفاجآت والكنوز المخفية!</p>
     </div>
 
-
+    <div class="body2">
     <div class="content">
 
 
-
+        
 
         <div class="wrapper">
             <div class="zoom-container">
@@ -541,7 +544,7 @@
                     <circle id="fromPoint" r="5" fill="red" visibility="hidden" />
                     <circle id="toPoint" r="5" fill="blue" visibility="hidden" />
                     <line id="routeLine" stroke="green" stroke-width="40" stroke-dasharray="1000" stroke-dashoffset="1000" visibility="hidden" />
-                    <text id="searchHint" visibility="hidden" font-size="70" fill="black" font-family='DG 3asomy' , Arial, sans-serif>⬅ اضغط هنا</text>
+                    <text id="searchHint" visibility="hidden" font-size="70" fill="black" font-family='DG 3asomy' , Arial, sans-serif>⬅اضغط هنا</text>
 
                 </svg>
 
@@ -608,6 +611,6 @@
         </div>
     </div>
     <script src="~/js/palmap.js"></script>
-
+    </div>
 </body>
 </html>

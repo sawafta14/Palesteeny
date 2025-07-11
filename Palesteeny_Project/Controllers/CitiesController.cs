@@ -17,7 +17,19 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
 
+        
+        ("التعديل على بيانات المدن ", "Edit", "Cities"),
+        ("حذف بيانات مدينة", "Delete", "Cities"),
+        ("عرض بيانات المدن", "Details", "Cities")
+    };
+
+            return View(adminActions);
+        }
         // GET: Cities
         public async Task<IActionResult> Index()
         {

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using Palesteeny_Project.Services;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Palesteeny_Project.Controllers
 {
@@ -23,10 +24,20 @@ namespace Palesteeny_Project.Controllers
 
         // GET: عرض صفحة التسجيل
         [HttpGet]
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
-            return View();
+            var semesters = await _context.Semesters.ToListAsync();
+            var model = new RegisterViewModel
+            {
+                SemesterSelectList = semesters.Select(s => new SelectListItem
+                {
+                    Value = s.SemesterId.ToString(),
+                    Text = $"{s.GradeName} - {s.SemesterName}"
+                })
+            };
+            return View(model);
         }
+
 
         // POST: استقبال بيانات التسجيل
         [HttpPost]
@@ -51,11 +62,12 @@ namespace Palesteeny_Project.Controllers
                 LastName = model.LastName,
                 Email = model.Email,
                 Gender = model.Gender,
-                Grade = model.Grade.ToString(),
+                SemesterId = model.SemesterId, // تأكد أن هذا الحقل موجود في نموذج التسجيل (model)
                 PasswordHash = passwordHasher.HashPassword(null!, model.Password),
                 EmailConfirmed = false,
                 ConfirmationToken = Guid.NewGuid().ToString()
             };
+
 
             _context.UsersPal.Add(user);
             await _context.SaveChangesAsync();
@@ -181,14 +193,19 @@ namespace Palesteeny_Project.Controllers
                 return View(model);
             }
 
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim("Grade", user.Grade),
-                new Claim("Gender", user.Gender)
-            };
+       var claims = new List<Claim>
+{
+    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+    new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
+    new Claim(ClaimTypes.Email, user.Email),
+    new Claim("Role", user.Role),
+
+    new Claim("Grade", user.Semester?.GradeName ?? "Unknown"), // إذا حذفت Grade من user
+    new Claim("Gender", user.Gender)
+
+
+};
+
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
@@ -205,7 +222,7 @@ namespace Palesteeny_Project.Controllers
             HttpContext.Session.SetString("UserId", user.Id.ToString());
             HttpContext.Session.SetString("UserName", $"{user.FirstName} {user.LastName}");
             HttpContext.Session.SetString("UserEmail", user.Email);
-            HttpContext.Session.SetString("UserGrade", user.Grade);
+            HttpContext.Session.SetString("UserGrade", user.Semester?.GradeName ?? "Unknown");
             HttpContext.Session.SetString("UserGender", user.Gender);
 
 

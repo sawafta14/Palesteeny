@@ -9,12 +9,44 @@
       "PackagePath": "staticwebassets\\DG-3asomy-Regular.ttf"
     },
     {
-      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\!ما هذه النظارة يا أرنوب؟.css",
-      "PackagePath": "staticwebassets\\css\\!ما هذه النظارة يا أرنوب؟.css"
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class1book1.pdf",
+      "PackagePath": "staticwebassets\\books\\class1book1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class1book2.pdf",
+      "PackagePath": "staticwebassets\\books\\class1book2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class2book1.pdf",
+      "PackagePath": "staticwebassets\\books\\class2book1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class2book2.pdf",
+      "PackagePath": "staticwebassets\\books\\class2book2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class3book1.pdf",
+      "PackagePath": "staticwebassets\\books\\class3book1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class3book2.pdf",
+      "PackagePath": "staticwebassets\\books\\class3book2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class4book1.pdf",
+      "PackagePath": "staticwebassets\\books\\class4book1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\books\\class4book2.pdf",
+      "PackagePath": "staticwebassets\\books\\class4book2.pdf"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\About.css",
       "PackagePath": "staticwebassets\\css\\About.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\AdFormcre.css",
+      "PackagePath": "staticwebassets\\css\\AdFormcre.css"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Create.css",
@@ -25,28 +57,68 @@
       "PackagePath": "staticwebassets\\css\\DG-3asomy-Regular.ttf"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\DetailsAndDelete.css",
+      "PackagePath": "staticwebassets\\css\\DetailsAndDelete.css"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Draw.css",
       "PackagePath": "staticwebassets\\css\\Draw.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Exercise.css",
+      "PackagePath": "staticwebassets\\css\\Exercise.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Help.css",
+      "PackagePath": "staticwebassets\\css\\Help.css"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Hesabi.css",
       "PackagePath": "staticwebassets\\css\\Hesabi.css"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Honor.css",
+      "PackagePath": "staticwebassets\\css\\Honor.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Ketabi.css",
+      "PackagePath": "staticwebassets\\css\\Ketabi.css"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Maktabati.css",
       "PackagePath": "staticwebassets\\css\\Maktabati.css"
     },
     {
-      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\PalMap.css",
-      "PackagePath": "staticwebassets\\css\\PalMap.css"
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\PalMap1.css",
+      "PackagePath": "staticwebassets\\css\\PalMap1.css"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Qisas.css",
       "PackagePath": "staticwebassets\\css\\Qisas.css"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Qresult.css",
+      "PackagePath": "staticwebassets\\css\\Qresult.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\QuisCat.css",
+      "PackagePath": "staticwebassets\\css\\QuisCat.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Quizs.css",
+      "PackagePath": "staticwebassets\\css\\Quizs.css"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Qusa.css",
       "PackagePath": "staticwebassets\\css\\Qusa.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Reg.css",
+      "PackagePath": "staticwebassets\\css\\Reg.css"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Result.css",
+      "PackagePath": "staticwebassets\\css\\Result.css"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Slider.css",
@@ -61,8 +133,8 @@
       "PackagePath": "staticwebassets\\css\\footer.css"
     },
     {
-      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\loginpal.css",
-      "PackagePath": "staticwebassets\\css\\loginpal.css"
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\mainpagepal.css",
@@ -81,24 +153,24 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\أين عُمر؟.css",
-      "PackagePath": "staticwebassets\\css\\أين عُمر؟.css"
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\teeny.css",
+      "PackagePath": "staticwebassets\\css\\teeny.css"
     },
     {
-      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\العمَّة زيُّون وشجرة الزَّيتون.css",
-      "PackagePath": "staticwebassets\\css\\العمَّة زيُّون وشجرة الزَّيتون.css"
-    },
-    {
-      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\القمر والقبعة.css",
-      "PackagePath": "staticwebassets\\css\\القمر والقبعة.css"
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\tt.css",
+      "PackagePath": "staticwebassets\\css\\tt.css"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\خيال بلا عنان.css",
       "PackagePath": "staticwebassets\\css\\خيال بلا عنان.css"
     },
     {
-      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\فانيلَّتي بيضاء.css",
-      "PackagePath": "staticwebassets\\css\\فانيلَّتي بيضاء.css"
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\exercises\\class1\\sem1\\lesson1.json",
+      "PackagePath": "staticwebassets\\exercises\\class1\\sem1\\lesson1.json"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\exercises\\exercises.html",
+      "PackagePath": "staticwebassets\\exercises\\exercises.html"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\favicon.ico",
@@ -109,16 +181,44 @@
       "PackagePath": "staticwebassets\\fonts\\DG-3asomy-Regular.ttf"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Activity-icon.png",
+      "PackagePath": "staticwebassets\\images\\Activity-icon.png"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Arrow.png",
       "PackagePath": "staticwebassets\\images\\Arrow.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\BlueTallTeena.svg",
+      "PackagePath": "staticwebassets\\images\\BlueTallTeena.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\BlueTallTeeny.svg",
+      "PackagePath": "staticwebassets\\images\\BlueTallTeeny.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Book-icon.png",
+      "PackagePath": "staticwebassets\\images\\Book-icon.png"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\DG-3asomy-Regular.ttf",
       "PackagePath": "staticwebassets\\images\\DG-3asomy-Regular.ttf"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Dome.PNG",
+      "PackagePath": "staticwebassets\\images\\Dome.PNG"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Frame.png",
       "PackagePath": "staticwebassets\\images\\Frame.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\GreenTallTeena.svg",
+      "PackagePath": "staticwebassets\\images\\GreenTallTeena.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\GreenTallTeeny.svg",
+      "PackagePath": "staticwebassets\\images\\GreenTallTeeny.svg"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Langicon.png",
@@ -129,8 +229,28 @@
       "PackagePath": "staticwebassets\\images\\Left.png"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\MAINPAGEBG.png",
+      "PackagePath": "staticwebassets\\images\\MAINPAGEBG.png"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\MyLibraryLogo.png",
       "PackagePath": "staticwebassets\\images\\MyLibraryLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\PinkTallTeena.svg",
+      "PackagePath": "staticwebassets\\images\\PinkTallTeena.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\PinkTallTeeny.svg",
+      "PackagePath": "staticwebassets\\images\\PinkTallTeeny.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\RedTallTeena.svg",
+      "PackagePath": "staticwebassets\\images\\RedTallTeena.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\RedTallTeeny.svg",
+      "PackagePath": "staticwebassets\\images\\RedTallTeeny.svg"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Right.png",
@@ -145,6 +265,58 @@
       "PackagePath": "staticwebassets\\images\\TeenaAbout.PNG"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenaBlue.svg",
+      "PackagePath": "staticwebassets\\images\\TeenaBlue.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenaGreen.svg",
+      "PackagePath": "staticwebassets\\images\\TeenaGreen.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenaPink.svg",
+      "PackagePath": "staticwebassets\\images\\TeenaPink.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenaRed.svg",
+      "PackagePath": "staticwebassets\\images\\TeenaRed.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenaYellow.svg",
+      "PackagePath": "staticwebassets\\images\\TeenaYellow.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenyBlue.svg",
+      "PackagePath": "staticwebassets\\images\\TeenyBlue.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenyGreen.svg",
+      "PackagePath": "staticwebassets\\images\\TeenyGreen.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenyPink.svg",
+      "PackagePath": "staticwebassets\\images\\TeenyPink.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenyRed.svg",
+      "PackagePath": "staticwebassets\\images\\TeenyRed.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\TeenyYellow.svg",
+      "PackagePath": "staticwebassets\\images\\TeenyYellow.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\Video-icon.png",
+      "PackagePath": "staticwebassets\\images\\Video-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\YellowTallTeena.svg",
+      "PackagePath": "staticwebassets\\images\\YellowTallTeena.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\YellowTallTeeny.svg",
+      "PackagePath": "staticwebassets\\images\\YellowTallTeeny.svg"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\a.jpg",
       "PackagePath": "staticwebassets\\images\\a.jpg"
     },
@@ -155,6 +327,10 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\a33.jpg",
       "PackagePath": "staticwebassets\\images\\a33.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\arrowDown.png",
+      "PackagePath": "staticwebassets\\images\\arrowDown.png"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\arrowleft.svg",
@@ -171,6 +347,18 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\blue-color.png",
       "PackagePath": "staticwebassets\\images\\blue-color.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\bookmark-add.jpg",
+      "PackagePath": "staticwebassets\\images\\bookmark-add.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\bookmark-add.png",
+      "PackagePath": "staticwebassets\\images\\bookmark-add.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\bookmark-empty.png",
+      "PackagePath": "staticwebassets\\images\\bookmark-empty.png"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\bunnyend.webp",
@@ -229,6 +417,14 @@
       "PackagePath": "staticwebassets\\images\\bunnyslide9.webp"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\camera-icon.png",
+      "PackagePath": "staticwebassets\\images\\camera-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\church.jpg",
+      "PackagePath": "staticwebassets\\images\\church.jpg"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\city climate icon.png",
       "PackagePath": "staticwebassets\\images\\city climate icon.png"
     },
@@ -247,6 +443,14 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\city name icon.png",
       "PackagePath": "staticwebassets\\images\\city name icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\cloud.png",
+      "PackagePath": "staticwebassets\\images\\cloud.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\cloud.svg",
+      "PackagePath": "staticwebassets\\images\\cloud.svg"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\colorsend.webp",
@@ -335,6 +539,10 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\decorR.png",
       "PackagePath": "staticwebassets\\images\\decorR.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\dotr.png",
+      "PackagePath": "staticwebassets\\images\\dotr.png"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\downloadicon.png",
@@ -475,6 +683,10 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\hatslide9.webp",
       "PackagePath": "staticwebassets\\images\\hatslide9.webp"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\ibrahimi.jpg",
+      "PackagePath": "staticwebassets\\images\\ibrahimi.jpg"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\imaginationslide1.webp",
@@ -745,6 +957,10 @@
       "PackagePath": "staticwebassets\\images\\omarslide9.webp"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\orga.svg",
+      "PackagePath": "staticwebassets\\images\\orga.svg"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\paintpaletteicon.svg",
       "PackagePath": "staticwebassets\\images\\paintpaletteicon.svg"
     },
@@ -767,6 +983,10 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\palesteeny-logo 5.png",
       "PackagePath": "staticwebassets\\images\\palesteeny-logo 5.png"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\palesteeny-logo-5.png",
+      "PackagePath": "staticwebassets\\images\\palesteeny-logo-5.png"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\palfooter.png",
@@ -815,6 +1035,10 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\puzzleicon.svg",
       "PackagePath": "staticwebassets\\images\\puzzleicon.svg"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\ques-background.png",
+      "PackagePath": "staticwebassets\\images\\ques-background.png"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\quiz.png",
@@ -961,6 +1185,10 @@
       "PackagePath": "staticwebassets\\images\\teenyAbout.PNG"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\thinking.png",
+      "PackagePath": "staticwebassets\\images\\thinking.png"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\images\\uploadicon.png",
       "PackagePath": "staticwebassets\\images\\uploadicon.png"
     },
@@ -1093,6 +1321,26 @@
       "PackagePath": "staticwebassets\\images\\مكتبتي.png"
     },
     {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\Exercise.js",
+      "PackagePath": "staticwebassets\\js\\Exercise.js"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\Hesabi.js",
+      "PackagePath": "staticwebassets\\js\\Hesabi.js"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\Ketabi.js",
+      "PackagePath": "staticwebassets\\js\\Ketabi.js"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\Navbar.js",
+      "PackagePath": "staticwebassets\\js\\Navbar.js"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\Search.js",
+      "PackagePath": "staticwebassets\\js\\Search.js"
+    },
+    {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\mainpagepal.js",
       "PackagePath": "staticwebassets\\js\\mainpagepal.js"
     },
@@ -1103,6 +1351,10 @@
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\js\\teeny.js",
+      "PackagePath": "staticwebassets\\js\\teeny.js"
     },
     {
       "Id": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\lib\\bootstrap\\LICENSE",

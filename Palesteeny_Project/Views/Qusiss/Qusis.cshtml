@@ -18,7 +18,7 @@
 <body>
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <h3 style="text-align: left;">
-            <a asp-controller="Qusiss" asp-action="Maktabati">
+            <a asp-controller="Qusiss" asp-action="Favorite">
                 <img src="~/images/MyLibraryLogo.png" alt="مكتبتي" />
             </a>
         </h3>
@@ -26,7 +26,7 @@
         <h2 class="h2decoration">
             <span class="arrow-text">
                 <img src="~/images/Arrow.png" alt="سهم" />
-                <a asp-controller="Qusiss" asp-action="Qisas" class="link-text">قصص</a>
+                <a asp-controller="Qusiss" asp-action="Qusis" class="link-text">قصص</a>
             </span>
         </h2>
     </div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="back">
                                 <img src="~/images/@story.CoverImage" alt="@story.Title" />
-                                <a asp-controller="Qusiss" asp-action="QusiDetails" asp-route-id="@story.Id">اقرأها الآن !!</a>
+                                <a asp-controller="Qusiss" asp-action="Qusa" asp-route-id="@story.Id">اقرأها الآن !!</a>
                             </div>
                         </div>
                     </div>

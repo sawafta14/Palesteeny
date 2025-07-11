@@ -1,0 +1,289 @@
+﻿@font-face {
+    font-family: 'DG3asomy';
+    src: url('../fonts/DG-3asomy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'DG3asomy', sans-serif;
+    background-color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.h2decoration {
+    text-align: right;
+    font-size: 48px;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+}
+
+.arrow-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.link-text {
+    text-decoration: none;
+    color: hsla(98, 78%, 60%, 1);
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.arrow-text img {
+    width: 50px;
+    height: auto;
+}
+
+.header-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+    height: 200px;
+    /* اضبط الارتفاع حسب حجم الصورة */
+}
+
+.background-img-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    pointer-events: none;
+}
+
+    .background-img-wrapper img {
+        max-width: 55%;
+        height: auto;
+        display: block;
+    }
+
+.banner-text {
+    position: relative;
+    top: -20px;
+    /⬅ هذه السطر يرفع الجملة لأعلى/ color: white;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 1;
+    white-space: nowrap;
+    font-family: 'DG3asomy', sans-serif;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, white 0%, white 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 16px;
+    border-radius: 2px;
+    animation: confetti-fall 4s infinite linear;
+    top: -20px;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.students-section {
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.student-card {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+    .student-card:hover {
+        transform: translateY(-8px);
+    }
+
+.card-frame {
+    padding: 1rem;
+}
+
+    .card-frame > div {
+        background: linear-gradient(135deg, hsla(98, 78%, 60%, 1), hsla(98, 78%, 55%, 1));
+        padding: 4px;
+        padding-top: 15px;
+        border-radius: 1rem;
+        max-width: 320px;
+        margin: 0;
+    }
+
+.card-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    position: relative;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.student-photo-container {
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.student-photo {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f3f4f6;
+    border: 4px solid white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+    .student-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.badge-icon {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+    /* ⬅ تصغير الحجم بنسبة 70% */
+    z-index: 10;
+}
+
+.student-info {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+    .student-info h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+.grade-badge {
+    background: hsla(98, 78%, 90%, 1);
+    color: hsla(98, 78%, 30%, 1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.sparkle {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.student-card:hover .sparkle {
+    opacity: 1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.cta-container {
+    padding: 3rem 0;
+    background: white;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.cta-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.cta-badge {
+    background: red;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+    .cta-badge a {
+        color: white;
+        font-weight: 700;
+        font-size: 1.125rem;
+    }
+
+
+@media (max-width: 768px) {
+    .students-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+}

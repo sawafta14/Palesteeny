@@ -1,0 +1,176 @@
+﻿@font-face {
+    font-family: 'DG 3asomy';
+    src: url('../fonts/DG-3asomy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DG 3asomy', sans-serif;
+}
+
+body {
+    background-color: white;
+    color: #1A1F2C;
+    text-align: right;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-text {
+    text-decoration: none;
+    color: hsla(98, 78%, 60%, 1);
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+    .breadcrumb a {
+        text-decoration: none;
+        color: hsla(98, 78%, 60%, 1);
+        font-size: 36px;
+        font-weight: bold;
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+    }
+
+    .breadcrumb img {
+        width: 40px;
+    }
+
+/* الصندوق الأخضر الكبير */
+.big-question-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 200px;
+    background: hsla(98, 78%, 60%, 0.4);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 2px 2px 5px #aaa;
+}
+
+.question-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+    .question-content h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.option {
+    background: white;
+    border: 2px solid #1A1F2C;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: right;
+    width: 95%; /* ⬅ تم تكبير عرض الأزرار */
+}
+
+
+    .option:hover {
+        background: hsla(98, 78%, 60%, 1);
+    }
+
+.image-box {
+    text-align: center;
+    flex-shrink: 0;
+    margin-top: 30px; /* ينزل الصورة شوي */
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+    .image-wrapper .bg-img {
+        width: 300px;
+        border-radius: 30px;
+    }
+
+    .image-wrapper .overlay-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 280px; /* ✅ نفس عرض الصورة */
+        height: auto; /* ✅ نفس ارتفاع الصورة */
+        border-radius: 30px;
+        transform: rotate(-13deg); /* التدوير حسب طلبك */
+    }
+
+    .image-wrapper .overlay-text {
+        position: absolute;
+        top: 40%; /* يمكنك تعديلها */
+        left: 50%; /* يمكنك تعديلها */
+        transform: translate(-50%, -50%);
+        color: black; /* أو أي لون مناسب */
+        font-size: 25px; /* حسب الحاجة */
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white, 3px 0 0 white, -3px 0 0 white, 0 3px 0 white, 0 -3px 0 white, 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+.image-box p {
+    margin-top: 15px;
+    font-size: 25px;
+    text-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white, 3px 0 0 white, -3px 0 0 white, 0 3px 0 white, 0 -3px 0 white, 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 22px;
+    cursor: pointer;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, -3px 0 0 black, 3px 0 0 black, 0 3px 0 black, 0 -3px 0 black;
+}
+
+    .nav-btn:hover {
+        background: darkred;
+    }
+
+.option.selected {
+    background-color: darkgreen;
+    color: white;
+    border: 2px solid #1A1F2C;
+}

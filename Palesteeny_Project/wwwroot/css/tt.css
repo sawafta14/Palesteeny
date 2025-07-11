@@ -1,0 +1,132 @@
+ body {
+    background-color: rgb(132, 232, 73);
+}
+
+.admin-sections-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px 100px 20px 100px; /* فوق يمين تحت يسار */
+
+    column-gap: 8px; /* تقليل المسافة بين الأعمدة */
+    row-gap: 8px;
+    direction: rtl;
+    background-color: rgb(132, 232, 73); /* رمادي فاتح جدًا يعطي احترافية */
+    min-height: 100vh;
+    font-family: 'DG3asomy', Tahoma, sans-serif;
+    justify-items: center;
+}
+
+.header-with-image {
+    display: flex;
+    flex-direction: column; /* عمودي */
+    align-items: center; /* تمركز أفقياً */
+    margin-top: 20px;
+    direction: rtl;
+    padding-right: 10px;
+    gap: 10px; /* مسافة بين العنوان والفقرة */
+}
+
+    .header-with-image h1 {
+        font-size: 50px;
+        margin: 0;
+        color: #ffffff; /* أبيض */
+        text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
+        font-family: 'DG 3asomy', Arial, sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+    }
+
+.top-text {
+    width: 100%;
+    color: #ffffff; /* أبيض */
+    font-size: 22px;
+    padding-right: 10px;
+    margin: 0;
+    text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
+    font-family: 'DG 3asomy', Arial, sans-serif;
+    font-style: normal;
+    text-align: center; /* تمركز الفقرة */
+}
+
+.admin-section-card * {
+    margin: 0 !important;
+    padding: 0;
+}
+
+
+/* بطاقة القسم */
+.admin-section-card {
+    text-decoration: none;
+    width: 300px;
+    height: 300px;
+    background-color: white; /* رمادي فاتح شفاف */
+    border-radius: 25px;
+    box-shadow: 0 7px 18px rgba(150, 150, 150, 0.4); /* ظل رمادي داكن */
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid BLACK; /* خط حدود رمادي ناعم */
+    margin: 0 !important;
+    text-align: center;
+    color: black; /* رمادي غامق للنص */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+    /* تأثير عند التحويم */
+    .admin-section-card:hover,
+    .admin-section-card:focus {
+        background-color: red;
+        color: white;
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 14px 35px rgba(150, 150, 150, 0.4);
+        border: 2px solid BLACK;
+    }
+
+    /* أيقونة داخل البطاقة */
+    .admin-section-card i {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: inherit;
+        transition: transform 0.3s ease;
+    }
+
+    /* عند التمرير: تحرك الأيقونة */
+    .admin-section-card:hover i {
+        transform: scale(1.2);
+    }
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* ⬅ هذه المسافة الكبيرة */
+}
+
+
+.back-button {
+    border: 2px solid BLACK;
+    background-color: red;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-family: 'DG 3asomy', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* ⬅ أضف transform هنا */
+}
+
+    .back-button:hover {
+        border: 2px solid BLACK;
+        background-color: darkred;
+        transform: scale(1.1); /* ⬅ تكبير الزر عند التمرير */
+    }
+
+  
+
+

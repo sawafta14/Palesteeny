@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>تسجيل الدخول</title>
-    <link rel="stylesheet" href="~/css/loginpal.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -57,11 +57,15 @@
                         emailAttrs.Add("autofocus", "autofocus");
                     }
                 }
-                <label>
-                    <span asp-for="Email" class="label-bg">اسمي:</span>
-                    @Html.TextBoxFor(m => m.Email, emailAttrs)
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </label>
+                <div class="input-wrapper @(ViewData.ModelState["Email"]?.Errors.Count > 0 ? "has-error" : "")">
+                    <label>
+                        <span asp-for="Email" class="label-bg">اسمي:</span>
+                        @Html.TextBoxFor(m => m.Email, emailAttrs)
+                        <div class="floating-error">
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </label>
+                </div>
 
                 @* حقل كلمة السر *@
                 @{
@@ -77,11 +81,15 @@
                         passwordAttrs.Add("autofocus", "autofocus");
                     }
                 }
-                <label>
-                    <span asp-for="Password" class="label-bg">كلمة السر:</span>
-                    @Html.TextBoxFor(m => m.Password, passwordAttrs)
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </label>
+                <div class="input-wrapper @(ViewData.ModelState["Password"]?.Errors.Count > 0 ? "has-error" : "")">
+                    <label>
+                        <span asp-for="Password" class="label-bg">كلمة السر:</span>
+                        @Html.TextBoxFor(m => m.Password, passwordAttrs)
+                        <div class="floating-error">
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </label>
+                </div>
 
                 <p class="forgot"><a asp-controller="Account" asp-action="ChangePassword">هل نسيت كلمة السر؟</a></p>
 

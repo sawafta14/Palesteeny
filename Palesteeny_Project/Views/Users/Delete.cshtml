@@ -1,0 +1,44 @@
+﻿@model Palesteeny_Project.Models.User
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/AdFormcre.css" />
+
+<div class="container">
+    <div class="details-box">
+        <h1>حذف مستخدم</h1>
+        <h4>User</h4>
+        <hr />
+        <dl>
+            <dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
+            <dd>@Html.DisplayFor(model => model.FirstName)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.LastName)</dt>
+            <dd>@Html.DisplayFor(model => model.LastName)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.PasswordHash)</dt>
+            <dd>@Html.DisplayFor(model => model.PasswordHash)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.EmailConfirmed)</dt>
+            <dd>@Html.DisplayFor(model => model.EmailConfirmed)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ConfirmationToken)</dt>
+            <dd>@Html.DisplayFor(model => model.ConfirmationToken)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Role)</dt>
+            <dd>@Html.DisplayFor(model => model.Role)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="حذف" class="btn-back" />
+            <a asp-action="Index" class="btn-back">رجوع للقائمة</a>
+        </form>
+    </div>
+</div>

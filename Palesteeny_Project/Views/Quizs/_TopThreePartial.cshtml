@@ -1,0 +1,19 @@
+﻿@model List<dynamic>
+
+<div class="heroes">
+    @foreach (var hero in Model)
+    {
+        var photo = !string.IsNullOrEmpty(hero.User?.ImagePath)
+        ? Url.Content(hero.User.ImagePath)
+        : Url.Content("~/images/profileDef.png");
+
+        <div class="hero-card @(Model.IndexOf(hero) == 1 ? "hero-card-center" : "")">
+            <div class="image-wrapper">
+                <img src="@photo" alt="صورة المستخدم">
+            </div>
+            <div class="badge-icon">
+                <img src="~/images/tabler_award.svg" alt="جائزة">
+            </div>
+        </div>
+    }
+</div>

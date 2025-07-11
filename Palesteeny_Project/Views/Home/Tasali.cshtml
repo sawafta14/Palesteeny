@@ -20,15 +20,17 @@
     <img src="~/images/decorR.png" class="decoration-right">
     <div class="tasa-title">
         <a asp-action="Tasali" asp-controller="Home" class="tasa-title-wr">تسالي</a>
-        <a asp-action="Tasali" asp-controller="Home"><img src="~/images/left-arrow.png" width="54.5px" height="54.5px"></a>
+        <a asp-action="Index" asp-controller="Home"><img src="~/images/left-arrow.png" width="54.5px" height="54.5px"></a>
     </div>
     <div class="tasa-container">
 
         <div class="tasa-item">
-            <a href="Games.html">
+            <a asp-action="Draw" asp-controller="Draw">
                 <img src="~/images/drawing.png" alt="رسم" class="tasa-image" />
             </a>
+            <form  asp-action="Draw" asp-controller="Draw" method="get">
             <button class="tasa-btn" style="font-family:'DG3asomi', sans-serif;">رسام</button>
+        </form>
         </div>
 
         <div class="tasa-item">
@@ -39,8 +41,11 @@
         </div>
 
         <div class="tasa-item">
-            <a href="Quiz.html"><img src="~/images/quiz.png" alt="اختبار" class="tasa-image" /></a>
+           
+            <a asp-action="Load_Quizs" asp-controller="Quizs"><img src="~/images/quiz.png" alt="اختبار" class="tasa-image" /></a>
+            <form asp-action="Load_Quizs" asp-controller="Quizs" method="get">
             <button class="tasa-btn" style="font-family:'DG3asomi', sans-serif;">اختبار</button>
+        </form> 
         </div>
     </div>
 </body>

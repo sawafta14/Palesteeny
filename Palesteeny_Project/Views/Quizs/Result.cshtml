@@ -1,0 +1,104 @@
+﻿@{
+    Layout = null;
+    var leaderboard = ViewBag.Leaderboard as List<Palesteeny_Project.Models.QuizResult>;
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>لوحة الشرف</title>
+    <link rel="stylesheet" href="~/css/Honor.css" />
+</head>
+
+<body>
+    <!-- Confetti Animation -->
+    <div class="confetti-container">
+        <div class="confetti" style="left: 10%; animation-delay: 0s; background-color: #ef4444;"></div>
+        <div class="confetti" style="left: 20%; animation-delay: 0.5s; background-color: #22c55e;"></div>
+        <div class="confetti" style="left: 30%; animation-delay: 1s; background-color: #f59e0b;"></div>
+        <div class="confetti" style="left: 40%; animation-delay: 1.5s; background-color: #3b82f6;"></div>
+        <div class="confetti" style="left: 50%; animation-delay: 2s; background-color: #a855f7;"></div>
+        <div class="confetti" style="left: 60%; animation-delay: 0.3s; background-color: #ef4444;"></div>
+        <div class="confetti" style="left: 70%; animation-delay: 0.8s; background-color: #22c55e;"></div>
+        <div class="confetti" style="left: 80%; animation-delay: 1.3s; background-color: #f59e0b;"></div>
+        <div class="confetti" style="left: 90%; animation-delay: 1.8s; background-color: #3b82f6;"></div>
+    </div>
+
+    <h2 class="h2decoration">
+        <span class="arrow-text">
+            <img src="~/images/Arrow.png" alt="سهم" />
+            <a asp-controller="Quizs" asp-action="Result" class="link-text">لوحة الشرف</a>
+        </span>
+    </h2>
+
+    <div class="header-banner">
+        <div class="background-img-wrapper">
+            <img src="~/images/bgherored.svg" alt="أبطال هذا الأسبوع" />
+        </div>
+        <div class="banner-text">!! أبطال هذا الأسبوع</div>
+    </div>
+
+    <!-- Students Section -->
+    <section class="students-section">
+        <div class="container">
+            <div class="students-grid">
+
+                @if (leaderboard != null && leaderboard.Any())
+                {
+                    foreach (var result in leaderboard)
+                    {
+                        var user = result.User;
+                        var photoUrl = !string.IsNullOrEmpty(user?.ImagePath)
+                        ? Url.Content(user.ImagePath)
+                        : Url.Content("~/images/profileDef.png");
+                        var userName = user != null ? $"{user.FirstName} {user.LastName}" : "مستخدم مجهول";
+                        var grade = user?.Semester?.GradeName ?? "غير محدد";
+
+
+                        <div class="student-card">
+                            <div class="card-frame">
+                                <div class="card-content">
+                                    <div class="student-photo-container">
+                                        <div class="student-photo">
+                                            <img src="@photoUrl" alt="@userName" />
+                                        </div>
+                                        <div class="badge-icon">
+                                            <img src="~/images/tabler_award.svg" alt="ميدالية" />
+                                        </div>
+                                    </div>
+                                    <div class="student-info">
+                                        <h3>@userName</h3>
+                                        <span class="grade-badge">@grade</span>
+                                        <div>النقاط: @result.TotalScore</div>
+                                    </div>
+                                    <div class="sparkle">⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>لا يوجد أبطال حتى الآن.</p>
+                }
+
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-container">
+        <div class="cta-content">
+            <h3>هل تريد أن تصبح أحد أبطالنا أيضًا؟</h3>
+            <p>اعمل بجد واجتهد لتحقق إنجازاتك وتظهر في لوحة الشرف</p>
+        </div>
+        <div class="cta-badge">
+            <a asp-controller="Quizs" asp-action="Categories" class="link-text">إختبار</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

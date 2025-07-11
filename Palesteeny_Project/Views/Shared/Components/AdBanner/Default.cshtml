@@ -1,0 +1,14 @@
+﻿@model Palesteeny_Project.Models.Ad
+
+@if (Model != null)
+{
+    <div class="ad-banner-container" id="adBanner">
+        <div class="ad-content">
+            <button class="close-btn" aria-label="Close ad">&times;</button>
+            <a href="@Model.Link" target="_blank" rel="noopener">
+                <img src="@Model.ImageUrl" alt="@Model.Title" />
+            </a>
+        </div>
+        <div class="placeholder">مساحة إعلانية</div>
+    </div>
+}

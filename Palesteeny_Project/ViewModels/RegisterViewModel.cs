@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace Palesteeny_Project.ViewModels
 {
@@ -40,5 +41,7 @@ namespace Palesteeny_Project.ViewModels
         
         [Display(Name = "الصف")]
         public int Grade { get; set; }
+        public int SemesterId { get; set; }
+        public IEnumerable<SelectListItem> SemesterSelectList { get; set; } = new List<SelectListItem>();
     }
 }

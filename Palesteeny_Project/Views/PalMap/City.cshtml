@@ -21,7 +21,6 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-
         .section {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: #fff;
@@ -43,7 +42,6 @@
             font-weight: bold;
             text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
         }
-
 
         .icon {
             position: absolute;
@@ -116,8 +114,7 @@
             font-family: 'DG 3asomy', sans-serif;
             font-size: 28px;
             color: #fdfafa;
-            font-style: normal;
-            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
+            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black;
             padding: 10px 20px;
         }
 
@@ -137,6 +134,24 @@
                 background-color: #d60010;
             }
 
+        .modal-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: red;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -145,35 +160,30 @@
         <a asp-controller="PalMap" asp-action="PalMap" class="link-text"> خريطتي</a>
         <img src="~/images/s.png" alt="سهم" style="width: 50px;">
         <a asp-controller="PalMap" asp-action="City" class="link-text">@Model.Name</a>
-
     </div>
+
     <p style="display: flex; align-items: center; gap: 20px; font-size: 24px;  margin-top: 20px;">جاهز للاستكشاف ؟ اختر عنوانًا ، واضغط على السهم لتعرف المزيد عن مدينتك المختارة!</p>
 
+    <!-- أقسام المدينة -->
     <div class="section" onclick="toggleSection(this)">
         <div class="arrow"><img src="~/images/ep.png" alt=""></div>
         معنى اسم المدينة
         <div class="content">
-
-            <div>
-                @Model.NameMeaning
-            </div>
+            <div>@Model.NameMeaning</div>
             <br />
             <div style="text-align: center;">
                 <img src="~/images/@Model.ImageNameMeaning" alt="@Model.Name Meaning" width="400" height="300">
             </div>
         </div>
-        <div class="arrow1"><img src="~/images/city name icon.png" alt="" top: 20px; width="125" height="100"></div>
+        <div class="arrow1"><img src="~/images/city name icon.png" alt="" width="125" height="100"></div>
     </div>
 
     <div class="section" onclick="toggleSection(this)">
         <div class="arrow"><img src="~/images/ep.png" alt=""></div>
         تاريخ المدينة
         <div class="content">
-            <div>
-                @Model.History
-            </div>
+            <div>@Model.History</div>
             <br />
-
             <div style="text-align: center;">
                 <img src="~/images/@Model.ImageHistory" alt="تاريخ المدينة" width="400" height="300">
             </div>
@@ -184,9 +194,7 @@
     <div class="section" onclick="toggleSection(this)">
         <div class="arrow"><img src="~/images/ep.png" alt=""></div>
         مناخ المدينة
-        <div class="content">
-            @Model.Climate
-        </div>
+        <div class="content">@Model.Climate</div>
         <div class="arrow1"><img src="~/images/city climate icon.png" alt="" width="125" height="auto"></div>
     </div>
 
@@ -194,9 +202,7 @@
         <div class="arrow"><img src="~/images/ep.png" alt=""></div>
         طعام المدينة
         <div class="content">
-            <div>
-                @Model.Food
-            </div>
+            <div>@Model.Food</div>
             <br />
             <div style="text-align: center;">
                 <img src="~/images/@Model.ImageFood" alt="طعام المدينة" width="400" height="300">
@@ -204,17 +210,43 @@
         </div>
         <div class="arrow1"><img src="~/images/city food.png" alt="" width="90" height="101"></div>
     </div>
+
     <div class="draw-jenin-section">
         <img src="~/images/mdi_paint-outline.png" alt="رسم" class="paint-icon">
-
         <div class="draw-text">ارسم خريطة @Model.Name !</div>
-
         <a href="page-you-want.html" class="draw-button">ارسم الآن !</a>
     </div>
 
+    <!-- نافذة التنبيه -->
+    <div id="loginAlertModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+     background:white; border:3px solid red; padding:30px; z-index:9999; border-radius:20px;
+     box-shadow: 0px 0px 15px rgba(0,0,0,0.5); text-align:center; max-width:90%; font-family:'DG 3asomy', sans-serif;">
+        <button onclick="closeLoginAlert()" class="close-btn">×</button>
+        <h3 style="color: red; text-shadow: 1px 1px black;">يجب تسجيل الدخول أولاً</h3>
+        <p style="margin-top:10px;">الرجاء تسجيل الدخول أو إنشاء حساب جديد للوصول إلى هذه المعلومة.</p>
+        <div class="modal-btns">
+            <a href="/Account/Login" class="draw-button">تسجيل الدخول</a>
+            <a href="/Account/Register" class="draw-button">إنشاء حساب</a>
+        </div>
+    </div>
+
     <script>
+          const isAuthenticated = '@(User?.Identity?.IsAuthenticated ?? false)'.toLowerCase() === 'true';
+
         function toggleSection(section) {
-          section.classList.toggle('open');
+            if (!isAuthenticated) {
+                showLoginAlert();
+                return;
+            }
+            section.classList.toggle('open');
+        }
+
+        function showLoginAlert() {
+            document.getElementById('loginAlertModal').style.display = 'block';
+        }
+
+        function closeLoginAlert() {
+            document.getElementById('loginAlertModal').style.display = 'none';
         }
     </script>
 

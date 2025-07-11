@@ -23,13 +23,43 @@
                     @await Component.InvokeAsync("ProfilePicture")
 
                     <div id="profileDropdown" class="dropdown-menu-custom hidden">
-                        <a class="dropdown-item" asp-controller="Profile" asp-action="Hesabi"><i class="fa fa-user"></i> عرض الملف الشخصي</a>
+                        @if (User?.Identity?.IsAuthenticated == true)
+                        {
+                            <a class="dropdown-item" asp-controller="Profile" asp-action="Hesabi"><i class="fa fa-user"></i> عرض الملف الشخصي</a>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Login"><i class="fa fa-user"></i> عرض الملف الشخصي</a>
+                        }
+
+                        @if (User?.Identity?.IsAuthenticated == true)
+                        {
+                            var roleClaim = User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value;
+                            if (roleClaim == "admin")
+                            {
+                                <a class="dropdown-item" asp-controller="Admins0" asp-action="Index"><i class="fa fa-tools"></i> لوحة التحكم</a>
+                            }
+                        }
+
                         <a href="#" class="dropdown-item"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
                         <a href="#" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
-                        <form asp-controller="Account" asp-action="Logout" method="post" >
-                            <button type="submit" class="dropdown-item" style="border-top: solid 1px gray;"><i class="fa fa-sign-out-alt"></i> تسجيل الخروج</button>
-                        </form>
+
+                        @if (User?.Identity != null && User.Identity.IsAuthenticated)
+                        {
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <button type="submit" class="dropdown-item" style="border-top: solid 1px gray;">
+                                    <i class="fa fa-sign-out-alt"></i> تسجيل الخروج
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Login" style="border-top: solid 1px gray;">
+                                <i class="fa fa-sign-in-alt"></i> تسجيل الدخول
+                            </a>
+                        }
                     </div>
+
                 </div>
 
 
@@ -42,14 +72,14 @@
 
 
                 <nav class="nav-links">
-                    <a asp-controller="Home" asp-action="PalMap">خريطتي</a>
-                    <a asp-controller="Home" asp-action="Ketabi">كتابي</a>
+                    <a asp-controller="PalMap" asp-action="PalMap">خريطتي</a>
+                    <a asp-controller="Ketabi" asp-action="Ketabi">كتابي</a>
                     <div class="logo-container">
                         <a asp-controller="Home" asp-action="Index"><img src="@Url.Content("~/images/Palesteeny-logo-5.png")" alt="Logo" class="logo"/></a>
                     </div>
                     <a asp-controller="Home" asp-action="Tasali">تسالي</a>
-                    <a asp-controller="Home" asp-action="Qisas">قصص</a>
-                    <a asp-controller="Home" asp-action="Maktabati">مكتبتي</a>
+                    <a asp-controller="Qusiss" asp-action="Qusis">قصص</a>
+                    <a asp-controller="Qusiss" asp-action="Favorite">مكتبتي</a>
                     <a asp-controller="Home" asp-action="about">من نحن</a>
                 </nav>
             </div>
@@ -57,11 +87,16 @@
     </header>
     @await Html.PartialAsync("_AiAssistant", new Palesteeny_Project.Models.ChatMessage())
 
-    <div class="container">
+    @{
+        var actionName = ViewContext?.RouteData?.Values["action"]?.ToString() ?? "";
+    }
+    <div class="@(actionName == "PalMap" ? "container-fluid p-0 m-0" : "container")">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
+
         <footer class="footer">
         <div class="custom-footer">
             <div class="social-div">
@@ -92,7 +127,7 @@
                 <table class="menu-container">
                     <tr>
                        
-                        <td class="menu__item"><a class="menu__link" <a asp-controller="Home" asp-action="Index">الرئيسية</a></td>
+                        <td class="menu__item"><a class="menu__link"  asp-controller="Home" asp-action="Index">الرئيسية</a></td>
                         <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="about">من نحن</a></td>
                         <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="Tasali">تسالي</a></td>
                        
@@ -115,7 +150,7 @@
                     </tr>
                     <tfoot>
                         <tr>
-                            <td class="menu__item" colspan="3" class="footer-cell"><a class="menu__link" href="#">تسجيل الدخول</a></td>
+                            <td class="menu__item footer-cell" colspan="3" ><a class="menu__link" href="#">تسجيل الدخول</a></td>
                         </tr>
                     </tfoot>
                 </table>

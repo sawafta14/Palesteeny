@@ -22,13 +22,13 @@
 <body>
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <h3 style="text-align: left;">
-            <a asp-controller="Home" asp-action="Maktabati"><img src="~/images/MyLibraryLogo.png" alt="مكتبتي" /></a>
+            <a asp-controller="Qusiss" asp-action="Favorite"><img src="~/images/MyLibraryLogo.png" alt="مكتبتي" /></a>
         </h3>
 
         <div style="display: flex; align-items: center; gap: 20px;">
-            <a asp-controller="Home" asp-action="@qusi.Link" class="link-text">@qusi.Title</a>
+            <a asp-controller="Qusiss" asp-action="@qusi.Link" class="link-text">@qusi.Title</a>
             <img src="~/images/Arrow.png" alt="سهم" style="width: 50px;" />
-            <a asp-controller="Home" asp-action="Qisas" class="link-text">قصص</a>
+            <a asp-controller="Qusiss" asp-action="Qusis" class="link-text">قصص</a>
         </div>
     </div>
 
@@ -74,7 +74,7 @@
         </div>
 
         <div class="actions">
-            <button class="add-button"><a asp-controller="Home" asp-action="Qisas">قراءة قصة جديدة</a></button>
+            <button class="add-button"><a asp-controller="Qusiss" asp-action="Qusis">قراءة قصة جديدة</a></button>
 
             <button id="addToLibraryBtn" class="add-button" aria-pressed="@(isFavorite ? "true" : "false")">
                 <span>@(isFavorite ? "حذف من المكتبة" : "إضافة إلى مكتبتي")</span>

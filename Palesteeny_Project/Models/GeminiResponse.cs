@@ -2,6 +2,6 @@
 {
     public class GeminiResponse
     {
-        public string Reply { get; set; }
+        public string? Reply { get; set; }
     }
 }

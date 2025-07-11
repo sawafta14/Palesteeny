@@ -44,12 +44,14 @@
                 اطلق العنان للفنان الذي بداخلك!
                 <br>
                 <img src="~/images/picmaindraw.svg" alt="رسام" class="content3-image" />
+                <form asp-controller="Draw" asp-action="Draw" method="get">
                 <button class="shared-btn-content">ارسم الان</button>
+                </form>
             </div>
         </div>
 
         <div class="decor2main">
-            <img src="~/images/decor2.4main.svg" alt="2زينة خضراء" class="green-decor-image">
+           
         </div>
 
     </div> <!-- نهاية main-container -->
@@ -63,48 +65,26 @@
                 </span>
             </div>
             <br><br>
-            <div class="heroes">
-                <div class="hero-card">
-                    <div class="image-wrapper">
-                        <img src="~/images/kid1.jpg" alt="طفل 1">
-                    </div>
-                    <div class="badge-icon">
+            @await Component.InvokeAsync("TopThreeHeroes")
 
-                        <img src="~/images/tabler_award.svg" alt=" جائزة">
-                    </div>
-                </div>
-                <div class="hero-card hero-card-center">
-                    <div class="image-wrapper">
-                        <img src="~/images/kid2.jpg" alt="طفل 2">
-                    </div>
-                    <div class="badge-icon">
-                        <img src="~/images/tabler_award.svg" alt="جائزة">
-                    </div>
-                </div>
 
-                <div class="hero-card">
-                    <div class="image-wrapper">
-                        <img src="~/images/kid3.jpg" alt="طفل 3">
-                    </div>
-                    <div class="badge-icon">
-                        <img src="~/images/tabler_award.svg" alt="جائزة">
-                    </div>
-                </div>
-            </div>
 
 
             <div class="buttons under-center">
+                 <form asp-controller="Quizs" asp-action="Result" method="get">
                 <button class="main-btn">عرض القائمة</button>
-
+                </form>
             </div>
             <div class="test-section">
                 <p class="test-text">
                     هل تريد ان تصبح احد ابطالنا؟ قم باختبار نفسك
+                     <form asp-controller="Quizs" asp-action="Categories" method="get">
                     <button class="test-btn-inline">اختبار! </button>
+                    </form>
                 </p>
             </div>
             <div class="decor2main">
-                <img src="~/images/decor3.4main.svg" alt="3زينة خضراء" class="green-decor-image">
+               
             </div>
         </div>
     </section>
@@ -112,15 +92,9 @@
     <br>
     <br>
 
-    <div class="ad-banner-container" id="adBanner">
-        <div class="ad-content">
-            <button class="close-btn" aria-label="Close ad">&times;</button>
-            <a href="https://paltoys.ps" target="_blank" rel="noopener">
-                <img src="https://paltoys.ps/upload/06-2022/ad/kindi-01.jpg" alt="إعلان محل ألعاب">
-            </a>
-        </div>
-        <div class="placeholder">مساحة إعلانية</div>
-    </div>
+    @await Component.InvokeAsync("AdBanner")
+
+
 
     <script src="~/js/mainpagepal.js"></script>
 </body>

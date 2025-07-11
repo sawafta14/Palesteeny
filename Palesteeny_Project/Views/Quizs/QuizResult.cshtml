@@ -1,0 +1,27 @@
+﻿@model Palesteeny_Project.Models.QuizResult
+@{
+    Layout = null;
+    var user = Model.User;
+    var userName = user != null ? $"{user.FirstName} {user.LastName}" : "مستخدم";
+}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>نتيجتك</title>
+    <link rel="stylesheet" href="~/css/Qresult.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="result-box">
+            <h2>نتيجتك في اختبار "@Model.Category"</h2>
+            <p>🧑 الاسم: @userName</p>
+            <p>📅 التاريخ: @Model.TakenAt.ToString("yyyy/MM/dd hh:mm tt")</p>
+            <p class="score">العلامة: @Model.TotalScore</p>
+
+            <a href="@Url.Action("Categories", "Quizs")" class="btn-back">🔁 العودة لاختيار تصنيف جديد</a>
+        </div>
+    </div>
+</body>
+</html>

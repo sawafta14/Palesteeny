@@ -18,9 +18,9 @@ namespace Palesteeny_Project.Controllers
         [HttpGet]
         public async Task<IActionResult> City(int id)
         {
-            var city = await _context.Cities.FindAsync(id);
-            if (city == null) return NotFound();
-            return View("City", city);
+            var City = await _context.Cities.FindAsync(id);
+            if (City == null) return NotFound();
+            return View("City", City);
         }
 
         // خريطة فلسطين

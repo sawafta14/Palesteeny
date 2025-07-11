@@ -17,11 +17,24 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
 
+        ("إضافة طالب جديد", "Create", "UserPals"),
+        ("التعديل على بيانات الطلاب ", "Edit", "UserPals"),
+        ("حذف طالب", "Delete", "UserPals"),
+        ("عرض بيانات الطلاب", "Details", "UserPals")
+    };
+
+            return View(adminActions);
+        }
         // GET: UserPals
         public async Task<IActionResult> Index()
         {
-            return View(await _context.UsersPal.ToListAsync());
+            var applicationDbContext = _context.UsersPal.Include(u => u.Semester);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: UserPals/Details/5
@@ -33,6 +46,7 @@ namespace Palesteeny_Project.Controllers
             }
 
             var userPal = await _context.UsersPal
+                .Include(u => u.Semester)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userPal == null)
             {
@@ -45,6 +59,7 @@ namespace Palesteeny_Project.Controllers
         // GET: UserPals/Create
         public IActionResult Create()
         {
+            ViewData["SemesterId"] = new SelectList(_context.Semesters, "SemesterId", "SemesterId");
             return View();
         }
 
@@ -53,7 +68,7 @@ namespace Palesteeny_Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Email,PasswordHash,Gender,Grade,Age,ImagePath")] UserPal userPal)
+        public async Task<IActionResult> Create([Bind("Gender,Age,ImagePath,SemesterId,Id,FirstName,LastName,Email,PasswordHash,EmailConfirmed,ConfirmationToken,Role")] UserPal userPal)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +76,7 @@ namespace Palesteeny_Project.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SemesterId"] = new SelectList(_context.Semesters, "SemesterId", "SemesterId", userPal.SemesterId);
             return View(userPal);
         }
 
@@ -77,6 +93,7 @@ namespace Palesteeny_Project.Controllers
             {
                 return NotFound();
             }
+            ViewData["SemesterId"] = new SelectList(_context.Semesters, "SemesterId", "SemesterId", userPal.SemesterId);
             return View(userPal);
         }
 
@@ -85,7 +102,7 @@ namespace Palesteeny_Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Email,PasswordHash,Gender,Grade,Age,ImagePath")] UserPal userPal)
+        public async Task<IActionResult> Edit(int id, [Bind("Gender,Age,ImagePath,SemesterId,Id,FirstName,LastName,Email,PasswordHash,EmailConfirmed,ConfirmationToken,Role")] UserPal userPal)
         {
             if (id != userPal.Id)
             {
@@ -112,6 +129,7 @@ namespace Palesteeny_Project.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SemesterId"] = new SelectList(_context.Semesters, "SemesterId", "SemesterId", userPal.SemesterId);
             return View(userPal);
         }
 
@@ -124,6 +142,7 @@ namespace Palesteeny_Project.Controllers
             }
 
             var userPal = await _context.UsersPal
+                .Include(u => u.Semester)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userPal == null)
             {

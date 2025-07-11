@@ -1,0 +1,97 @@
+﻿@model List<Palesteeny_Project.Models.HelpQuestion>
+@{
+    ViewData["Title"] = "مركز المساعدة";
+}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>مركز المساعدة - Palesteeny</title>
+    <link rel="stylesheet" href="~/css/Help.css">
+</head>
+
+<body>
+    <div class="help-container">
+        <h1><span class="flip-emoji">❓</span>مركز المساعدة</h1>
+
+        <section class="intro">
+            <p>
+                مرحبًا بك!👋، هون بتلاقي كل الإجابات اللي ممكن تحتاجها عشان تتصفح وتستخدم منصة Palesteeny بكل سهولة.
+                إذا عندك أي سؤال، إحنا دائمًا جاهزين نساعدك!<img src="~/images/teeny.png" alt="تيني" class="character-icon" />
+            </p>
+        </section>
+
+        <section class="quick-questions">
+            <h2>📌 أسئلة سريعة</h2>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <button onclick="showAnswer(@i)">@Model[i].Question</button>
+            }
+            <div id="main-answer" class="answer"></div>
+        </section>
+
+        <section class="feedback-form">
+            <h2>💌 أرسل ملاحظتك إلينا</h2>
+            <form id="feedbackForm">
+                <label for="name">:الاسم</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">:البريد الإلكتروني</label>
+                <input type="email" id="email" name="email">
+
+                <label for="type">:نوع الملاحظة</label>
+                <select id="type" name="type">
+                    <option value="">-- يرجى اختيار نوع الملاحظة --</option>
+                    <option>اقتراح</option>
+                    <option>مشكلة تقنية</option>
+                    <option>محتوى</option>
+                    <option>أخرى</option>
+                </select>
+
+                <label for="message">:ملاحظتك أو رسالتك</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit" class="submit-btn">أرسل الآن</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        const answers = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Select(q => q.Answer).ToList()));
+
+        function showAnswer(index) {
+            const answerDiv = document.getElementById("main-answer");
+            answerDiv.textContent = answers[index];
+            answerDiv.style.display = "block";
+        }
+
+        document.getElementById("feedbackForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                type: document.getElementById("type").value,
+                message: document.getElementById("message").value
+            };
+
+            const response = await fetch("/Help/SendFeedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                alert("✅ تم إرسال رسالتك بنجاح!");
+                document.getElementById("feedbackForm").reset();
+            } else {
+                alert("❌ حدث خطأ أثناء الإرسال.");
+            }
+        });
+    </script>
+</body>
+
+</html>

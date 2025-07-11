@@ -17,7 +17,19 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
 
+        ("إضافةادوات جديدة", "Create", "Drawings"),
+        ("التعديل على بيانات الرسام ", "Edit", "Drawings"),
+        ("حذف رسمة من المعرض", "Delete", "Drawings"),
+        ("عرض بيانات الرسام", "Details", "Drawings")
+    };
+
+            return View(adminActions);
+        }
         // GET: Drawings
         public async Task<IActionResult> Index()
         {

@@ -1,0 +1,104 @@
+﻿@font-face {
+    font-family: 'DG 3asomy';
+    src: url('../fonts/DG-3asomy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DG 3asomy', sans-serif;
+}
+
+body {
+    background-color: white;
+    color: #1A1F2C;
+    text-align: right;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-text {
+    text-decoration: none;
+    color: hsla(98, 78%, 60%, 1);
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+}
+
+.opening-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: rtl; /* لأن الجملة بالعربي */
+}
+
+.character-icon {
+    width: 60px;
+    height: auto;
+    transform: rotate(-25deg) translateY(-17px);
+}
+
+.openingsentence {
+    font-size: 30px;
+    color: lightgray;
+    text-align: center;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, -3px 0 0 black, 3px 0 0 black, 0 3px 0 black, 0 -3px 0 black;
+    margin: 0;
+}
+
+
+/* ====== المستطيلات التفاعلية ====== */
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse; /* مهم! يجعل الأيقونة على اليمين */
+    text-decoration: none;
+    border: 2px solid #d0d0d0;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.icon img {
+    width: 70px; /* حجم أصغر للأيقونة */
+    height: auto;
+}
+
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: hsla(98, 78%, 60%, 1);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, -3px 0 0 black, 3px 0 0 black, 0 3px 0 black, 0 -3px 0 black;
+    flex: 1;
+    text-align: center;
+}

@@ -17,7 +17,19 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
 
+        ("إضافة قالب جديد", "Create", "Templates"),
+        ("التعديل على القوالب ", "Edit", "Templates"),
+        ("حذف قالب", "Delete", "Templates"),
+        ("عرض القوالب الحالية", "Details", "Templates")
+    };
+
+            return View(adminActions);
+        }
         // GET: Templates
         public async Task<IActionResult> Index()
         {

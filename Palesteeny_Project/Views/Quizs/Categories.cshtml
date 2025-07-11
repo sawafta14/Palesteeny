@@ -1,0 +1,53 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "اختار فئة الاختبار";
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/QuisCat.css" />
+</head>
+<body>
+    <div style="display: flex; align-items: center; gap: 20px; justify-content: flex-end;">
+        <a asp-controller="Home" asp-action="GeneralQuiz" class="link-text">إختبار</a>
+        <img src="~/images/Arrow.png" alt="سهم" style="width: 50px;" />
+        <a asp-controller="Home" asp-action="Tasali" class="link-text">تسالي</a>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="opening-line">
+        <p class="openingsentence">كل إختبار مغامرة جديدة!، شو بتحب تجرب اليوم؟</p>
+        <img src="~/images/teeny.png" alt="تيني" class="character-icon" />
+    </div>
+
+    <br />
+
+    <div class="card-container">
+        @foreach (var category in Model)
+        {
+            // تعيين الأيقونة المناسبة لكل تصنيف
+            var iconPath = category switch
+            {
+                "جغرافيا" => Url.Content("~/images/geographyicon.png"),
+                "تاريخ" => Url.Content("~/images/historyicon.png"),
+                "حيوانات" => Url.Content("~/images/animalicon.png"),
+                "ألوان" => Url.Content("~/images/coloricon.png"),
+                _ => Url.Content("~/images/defaulticon.png") // أيقونة افتراضية
+            };
+            <a asp-controller="Quizs" asp-action="Index" asp-route-category="@category" class="card">
+                <span class="icon">
+                    <img src="@iconPath" alt="@category" />
+                </span>
+                <span class="title">@category</span>
+            </a>
+        }
+    </div>
+</body>`
+</html>

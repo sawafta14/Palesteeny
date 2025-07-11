@@ -17,6 +17,17 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
+
+        
+        ("عرض المكتبة الخاصة بالطلاب", "Details", "FavoriteStories")
+    };
+
+            return View(adminActions);
+        }
 
         // GET: FavoriteStories
         public async Task<IActionResult> Index()

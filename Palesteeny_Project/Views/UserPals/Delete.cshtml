@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = null;
 }
 
 <h1>Delete</h1>
@@ -12,6 +11,30 @@
     <h4>UserPal</h4>
     <hr />
     <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Semester.SemesterId)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -37,28 +60,22 @@
             @Html.DisplayFor(model => model.PasswordHash)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
+            @Html.DisplayFor(model => model.EmailConfirmed)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Grade)
+            @Html.DisplayNameFor(model => model.ConfirmationToken)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Grade)
+            @Html.DisplayFor(model => model.ConfirmationToken)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.DisplayNameFor(model => model.Role)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImagePath)
+            @Html.DisplayFor(model => model.Role)
         </dd>
     </dl>
     

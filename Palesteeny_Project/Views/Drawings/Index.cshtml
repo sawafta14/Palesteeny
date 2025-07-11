@@ -12,57 +12,54 @@
 <table class="table">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.User)</th>
-            <th>@Html.DisplayNameFor(model => model.ImageUrl)</th>
-            <th>@Html.DisplayNameFor(model => model.Mode)</th>
-            <th>@Html.DisplayNameFor(model => model.Template)</th>
-            <th>@Html.DisplayNameFor(model => model.BrushType)</th>
-            <th>@Html.DisplayNameFor(model => model.Color)</th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Template)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrushType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @if (item.User != null)
-                    {
-                        @item.User.Email
-                    }
-                    else
-                    {
-                        <em>لا يوجد مستخدم</em>
-                    }
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImageUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mode)
-                </td>
-                <td>
-                    @if (item.Template != null)
-                    {
-                        @item.Template.Id
-                    }
-                    else
-                    {
-                        <em>لا يوجد قالب</em>
-                    }
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BrushType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Color)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.DrawingId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.DrawingId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.DrawingId">Delete</a>
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Template.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrushType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DrawingId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DrawingId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DrawingId">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>

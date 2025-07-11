@@ -15,8 +15,8 @@ namespace Palesteeny_Project.Controllers
         {
             _context = context;
         }
+  
 
-        // 1. عرض كل القصص
         public async Task<IActionResult> Qusis()
         {
             var qusis = await _context.Qusis

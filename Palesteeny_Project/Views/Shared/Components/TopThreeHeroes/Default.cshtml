@@ -1,0 +1,28 @@
+﻿@using Palesteeny_Project.ViewModels
+@model List<HeroViewModel>
+
+<div class="heroes">
+    @{
+        int index = 0;
+    }
+
+    @foreach (var hero in Model)
+    {
+        var photo = !string.IsNullOrEmpty(hero.User?.ImagePath)
+            ? Url.Content(hero.User.ImagePath)
+            : Url.Content("~/images/profileDef.png");
+
+        var cardClass = index == 1 ? "hero-card hero-card-center" : "hero-card";
+
+            <div class="@cardClass">
+                <div class="image-wrapper">
+                    <img src="@photo" alt="صورة المستخدم" />
+                </div>
+                <div class="badge-icon">
+                    <img src="~/images/tabler_award.svg" alt="جائزة" />
+                </div>
+            </div>
+
+        index++;
+    }
+</div>

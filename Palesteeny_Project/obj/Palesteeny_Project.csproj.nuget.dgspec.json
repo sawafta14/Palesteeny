@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Senior\\Palesteeny_Project\\Palesteeny_Project.csproj": {}
+    "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Palesteeny_Project.csproj": {}
   },
   "projects": {
-    "C:\\Senior\\Palesteeny_Project\\Palesteeny_Project.csproj": {
+    "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Palesteeny_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Senior\\Palesteeny_Project\\Palesteeny_Project.csproj",
+        "projectUniqueName": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Palesteeny_Project.csproj",
         "projectName": "Palesteeny_Project",
-        "projectPath": "C:\\Senior\\Palesteeny_Project\\Palesteeny_Project.csproj",
-        "packagesPath": "C:\\Users\\JCC\\.nuget\\packages\\",
-        "outputPath": "C:\\Senior\\Palesteeny_Project\\obj\\",
+        "projectPath": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Palesteeny_Project.csproj",
+        "packagesPath": "C:\\Users\\Safaa Sawafta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\JCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Safaa Sawafta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -93,7 +93,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Net.Sdk.Compilers.Toolset",
-              "version": "[9.0.301, 9.0.301]"
+              "version": "[9.0.203, 9.0.203]"
             }
           ],
           "frameworkReferences": {
@@ -104,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
