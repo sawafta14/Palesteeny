@@ -1,0 +1,43 @@
+﻿@model Palesteeny_Project.Models.Game
+@{
+    Layout = "~/Views/Shared/_GameLayout.cshtml";
+    
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8" />
+    <title>@Model.Title</title>
+
+    <link rel="stylesheet" href="~/css/oneGame.css" />
+</head>
+<body>
+    <main>
+        <div class="title-container">
+        <h2 class="h2decoration">
+            <span class="arrow-text">
+                    <a asp-controller="Game" asp-action="@Model.Title" class="link-text">@Model.Title</a>
+                <img src="~/images/Arrow.png" alt="سهم" />
+                <a asp-controller="Game" asp-action="Game" class="link-text">الألعاب</a>
+                <img src="~/images/Arrow.png" alt="سهم" />
+                <a asp-controller="Home" asp-action="Tasali" class="link-text">تسالي</a>
+            </span>
+        </h2>
+    </div>
+
+    <div id="game-container">
+        <iframe id="game-frame" src="/Game/@Model.GamePath" allowfullscreen tabindex="0"></iframe>
+    </div>
+    </main>
+    <script>
+        const iframe = document.getElementById("game-frame");
+        iframe.focus();
+
+        window.addEventListener('click', () => {
+            iframe.focus();
+        });
+    </script>
+
+</body>
+</html>

@@ -2,38 +2,99 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = null; /* تعيين الصفحة كصفحة مستقلة */
 }
 
-<h1>Edit</h1>
+@* إضافة تنسيق CSS احترافي *@
+<style>
+    body {
+        background-color: #f4f7fa; /* خلفية فاتحة */
+        color: #333; /* لون النص */
+    }
 
-<h4>HelpQuestion</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Question" class="control-label"></label>
-                <input asp-for="Question" class="form-control" />
-                <span asp-validation-for="Question" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Answer" class="control-label"></label>
-                <input asp-for="Answer" class="form-control" />
-                <span asp-validation-for="Answer" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    h1, h4 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه للعناوين */
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        border-color: rgb(132, 232, 73);
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(104, 188, 59);
+            border-color: rgb(104, 188, 59);
+        }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+        color: red;
+    }
+
+    .back-link {
+        text-decoration: none;
+        color: rgb(132, 232, 73);
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="container">
+    <h1>Edit Help Question</h1>
+    <h4>Help Question</h4>
+    <hr />
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Question" class="control-label">Question</label>
+            <input asp-for="Question" class="form-control" />
+            <span asp-validation-for="Question" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Answer" class="control-label">Answer</label>
+            <input asp-for="Answer" class="form-control" />
+            <span asp-validation-for="Answer" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <div>
+        <a class="back-link" asp-action="Index">Back to List</a>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

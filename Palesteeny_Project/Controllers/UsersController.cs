@@ -24,8 +24,8 @@ namespace Palesteeny_Project.Controllers
 
         ("إضافة مستخدم جديد","Create","Users"),
         
-        ("حذف مستخدم","Delete","Users"),
-        ("عرض بيانات المستخدمين","Details","Users")
+        ("حذف مستخدم","Index","Users"),
+        ("عرض بيانات المستخدمين","Index","Users")
     };
 
             return View(adminActions);

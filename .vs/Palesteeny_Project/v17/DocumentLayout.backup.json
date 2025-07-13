@@ -3,36 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\palmap\\choose_region.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\palmap\\choose_region.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\onegame.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\onegame.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\palmapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\palmapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\game\\onegame.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\game\\onegame.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\admins0controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\admins0controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\shared\\_gamelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\shared\\_gamelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\game\\maze4pal\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\game\\maze4pal\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\detailsanddelete.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\detailsanddelete.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\qresult.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\qresult.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.Qusis.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\quizs\\quizresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -43,72 +46,31 @@
       "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\quizs\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\honor1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\honor1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\quizscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\quizscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\admins\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\admins\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\quizs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\quizs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\quizs1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\quizs1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.QuizQuestions.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\admins\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\admins\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\home\\bunny.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\home\\bunny.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\admins\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\admins\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\admins\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\admins\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\admins\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\admins\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\adformcre.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\adformcre.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\ads1\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\ads1\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\ads1\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\ads1\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\reg.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\reg.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\views\\admins0\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\views\\admins0\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\wwwroot\\css\\tt.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\wwwroot\\css\\tt.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|c:\\users\\safaa sawafta\\source\\repos\\palesteeny_project\\palesteeny_project\\models\\quizquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93FB7BF-EEFF-4822-BA7D-DEAAB06E3511}|Palesteeny_Project\\Palesteeny_Project.csproj|solutionrelative:palesteeny_project\\models\\quizquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,354 +80,229 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PalMapController.cs",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\PalMapController.cs",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\PalMapController.cs",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\PalMapController.cs",
-              "RelativeToolTip": "Palesteeny_Project\\Controllers\\PalMapController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T23:58:45.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Choose_Region.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\PalMap\\Choose_Region.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\PalMap\\Choose_Region.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\PalMap\\Choose_Region.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\PalMap\\Choose_Region.cshtml",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAALUAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T23:42:53.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\User.cs",
-              "RelativeToolTip": "Palesteeny_Project\\Models\\User.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAkwCYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T23:23:20.464Z",
+              "Title": "oneGame.css",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\oneGame.css",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\oneGame.css",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\oneGame.css*",
+              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\oneGame.css*",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-12T20:17:45.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Palesteeny_Project\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAMkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T22:30:03.921Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAwLIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-12T20:07:32.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Admins0Controller.cs",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\Admins0Controller.cs",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\Admins0Controller.cs",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\Admins0Controller.cs",
-              "RelativeToolTip": "Palesteeny_Project\\Controllers\\Admins0Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T22:30:06.48Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DetailsAndDelete.css",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\DetailsAndDelete.css",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\DetailsAndDelete.css",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\DetailsAndDelete.css",
-              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\DetailsAndDelete.css",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAB8AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-10T22:51:39.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Result.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "_GameLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Shared\\_GameLayout.cshtml",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Shared\\_GameLayout.cshtml",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Shared\\_GameLayout.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Shared\\_GameLayout.cshtml",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAGMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:55:08.676Z",
+              "WhenOpened": "2025-07-12T20:07:26.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "QuizResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:55:18.692Z",
+              "DocumentIndex": 4,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\Game\\maze4pal\\index.html",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\Game\\maze4pal\\index.html",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\Game\\maze4pal\\index.html",
+              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\Game\\maze4pal\\index.html",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-07-12T19:19:06.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Index.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Users\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Index.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Users\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "OneGame.cshtml",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Game\\OneGame.cshtml",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Game\\OneGame.cshtml",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Game\\OneGame.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Game\\OneGame.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:42:18.592Z",
+              "WhenOpened": "2025-07-12T18:21:48.684Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Users\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Delete.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Users\\Delete.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:41:47.542Z",
+              "Title": "GameController.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\GameController.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\GameController.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\GameController.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Controllers\\GameController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwBcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T17:56:58.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T18:10:56.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Qresult.css",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Qresult.css",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Qresult.css",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Qresult.css",
-              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\Qresult.css",
-              "ViewState": "AgIAACIAAAAAAAAAAAAswCwAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-10T22:55:31.425Z",
+              "Title": "dbo.Qusis [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.Qusis.sql",
+              "ToolTip": "dbo.Qusis [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-12T17:53:32.347Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Users\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Edit.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Users\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Honor1.css",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Honor1.css",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Honor1.css",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Honor1.css",
+              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\Honor1.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-12T17:00:14.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Program.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Program.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAQwDYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T16:06:38.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "QuizResult.cshtml",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Quizs\\QuizResult.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:42:05.848Z",
+              "WhenOpened": "2025-07-12T15:59:29.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Details.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Users\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Details.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Users\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
+              "Title": "Result.cshtml",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Quizs\\Result.cshtml",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAwFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:41:55.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Create.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Users\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Users\\Create.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Users\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:41:35.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Create.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Admins\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Create.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Admins\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:33:56.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:05:21.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Admins\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Delete.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Admins\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:34:19.721Z",
+              "WhenOpened": "2025-07-12T15:59:17.389Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Details.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Admins\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Details.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Admins\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:34:33.595Z",
-              "EditorCaption": ""
+              "Title": "QuizQuestion.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\QuizQuestion.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Models\\QuizQuestion.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Models\\QuizQuestion.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Models\\QuizQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T15:29:14.789Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Admins\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Edit.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Admins\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\Index.cshtml",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Quizs\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Quizs\\Index.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Quizs\\Index.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:34:58.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T17:10:47.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "QuizsController.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\QuizsController.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\QuizsController.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\QuizsController.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Controllers\\QuizsController.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAMIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T18:24:11.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Quizs1.css",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Quizs1.css",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Quizs1.css",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Quizs1.css",
+              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\Quizs1.css",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAswK0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-12T16:40:44.296Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Index.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Admins\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins\\Index.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Admins\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
+              "Title": "dbo.QuizQuestions.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.QuizQuestions.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DBTest/True/SqlTable/dbo.QuizQuestions.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-12T16:11:21.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Bunny.cshtml",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Home\\Bunny.cshtml",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Home\\Bunny.cshtml",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Home\\Bunny.cshtml",
+              "RelativeToolTip": "Palesteeny_Project\\Views\\Home\\Bunny.cshtml",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAwIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:35:17.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AdFormcre.css",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\AdFormcre.css",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\AdFormcre.css",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\AdFormcre.css",
-              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\AdFormcre.css",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAswKIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-10T22:12:25.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Ads1\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Ads1\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Ads1\\Delete.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Ads1\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:14:01.205Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Ads1\\Create.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Ads1\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Ads1\\Create.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Ads1\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T22:06:11.1Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Reg.css",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Reg.css",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\Reg.css",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\Reg.css",
-              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\Reg.css",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAswMMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-10T22:05:49.703Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Palesteeny_Project\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAAABsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T22:03:11.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins0\\Index.cshtml",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Views\\Admins0\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Views\\Admins0\\Index.cshtml",
-              "RelativeToolTip": "Palesteeny_Project\\Views\\Admins0\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-10T20:10:45.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "tt.css",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\tt.css",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\wwwroot\\css\\tt.css",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\wwwroot\\css\\tt.css",
-              "RelativeToolTip": "Palesteeny_Project\\wwwroot\\css\\tt.css",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAD0AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-10T01:57:35.835Z"
+              "WhenOpened": "2025-07-11T17:58:46.015Z"
             }
           ]
         }

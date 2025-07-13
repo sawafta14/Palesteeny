@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Palesteeny_Project</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Palesteeny_Project.styles.css" asp-append-version="true" />
+    <link href="@Url.Content("~/fonts/DG-3asomy-Regular.ttf")" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/navbar.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/teeny.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="main-container">
+            <div class="nav-container">
+                <div class="profile-pic-container" style="position: relative;">
+                    @await Component.InvokeAsync("ProfilePicture")
+
+                    <div id="profileDropdown" class="dropdown-menu-custom hidden">
+                        @if (User?.Identity?.IsAuthenticated == true)
+                        {
+                            <a class="dropdown-item" asp-controller="Profile" asp-action="Hesabi"><i class="fa fa-user"></i> عرض الملف الشخصي</a>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Login"><i class="fa fa-user"></i> عرض الملف الشخصي</a>
+                        }
+
+                        @if (User?.Identity?.IsAuthenticated == true)
+                        {
+                            var roleClaim = User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value;
+                            if (roleClaim == "admin")
+                            {
+                                <a class="dropdown-item" asp-controller="Admins0" asp-action="Index"><i class="fa fa-tools"></i> لوحة التحكم</a>
+                            }
+                        }
+
+                        <a href="#" class="dropdown-item"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
+
+                        @if (User?.Identity != null && User.Identity.IsAuthenticated)
+                        {
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <button type="submit" class="dropdown-item" style="border-top: solid 1px gray;">
+                                    <i class="fa fa-sign-out-alt"></i> تسجيل الخروج
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Login" style="border-top: solid 1px gray;">
+                                <i class="fa fa-sign-in-alt"></i> تسجيل الدخول
+                            </a>
+                        }
+                    </div>
+
+                </div>
+
+
+                <div class="input-wrapper">
+                    <input type="text" placeholder="ابحث عن ما تريده" />
+                    <i class="fa fa-search input-icon"></i>
+                    <div class="search-results"></div>
+                </div>
+
+
+
+                <nav class="nav-links">
+                    <a asp-controller="PalMap" asp-action="PalMap">خريطتي</a>
+                    <a asp-controller="Ketabi" asp-action="Ketabi">كتابي</a>
+                    <div class="logo-container">
+                        <a asp-controller="Home" asp-action="Index"><img src="@Url.Content("~/images/Palesteeny-logo-5.png")" alt="Logo" class="logo" /></a>
+                    </div>
+                    <a asp-controller="Home" asp-action="Tasali">تسالي</a>
+                    <a asp-controller="Qusiss" asp-action="Qusis">قصص</a>
+                    <a asp-controller="Qusiss" asp-action="Favorite">مكتبتي</a>
+                    <a asp-controller="Home" asp-action="about">من نحن</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    @await Html.PartialAsync("_AiAssistant", new Palesteeny_Project.Models.ChatMessage())
+
+    @{
+        var actionName = ViewContext?.RouteData?.Values["action"]?.ToString() ?? "";
+    }
+    <div class="@(actionName == "PalMap" ? "container-fluid p-0 m-0" : "container")">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer >
+      
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="~/js/Search.js"></script>
+    <script src="~/js/Navbar.js"></script>
+    <script src="~/js/teeny.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

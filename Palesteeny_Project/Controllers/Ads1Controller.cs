@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة اعلان جديد", "Create", "Ads1"),
-        ("التعديل على بيانات الاعلانات ", "Edit", "Ads1"),
-        ("حذف اعلان", "Delete", "Ads1"),
-        ("عرض بيانات االاعلانات", "Details", "Ads1")
+        ("التعديل على بيانات الاعلانات ", "Index", "Ads1"),
+        ("حذف اعلان", "Index", "Ads1"),
+        ("عرض بيانات االاعلانات", "Index", "Ads1")
     };
 
             return View(adminActions);

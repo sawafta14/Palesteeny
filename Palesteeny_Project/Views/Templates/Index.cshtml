@@ -2,40 +2,120 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = null;  // أو اضبطه حسب مشروعك
 }
 
-<h1>Index</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(132, 232, 73, 0.3);
+    }
+
+        .table thead tr {
+            background-color: rgb(132, 232, 73);
+            color: white;
+        }
+
+        .table th, .table td {
+            padding: 12px 20px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        .table tbody tr:hover {
+            background-color: rgb(132, 232, 73);
+            color: white;
+        }
+
+    a {
+        color: rgb(132, 232, 73);
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+            color: #97d44d;
+        }
+
+    .btn {
+        background-color: rgb(132, 232, 73);
+        color: white;
+        padding: 6px 12px;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-block;
+        transition: background-color 0.3s;
+    }
+
+        .btn:hover {
+            background-color: #97d44d;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.First().Category)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
+                @Html.DisplayNameFor(model => model.First().ImageUrl)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn" style="background-color: #e74c3c;">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

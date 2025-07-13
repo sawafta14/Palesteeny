@@ -5,63 +5,163 @@
     Layout = null;
 }
 
-<link rel="stylesheet" href="~/css/AdFormcre.css" />
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="col-md-8 col-lg-6">
+        <form asp-action="Create" class="form-container">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
+
+            <h2 class="form-title">إضافة مشرف جديد</h2>
+
+            <!-- First Name Field -->
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
+                <input asp-for="FirstName" class="form-control" placeholder="أدخل الاسم الأول" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
+
+            <!-- Last Name Field -->
             <div class="form-group">
                 <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
+                <input asp-for="LastName" class="form-control" placeholder="أدخل الاسم الأخير" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
+
+            <!-- Email Field -->
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" placeholder="أدخل البريد الإلكتروني" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PasswordHash" class="control-label"></label>
-                <input asp-for="PasswordHash" class="form-control" />
-                <span asp-validation-for="PasswordHash" class="text-danger"></span>
-            </div>
+
+            <!-- Email Confirmation Field -->
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="EmailConfirmed" /> @Html.DisplayNameFor(model => model.EmailConfirmed)
                 </label>
             </div>
-            <div class="form-group">
-                <label asp-for="ConfirmationToken" class="control-label"></label>
-                <input asp-for="ConfirmationToken" class="form-control" />
-                <span asp-validation-for="ConfirmationToken" class="text-danger"></span>
-            </div>
+
+            <!-- Role Field -->
             <div class="form-group">
                 <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
+                <input asp-for="Role" class="form-control" placeholder="أدخل الدور" />
                 <span asp-validation-for="Role" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <!-- Submit Button -->
+            <div class="form-group text-center">
+                <input type="submit" value="إضافة" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<!-- Back to List Button -->
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-link">العودة إلى القائمة</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<style>
+    body {
+        background-color: #f4f7f6;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh; /* هذا يضمن أن الصفحة تأخذ ارتفاع كامل الشاشة */
+    }
+
+    .container-fluid {
+        display: flex;
+        justify-content: center; /* محاذاة العناصر أفقيًا */
+        align-items: center; /* محاذاة العناصر عموديًا */
+        min-height: 100vh; /* يضمن أن الـ div يحتوي على الارتفاع الكامل */
+    }
+
+    .form-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: right;
+        width: 100%;
+    }
+
+    .form-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: rgb(132, 232, 73);
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-weight: 600;
+            color: rgb(75, 160, 30);
+            font-size: 16px;
+        }
+
+    .form-control {
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: rgb(132, 232, 73);
+            outline: none;
+            box-shadow: 0 0 5px rgba(132, 232, 73, 0.3);
+        }
+
+    .form-group .text-danger {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-weight: 600;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .btn-success {
+        background-color: rgb(132, 232, 73);
+        color: #fff;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: rgb(100, 190, 50);
+        }
+
+    .btn-link {
+        font-size: 16px;
+        color: rgb(132, 232, 73);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .btn-link:hover {
+            text-decoration: underline;
+            color: rgb(100, 190, 50);
+        }
+
+    /* Centering the buttons */
+    .text-center {
+        text-align: center;
+    }
+</style>

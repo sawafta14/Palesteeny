@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة قالب جديد", "Create", "Templates"),
-        ("التعديل على القوالب ", "Edit", "Templates"),
-        ("حذف قالب", "Delete", "Templates"),
-        ("عرض القوالب الحالية", "Details", "Templates")
+        ("التعديل على القوالب ", "Index", "Templates"),
+        ("حذف قالب", "Index", "Templates"),
+        ("عرض القوالب الحالية", "Index", "Templates")
     };
 
             return View(adminActions);

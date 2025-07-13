@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافةادوات جديدة", "Create", "Drawings"),
-        ("التعديل على بيانات الرسام ", "Edit", "Drawings"),
-        ("حذف رسمة من المعرض", "Delete", "Drawings"),
-        ("عرض بيانات الرسام", "Details", "Drawings")
+        ("التعديل على بيانات الرسام ", "Index", "Drawings"),
+        ("حذف رسمة من المعرض", "Index", "Drawings"),
+        ("عرض بيانات الرسام", "Index", "Drawings")
     };
 
             return View(adminActions);

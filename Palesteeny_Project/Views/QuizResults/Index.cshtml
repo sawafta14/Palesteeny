@@ -2,52 +2,123 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = null; // تحديد Null Layout إذا كنت تريد صفحة مستقلة
 }
 
-<h1>Index</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 30px;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: rgb(132, 232, 73);
+        color: white;
+        font-weight: bold;
+    }
+
+    td {
+        background-color: #f9f9f9;
+    }
+
+        td a {
+            color: rgb(132, 232, 73);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            td a:hover {
+                color: #97d44d;
+                text-decoration: underline;
+            }
+
+    .btn {
+        background-color: rgb(132, 232, 73);
+        border-color: rgb(132, 232, 73);
+        color: white;
+        font-weight: bold;
+    }
+
+        .btn:hover {
+            background-color: #97d44d;
+            border-color: #97d44d;
+        }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+    }
+
+        .back-link:hover {
+            color: #97d44d;
+            text-decoration: underline;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalScore)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TakenAt)
-            </th>
+            <th>@Html.DisplayNameFor(model => model.User)</th>
+            <th>@Html.DisplayNameFor(model => model.Category)</th>
+            <th>@Html.DisplayNameFor(model => model.TotalScore)</th>
+            <th>@Html.DisplayNameFor(model => model.TakenAt)</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TakenAt)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.User?.Email ?? "No email available"
+                </td>
+
+                <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalScore)</td>
+                <td>@Html.DisplayFor(modelItem => item.TakenAt)</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<div>
+    <a class="back-link" asp-action="Index">Back to List</a>
+</div>

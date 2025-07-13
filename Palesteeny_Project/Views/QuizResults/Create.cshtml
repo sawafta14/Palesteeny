@@ -2,35 +2,113 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null; // لضبط الـ Layout كـ null إذا كان هذا جزء من صفحة مستقلة
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73);
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            color: rgb(132, 232, 73);
+            font-weight: bold;
+        }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        border-color: rgb(132, 232, 73);
+        color: white;
+        font-weight: bold;
+    }
+
+        .btn-primary:hover {
+            background-color: #97d44d;
+            border-color: #97d44d;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+    }
+
+        .back-link:hover {
+            color: #97d44d;
+            text-decoration: underline;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <h4>QuizResult</h4>
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 offset-md-3">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="UserPalId" class="control-label"></label>
-                <select asp-for="UserPalId" class ="form-control" asp-items="ViewBag.UserPalId"></select>
+                <select asp-for="UserPalId" class="form-control" asp-items="ViewBag.UserPalId"></select>
+                <span asp-validation-for="UserPalId" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="TotalScore" class="control-label"></label>
                 <input asp-for="TotalScore" class="form-control" />
                 <span asp-validation-for="TotalScore" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="TakenAt" class="control-label"></label>
                 <input asp-for="TakenAt" class="form-control" />
                 <span asp-validation-for="TakenAt" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -39,9 +117,11 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="back-link" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

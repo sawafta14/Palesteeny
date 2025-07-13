@@ -2,31 +2,111 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null;
+      <!-- لاي أوت فارغ -->
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73);
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: rgb(132, 232, 73);
+    }
+
+    .form-group input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        width: 100%;
+    }
+
+        .form-group input:focus {
+            border-color: rgb(132, 232, 73);
+            box-shadow: 0 0 8px rgba(132, 232, 73, 0.3);
+        }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #97d44d;
+        }
+
+    .text-danger {
+        font-size: 0.9rem;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 15px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: rgb(132, 232, 73);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #97d44d;
+            text-decoration: underline;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <h4>Semester</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 offset-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="GradeName" class="control-label"></label>
                 <input asp-for="GradeName" class="form-control" />
                 <span asp-validation-for="GradeName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="SemesterName" class="control-label"></label>
                 <input asp-for="SemesterName" class="form-control" />
                 <span asp-validation-for="SemesterName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="RegistrationDate" class="control-label"></label>
                 <input asp-for="RegistrationDate" class="form-control" />
                 <span asp-validation-for="RegistrationDate" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -34,10 +114,12 @@
     </div>
 </div>
 
-<div>
+<div class="text-center">
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

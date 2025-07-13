@@ -16,7 +16,7 @@
     <div class="container">
         <div class="result-box">
             <h2>نتيجتك في اختبار "@Model.Category"</h2>
-            <p>🧑 الاسم: @userName</p>
+            <p>🧑 الاسم: @Model.User?.FirstName</p>
             <p>📅 التاريخ: @Model.TakenAt.ToString("yyyy/MM/dd hh:mm tt")</p>
             <p class="score">العلامة: @Model.TotalScore</p>
 

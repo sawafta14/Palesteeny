@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة اختبار جديد", "Create", "QuizQuestions"),
-        ("التعديل على اسئلة الاختبار ", "Edit", "QuizQuestions"),
-        ("حذف سؤال", "Delete", "QuizQuestions"),
-        ("عرض الاختبارات والاسئلة", "Details", "QuizQuestions")
+        ("التعديل على اسئلة الاختبار ", "Index", "QuizQuestions"),
+        ("حذف سؤال", "Index", "QuizQuestions"),
+        ("عرض الاختبارات والاسئلة", "Index", "QuizQuestions")
     };
 
             return View(adminActions);

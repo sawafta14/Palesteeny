@@ -1,0 +1,85 @@
+﻿@font-face {
+    font-family: 'DG 3asomy';
+    src: url('/fonts/DG3asomy.ttf') format('truetype');
+    /* Adjust this URL to where your font file really is */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    
+    background: #ffff;
+    font-family: 'DG 3asomy', sans-serif;
+}
+main {
+    padding-bottom: 250px;
+    padding-left: 100px;
+}
+body {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.h2decoration {
+    text-align: right;
+    font-size: 40px;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
+    margin: 0;
+    font-family: 'DG 3asomy', sans-serif;
+}
+
+.arrow-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'DG 3asomy', sans-serif;
+}
+
+.link-text {
+    text-decoration: none;
+    color: hsla(98, 78%, 60%, 1);
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'DG 3asomy', sans-serif;
+}
+
+.arrow-text img {
+    width: 50px;
+    height: auto;
+}
+
+#game-container {
+    width: 63vw;
+    aspect-ratio: 16 / 9;
+    max-width: 960px;
+    background: #fff4f8;
+    border-radius: 25px;
+    border: 5px solid rgb(132, 232, 73);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+#unity-fullscreen-button {
+    display: none;
+}

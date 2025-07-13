@@ -2,47 +2,142 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null;
+      <!-- لاي أوت فارغ -->
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
 
-<h4>Qusi</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CoverImage" class="control-label"></label>
-                <input asp-for="CoverImage" class="form-control" />
-                <span asp-validation-for="CoverImage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Link" class="control-label"></label>
-                <input asp-for="Link" class="form-control" />
-                <span asp-validation-for="Link" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    h1 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73);
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        background-color: rgb(132, 232, 73);
+        padding: 10px 20px;
+        color: white;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        display: inline-block;
+    }
+
+        .btn:hover {
+            background-color: #97d44d;
+        }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+        .form-control:focus {
+            border-color: rgb(132, 232, 73);
+            box-shadow: 0 0 5px rgb(132, 232, 73);
+        }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgb(132, 232, 73 / 0.3);
+    }
+
+    .text-danger {
+        color: red;
+    }
+
+    div > a {
+        display: inline-block;
+        margin-top: 15px;
+        font-weight: 600;
+        color: rgb(132, 232, 73);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        div > a:hover {
+            color: #97d44d;
+            text-decoration: underline;
+        }
+</style>
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <h4>Qusi</h4>
+    <hr />
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Title" class="control-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Category" class="control-label"></label>
+            <input asp-for="Category" class="form-control" />
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CoverImage" class="control-label"></label>
+            <input asp-for="CoverImage" class="form-control" />
+            <span asp-validation-for="CoverImage" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Link" class="control-label"></label>
+            <input asp-for="Link" class="form-control" />
+            <span asp-validation-for="Link" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </form>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

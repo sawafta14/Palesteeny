@@ -2,83 +2,135 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = null;
 }
 
-<h1>Details</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9fff5;
+        color: #333;
+        direction: rtl;
+        margin: 40px auto;
+        max-width: 700px;
+        padding: 0 20px;
+        user-select: none;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 34px;
+        text-align: center;
+        color: rgb(132, 232, 73);
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 10px;
+        border-bottom: 3px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        color: rgb(75, 160, 30);
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background: rgb(132, 232, 73);
+        margin-bottom: 25px;
+        border-radius: 2px;
+    }
+
+    dl.row {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        row-gap: 15px;
+        column-gap: 25px;
+        margin-bottom: 35px;
+    }
+
+    dt {
+        font-weight: 700;
+        font-size: 18px;
+        color: rgb(75, 160, 30);
+        text-align: right;
+        align-self: center;
+    }
+
+    dd {
+        font-size: 18px;
+        color: #444;
+        margin: 0;
+        word-wrap: break-word;
+    }
+
+    .actions {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    a {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        margin: 0 15px;
+        user-select: none;
+    }
+
+        a:hover {
+            color: rgb(100, 180, 45);
+            text-decoration: underline;
+        }
+
+</style>
+
+<h1>تفاصيل المستخدم</h1>
 
 <div>
-    <h4>UserPal</h4>
+    <h4>بيانات المستخدم</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
+        <dt>@Html.DisplayNameFor(model => model.Gender)</dt>
+        <dd>@Html.DisplayFor(model => model.Gender)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Age)</dt>
+        <dd>@Html.DisplayFor(model => model.Age)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ImagePath)</dt>
+        <dd>@Html.DisplayFor(model => model.ImagePath)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Semester)</dt>
+        <dd>
+            @(Model.Semester != null ? Model.Semester.SemesterId.ToString() : "لا يوجد فصل دراسي")
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImagePath)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Semester)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Semester.SemesterId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EmailConfirmed)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EmailConfirmed)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ConfirmationToken)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ConfirmationToken)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Role)
-        </dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.FirstName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.LastName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.PasswordHash)</dt>
+        <dd>@Html.DisplayFor(model => model.PasswordHash)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.EmailConfirmed)</dt>
+        <dd>@Html.DisplayFor(model => model.EmailConfirmed)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ConfirmationToken)</dt>
+        <dd>@Html.DisplayFor(model => model.ConfirmationToken)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Role)</dt>
+        <dd>@Html.DisplayFor(model => model.Role)</dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="actions">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">تعديل</a> |
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>

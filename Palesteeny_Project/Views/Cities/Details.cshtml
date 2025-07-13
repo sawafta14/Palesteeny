@@ -2,71 +2,170 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = null;
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>City</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NameMeaning)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NameMeaning)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.History)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.History)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Climate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Climate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Food)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Food)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageNameMeaning)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageNameMeaning)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageHistory)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageHistory)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageClimate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageClimate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageFood)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageFood)
-        </dd>
-    </dl>
+<hr />
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="col-md-8 col-lg-6 details-form">
+        <h1>تفاصيل المدينة</h1>
+
+        <h4>معلومات المدينة</h4>
+        <div class="dl-container">
+            <dl class="row">
+                <dt class="col-sm-2">الاسم:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
+
+                <dt class="col-sm-2">معنى الاسم:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.NameMeaning)</dd>
+
+                <dt class="col-sm-2">التاريخ:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.History)</dd>
+
+                <dt class="col-sm-2">المناخ:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Climate)</dd>
+
+                <dt class="col-sm-2">الأطعمة:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Food)</dd>
+
+                <dt class="col-sm-2">صورة معنى الاسم:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.ImageNameMeaning)</dd>
+
+                <dt class="col-sm-2">صورة التاريخ:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.ImageHistory)</dd>
+
+                <dt class="col-sm-2">صورة المناخ:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.ImageClimate)</dd>
+
+                <dt class="col-sm-2">صورة الأطعمة:</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.ImageFood)</dd>
+            </dl>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">تعديل</a>
+            <a asp-action="Index" class="btn btn-link">العودة إلى القائمة</a>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-fluid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .details-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(132, 232, 73, 0.2);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: rgb(132, 232, 73);
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .dl-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #d1d1d1;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        dt {
+            font-weight: 600;
+            color: rgb(75, 160, 30);
+            font-size: 16px;
+        }
+
+        dd {
+            color: #444;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            font-size: 16px;
+            padding: 12px 25px;
+            font-weight: 600;
+            border-radius: 6px;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background-color: rgb(132, 232, 73);
+            border-color: rgb(132, 232, 73);
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: rgb(100, 190, 50);
+                border-color: rgb(100, 190, 50);
+            }
+
+        .btn-link {
+            font-size: 16px;
+            color: rgb(132, 232, 73);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+            .btn-link:hover {
+                text-decoration: underline;
+                color: rgb(100, 190, 50);
+            }
+
+        /* Responsive Design */
+        .details-form {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        .dl-container {
+            padding: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>

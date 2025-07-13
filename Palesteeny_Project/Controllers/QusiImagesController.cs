@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة محتوى جديد", "Create", "QusiImages"),
-        ("التعديل على المحتوى", "Edit", "QusiImages"),
-        ("حذف المحتوى", "Delete", "QusiImages"),
-        ("عرض محتوى القصة", "Details", "QusiImages")
+        ("التعديل على المحتوى", "Index", "QusiImages"),
+        ("حذف المحتوى", "Index", "QusiImages"),
+        ("عرض محتوى القصة", "Index", "QusiImages")
     };
 
             return View(adminActions);

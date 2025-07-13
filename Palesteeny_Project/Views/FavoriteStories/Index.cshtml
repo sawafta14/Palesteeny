@@ -4,38 +4,105 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+@* إضافة تنسيق CSS احترافي *@
+<style>
+    body {
+        background-color: #f4f7fa; /* خلفية فاتحة */
+        color: #333; /* لون النص */
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Qusi)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Qusi.Title)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    h1 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه للعناوين */
+        font-size: 2rem;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .table th, .table td {
+            padding: 1rem;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: rgb(132, 232, 73);
+            color: white;
+        }
+
+        .table td {
+            background-color: #f9f9f9;
+        }
+
+    .action-links a {
+        text-decoration: none;
+        color: rgb(132, 232, 73);
+    }
+
+        .action-links a:hover {
+            text-decoration: underline;
+        }
+
+    .create-link {
+        text-decoration: none;
+        color: rgb(132, 232, 73);
+        font-weight: bold;
+    }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="container">
+    <h1>Favorite Stories</h1>
+    <p>
+        <a class="create-link" asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.User)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Qusi)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @(item.User != null ? item.User.Email : "Email not available")
+                    </td>
+                    <td>
+                        @(item.Qusi != null ? item.Qusi.Title : "Title not available")
+                    </td>
+
+
+                    <td class="action-links">
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

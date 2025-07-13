@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة كتاب جديد", "Create", "Books"),
-        ("تحديث الكتاب ", "Edit", "Books"),
-        ("حذف كتاب", "Delete", "Books"),
-        ("عرض الكتب", "Details", "Books")
+        ("تحديث الكتاب ", "Index", "Books"),
+        ("حذف كتاب", "Index", "Books"),
+        ("عرض الكتب", "Index", "Books")
     };
 
             return View(adminActions);

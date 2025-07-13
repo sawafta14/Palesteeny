@@ -1,0 +1,105 @@
+﻿@model List<Palesteeny_Project.Models.Game>
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ألعابي</title>
+    <link rel="stylesheet" href="~/css/game.css" />
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; justify-content: flex-end;">
+        <h2 class="h2decoration">
+            <span class="arrow-text">
+                <a asp-controller="Game" asp-action="Game" class="link-text">الألعاب</a>
+                <img src="~/images/Arrow.png" alt="سهم" />
+                <a asp-controller="Home" asp-action="Tasali" class="link-text">تسالي</a>
+            </span>
+        </h2>
+    </div>
+    <br />
+
+    <p style="text-align: right; font-size:x-large; font-weight: bolder;">:جرب هذه الألعاب الممتعة</p>
+    <br />
+
+    <!-- كونتينر الألعاب -->
+    <div class="games_container" style="display: grid;">
+        <div class="games">
+            @foreach (var game in Model)
+            {
+                <div class="game">
+                    <div class="game-image">
+                        <a asp-controller="Game" asp-action="OneGame" asp-route-id="@game.Id">
+                            <div class="image-container">
+                                <div class="front">
+                                    <img src="~/images/@game.CoverImage" alt="@game.Title" />
+                                </div>
+                                <div class="back">
+                                    <img src="~/images/@game.CoverImage" alt="@game.Title" />
+                                    <div class="play-button" style="margin-top: 10px; font-size: 20px; font-weight: bold; color: #fff; background: green; padding: 10px 15px; border-radius: 5px; display: flex; justify-content: center; align-items: center;">
+                                        العب الآن !!
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <p>@game.Title</p>
+                </div>
+            }
+        </div>
+    </div>
+
+    <br />
+    <div style="display: flex; justify-content: space-between;">
+        <button id="prev" class="nav-button">
+            <img src="~/images/Left.png" alt="السابق" />
+        </button>
+        <button id="next" class="nav-button">
+            <img src="~/images/Right.png" alt="التالي" />
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentPage = 0;
+            const itemsPerPage = 4;
+
+            const container = document.querySelector(".games_container .games");
+            const prevBtn = document.getElementById("prev");
+            const nextBtn = document.getElementById("next");
+
+            const allGames = [...container.children];
+
+            function showGamesPage() {
+                container.innerHTML = "";
+                const start = currentPage * itemsPerPage;
+                const end = start + itemsPerPage;
+                const gamesToShow = allGames.slice(start, end);
+                gamesToShow.forEach(game => container.appendChild(game));
+
+                if (gamesToShow.length === 0 && currentPage > 0) {
+                    currentPage = 0;
+                    showGamesPage();
+                }
+            }
+
+            prevBtn.addEventListener("click", () => {
+                const maxPage = Math.ceil(allGames.length / itemsPerPage) - 1;
+                currentPage = currentPage > 0 ? currentPage - 1 : maxPage;
+                showGamesPage();
+            });
+
+            nextBtn.addEventListener("click", () => {
+                const maxPage = Math.ceil(allGames.length / itemsPerPage) - 1;
+                currentPage = currentPage < maxPage ? currentPage + 1 : 0;
+                showGamesPage();
+            });
+
+            showGamesPage();
+        });
+    </script>
+</body>
+</html>

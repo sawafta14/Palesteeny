@@ -2,35 +2,116 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = null; /* Standalone page */
 }
 
-<h1>Details</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
-<div>
-    <h4>QuizOption</h4>
+    h1 {
+        color: rgb(132, 232, 73); /* Primary color */
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        color: rgb(113, 202, 63);
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+
+    .form-control {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #333;
+    }
+
+    dd {
+        padding-left: 20px;
+    }
+
+    .btn-link {
+        color: rgb(132, 232, 73);
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .btn-link:hover {
+            color: rgb(113, 202, 63);
+        }
+</style>
+
+<div class="container">
+    <h1>Quiz Option Details</h1>
+    <h4>Details of the selected quiz option</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OptionText)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OptionText)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IsCorrect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsCorrect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.QuizQuestion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.QuizQuestion.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+    <div>
+        <h4>QuizOption Details</h4>
+        <hr />
+        <dl class="row">
+            <!-- Option Text -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.OptionText)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.OptionText)
+            </dd>
+
+            <!-- Is Correct -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IsCorrect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IsCorrect)
+            </dd>
+
+            <!-- Associated Quiz Question -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.QuizQuestion)
+            </dt>
+            <dd class="col-sm-10">
+                @(Model.QuizQuestion != null ? Model.QuizQuestion.Id.ToString() : "لا يوجد سؤال")
+            </dd>
+
+
+
+
+        </dl>
+    </div>
+
+    <!-- Navigation Back to List -->
+    <div>
+        <a class="btn-link" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+        <a class="btn-link" asp-action="Index">Back to List</a>
+    </div>
 </div>

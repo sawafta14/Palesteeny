@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
         
         ("إضافة قصة جديدة", "Create", "Qusis1"),
-        ("التعديل على بيانات القصة", "Edit", "Qusis1"),
-        ("حذف قصة", "Delete", "Qusis1"),
-        ("عرض تفاصيل القصص الحالية", "Details", "Qusis1")
+        ("التعديل على بيانات القصة", "Index", "Qusis1"),
+        ("حذف قصة", "Index", "Qusis1"),
+        ("عرض تفاصيل القصص الحالية", "Index", "Qusis1")
     };
 
             return View(adminActions);

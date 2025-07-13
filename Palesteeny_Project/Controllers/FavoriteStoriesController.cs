@@ -23,7 +23,7 @@ namespace Palesteeny_Project.Controllers
     {
 
         
-        ("عرض المكتبة الخاصة بالطلاب", "Details", "FavoriteStories")
+        ("عرض المكتبة الخاصة بالطلاب", "Index", "FavoriteStories")
     };
 
             return View(adminActions);

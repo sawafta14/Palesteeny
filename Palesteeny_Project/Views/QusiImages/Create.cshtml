@@ -2,30 +2,107 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null;
+      <!-- لاي أوت فارغ -->
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: rgb(132, 232, 73);
+            box-shadow: 0 0 5px rgb(132, 232, 73);
+        }
+
+    .form-group span {
+        color: red;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #97d44d;
+        }
+
+    .btn-link {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <h4>QusiImage</h4>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="QusiId" class="control-label"></label>
-                <select asp-for="QusiId" class ="form-control" asp-items="ViewBag.QusiId"></select>
+                <label asp-for="QusiId" class="control-label">Select Qusi</label>
+                <select asp-for="QusiId" class="form-control" asp-items="ViewBag.QusiId"></select>
             </div>
+
             <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
+                <label asp-for="ImageUrl" class="control-label">Image URL</label>
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Order" class="control-label"></label>
+                <label asp-for="Order" class="control-label">Order</label>
                 <input asp-for="Order" class="form-control" />
                 <span asp-validation-for="Order" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -34,9 +111,11 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn-link">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

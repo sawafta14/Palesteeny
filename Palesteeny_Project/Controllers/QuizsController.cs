@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Palesteeny_Project.Models;
 using System.Security.Claims;
+using Palesteeny_Project.Services;
 
 namespace Palesteeny_Project.Controllers
 {
@@ -77,7 +78,9 @@ namespace Palesteeny_Project.Controllers
 
         // POST: /Quizs/SubmitAnswers
         [HttpPost]
-        public async Task<IActionResult> SubmitAnswers(int page, string category, List<int> selectedOptionIds)
+     
+        public async Task<IActionResult> SubmitAnswers(int page, string category, Dictionary<int, int> answers)
+
         {
             if (User?.Identity == null || !User.Identity.IsAuthenticated)
                 return Unauthorized("يجب تسجيل الدخول للإجابة على الأسئلة.");
@@ -89,6 +92,9 @@ namespace Palesteeny_Project.Controllers
             int userId = int.Parse(userIdStr);
             int pageSize = 3;
 
+            // استرجاع الإجابات السابقة من الـ Session أو إنشاء جديد
+            Dictionary<int, int> answersDict = HttpContext.Session.GetObject<Dictionary<int, int>>("QuizAnswers") ?? new();
+
             var questions = await _context.QuizQuestions
                 .Where(q => q.Category == category)
                 .Include(q => q.Options)
@@ -96,25 +102,50 @@ namespace Palesteeny_Project.Controllers
                 .Take(pageSize)
                 .ToListAsync();
 
-            int score = 0;
-
+            // تحديث القاموس بالإجابات الجديدة من الصفحة الحالية
             foreach (var question in questions)
             {
-                var selectedOptionId = selectedOptionIds
-                    .FirstOrDefault(id => question.Options.Any(o => o.Id == id));
-
-                var selectedOption = question.Options.FirstOrDefault(o => o.Id == selectedOptionId);
-
-                if (selectedOption != null && selectedOption.IsCorrect)
+                if (answers.TryGetValue(question.Id, out int selectedOptionId))
                 {
-                    score += question.Score;
+                    if (selectedOptionId != 0)
+                    {
+                        answersDict[question.Id] = selectedOptionId;
+                    }
+                }
+            }
+
+
+            // حفظ القاموس المحدث بالـ Session
+            HttpContext.Session.SetObject("QuizAnswers", answersDict);
+
+            // إذا الصفحة ليست الأخيرة ننتقل للصفحة التالية
+            int totalQuestions = await _context.QuizQuestions.Where(q => q.Category == category).CountAsync();
+            int totalPages = (int)Math.Ceiling(totalQuestions / (double)pageSize);
+
+            if (page < totalPages)
+            {
+                return RedirectToAction("Index", new { page = page + 1, category });
+            }
+
+            // حساب النتيجة النهائية بعد انتهاء كل الصفحات
+            int totalScore = 0;
+            foreach (var kvp in answersDict)
+            {
+                var question = await _context.QuizQuestions.Include(q => q.Options).FirstOrDefaultAsync(q => q.Id == kvp.Key);
+                if (question != null)
+                {
+                    var selectedOption = question.Options.FirstOrDefault(o => o.Id == kvp.Value);
+                    if (selectedOption != null && selectedOption.IsCorrect)
+                    {
+                        totalScore += question.Score;
+                    }
                 }
             }
 
             var quizResult = new QuizResult
             {
                 UserPalId = userId,
-                TotalScore = score,
+                TotalScore = totalScore,
                 TakenAt = DateTime.Now,
                 Category = category
             };
@@ -122,22 +153,12 @@ namespace Palesteeny_Project.Controllers
             _context.QuizResults.Add(quizResult);
             await _context.SaveChangesAsync();
 
-            int totalQuestions = await _context.QuizQuestions
-                                        .Where(q => q.Category == category)
-                                        .CountAsync();
+            // مسح الإجابات المؤقتة بعد الحفظ
+            HttpContext.Session.Remove("QuizAnswers");
 
-            int totalPages = (int)Math.Ceiling(totalQuestions / (double)pageSize);
-
-            if (page < totalPages)
-            {
-                return RedirectToAction("Index", new { page = page + 1, category });
-            }
-            else
-            {
-                return RedirectToAction("QuizResult", new { resultId = quizResult.Id });
-            }
-
+            return RedirectToAction("QuizResult", new { resultId = quizResult.Id });
         }
+
 
         // GET: /Quizs/Result
         public async Task<IActionResult> Result(string category)

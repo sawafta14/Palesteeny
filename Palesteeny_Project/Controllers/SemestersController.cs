@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة صف جديد", "Create", "Semesters"),
-        ("التعديل على الصفوف ", "Edit", "Semesters"),
-        ("حذف صف", "Delete", "Semesters"),
-        ("عرض االصفوف الحالية", "Details", "Semesters")
+        ("التعديل على الصفوف ", "Index", "Semesters"),
+        ("حذف صف", "Index", "Semesters"),
+        ("عرض االصفوف الحالية", "Index", "Semesters")
     };
 
             return View(adminActions);

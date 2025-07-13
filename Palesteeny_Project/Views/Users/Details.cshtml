@@ -5,56 +5,122 @@
     Layout = null;
 }
 
-<link rel="stylesheet" href="~/css/DetailsAndDelete.css" />
-<div>
-    <h4>User</h4>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9fef6;
+        color: #2f4f1f;
+        direction: rtl;
+        margin: 0;
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .details-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(132, 232, 73, 0.3);
+        width: 500px;
+        padding: 25px 35px;
+    }
+
+    h4 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 26px;
+        margin-bottom: 12px;
+        color: rgb(84, 157, 35);
+        letter-spacing: 1px;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: rgb(132, 232, 73);
+        border-radius: 6px;
+        width: 80px;
+        margin: 10px auto 25px auto;
+    }
+
+    dl.row {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 10px 20px;
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+    dt.col-sm-2 {
+        font-weight: 700;
+        color: rgb(65, 124, 17);
+        user-select: none;
+        text-align: left;
+    }
+
+    dd.col-sm-10 {
+        background-color: #e9f3d9;
+        padding: 8px 15px;
+        border-radius: 8px;
+        margin: 0;
+        word-break: break-word;
+    }
+
+    .actions {
+        margin-top: 28px;
+        text-align: center;
+    }
+
+        .actions a {
+            background-color: rgb(132, 232, 73);
+            color: #1a1a1a;
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 0 10px;
+            box-shadow: 0 4px 10px rgba(132, 232, 73, 0.5);
+            transition: background-color 0.3s ease;
+            user-select: none;
+            display: inline-block;
+            min-width: 90px;
+        }
+
+            .actions a:hover {
+                background-color: rgb(102, 182, 57);
+                color: #111;
+                box-shadow: 0 6px 14px rgba(102, 182, 57, 0.7);
+            }
+</style>
+
+<div class="details-container">
+    <h4>تفاصيل المستخدم</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EmailConfirmed)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EmailConfirmed)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ConfirmationToken)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ConfirmationToken)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Role)
-        </dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.FirstName)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.FirstName)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.LastName)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.LastName)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Email)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.Email)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.PasswordHash)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.PasswordHash)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.EmailConfirmed)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.EmailConfirmed)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.ConfirmationToken)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.ConfirmationToken)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Role)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.Role)</dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+    <div class="actions">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">تعديل</a>
+        <a asp-action="Index">العودة للقائمة</a>
+    </div>
 </div>

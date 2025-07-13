@@ -4,65 +4,190 @@
     ViewData["Title"] = "Edit";
     Layout = null;
 }
+<head>
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-<link rel="stylesheet" href="~/css/AdFormcre.css" />
-<hr />
-<div class="row">
-    <div class="col-md-4">
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .edit-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(132, 232, 73, 0.2);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: rgb(132, 232, 73);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        hr {
+            border: 1px solid rgb(132, 232, 73);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                font-weight: 600;
+                color: rgb(75, 160, 30);
+                font-size: 16px;
+            }
+
+            .form-group input {
+                font-size: 16px;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid #d1d1d1;
+                transition: border-color 0.3s ease;
+                width: 100%;
+            }
+
+                .form-group input:focus {
+                    border-color: rgb(132, 232, 73);
+                    outline: none;
+                    box-shadow: 0 0 5px rgba(132, 232, 73, 0.3);
+                }
+
+            .form-group .text-danger {
+                font-size: 14px;
+            }
+
+        .btn {
+            font-size: 16px;
+            padding: 12px 20px;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: rgb(132, 232, 73);
+            border-color: rgb(132, 232, 73);
+            color: #fff;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: rgb(100, 190, 50);
+                border-color: rgb(100, 190, 50);
+            }
+
+        .btn-link {
+            font-size: 16px;
+            color: rgb(132, 232, 73);
+            text-decoration: none;
+        }
+
+            .btn-link:hover {
+                text-decoration: underline;
+                color: rgb(100, 190, 50);
+            }
+
+
+        .edit-form {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        .form-group input {
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<div class="container">
+    <div class="edit-form">
+        <h1>تعديل بيانات المشرف</h1>
+        <hr />
+
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
+
+          
+
             <input type="hidden" asp-for="Id" />
+
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
+                <label asp-for="FirstName" class="control-label">الاسم الأول:</label>
                 <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
+                <label asp-for="LastName" class="control-label">الاسم الأخير:</label>
                 <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">البريد الإلكتروني:</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="PasswordHash" class="control-label"></label>
-                <input asp-for="PasswordHash" class="form-control" />
+                <label asp-for="PasswordHash" class="control-label">كلمة المرور:</label>
+                <input asp-for="PasswordHash" class="form-control" type="password" />
                 <span asp-validation-for="PasswordHash" class="text-danger"></span>
             </div>
+
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="EmailConfirmed" /> @Html.DisplayNameFor(model => model.EmailConfirmed)
+                    <input class="form-check-input" asp-for="EmailConfirmed" />
+                    تم تأكيد البريد الإلكتروني
                 </label>
             </div>
+
+          
+
             <div class="form-group">
-                <label asp-for="ConfirmationToken" class="control-label"></label>
-                <input asp-for="ConfirmationToken" class="form-control" />
-                <span asp-validation-for="ConfirmationToken" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
+                <label asp-for="Role" class="control-label">الدور:</label>
                 <input asp-for="Role" class="form-control" />
                 <span asp-validation-for="Role" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="form-group text-center">
+                <input type="submit" value="حفظ التعديلات" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-link">العودة إلى القائمة</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+
+    
+

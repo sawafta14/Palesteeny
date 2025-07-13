@@ -1,5 +1,6 @@
 ﻿@model Palesteeny_Project.Controllers.QusaViewModel
 
+
 @{
     var qusi = Model.Qusi;
     var images = qusi.Images.OrderBy(img => img.Order).ToList();
@@ -26,7 +27,7 @@
         </h3>
 
         <div style="display: flex; align-items: center; gap: 20px;">
-            <a asp-controller="Qusiss" asp-action="@qusi.Link" class="link-text">@qusi.Title</a>
+            <a asp-controller="Qusiss" asp-action="Qusa" asp-route-id="@qusi.Id class="link-text">@qusi.Title</a>
             <img src="~/images/Arrow.png" alt="سهم" style="width: 50px;" />
             <a asp-controller="Qusiss" asp-action="Qusis" class="link-text">قصص</a>
         </div>

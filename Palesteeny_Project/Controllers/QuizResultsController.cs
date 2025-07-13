@@ -25,7 +25,7 @@ namespace Palesteeny_Project.Controllers
        
         
         
-        ("عرض نتائج الطلاب", "Details", "QuizResults")
+        ("عرض نتائج الطلاب", "Index", "QuizResults")
     };
 
             return View(adminActions);

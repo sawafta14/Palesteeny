@@ -2,7 +2,71 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = null;
 }
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f9f1;
+        color: #333;
+        padding: 20px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73);
+        text-align: center;
+        margin-bottom: 25px;
+        text-shadow: 1px 1px 1px #9fd94f;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    hr {
+        border: 1.5px solid rgb(132, 232, 73);
+        width: 80px;
+        margin: 10px auto 30px;
+        border-radius: 5px;
+    }
+
+    dl.row {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        background: #e7f2d9;
+        border: 2px solid rgb(132, 232, 73);
+        border-radius: 10px;
+        padding: 20px 30px;
+        font-size: 1.1rem;
+    }
+
+    dt.col-sm-2 {
+        font-weight: 700;
+        color: rgb(86, 176, 36);
+        padding-top: 12px;
+    }
+
+    dd.col-sm-10 {
+        margin-bottom: 20px;
+        padding-top: 12px;
+    }
+
+    div > a {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.1rem;
+    }
+
+        div > a:hover {
+            text-decoration: underline;
+            color: #89c93a;
+        }
+</style>
 
 <h1>Details</h1>
 
@@ -10,45 +74,33 @@
     <h4>UserLesson</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserPal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserPal.Email)
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UserPal)</dt>
+        <dd class="col-sm-10">
+            @(Model.UserPal != null ? Model.UserPal.Email : "No Email")
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Lesson)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Lesson.LessonId)
+
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Lesson)</dt>
+        <dd class="col-sm-10">
+            @(Model.Lesson != null ? Model.Lesson.LessonId.ToString() : "لا توجد بيانات")
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IsCompleted)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsCompleted)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartTime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StartTime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EndTime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EndTime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BookmarkPage)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BookmarkPage)
-        </dd>
+
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.IsCompleted)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.IsCompleted)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.StartTime)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.StartTime)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.EndTime)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.EndTime)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.BookmarkPage)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.BookmarkPage)</dd>
     </dl>
 </div>
-<div>
+
+<div style="text-align:center;">
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

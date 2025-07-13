@@ -2,29 +2,89 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = null; // أو اضبطه حسب مشروعك
 }
 
-<h1>Details</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73);
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    dl.row {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgb(132 232 73 / 0.3);
+    }
+
+    dt.col-sm-2 {
+        font-weight: 700;
+        color: rgb(132, 232, 73);
+        float: right;
+        width: 25%;
+        padding: 8px 0;
+        text-align: right;
+    }
+
+    dd.col-sm-10 {
+        margin-right: 25%;
+        padding: 8px 0;
+        color: #444;
+        word-wrap: break-word;
+    }
+
+    div > a {
+        display: inline-block;
+        margin: 15px 10px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: rgb(132, 232, 73);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        div > a:hover {
+            color: #97d44d;
+            text-decoration: underline;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <div>
     <h4>Template</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Category)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Category)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.ImageUrl)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.ImageUrl)</dd>
     </dl>
 </div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">تعديل</a> |
+    <a asp-action="Index">العودة للقائمة</a>
 </div>

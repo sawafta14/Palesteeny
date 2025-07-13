@@ -41,8 +41,8 @@
                             }
                         }
 
-                        <a href="#" class="dropdown-item"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
+                        <a asp-controller="Help" asp-action="Help" class="dropdown-item"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
+                        <a  asp-controller="Help" asp-action="Help" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
 
                         @if (User?.Identity != null && User.Identity.IsAuthenticated)
                         {
@@ -134,14 +134,14 @@
 
                     </tr>
                     <tr>
-                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="PalMap">خريطتي</a></td>
-                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="Ketabi">كتابي</a></td>
-                        <td class="menu__item"><a class="menu__link" href="#">رسام</a></td>                        
+                        <td class="menu__item"><a class="menu__link" asp-controller="PalMap" asp-action="PalMap">خريطتي</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Ketabi" asp-action="Ketabi">كتابي</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Draw" asp-action="Draw">رسام</a></td>
                     </tr>
                     <tr>
-                        <td class="menu__item"><a class="menu__link" asp-controller="Home" asp-action="Qisas">قصص</a></td>
-                        <td class="menu__item"><a class="menu__link" href="#">العاب</a></td>
-                        <td class="menu__item"><a class="menu__link" href="#">اختبارات</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Qusiss" asp-action="Qusis">قصص</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Game" asp-action="Game">العاب</a></td>
+                        <td class="menu__item"><a class="menu__link" asp-controller="Quizs" asp-action="Categories">اختبارات</a></td>
                     </tr>
                     <tr>
                         <td class="menu__item"><a class="menu__link" href="#">مكتبتي</a></td>
@@ -150,7 +150,7 @@
                     </tr>
                     <tfoot>
                         <tr>
-                            <td class="menu__item footer-cell" colspan="3" ><a class="menu__link" href="#">تسجيل الدخول</a></td>
+                            <td class="menu__item footer-cell" colspan="3"><a class="menu__link" asp-controller="Account" asp-action="Login">تسجيل الدخول</a></td>
                         </tr>
                     </tfoot>
                 </table>

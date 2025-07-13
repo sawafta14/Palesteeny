@@ -2,43 +2,132 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = null; /* Standalone page */
 }
 
-<h1>Edit</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
-<h4>QuizOption</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="OptionText" class="control-label"></label>
-                <input asp-for="OptionText" class="form-control" />
-                <span asp-validation-for="OptionText" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsCorrect" /> @Html.DisplayNameFor(model => model.IsCorrect)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="QuizQuestionId" class="control-label"></label>
-                <select asp-for="QuizQuestionId" class="form-control" asp-items="ViewBag.QuizQuestionId"></select>
-                <span asp-validation-for="QuizQuestionId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    h1 {
+        color: rgb(132, 232, 73); /* Primary color */
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        color: rgb(113, 202, 63);
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+
+    .form-control {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .form-check-label {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    .form-check-input {
+        margin-top: 5px;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73); /* Primary color */
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(113, 202, 63);
+        }
+
+    .btn-link {
+        color: rgb(132, 232, 73);
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .btn-link:hover {
+            color: rgb(113, 202, 63);
+        }
+</style>
+
+<div class="container">
+    <h1>Edit Quiz Option</h1>
+    <h4>Edit the details of the selected Quiz Option</h4>
+    <hr />
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- Hidden field for Id -->
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Option Text Field -->
+        <div class="form-group">
+            <label asp-for="OptionText" class="control-label"></label>
+            <input asp-for="OptionText" class="form-control" />
+            <span asp-validation-for="OptionText" class="text-danger"></span>
+        </div>
+
+        <!-- Correct Option Checkbox -->
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="IsCorrect" /> @Html.DisplayNameFor(model => model.IsCorrect)
+            </label>
+        </div>
+
+        <!-- Dropdown for Quiz Question -->
+        <div class="form-group">
+            <label asp-for="QuizQuestionId" class="control-label"></label>
+            <select asp-for="QuizQuestionId" class="form-control" asp-items="ViewBag.QuizQuestionId"></select>
+            <span asp-validation-for="QuizQuestionId" class="text-danger"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <!-- Navigation -->
+    <div>
+        <a class="btn-link" asp-action="Index">Back to List</a>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

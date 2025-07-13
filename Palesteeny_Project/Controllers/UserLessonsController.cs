@@ -24,8 +24,8 @@ namespace Palesteeny_Project.Controllers
 
       
       
-        ("حذف تقدم طالب", "Delete", "UserLessons"),
-        ("عرض بيانات تقدم الطلاب", "Details", "UserLessons")
+        ("حذف تقدم طالب", "Index", "UserLessons"),
+        ("عرض بيانات تقدم الطلاب", "Index", "UserLessons")
     };
 
             return View(adminActions);

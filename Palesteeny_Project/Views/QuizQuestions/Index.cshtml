@@ -2,52 +2,102 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = null; /* Use null layout for standalone page */
 }
 
-<h1>Index</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.QuestionText)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Score)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuestionText)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    h1 {
+        color: rgb(132, 232, 73); /* Primary color */
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: rgb(132, 232, 73);
+            color: white;
+        }
+
+        .table td {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .table td a {
+                color: rgb(132, 232, 73);
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+                .table td a:hover {
+                    color: rgb(113, 202, 63);
+                }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        border-color: rgb(132, 232, 73);
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(113, 202, 63);
+            border-color: rgb(113, 202, 63);
+        }
+</style>
+
+<div class="container">
+    <h1>Quiz Questions</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.QuestionText)</th>
+                <th>@Html.DisplayNameFor(model => model.ImageUrl)</th>
+                <th>@Html.DisplayNameFor(model => model.Score)</th>
+                <th>@Html.DisplayNameFor(model => model.Category)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.QuestionText)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ImageUrl)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Score)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -12,6 +12,7 @@ namespace Palesteeny_Project.Models
 
         public DbSet<UserPal> UsersPal { get; set; } = null!;
         public DbSet<Ad> Ads { get; set; } = null!;
+        public DbSet<Game> Games { get; set; } = null!;
 
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Admin> Admins { get; set; } = null!;

@@ -34,16 +34,18 @@
         </div>
 
         <div class="tasa-item">
-            <a href="Games.html">
+            <a asp-action="Game" asp-controller="Game">
                 <img src="~/images/games.png" alt="العاب" class="tasa-image" />
             </a>
+            <form  asp-action="Game" asp-controller="Game" method="get">
             <button class="tasa-btn" style="font-family:'DG3asomi', sans-serif;">العاب</button>
+            </form>
         </div>
 
         <div class="tasa-item">
            
-            <a asp-action="Load_Quizs" asp-controller="Quizs"><img src="~/images/quiz.png" alt="اختبار" class="tasa-image" /></a>
-            <form asp-action="Load_Quizs" asp-controller="Quizs" method="get">
+            <a asp-action="Categories" asp-controller="Quizs"><img src="~/images/quiz.png" alt="اختبار" class="tasa-image" /></a>
+            <form asp-action="Categories" asp-controller="Quizs" method="get">
             <button class="tasa-btn" style="font-family:'DG3asomi', sans-serif;">اختبار</button>
         </form> 
         </div>

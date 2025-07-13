@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة اسئلة جديدة", "Create", "ExerciseQuestions"),
-        ("التعديل على بيانات التمارين ", "Edit", "ExerciseQuestions"),
-        ("حذف سؤال", "Delete", "ExerciseQuestions"),
-        ("عرض اسئلة التمارين", "Details", "ExerciseQuestions")
+        ("التعديل على بيانات التمارين ", "Index", "ExerciseQuestions"),
+        ("حذف سؤال", "Index", "ExerciseQuestions"),
+        ("عرض اسئلة التمارين", "Index", "ExerciseQuestions")
     };
 
             return View(adminActions);

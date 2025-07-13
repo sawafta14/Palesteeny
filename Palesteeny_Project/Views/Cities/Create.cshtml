@@ -2,72 +2,195 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null;
 }
 
 <h1>Create</h1>
 
 <h4>City</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="col-md-8 col-lg-6">
+        <form asp-action="Create" class="form-container">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Name Field -->
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control" placeholder="أدخل اسم المدينة" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
+            <!-- Name Meaning Field -->
             <div class="form-group">
                 <label asp-for="NameMeaning" class="control-label"></label>
-                <input asp-for="NameMeaning" class="form-control" />
+                <input asp-for="NameMeaning" class="form-control" placeholder="أدخل معنى الاسم" />
                 <span asp-validation-for="NameMeaning" class="text-danger"></span>
             </div>
+
+            <!-- History Field -->
             <div class="form-group">
                 <label asp-for="History" class="control-label"></label>
-                <input asp-for="History" class="form-control" />
+                <input asp-for="History" class="form-control" placeholder="أدخل تاريخ المدينة" />
                 <span asp-validation-for="History" class="text-danger"></span>
             </div>
+
+            <!-- Climate Field -->
             <div class="form-group">
                 <label asp-for="Climate" class="control-label"></label>
-                <input asp-for="Climate" class="form-control" />
+                <input asp-for="Climate" class="form-control" placeholder="أدخل المناخ" />
                 <span asp-validation-for="Climate" class="text-danger"></span>
             </div>
+
+            <!-- Food Field -->
             <div class="form-group">
                 <label asp-for="Food" class="control-label"></label>
-                <input asp-for="Food" class="form-control" />
+                <input asp-for="Food" class="form-control" placeholder="أدخل الأطعمة المحلية" />
                 <span asp-validation-for="Food" class="text-danger"></span>
             </div>
+
+            <!-- Image Name Meaning Field -->
             <div class="form-group">
                 <label asp-for="ImageNameMeaning" class="control-label"></label>
-                <input asp-for="ImageNameMeaning" class="form-control" />
+                <input asp-for="ImageNameMeaning" class="form-control" placeholder="أدخل صورة معنى الاسم" />
                 <span asp-validation-for="ImageNameMeaning" class="text-danger"></span>
             </div>
+
+            <!-- Image History Field -->
             <div class="form-group">
                 <label asp-for="ImageHistory" class="control-label"></label>
-                <input asp-for="ImageHistory" class="form-control" />
+                <input asp-for="ImageHistory" class="form-control" placeholder="أدخل صورة التاريخ" />
                 <span asp-validation-for="ImageHistory" class="text-danger"></span>
             </div>
+
+            <!-- Image Climate Field -->
             <div class="form-group">
                 <label asp-for="ImageClimate" class="control-label"></label>
-                <input asp-for="ImageClimate" class="form-control" />
+                <input asp-for="ImageClimate" class="form-control" placeholder="أدخل صورة المناخ" />
                 <span asp-validation-for="ImageClimate" class="text-danger"></span>
             </div>
+
+            <!-- Image Food Field -->
             <div class="form-group">
                 <label asp-for="ImageFood" class="control-label"></label>
-                <input asp-for="ImageFood" class="form-control" />
+                <input asp-for="ImageFood" class="form-control" placeholder="أدخل صورة الأطعمة" />
                 <span asp-validation-for="ImageFood" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <!-- Submit Button -->
+            <div class="form-group text-center">
+                <input type="submit" value="إنشاء" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<!-- Back to List Button -->
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-link">العودة إلى القائمة</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<style>
+    body {
+        background-color: #f4f7f6;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .container-fluid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .form-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: right;
+        width: 100%;
+    }
+
+    .form-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: rgb(132, 232, 73);
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-weight: 600;
+            color: rgb(75, 160, 30);
+            font-size: 16px;
+        }
+
+    .form-control {
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: rgb(132, 232, 73);
+            outline: none;
+            box-shadow: 0 0 5px rgba(132, 232, 73, 0.3);
+        }
+
+    .form-group .text-danger {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-weight: 600;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .btn-success {
+        background-color: rgb(132, 232, 73);
+        color: #fff;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: rgb(100, 190, 50);
+        }
+
+    .btn-link {
+        font-size: 16px;
+        color: rgb(132, 232, 73);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .btn-link:hover {
+            text-decoration: underline;
+            color: rgb(100, 190, 50);
+        }
+
+    .text-center {
+        text-align: center;
+    }
+</style>

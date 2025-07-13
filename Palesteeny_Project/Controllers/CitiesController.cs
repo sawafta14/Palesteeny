@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         
-        ("التعديل على بيانات المدن ", "Edit", "Cities"),
-        ("حذف بيانات مدينة", "Delete", "Cities"),
-        ("عرض بيانات المدن", "Details", "Cities")
+        ("التعديل على بيانات المدن ", "Index", "Cities"),
+        ("حذف بيانات مدينة", "Index", "Cities"),
+        ("عرض بيانات المدن", "Index", "Cities")
     };
 
             return View(adminActions);

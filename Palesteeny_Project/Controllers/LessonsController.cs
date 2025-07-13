@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة درس جديد", "Create", "Lessons"),
-        ("التعديل على بيانات الدروس ", "Edit", "Lessons"),
-        ("حذف درس", "Delete", "Lessons"),
-        ("عرض بيانات االدروس", "Details", "Lessons")
+        ("التعديل على بيانات الدروس ", "Index", "Lessons"),
+        ("حذف درس", "Index", "Lessons"),
+        ("عرض بيانات االدروس", "Index", "Lessons")
     };
 
             return View(adminActions);

@@ -25,7 +25,7 @@ namespace Palesteeny_Project.Controllers
         
        
         
-        ("عرض الاشارات المرجعية ", "Details", "StoryBookmarks")
+        ("عرض الاشارات المرجعية ", "Index", "StoryBookmarks")
     };
 
             return View(adminActions);

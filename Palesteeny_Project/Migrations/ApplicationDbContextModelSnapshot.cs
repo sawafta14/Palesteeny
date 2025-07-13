@@ -215,6 +215,28 @@ namespace Palesteeny_Project.Migrations
                     b.ToTable("FavoriteStories");
                 });
 
+            modelBuilder.Entity("Palesteeny_Project.Models.Game", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CoverImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GamePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Games");
+                });
+
             modelBuilder.Entity("Palesteeny_Project.Models.HelpQuestion", b =>
                 {
                     b.Property<int>("Id")

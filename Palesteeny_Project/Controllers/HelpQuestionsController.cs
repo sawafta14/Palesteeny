@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة سؤال مساعد جديد", "Create", "HelpQuestions"),
-        ("التعديل على بيانات الصفحة ", "Edit", "HelpQuestions"),
-        ("حذف سؤال", "Delete", "HelpQuestions"),
-        ("عرض بيانات الصفحة", "Details", "HelpQuestions")
+        ("التعديل على بيانات الصفحة ", "Index", "HelpQuestions"),
+        ("حذف سؤال", "Index", "HelpQuestions"),
+        ("عرض بيانات الصفحة", "Index", "HelpQuestions")
     };
 
             return View(adminActions);

@@ -2,9 +2,83 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = null;
+      <!-- لاي أوت فارغ -->
 }
 
-<h1>Edit</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        font-weight: 600;
+    }
+
+    input.form-control {
+        border: 1px solid #ddd;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73); /* اللون المتفق عليه */
+        border-color: rgb(132, 232, 73);
+        font-weight: 700;
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(97, 183, 54);
+            border-color: rgb(97, 183, 54);
+        }
+
+    .text-danger {
+        font-size: 0.9rem;
+        color: #e74c3c;
+    }
+
+    div > a {
+        display: inline-block;
+        margin-top: 15px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: rgb(132, 232, 73);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        div > a:hover {
+            color: #97d44d;
+            text-decoration: underline;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <h4>QusiImage</h4>
 <hr />
@@ -13,21 +87,25 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+
             <div class="form-group">
                 <label asp-for="QusiId" class="control-label"></label>
                 <select asp-for="QusiId" class="form-control" asp-items="ViewBag.QusiId"></select>
                 <span asp-validation-for="QusiId" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="ImageUrl" class="control-label"></label>
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Order" class="control-label"></label>
                 <input asp-for="Order" class="form-control" />
                 <span asp-validation-for="Order" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -40,5 +118,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

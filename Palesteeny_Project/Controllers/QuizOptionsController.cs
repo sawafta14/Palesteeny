@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة جواب جديد", "Create", "QuizOptions"),
-        ("التعديل الاجوبة ", "Edit", "QuizOptions"),
-        ("حذف جواب", "Delete", "QuizOptions"),
-        ("عرض الاجابات", "Details", "QuizOptions")
+        ("التعديل الاجوبة ", "Index", "QuizOptions"),
+        ("حذف جواب", "Index", "QuizOptions"),
+        ("عرض الاجابات", "Index", "QuizOptions")
     };
 
             return View(adminActions);

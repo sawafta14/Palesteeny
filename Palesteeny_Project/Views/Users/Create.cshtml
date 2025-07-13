@@ -5,58 +5,189 @@
     Layout = null;
 }
 
-<link rel="stylesheet" href="~/css/AdFormcre.css" />
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PasswordHash" class="control-label"></label>
-                <input asp-for="PasswordHash" class="form-control" />
-                <span asp-validation-for="PasswordHash" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="EmailConfirmed" /> @Html.DisplayNameFor(model => model.EmailConfirmed)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmationToken" class="control-label"></label>
-                <input asp-for="ConfirmationToken" class="form-control" />
-                <span asp-validation-for="ConfirmationToken" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
-                <span asp-validation-for="Role" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<link rel="stylesheet" href="~/css/UC.css" />
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        direction: rtl;
+    }
+
+    .form-container {
+        background: white;
+        padding: 30px 40px;
+        box-shadow: 0 4px 12px rgba(132, 232, 73, 0.3);
+        border-radius: 12px;
+        width: 400px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(56, 91, 25);
+        font-weight: 700;
+    }
+
+    form .form-group {
+        margin-bottom: 18px;
+    }
+
+    label.control-label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+        color: rgb(56, 91, 25);
+        font-size: 14px;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1.5px solid #a6d957;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: border-color 0.3s ease;
+    }
+
+        input.form-control:focus {
+            border-color: rgb(132, 232, 73);
+            outline: none;
+            box-shadow: 0 0 8px rgba(132, 232, 73, 0.5);
+        }
+
+    .text-danger {
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .form-check {
+        margin-bottom: 18px;
+    }
+
+    .form-check-label {
+        font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+        color: rgb(56, 91, 25);
+    }
+
+    .form-check-input {
+        margin-left: 6px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        accent-color: rgb(132, 232, 73);
+    }
+
+    .btn-primary {
+        width: 100%;
+        background-color: rgb(132, 232, 73);
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        color: #1a1a1a;
+        box-shadow: 0 4px 10px rgba(132, 232, 73, 0.4);
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(102, 182, 57);
+            box-shadow: 0 6px 14px rgba(102, 182, 57, 0.6);
+            color: #0d0d0d;
+        }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: rgb(132, 232, 73);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: rgb(102, 182, 57);
+            text-decoration: underline;
+        }
+</style>
+<hr />
+<div class="form-container">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2>إنشاء مستخدم جديد</h2>
+
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PasswordHash" class="control-label"></label>
+            <input asp-for="PasswordHash" class="form-control" type="password" />
+            <span asp-validation-for="PasswordHash" class="text-danger"></span>
+        </div>
+
+        <div class="form-group form-check">
+            <input class="form-check-input" asp-for="EmailConfirmed" />
+            <label class="form-check-label" for="EmailConfirmed">@Html.DisplayNameFor(model => model.EmailConfirmed)</label>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ConfirmationToken" class="control-label"></label>
+            <input asp-for="ConfirmationToken" class="form-control" />
+            <span asp-validation-for="ConfirmationToken" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Role" class="control-label"></label>
+            <input asp-for="Role" class="form-control" />
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="إنشاء" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

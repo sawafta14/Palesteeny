@@ -4,27 +4,102 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+@* إضافة تنسيق CSS احترافي *@
+<style>
+    body {
+        background-color: #f4f7fa; /* خلفية فاتحة */
+        color: #333; /* لون النص */
+    }
 
-<div>
-    <h4>FavoriteStory</h4>
+    h1 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه للعناوين */
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .table th, .table td {
+            padding: 1rem;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: rgb(132, 232, 73);
+            color: white;
+        }
+
+        .table td {
+            background-color: #f9f9f9;
+        }
+
+    .btn-link {
+        color: rgb(132, 232, 73);
+    }
+
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+
+    .action-links {
+        display: flex;
+        gap: 10px;
+    }
+
+    .back-link {
+        text-decoration: none;
+        color: rgb(132, 232, 73);
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    .control-label {
+        font-weight: bold;
+    }
+</style>
+
+<div class="container">
+    <h1>Favorite Story Details</h1>
+    <h4>Favorite Story</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.User)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Email)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class="col-sm-10">
+            @(Model.User != null ? Model.User.Email : "Email not available")
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Qusi)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Qusi.Title)
+        <dd class="col-sm-10">
+            @(Model.Qusi != null ? Model.Qusi.Title : "Title not available")
         </dd>
+
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+    <div class="action-links">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn-link">Edit</a> |
+        <a asp-action="Index" class="back-link">Back to List</a>
+    </div>
 </div>

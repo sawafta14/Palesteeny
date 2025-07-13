@@ -14,7 +14,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/Quizs.css" />
+    <link rel="stylesheet" href="~/css/Quizs1.css" />
+    <style>
+        /* إخفاء الراديو */
+        .option-radio {
+            display: none;
+        }
+
+        /* مظهر الزر */
+        .option-label {
+            display: inline-block;
+            background: white;
+            border: 2px solid #1A1F2C;
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 22px;
+            cursor: pointer;
+            width: 95%;
+            text-align: right;
+            transition: background 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+
+        /* عند الضغط */
+        .option-radio:checked + .option-label {
+            background-color: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -38,26 +67,34 @@
         {
             <div class="big-question-box">
                 <div class="question-content">
-                    <h2>:@question.QuestionText</h2>
+                    <h2>:اختر الاجابة الصحيحة</h2>
 
                     <div class="options">
                         @foreach (var option in question.Options)
                         {
-                            <label>
-                                <input type="radio" name="selectedOptionIds" value="@option.Id" required />
+                            <input type="radio"
+                                   id="opt_@option.Id"
+                                   class="option-radio"
+                                   name="answers[@question.Id]"
+                                   value="@option.Id" />
+
+                            <label for="opt_@option.Id" class="option-label">
                                 @option.OptionText
                             </label>
-                            <br />
                         }
                     </div>
+
+
                 </div>
 
                 @if (!string.IsNullOrEmpty(question.ImageUrl))
                 {
                     <div class="image-box">
                         <div class="image-wrapper">
-                            <img src="@question.ImageUrl" alt="صورة السؤال" class="bg-img" />
+                            <img src="~/images/greenRectangle.png" alt="خلفية خضراء" class="bg-img">
+                            <img src="~/images/@question.ImageUrl" alt="صورة السؤال" class="overlay-img" />
                         </div>
+                        <p>:@question.QuestionText</p>
                     </div>
                 }
             </div>

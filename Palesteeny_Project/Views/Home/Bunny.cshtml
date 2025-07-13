@@ -1,0 +1,138 @@
+﻿@model List<Palesteeny_Project.Models.QuizQuestion>
+
+@{
+    ViewData["Title"] = "اختبار";
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    string selectedCategory = ViewBag.SelectedCategory ?? "جغرافيا"; // التصنيف المختار من الكونترولر
+}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/Quizs1.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; gap: 20px; justify-content: flex-end;">
+        <a asp-controller="Quizs" asp-action="Load_Quizs" class="link-text">@ViewBag.SelectedCategory</a>
+        <img src="~/images/Arrow.png" alt="سهم" style="width: 50px;" />
+        <a asp-controller="Quizs" asp-action="Categories" class="link-text">إختبار</a>
+        <img src="~/images/Arrow.png" alt="سهم" style="width: 50px;" />
+        <a asp-controller="Home" asp-action="Tasali" class="link-text">تسالي</a>
+    </div>
+
+    <br />
+    <br />
+
+    <form method="post" asp-action="SubmitAnswers" asp-controller="Quizs">
+        <input type="hidden" name="page" value="@currentPage" />
+        <input type="hidden" name="category" value="@selectedCategory" />
+
+        @foreach (var question in Model)
+        {
+            <div class="big-question-box">
+                <div class="question-content">
+                    <h2>:اختر الاجابة الصحيحة</h2>
+
+                    <div class="options">
+                        @foreach (var option in question.Options)
+                        {
+                            <button type="button" class="option" data-option-id="@option.Id" data-question-id="@question.Id">
+                                @option.OptionText
+                            </button>
+                            <br />
+                        }
+
+                    </div>
+                </div>
+
+                @if (!string.IsNullOrEmpty(question.ImageUrl))
+                {
+                    <div class="image-box">
+                        <div class="image-wrapper">
+                            <img src="~/images/greenRectangle.png" alt="خلفية خضراء" class="bg-img">
+                            <img src="~/images/@question.ImageUrl" alt="صورة السؤال" class="overlay-img" />
+                        </div>
+                        <p>:@question.QuestionText</p>
+                    </div>
+                }
+
+                <!-- Hidden Input for storing selected option -->
+
+            </div>
+            <input type="hidden" name="selectedOptionIds_@question.Id" data-question-id="@question.Id" />
+            <br />
+        }
+
+        <div class="nav-buttons">
+            @if (currentPage > 1)
+            {
+                <a asp-action="Index" asp-route-page="@(currentPage - 1)" class="nav-btn">السابق</a>
+            }
+
+            @if (ViewBag.IsAuthenticated != null && (bool)ViewBag.IsAuthenticated)
+            {
+                <button type="submit" class="nav-btn">
+                    @(currentPage == totalPages ? "عرض النتيجة" : "التالي")
+                </button>
+            }
+            else
+            {
+                <div style="margin-top: 10px; text-align: center;">
+                    <p style="color: red; font-weight: bold;">
+                        يجب تسجيل الدخول لعرض نتيحتك في الاختبار .
+                    </p>
+                    <a href="@Url.Action("Register", "Account")"
+                       style="display: inline-block; background-color: red; color: white; padding: 10px 20px; border-radius: 15px; text-decoration: none; font-weight: bold; font-family: 'DG3asomy', sans-serif; transition: background-color 0.3s ease;">
+                        سجل الآن
+                    </a>
+                </div>
+            }
+        </div>
+
+    </form>
+
+    <script>
+        document.querySelectorAll('.option').forEach(button => {
+            button.addEventListener('click', function() {
+                var questionId = this.getAttribute('data-question-id');
+
+                // إزالة التحديد من جميع الأزرار الخاصة بهذا السؤال فقط
+                document.querySelectorAll(`.option[data-question-id='${questionId}']`).forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+
+                // إضافة التحديد للزر الذي تم النقر عليه
+                this.classList.add('selected');
+
+                // حفظ الخيار المحدد في hidden input
+                var optionId = this.getAttribute('data-option-id');
+
+                // العثور على العنصر المخفي الخاص بالسؤال
+                var input = document.querySelector(`input[name='selectedOptionIds_${questionId}']`);
+
+                // إذا لم يكن هناك input مخفي موجود للسؤال، أنشئ واحدًا
+                if (!input) {
+                    input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = `selectedOptionIds_${questionId}`; // تعديل الاسم ليكون مرتبطًا بالسؤال
+                    input.setAttribute('data-question-id', questionId);
+                    document.forms[0].appendChild(input);
+                }
+
+                // تأكد من تعيين القيمة بشكل صحيح
+                input.value = optionId;
+            });
+        });
+    </script>
+</body>
+
+</html>

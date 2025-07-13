@@ -7,10 +7,117 @@
 
 <link rel="stylesheet" href="~/css/AdFormcre.css" />
 
+<style>
+    /* تنسيق عام */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f9f3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        direction: rtl;
+    }
+
+    .container {
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 5px 15px rgba(132, 232, 73, 0.4);
+        padding: 30px 40px;
+        max-width: 500px;
+        width: 90%;
+    }
+
+    .details-box h1 {
+        text-align: center;
+        color: rgb(62, 135, 14);
+        margin-bottom: 10px;
+        font-weight: 800;
+        font-size: 28px;
+        letter-spacing: 1.1px;
+    }
+
+    .details-box h4 {
+        text-align: center;
+        color: rgb(110, 170, 40);
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    hr {
+        border: none;
+        height: 1.8px;
+        background: rgb(132, 232, 73);
+        margin-bottom: 25px;
+        border-radius: 5px;
+        width: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 12px 18px;
+        color: #444;
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 30px;
+    }
+
+    dt {
+        font-weight: 700;
+        color: rgb(62, 135, 14);
+        text-align: left;
+        user-select: none;
+    }
+
+    dd {
+        margin: 0;
+        background: #ecf7d9;
+        padding: 8px 14px;
+        border-radius: 8px;
+        word-break: break-word;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    input[type="submit"].btn-back,
+    a.btn-back {
+        background-color: rgb(132, 232, 73);
+        color: #1a1a1a;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        user-select: none;
+        box-shadow: 0 4px 10px rgba(132, 232, 73, 0.5);
+        display: inline-block;
+    }
+
+        input[type="submit"].btn-back:hover,
+        a.btn-back:hover {
+            background-color: rgb(102, 182, 57);
+            box-shadow: 0 6px 14px rgba(102, 182, 57, 0.7);
+            color: #111;
+        }
+</style>
+<hr />
 <div class="container">
     <div class="details-box">
         <h1>حذف مستخدم</h1>
-        <h4>User</h4>
+        <h4>تفاصيل المستخدم</h4>
         <hr />
         <dl>
             <dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
@@ -35,7 +142,7 @@
             <dd>@Html.DisplayFor(model => model.Role)</dd>
         </dl>
 
-        <form asp-action="Delete">
+        <form asp-action="Delete" method="post">
             <input type="hidden" asp-for="Id" />
             <input type="submit" value="حذف" class="btn-back" />
             <a asp-action="Index" class="btn-back">رجوع للقائمة</a>

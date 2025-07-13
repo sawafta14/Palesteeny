@@ -2,81 +2,250 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null;
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f7f7;
+        color: #4e5b31;
+        direction: rtl;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #d9f7b4, #a8e27a);
+    }
 
-<h4>UserPal</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Age" class="control-label"></label>
-                <input asp-for="Age" class="form-control" />
-                <span asp-validation-for="Age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImagePath" class="control-label"></label>
-                <input asp-for="ImagePath" class="form-control" />
-                <span asp-validation-for="ImagePath" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SemesterId" class="control-label"></label>
-                <select asp-for="SemesterId" class ="form-control" asp-items="ViewBag.SemesterId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PasswordHash" class="control-label"></label>
-                <input asp-for="PasswordHash" class="form-control" />
-                <span asp-validation-for="PasswordHash" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="EmailConfirmed" /> @Html.DisplayNameFor(model => model.EmailConfirmed)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmationToken" class="control-label"></label>
-                <input asp-for="ConfirmationToken" class="form-control" />
-                <span asp-validation-for="ConfirmationToken" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
-                <span asp-validation-for="Role" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    .create-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(132, 232, 73, 0.2);
+        width: 450px;
+        padding: 40px;
+        transition: box-shadow 0.3s ease-in-out;
+        border: 1px solid #e0e0e0;
+    }
+
+        .create-container:hover {
+            box-shadow: 0 15px 35px rgba(132, 232, 73, 0.3);
+        }
+
+    h1, h4 {
+        text-align: center;
+        font-weight: bold;
+        color: #68b24f;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+        letter-spacing: 1.5px;
+        user-select: none;
+    }
+
+    h4 {
+        font-size: 24px;
+        color: #8fbf68;
+        font-weight: 600;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: #84e849;
+        border-radius: 6px;
+        width: 90px;
+        margin: 0 auto 30px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    label.control-label {
+        font-weight: bold;
+        color: #4e5b31;
+        margin-bottom: 8px;
+        user-select: none;
+    }
+
+    input.form-control,
+    select.form-control {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid #84e849;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        outline: none;
+        background-color: #f9fef6;
+    }
+
+        input.form-control:focus,
+        select.form-control:focus {
+            border-color: #68b24f;
+            box-shadow: 0 0 8px rgba(68, 178, 95, 0.7);
+        }
+
+    .text-danger {
+        font-size: 13px;
+        margin-top: 4px;
+        color: #d32f2f;
+        font-weight: 600;
+    }
+
+    .form-check {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .form-check-input {
+        margin-left: 10px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn-primary {
+        background-color: #84e849;
+        border: none;
+        color: #1a1a1a;
+        font-weight: bold;
+        padding: 14px;
+        border-radius: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 6px 14px rgba(132, 232, 73, 0.4);
+        transition: all 0.3s ease-in-out;
+        user-select: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #68b24f;
+            box-shadow: 0 8px 20px rgba(102, 178, 87, 0.6);
+        }
+
+    div.back-link {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        div.back-link a {
+            color: #84e849;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+            user-select: none;
+        }
+
+            div.back-link a:hover {
+                color: #68b24f;
+                text-decoration: underline;
+            }
+
+</style>
+
+
+<div class="create-container">
+    <h1>إنشاء حساب</h1>
+    <hr />
+    <hr />
+    <hr />
+      <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Gender" class="control-label">الجنس</label>
+            <input asp-for="Gender" class="form-control" value="" />
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Age" class="control-label">العمر</label>
+            <input asp-for="Age" class="form-control" value="" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ImagePath" class="control-label">رابط الصورة</label>
+            <input asp-for="ImagePath" class="form-control" value="" />
+            <span asp-validation-for="ImagePath" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SemesterId" class="control-label">الفصل الدراسي</label>
+            <select asp-for="SemesterId" class="form-control" asp-items="ViewBag.SemesterId">
+                <option value="">-- اختر الفصل الدراسي --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label">الاسم الأول</label>
+            <input asp-for="FirstName" class="form-control" value="" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label">الاسم الأخير</label>
+            <input asp-for="LastName" class="form-control" value="" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">البريد الإلكتروني</label>
+            <input asp-for="Email" class="form-control" value="" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PasswordHash" class="control-label">كلمة المرور</label>
+            <input asp-for="PasswordHash" class="form-control" value="" />
+            <span asp-validation-for="PasswordHash" class="text-danger"></span>
+        </div>
+
+        <div class="form-group form-check">
+            <input class="form-check-input" asp-for="EmailConfirmed" />
+            <label class="form-check-label">@Html.DisplayNameFor(model => model.EmailConfirmed)</label>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ConfirmationToken" class="control-label">رمز التأكيد</label>
+            <input asp-for="ConfirmationToken" class="form-control" value="" />
+            <span asp-validation-for="ConfirmationToken" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Role" class="control-label">الدور</label>
+            <input asp-for="Role" class="form-control" value="" />
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="إنشاء" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <div class="back-link">
+        <a asp-action="Index">العودة للقائمة</a>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

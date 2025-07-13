@@ -2,94 +2,161 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h1>Index</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9fff5;
+        color: #333;
+        direction: rtl;
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 0 15px;
+        user-select: none;
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: 900;
+        font-size: 32px;
+        color: rgb(132, 232, 73);
+        margin-bottom: 25px;
+        user-select: text;
+    }
+
+    p a {
+        background-color: rgb(132, 232, 73);
+        color: #222;
+        font-weight: 700;
+        padding: 8px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        user-select: none;
+        transition: background-color 0.3s ease;
+    }
+
+        p a:hover {
+            background-color: rgb(100, 190, 50);
+            color: #111;
+        }
+
+    table.table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 0 12px rgb(132 232 73 / 0.3);
+        border-radius: 8px;
+        overflow: hidden;
+        user-select: text;
+    }
+
+        table.table thead {
+            background-color: rgb(132, 232, 73);
+            color: #222;
+        }
+
+            table.table thead th {
+                padding: 12px 15px;
+                font-weight: 700;
+                font-size: 16px;
+                border-bottom: 2px solid #b6ddb0;
+                text-align: center;
+                user-select: none;
+            }
+
+        table.table tbody tr {
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+        }
+
+            table.table tbody tr:nth-child(even) {
+                background-color: #f5fef4;
+            }
+
+            table.table tbody tr:hover {
+                background-color: rgb(220, 255, 180);
+            }
+
+        table.table tbody td {
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #444;
+            vertical-align: middle;
+            user-select: text;
+        }
+
+            table.table tbody td a {
+                color: rgb(75, 160, 30);
+                font-weight: 600;
+                text-decoration: none;
+                margin: 0 6px;
+                user-select: none;
+            }
+
+                table.table tbody td a:hover {
+                    text-decoration: underline;
+                    color: rgb(100, 190, 50);
+                }
+
+            table.table tbody td:last-child {
+                text-align: left;
+                padding-right: 20px;
+            }
+
+            table.table tbody td a {
+                padding: 8px 12px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                table.table tbody td a:hover {
+                    background-color: rgba(132, 232, 73, 0.1);
+                }
+
+</style>
+
+<h1>قائمة المستخدمين</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">إضافة جديد</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Age)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagePath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Semester)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PasswordHash)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailConfirmed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ConfirmationToken)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Role)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.First().Gender)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Age)</th>
+            <th>@Html.DisplayNameFor(model => model.First().ImagePath)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Semester)</th>
+            <th>@Html.DisplayNameFor(model => model.First().FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.First().LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Email)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Role)</th>
+            <th>العمليات</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagePath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Semester.SemesterId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PasswordHash)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailConfirmed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConfirmationToken)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Role)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                <td>@Html.DisplayFor(modelItem => item.ImagePath)</td>
+                <td>@(item.Semester != null ? item.Semester.SemesterId.ToString() : "غير متوفر")</td>
+
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+         
+                <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">تعديل</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">تفاصيل</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" style="color:#d9534f;">حذف</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

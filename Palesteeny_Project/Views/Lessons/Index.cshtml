@@ -2,52 +2,110 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = null; /* لتحديد الصفحة كصفحة مستقلة */
 }
 
-<h1>Index</h1>
+@* إضافة تنسيق CSS احترافي *@
+<style>
+    body {
+        background-color: #f4f7fa; /* خلفية فاتحة */
+        color: #333; /* لون النص */
+        font-family: 'Arial', sans-serif;
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.LessonName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartPage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VideoUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LessonName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartPage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VideoUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Book.BookId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.LessonId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LessonId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LessonId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    h1, h3, h4 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه للعناوين */
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+        .table th, .table td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        border-color: rgb(132, 232, 73);
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(100, 200, 50);
+            border-color: rgb(100, 200, 50);
+        }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .back-link {
+        text-decoration: none;
+        color: rgb(132, 232, 73);
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    .table a {
+        color: rgb(132, 232, 73);
+        text-decoration: none;
+    }
+
+        .table a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="container">
+    <h1>Lesson List</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.LessonName)</th>
+                <th>@Html.DisplayNameFor(model => model.StartPage)</th>
+                <th>@Html.DisplayNameFor(model => model.VideoUrl)</th>
+                <th>@Html.DisplayNameFor(model => model.Book)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.LessonName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartPage)</td>
+                    <td>@Html.DisplayFor(modelItem => item.VideoUrl)</td>
+                    <td>
+                        @(item.Book != null ? item.Book.BookId.ToString() : "غير متوفر")
+                    </td>
+
+
+                    <td>
+                        <a class="btn btn-link" asp-action="Edit" asp-route-id="@item.LessonId">Edit</a> |
+                        <a class="btn btn-link" asp-action="Details" asp-route-id="@item.LessonId">Details</a> |
+                        <a class="btn btn-link" asp-action="Delete" asp-route-id="@item.LessonId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

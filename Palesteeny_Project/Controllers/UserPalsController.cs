@@ -23,9 +23,9 @@ namespace Palesteeny_Project.Controllers
     {
 
         ("إضافة طالب جديد", "Create", "UserPals"),
-        ("التعديل على بيانات الطلاب ", "Edit", "UserPals"),
-        ("حذف طالب", "Delete", "UserPals"),
-        ("عرض بيانات الطلاب", "Details", "UserPals")
+        ("التعديل على بيانات الطلاب ", "Index", "UserPals"),
+        ("حذف طالب", "Index", "UserPals"),
+        ("عرض بيانات الطلاب", "Index", "UserPals")
     };
 
             return View(adminActions);

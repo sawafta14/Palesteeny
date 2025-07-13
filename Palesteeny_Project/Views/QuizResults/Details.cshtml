@@ -2,41 +2,136 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = null; // تعيين الـ Layout إلى null إذا كنت تريد صفحة مستقلة
 }
 
-<h1>Details</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
 
-<div>
+    h1 {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: rgb(132, 232, 73);
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 6px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            color: rgb(132, 232, 73);
+            font-weight: bold;
+        }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        border-color: rgb(132, 232, 73);
+        color: white;
+        font-weight: bold;
+    }
+
+        .btn-primary:hover {
+            background-color: #97d44d;
+            border-color: #97d44d;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+    }
+
+        .back-link:hover {
+            color: #97d44d;
+            text-decoration: underline;
+        }
+
+    .dl-row {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgb(132 232 73 / 0.3);
+    }
+
+        .dl-row dt, .dl-row dd {
+            margin-bottom: 15px;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="dl-row">
     <h4>QuizResult</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.User)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Email)
+        <dd class="col-sm-10">
+            @Model.User?.Email ?? "No email available"
         </dd>
-        <dt class = "col-sm-2">
+
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Category)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TotalScore)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TotalScore)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TakenAt)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TakenAt)
         </dd>
     </dl>
 </div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="back-link" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a class="back-link" asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

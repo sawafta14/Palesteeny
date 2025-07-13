@@ -2,9 +2,119 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null; // لو حابب تستخدم لاي آوت فارغ، غيرها حسب الحاجة
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        margin: 30px;
+    }
+
+    h1 {
+        color: rgb(132, 232, 73);
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #bbb;
+    }
+
+    h4 {
+        color: #444;
+        margin-bottom: 20px;
+        border-bottom: 2px solid rgb(132, 232, 73);
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-md-4 {
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgb(132 232 73 / 0.3);
+        width: 100%;
+        max-width: 450px;
+    }
+
+    form .form-group {
+        margin-bottom: 18px;
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 6px;
+        color: rgb(132, 232, 73);
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1.5px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+
+        input.form-control:focus {
+            border-color: rgb(132, 232, 73);
+            outline: none;
+            box-shadow: 0 0 8px rgb(132, 232, 73 / 0.5);
+        }
+
+    span.text-danger {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        margin-top: 4px;
+        display: block;
+    }
+
+    input[type="submit"] {
+        background-color: rgb(132, 232, 73);
+        color: #fff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 8px rgb(132 232 73 / 0.4);
+    }
+
+        input[type="submit"]:hover {
+            background-color: #97d44d;
+        }
+
+    div a {
+        display: inline-block;
+        margin-top: 25px;
+        color: rgb(132, 232, 73);
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        width: 100%;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        transition: color 0.3s ease;
+    }
+
+        div a:hover {
+            color: #6cb224;
+            text-decoration: underline;
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
 
 <h4>Template</h4>
 <hr />
@@ -13,17 +123,17 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
+                <label asp-for="Category"></label>
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
+                <label asp-for="ImageUrl"></label>
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" />
             </div>
         </form>
     </div>
@@ -34,5 +144,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

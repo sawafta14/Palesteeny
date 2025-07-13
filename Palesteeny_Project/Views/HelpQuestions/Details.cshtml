@@ -2,29 +2,100 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = null; /* تعيين الصفحة كصفحة مستقلة */
 }
 
-<h1>Details</h1>
+@* إضافة تنسيق CSS احترافي *@
+<style>
+    body {
+        background-color: #f4f7fa; /* خلفية فاتحة */
+        color: #333; /* لون النص */
+    }
 
-<div>
-    <h4>HelpQuestion</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Question)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Question)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Answer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Answer)
-        </dd>
-    </dl>
+    h1, h4 {
+        color: rgb(132, 232, 73); /* اللون المتفق عليه للعناوين */
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        border-color: rgb(132, 232, 73);
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(104, 188, 59);
+            border-color: rgb(104, 188, 59);
+        }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+        color: red;
+    }
+
+    .back-link {
+        text-decoration: none;
+        color: rgb(132, 232, 73);
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    .row dl dt {
+        font-weight: bold;
+        color: rgb(132, 232, 73);
+    }
+
+    .row dl dd {
+        margin-bottom: 1rem;
+    }
+</style>
+
+<div class="container">
+    <h1>Details of Help Question</h1>
+    <div>
+        <h4>Help Question</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Question)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Question)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Answer)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Answer)
+            </dd>
+        </dl>
+    </div>
+
+    <div>
+        <a class="back-link" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+        <a class="back-link" asp-action="Index">Back to List</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
