@@ -4,7 +4,7 @@
     {
         public string? Base64Image { get; set; }
         public int UserPalId { get; set; }
-        public string? Mode { get; set; } // "free" أو "template"
+        public string? Mode { get; set; } 
         public int? TemplateId { get; set; }
         public string? Category { get; set; }
         public string? BrushType { get; set; }

@@ -14,7 +14,7 @@ namespace Palesteeny_Project.Controllers
             _context = context;
         }
 
-        // عرض أي مدينة حسب ID
+       
         [HttpGet]
         public async Task<IActionResult> City(int id)
         {
@@ -23,7 +23,7 @@ namespace Palesteeny_Project.Controllers
             return View("City", City);
         }
 
-        // خريطة فلسطين
+   
         public IActionResult PalMap() => View();
     }
 }

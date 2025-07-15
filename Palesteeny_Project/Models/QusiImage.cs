@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public int QusId { get; set; }
         public string ImageUrl { get; set; } = "";
-        public int Order { get; set; }  // ترتيب الصورة في العرض
+        public int Order { get; set; }  
 
         public Qusi? Qusi { get; set; }
     }

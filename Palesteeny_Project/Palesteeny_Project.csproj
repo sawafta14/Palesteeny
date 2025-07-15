@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\templates\maps\" />
+    <Folder Include="wwwroot\images\templates\places\" />
+    <Folder Include="wwwroot\images\templates\randoms\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 

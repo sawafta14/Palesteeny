@@ -12,7 +12,7 @@ namespace Palesteeny_Project.Models
 
         public string? ImageUrl { get; set; }
 
-        public string? Mode { get; set; }  // "free" أو "template"
+        public string? Mode { get; set; }  
 
 
         public int? TemplateId { get; set; }
@@ -20,10 +20,10 @@ namespace Palesteeny_Project.Models
         [ForeignKey("TemplateId")]
         public Template? Template { get; set; }
 
-        // ✅ جديد: نوع الفرشاة
+        
         public string? BrushType { get; set; }
 
-        // ✅ جديد: اللون المستخدم
+       
         public string? Color { get; set; }
     }
 }

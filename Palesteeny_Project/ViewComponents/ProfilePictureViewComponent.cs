@@ -19,7 +19,7 @@ namespace Palesteeny_Project.ViewComponents
             var claimsPrincipal = User as ClaimsPrincipal;
             string? userEmail = claimsPrincipal?.FindFirst(ClaimTypes.Email)?.Value;
 
-            string imagePath = "~/images/profileDef.png"; // default image
+            string imagePath = "~/images/profileDef.png"; 
 
             if (!string.IsNullOrEmpty(userEmail))
             {

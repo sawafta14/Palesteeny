@@ -32,7 +32,7 @@ namespace Palesteeny_Project.Models
         public bool EmailConfirmed { get; set; } = false;
         public string? ConfirmationToken { get; set; }
 
-        // تمييز الدور (optional)
+        
         public string Role { get; set; } = "UserPal";
     }
 }

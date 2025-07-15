@@ -22,7 +22,7 @@ namespace Palesteeny_Project.Controllers
             _emailSender = emailSender;
         }
 
-        // GET: عرض صفحة التسجيل
+        
         [HttpGet]
         public async Task<IActionResult> Register()
         {
@@ -39,7 +39,7 @@ namespace Palesteeny_Project.Controllers
         }
 
 
-        // POST: استقبال بيانات التسجيل
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
@@ -86,7 +86,7 @@ namespace Palesteeny_Project.Controllers
             return RedirectToAction("ConfirmEmailRequest");
         }
 
-        // GET: تأكيد البريد الإلكتروني من الرابط
+      
         [HttpGet]
         public async Task<IActionResult> ConfirmEmail(string email, string token)
         {
@@ -110,14 +110,14 @@ namespace Palesteeny_Project.Controllers
             return View("Login");
         }
 
-        // GET: عرض نموذج لإعادة إرسال رابط التأكيد
+      
         [HttpGet]
         public IActionResult ConfirmEmailRequest()
         {
             return View();
         }
 
-        // POST: إرسال رابط تأكيد جديد إلى البريد
+    
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmEmailRequest(VerifyEmailViewModel model)
@@ -138,7 +138,7 @@ namespace Palesteeny_Project.Controllers
                 return RedirectToAction("Login");
             }
 
-            // إعادة توليد رمز التأكيد (اختياري)
+      
             user.ConfirmationToken = Guid.NewGuid().ToString();
             await _context.SaveChangesAsync();
 
@@ -156,14 +156,14 @@ namespace Palesteeny_Project.Controllers
             return RedirectToAction("Login");
         }
 
-        // GET: صفحة تسجيل الدخول
+       
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        // POST: تسجيل الدخول
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -200,7 +200,7 @@ namespace Palesteeny_Project.Controllers
     new Claim(ClaimTypes.Email, user.Email),
     new Claim("Role", user.Role),
 
-    new Claim("Grade", user.Semester?.GradeName ?? "Unknown"), // إذا حذفت Grade من user
+    new Claim("Grade", user.Semester?.GradeName ?? "Unknown"),
     new Claim("Gender", user.Gender)
 
 
@@ -231,7 +231,7 @@ namespace Palesteeny_Project.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // POST: تسجيل الخروج
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -242,7 +242,7 @@ namespace Palesteeny_Project.Controllers
             return RedirectToAction("Login");
         }
 
-        // GET: عرض صفحة تغيير كلمة المرور
+     
         [HttpGet]
         public IActionResult ChangePassword()
         {
@@ -251,7 +251,6 @@ namespace Palesteeny_Project.Controllers
             return View();
         }
 
-        // POST: استقبال تغيير كلمة المرور
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
@@ -271,7 +270,7 @@ namespace Palesteeny_Project.Controllers
 
             await _context.SaveChangesAsync();
 
-            // بعد تغيير كلمة المرور، ننتقل إلى صفحة تأكيد البريد
+          
             return RedirectToAction("ConfirmEmailRequest");
         }
 

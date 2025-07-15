@@ -15,6 +15,6 @@
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
 
-        public int? BookmarkPage { get; set; } // صفحة الوصول الحالية داخل الدرس
+        public int? BookmarkPage { get; set; } 
     }
 }

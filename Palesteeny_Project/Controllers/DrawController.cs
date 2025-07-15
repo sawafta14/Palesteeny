@@ -17,20 +17,20 @@ namespace Palesteeny_Project.Controllers
             _env = env;
         }
 
-        // استخدم async هنا لتحسين الأداء
+       
        public IActionResult Draw()
 {
             var categories = _context.Templates
               .Select(t => t.Category)
-              .Where(c => c != null)         // تأكد من إزالة null
+              .Where(c => c != null)       
               .Distinct()
-              .Cast<string>()                // نحول من string? إلى string
+              .Cast<string>()                
               .ToList();
 
             var userId = HttpContext.Session.GetInt32("UserPalId");
             if (userId == null)
             {
-                // إذا لم يكن هناك مستخدم مسجل دخول، يمكن إعادة توجيه المستخدم إلى صفحة تسجيل الدخول.
+            
                 return RedirectToAction("Login", "Account");
             }
             ViewBag.UserPalId = userId;

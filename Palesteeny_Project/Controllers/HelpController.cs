@@ -18,14 +18,14 @@ namespace Palesteeny_Project.Controllers
             _emailSender = emailSender;
         }
 
-        // عرض الأسئلة من قاعدة البيانات
+     
         public IActionResult Help()
         {
             var questions = _context.HelpQuestions.ToList();
             return View(questions);
         }
 
-        // إرسال الملاحظات عبر البريد الإلكتروني
+       
         [HttpPost]
         public async Task<IActionResult> SendFeedback([FromBody] FeedbackViewModel model)
         {

@@ -25,7 +25,7 @@ namespace Palesteeny_Project.Models
         public List<UserLesson> UserLessons { get; set; } = new();
 
 
-        // ✅ علاقات جديدة
+   
         public List<FavoriteStory> FavoriteStories { get; set; } = new();
         public List<StoryBookmark> StoryBookmarks { get; set; } = new();
         public List<Drawing> Drawings { get; set; } = new();

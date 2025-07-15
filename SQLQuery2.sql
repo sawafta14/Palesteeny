@@ -1,1 +1,1 @@
-﻿SELECT Id FROM Qusis WHERE Id = 10;
+﻿DBCC CHECKIDENT ('Templates', RESEED, 0);

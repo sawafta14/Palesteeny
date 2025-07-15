@@ -244,7 +244,7 @@
 
               undoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
               if (undoStack.length > 20) undoStack.shift();
-              states[currentMode].redoStack = []; // نفضّي التراجع الأمامي
+              states[currentMode].redoStack = []; 
             }
 
                 function undo() {
@@ -329,10 +329,10 @@
                 if (currentMode === "template") {
                   document.getElementById("templateContainer").style.display = "block";
                   if (templateImage.src && templateImage.src !== window.location.href) {
-                    // لو الصورة موجودة وغير فارغة، نظهرها
+            
                     templateImage.style.display = "block";
                   } else {
-                    // لو ما فيه صورة، نخليها مخفية
+                    
                     templateImage.style.display = "none";
                   }
                 } else {
@@ -355,29 +355,28 @@
               const max = slider.max;
               const val = slider.value;
 
-              // Calculate percent (0 to 100)
+              
               const percent = ((val - min) / (max - min)) * 100;
 
-              // Because slider is rotated 90deg, fill direction is 'to left'
-              // We adjust fill stop exactly at percent%
+           
               slider.style.background = `linear-gradient(to left, #4caf50 0%, #4caf50 ${percent}%, #c8e6c9 ${percent}%, #c8e6c9 100%)`;
             }
 
             slider.addEventListener('input', () => {
               updateSlider();
-              // also update your lineWidth or other logic
+          
             });
 
-            updateSlider(); // initial fill
+            updateSlider(); 
 
 
 
-                // خيارات القوالب
+                
                        async function loadCategories() {
           const response = await fetch('/Draw/GetCategories');
           const data = await response.json();
           const categoryView = document.getElementById("categoryView");
-          categoryView.innerHTML = ""; // نحذف الموجود حاليًا
+          categoryView.innerHTML = ""; 
 
           data.forEach(cat => {
             const btn = document.createElement("button");
@@ -416,7 +415,7 @@
           document.getElementById("categoryView").style.display = "block";
         });
 
-        // تحميل التصنيفات عند فتح الصفحة
+       
         window.addEventListener("load", loadCategories);
 
                 const categoryView = document.getElementById("categoryView");
@@ -438,7 +437,7 @@
               img.addEventListener("click", () => {
                 const templateImage = document.getElementById("templateImage");
                 templateImage.src = img.src;
-                templateImage.style.display = "block";  // لما يختار صورة نعرضها
+                templateImage.style.display = "block";  
               });
             });
 
@@ -454,7 +453,7 @@
                   categoryView.style.display = "block";
                 });
 
-                // تفعيل قلم عادي كبداية
+                
                 setBrush("normal", document.getElementById("pencilBtn"));
 
 
@@ -466,14 +465,13 @@
               tempCanvas.width = canvas.width;
               tempCanvas.height = canvas.height;
 
-              // Fill with white background
               tempCtx.fillStyle = "#ffffff";
               tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
 
-              // Draw the current canvas on top
+             
               tempCtx.drawImage(canvas, 0, 0);
 
-              // Save
+           
               const link = document.createElement("a");
               link.download = "my_drawing.png";
               link.href = tempCanvas.toDataURL("image/png");
@@ -483,12 +481,12 @@
              async function shareDrawing() {
             const userPalId = document.getElementById("userPalId").value;
 
-            // ✅ تحقق هل المستخدم مسجل دخول
+            
             if (!userPalId || isNaN(userPalId)) {
                 if (confirm("🔒 يجب تسجيل الدخول لمشاركة رسمة.\nهل تريد الانتقال لصفحة التسجيل؟")) {
-                    window.location.href = "/Account/Login"; // 🡸 غيري الرابط حسب صفحة الدخول عندك
+                    window.location.href = "/Account/Login"; 
                 }
-                return; // ما نكمل إرسال
+                return;
             }
 
             const imageData = canvas.toDataURL("image/png");
@@ -515,9 +513,9 @@
         }
 
 
-        // ستحتاج دالتين للمساعدة على استخراج ID القالب والفئة من الرابط أو من الخصائص
+        
         function extractTemplateId() {
-          // استخدم اسم الصورة أو رابطها لاستخراج رقم أو اسم مناسب إن كنت تخزنه عند الإدخال
+         
           const src = document.getElementById("templateImage").src;
           const idMatch = src.match(/\/(\d+)\.(png|jpg|jpeg|svg)$/);
           return idMatch ? parseInt(idMatch[1]) : null;
@@ -529,7 +527,7 @@
         }
 
 
-            // تحويل base64 إلى Blob
+           
             function dataURLtoBlob(dataurl) {
               const arr = dataurl.split(",");
               const mime = arr[0].match(/:(.*?);/)[1];
@@ -540,7 +538,7 @@
               return new Blob([u8arr], { type: mime });
             }
 
-            // تفعيل الزر
+            
             document.querySelector(".share-drawing").addEventListener("click", shareDrawing);
 
 

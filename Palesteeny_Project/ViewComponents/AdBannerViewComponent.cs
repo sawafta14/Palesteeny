@@ -19,7 +19,7 @@ namespace Palesteeny_Project.ViewComponents
                 .OrderByDescending(a => a.CreatedAt)
                 .FirstOrDefault();
 
-            return View("Default", ad); // Views/Shared/Components/AdBanner/Default.cshtml
+            return View("Default", ad); 
         }
     }
 }

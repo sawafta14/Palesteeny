@@ -15,6 +15,6 @@ namespace Palesteeny_Project.Models
         [ForeignKey("QusId")]
         public Qusi? Qusi { get; set; } = null!;
 
-        public int LastImageIndex { get; set; }  // رقم الصورة اللي وقف عندها
+        public int LastImageIndex { get; set; }  
     }
 }

@@ -4,8 +4,8 @@
     {
 
         public int Id { get; set; }
-        public string? Category { get; set; }  // خرائط - معالم - عشوائيات
-        public string? ImageUrl { get; set; }  // مسار صورة القالب أو URL
+        public string? Category { get; set; }  
+        public string? ImageUrl { get; set; }  
         public virtual ICollection<Drawing> Drawings { get; set; } = new List<Drawing>();
     }
 }

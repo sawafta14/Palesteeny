@@ -6,7 +6,7 @@
     var images = qusi.Images.OrderBy(img => img.Order).ToList();
     var userId = Model.UserId;
     var isFavorite = Model.IsFavorite;
-    var bookmarkOrder = Model.BookmarkOrder; // رقم الصورة الأخيرة المفعلة بالبوك مارك
+    var bookmarkOrder = Model.BookmarkOrder; 
 }
 
 <!DOCTYPE html>
@@ -110,7 +110,7 @@
             const bookmarkBtn = document.getElementById('bookmarkBtn');
             const toast = document.getElementById('toast');
 
-            // تحويل userId من int? إلى string بأمان
+        
             const userId = '@(userId.HasValue ? userId.Value.ToString() : "")';
             const isUserLoggedIn = userId !== "";
 
@@ -228,7 +228,7 @@
                     });
             });
 
-            // تعديل دالة showToast لعرض رسالة خطأ خارج زر تسجيل الدخول تحته
+      
             function showToast(message, showLoginLink = false) {
                 const toastContent = toast.querySelector('.toast-content');
                 if (showLoginLink) {

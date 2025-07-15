@@ -32,8 +32,7 @@ namespace Palesteeny_Project.Controllers
             return PartialView("_TopThreePartial", topThree);
         }
 
-        // ✅ عرض كل التصنيفات الموجودة فعلياً في الأسئلة
-        // GET: /Quizs/Categories
+       
         public async Task<IActionResult> Categories()
         {
             var categories = await _context.QuizQuestions
@@ -45,7 +44,7 @@ namespace Palesteeny_Project.Controllers
             return View(categories);
         }
 
-        // GET: /Quizs/Index?page=1&category=جغرافيا
+        
         public async Task<IActionResult> Index(int page = 1, string category = "جغرافيا")
         {
             int pageSize = 3;
@@ -76,7 +75,7 @@ namespace Palesteeny_Project.Controllers
             return View(questions);
         }
 
-        // POST: /Quizs/SubmitAnswers
+       
         [HttpPost]
      
         public async Task<IActionResult> SubmitAnswers(int page, string category, Dictionary<int, int> answers)
@@ -92,7 +91,7 @@ namespace Palesteeny_Project.Controllers
             int userId = int.Parse(userIdStr);
             int pageSize = 3;
 
-            // استرجاع الإجابات السابقة من الـ Session أو إنشاء جديد
+            
             Dictionary<int, int> answersDict = HttpContext.Session.GetObject<Dictionary<int, int>>("QuizAnswers") ?? new();
 
             var questions = await _context.QuizQuestions
@@ -102,7 +101,7 @@ namespace Palesteeny_Project.Controllers
                 .Take(pageSize)
                 .ToListAsync();
 
-            // تحديث القاموس بالإجابات الجديدة من الصفحة الحالية
+           
             foreach (var question in questions)
             {
                 if (answers.TryGetValue(question.Id, out int selectedOptionId))
@@ -115,10 +114,10 @@ namespace Palesteeny_Project.Controllers
             }
 
 
-            // حفظ القاموس المحدث بالـ Session
+           
             HttpContext.Session.SetObject("QuizAnswers", answersDict);
 
-            // إذا الصفحة ليست الأخيرة ننتقل للصفحة التالية
+           
             int totalQuestions = await _context.QuizQuestions.Where(q => q.Category == category).CountAsync();
             int totalPages = (int)Math.Ceiling(totalQuestions / (double)pageSize);
 
@@ -127,7 +126,7 @@ namespace Palesteeny_Project.Controllers
                 return RedirectToAction("Index", new { page = page + 1, category });
             }
 
-            // حساب النتيجة النهائية بعد انتهاء كل الصفحات
+           
             int totalScore = 0;
             foreach (var kvp in answersDict)
             {
@@ -153,14 +152,14 @@ namespace Palesteeny_Project.Controllers
             _context.QuizResults.Add(quizResult);
             await _context.SaveChangesAsync();
 
-            // مسح الإجابات المؤقتة بعد الحفظ
+           
             HttpContext.Session.Remove("QuizAnswers");
 
             return RedirectToAction("QuizResult", new { resultId = quizResult.Id });
         }
 
 
-        // GET: /Quizs/Result
+        
         public async Task<IActionResult> Result(string category)
         {
             var userIdStr = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -171,7 +170,7 @@ namespace Palesteeny_Project.Controllers
                 userId = parsedId;
             }
 
-            // حساب مجموع النقاط لكل مستخدم عبر جميع التصنيفات (Leaderboard)
+           
             var leaderboard = await _context.QuizResults
                 .GroupBy(r => r.UserPalId)
                 .Select(g => new QuizResult
@@ -184,7 +183,7 @@ namespace Palesteeny_Project.Controllers
                 .Take(10)
                 .ToListAsync();
 
-            // الحصول على نتيجة المستخدم في هذا التصنيف فقط (آخر نتيجة له)
+         
             QuizResult? userResult = null;
             if (userId.HasValue)
             {
@@ -210,7 +209,7 @@ namespace Palesteeny_Project.Controllers
             if (result == null)
                 return NotFound();
 
-            return View(result); // سيعرض View جديد فيه نتيجة هذا الاختبار فقط
+            return View(result);
         }
 
     }

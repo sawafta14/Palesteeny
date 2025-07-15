@@ -30,14 +30,14 @@ namespace Palesteeny_Project.Controllers
 
             return View(adminActions);
         }
-        // GET: UserPals
+     
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.UsersPal.Include(u => u.Semester);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: UserPals/Details/5
+     
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -56,16 +56,14 @@ namespace Palesteeny_Project.Controllers
             return View(userPal);
         }
 
-        // GET: UserPals/Create
+        
         public IActionResult Create()
         {
             ViewData["SemesterId"] = new SelectList(_context.Semesters, "SemesterId", "SemesterId");
             return View();
         }
 
-        // POST: UserPals/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Gender,Age,ImagePath,SemesterId,Id,FirstName,LastName,Email,PasswordHash,EmailConfirmed,ConfirmationToken,Role")] UserPal userPal)
@@ -80,7 +78,7 @@ namespace Palesteeny_Project.Controllers
             return View(userPal);
         }
 
-        // GET: UserPals/Edit/5
+     
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,9 +95,8 @@ namespace Palesteeny_Project.Controllers
             return View(userPal);
         }
 
-        // POST: UserPals/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Gender,Age,ImagePath,SemesterId,Id,FirstName,LastName,Email,PasswordHash,EmailConfirmed,ConfirmationToken,Role")] UserPal userPal)

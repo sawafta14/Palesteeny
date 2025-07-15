@@ -8,9 +8,9 @@
 
         
 
-        public int StartPage { get; set; } // رقم الصفحة التي يبدأ منها الدرس
+        public int StartPage { get; set; } 
 
-        public string? VideoUrl { get; set; } // رابط فيديو الدرس
+        public string? VideoUrl { get; set; } 
 
         public int BookId { get; set; }
         public Book? Book { get; set; }

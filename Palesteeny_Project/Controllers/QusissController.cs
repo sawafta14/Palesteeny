@@ -92,13 +92,12 @@ namespace Palesteeny_Project.Controllers
                 return Unauthorized();
           
 
-            // تحقق من وجود المستخدم
+           
             var userExists = await _context.UsersPal.AnyAsync(u => u.Id == userId.Value);
             if (!userExists)
                 return BadRequest("المستخدم غير موجود.");
 
 
-            // ✅ تحقق من أن القصة موجودة
             var exists = await _context.Qusis.AnyAsync(q => q.Id == qusiId);
             if (!exists)
                 return NotFound("القصة غير موجودة");
@@ -143,7 +142,7 @@ namespace Palesteeny_Project.Controllers
             if (!qusiExists)
                 return BadRequest("القصة غير موجودة.");
 
-            // تحقق من وجود المستخدم
+            
             var userExists = await _context.UsersPal.AnyAsync(u => u.Id == userId.Value);
             if (!userExists)
                 return BadRequest("المستخدم غير موجود.");

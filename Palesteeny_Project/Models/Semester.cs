@@ -6,8 +6,8 @@
 
         
 
-        public string? GradeName { get; set; } // مثال: "الصف الأول"
-        public string? SemesterName { get; set; } // مثال: "الفصل الأول"
+        public string? GradeName { get; set; }
+        public string? SemesterName { get; set; } 
 
         public DateTime? RegistrationDate { get; set; }
 

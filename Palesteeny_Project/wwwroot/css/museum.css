@@ -66,7 +66,7 @@ body {
 .banner-text {
     position: relative;
     top: -20px;
-    /⬅ هذه السطر يرفع الجملة لأعلى/ color: white;
+    color: white;
     font-size: 40px;
     font-weight: bold;
     z-index: 1;

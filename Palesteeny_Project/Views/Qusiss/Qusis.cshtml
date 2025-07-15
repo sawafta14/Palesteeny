@@ -1,7 +1,7 @@
 ﻿@model List<Palesteeny_Project.Models.Qusi>
 
 @{
-    // جلب التصنيفات من ViewData
+   
     var categories = ViewData["Categories"] as List<string> ?? new List<string>();
 }
 
@@ -34,7 +34,7 @@
 
     <div>
         <ul class="categories">
-            @* عرض التصنيفات من قاعدة البيانات ديناميكيًا *@
+         
             @foreach (var category in categories)
             {
                 <li><a href="#" class="categoriescontent">@category</a></li>
@@ -49,7 +49,7 @@
 
     <div class="stories_container" style="display: grid;">
         <div class="stories">
-            @* عرض القصص من قاعدة البيانات ديناميكيًا *@
+          =
             @foreach (var story in Model)
             {
                 <div class="story" data-category="@story.Category">
@@ -89,7 +89,7 @@
             const prevBtn = document.getElementById("prev");
             const nextBtn = document.getElementById("next");
 
-            // أخذ نسخة من جميع القصص (nodes)
+           
             const allStories = [...container.children];
 
             let currentMode = "all";

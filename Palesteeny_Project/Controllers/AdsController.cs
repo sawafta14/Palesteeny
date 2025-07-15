@@ -14,7 +14,7 @@ namespace Palesteeny_Project.Controllers
 
         public IActionResult LoadAd()
         {
-            // جلب أول إعلان مفعّل فقط
+           
             var ad = _context.Ads
                 .Where(a => a.IsActive)
                 .OrderByDescending(a => a.CreatedAt)

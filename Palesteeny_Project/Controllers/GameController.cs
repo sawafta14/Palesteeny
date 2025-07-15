@@ -14,14 +14,14 @@ namespace Palesteeny_Project.Controllers
             _context = context;
         }
 
-        // عرض كل الألعاب
+   
         public async Task<IActionResult> Game()
         {
             var games = await _context.Games.ToListAsync();
             return View(games);
         }
 
-        // عرض لعبة واحدة بناءً على ID
+       
         public async Task<IActionResult> OneGame(int id)
         {
             var game = await _context.Games.FirstOrDefaultAsync(g => g.Id == id);

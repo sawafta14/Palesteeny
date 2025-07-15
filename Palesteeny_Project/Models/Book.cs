@@ -6,7 +6,7 @@
 
         public string? Title { get; set; }
 
-        public string? PdfUrl { get; set; } // رابط ملف PDF إن وجد
+        public string? PdfUrl { get; set; } 
         public int NumberOfLessons { get; set; }
         public int SemesterId { get; set; }
         public Semester? Semester { get; set; }
