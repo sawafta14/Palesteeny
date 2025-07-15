@@ -11,8 +11,8 @@ namespace Palesteeny_Project.Models
         [ForeignKey("UserPalId")]
         public UserPal? User { get; set; } = null!;
 
-        public int QusiId { get; set; }
-        [ForeignKey("QusiId")]
+        public int QusId { get; set; }
+        [ForeignKey("QusId")]
         public Qusi? Qusi { get; set; } = null!;
 
         public int LastImageIndex { get; set; }  // رقم الصورة اللي وقف عندها

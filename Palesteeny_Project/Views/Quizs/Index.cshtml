@@ -94,7 +94,7 @@
                             <img src="~/images/greenRectangle.png" alt="خلفية خضراء" class="bg-img">
                             <img src="~/images/@question.ImageUrl" alt="صورة السؤال" class="overlay-img" />
                         </div>
-                        <p>:@question.QuestionText</p>
+                        <p>@question.QuestionText</p>
                     </div>
                 }
             </div>
@@ -121,7 +121,7 @@
                     <p style="color: red; font-weight: bold;">
                         يجب تسجيل الدخول لعرض نتيحتك في الاختبار .
                     </p>
-                    <a href="@Url.Action("Register", "Account")"
+                    <a href="@Url.Action("Login", "Account")"
                        style="display: inline-block; background-color: red; color: white; padding: 10px 20px; border-radius: 15px; text-decoration: none; font-weight: bold; font-family: 'DG3asomy', sans-serif; transition: background-color 0.3s ease;">
                         سجل الآن
                     </a>

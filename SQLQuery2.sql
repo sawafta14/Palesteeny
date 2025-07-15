@@ -1,1 +1,1 @@
-﻿DELETE FROM QuizOptions;
+﻿SELECT Id FROM Qusis WHERE Id = 10;

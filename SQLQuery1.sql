@@ -1,2 +1,1 @@
-﻿select * from UsersPalesteeny1 ;
-
+﻿TRUNCATE TABLE HelpQuestions;

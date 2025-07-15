@@ -59,7 +59,7 @@ namespace Palesteeny_Project.Controllers
         // GET: FavoriteStories/Create
         public IActionResult Create()
         {
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title");
+            ViewData["QusId"] = new SelectList(_context.Qusis, "Id", "Title");
             ViewData["UserPalId"] = new SelectList(_context.UsersPal, "Id", "Email");
             return View();
         }
@@ -69,7 +69,7 @@ namespace Palesteeny_Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserPalId,QusiId")] FavoriteStory favoriteStory)
+        public async Task<IActionResult> Create([Bind("Id,UserPalId,QusId")] FavoriteStory favoriteStory)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace Palesteeny_Project.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", favoriteStory.QusiId);
+            ViewData["QusId"] = new SelectList(_context.Qusis, "Id", "Title", favoriteStory.QusId);
             ViewData["UserPalId"] = new SelectList(_context.UsersPal, "Id", "Email", favoriteStory.UserPalId);
             return View(favoriteStory);
         }
@@ -95,7 +95,7 @@ namespace Palesteeny_Project.Controllers
             {
                 return NotFound();
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", favoriteStory.QusiId);
+            ViewData["QusId"] = new SelectList(_context.Qusis, "Id", "Title", favoriteStory.QusId);
             ViewData["UserPalId"] = new SelectList(_context.UsersPal, "Id", "Email", favoriteStory.UserPalId);
             return View(favoriteStory);
         }
@@ -105,7 +105,7 @@ namespace Palesteeny_Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UserPalId,QusiId")] FavoriteStory favoriteStory)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UserPalId,QusId")] FavoriteStory favoriteStory)
         {
             if (id != favoriteStory.Id)
             {
@@ -132,7 +132,7 @@ namespace Palesteeny_Project.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", favoriteStory.QusiId);
+            ViewData["QusId"] = new SelectList(_context.Qusis, "Id", "Title", favoriteStory.QusId);
             ViewData["UserPalId"] = new SelectList(_context.UsersPal, "Id", "Email", favoriteStory.UserPalId);
             return View(favoriteStory);
         }

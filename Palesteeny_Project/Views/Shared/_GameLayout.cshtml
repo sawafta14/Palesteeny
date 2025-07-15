@@ -41,8 +41,8 @@
                             }
                         }
 
-                        <a href="#" class="dropdown-item"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
+                        <a asp-controller="Help" asp-action="Help" class="dropdown-item"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
+                        <a asp-controller="Help" asp-action="Help" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
 
                         @if (User?.Identity != null && User.Identity.IsAuthenticated)
                         {
@@ -98,7 +98,7 @@
 
 
     <footer >
-      
+  
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

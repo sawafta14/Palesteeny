@@ -1,220 +1,0 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>خريطتي - جنين</title>
-    <style>
-        body {
-            font-family: 'DG 3asomy', sans-serif;
-            background-color: #ffffff;
-            text-align: center;
-        }
-
-        .section {
-            background: #fff;
-            margin: 20px auto;
-            padding: 20px;
-            width: 80%;
-            border-radius: 35px;
-            box-shadow: 0 4px 4px rgba(0,0,0,0.25), inset 0 4px 4px rgba(0,0,0,0.25);
-            position: relative;
-            cursor: pointer;
-            border: 2px solid #e2dfdf;
-            font-size: 32px;
-            text-decoration: none;
-            color: hsla(98, 78%, 60%, 1);
-            font-weight: bold;
-            text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
-        }
-
-
-        .icon {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-        }
-
-        .content {
-            display: none;
-            text-align: right;
-            color: #fdfafa;
-            font-style: normal;
-            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
-            padding: 20px;
-            font-size: 20px;
-        }
-
-        .arrow {
-            position: absolute;
-            left: 70px;
-            top: 10px;
-            font-size: 30px;
-        }
-
-        .arrow1 {
-            position: absolute;
-            right: 70px;
-            top: 10px;
-        }
-
-        .section.open .content {
-            display: block;
-        }
-
-        .section.open .arrow {
-            transform: rotate(0deg);
-        }
-
-        .link-text {
-            text-decoration: none;
-            color: hsla(98, 78%, 60%, 1);
-            font-size: 45px;
-            font-weight: bold;
-            text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -4px 0 0 black, 4px 0 0 black, 0 4px 0 black, 0 -4px 0 black;
-        }
-
-        p {
-            color: #fdfafa;
-            font-style: normal;
-            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
-        }
-
-        .draw-jenin-section {
-            position: relative;
-            width: 100%;
-            height: 150px;
-            margin-top: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .paint-icon {
-            width: 100px;
-            height: 100px;
-        }
-
-        .draw-text {
-            font-family: 'DG 3asomy', sans-serif;
-            font-size: 28px;
-            color: #fdfafa;
-            font-style: normal;
-            text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black, 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
-            padding: 10px 20px;
-        }
-
-        .draw-button {
-            font-size: 25px;
-            color: #FCF1FD;
-            background-color: #FF0013;
-            padding: 10px 30px;
-            border-radius: 60px;
-            border: 4px solid black;
-            text-decoration: none;
-            box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-
-            .draw-button:hover {
-                background-color: #d60010;
-            }
-
-    </style>
-</head>
-<body>
-
-    <div style="display: flex; align-items: center; gap: 20px;">
-        <a asp-controller="PalMap" asp-action="PalMap" class="link-text"> خريطتي</a>
-        <img src="~/images/s.png" alt="سهم" style="width: 50px;">
-        <a asp-controller="PalMap" asp-action="Tabaria" class="link-text">طبريا</a>
-
-    </div>
-    <p style="display: flex; align-items: center; gap: 20px; font-size: 24px;  margin-top: 20px;">جاهز للاستكشاف ؟ اختر عنوانًا ، واضغط على السهم لتعرف المزيد عن مدينتك المختارة!</p>
-
-    <div class="section" onclick="toggleSection(this)">
-        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
-        معنى اسم المدينة
-        <div class="content">
-
-            <div>
-                اسم "طبريا" جاي من اسم إمبراطور روماني اسمه "طيباريوس".
-                يعني المدينة سُمّيت على اسم شخص مهم زمان، بس اليوم الكل يعرفها بسبب بحيرة طبريا الجميلة! 💧
-
-            </div>
-            <br />
-            <div style="text-align: center;">
-                <img src="~/images/T.jpg" alt="" width="400" height="300">
-            </div>
-        </div>
-        <div class="arrow1"><img src="~/images/w4.png" alt="" width="125" height="75"></div>
-    </div>
-
-    <div class="section" onclick="toggleSection(this)">
-        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
-        تاريخ المدينة
-        <div class="content">
-            <div>
-                طبريا مدينة قديمة جدًا، بناها الرومان قبل أكتر من 2000 سنة!
-                وفيها آثار قديمة وحمّامات رومانية، وكانت مشهورة بالعلم والدين.
-                وفي ناس بتيجوا يزوروها من أماكن بعيدة لأنها مدينة مقدسة عند ديانات مختلفة.
-            </div>
-            <br />
-
-            <div style="text-align: center;">
-                <img src="~/images/t2.jpg" alt="" width="400" height="300">
-            </div>
-        </div>
-        <div class="arrow1"><img src="~/images/w3.png" alt="" width="125" height="75"></div>
-    </div>
-
-    <div class="section" onclick="toggleSection(this)">
-        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
-        مناخ المدينة
-        <div class="content">
-            جو طبريا حار في الصيف، وأحيانًا بيكون كتير شوب 🥵
-            وفي الشتاء الجو معتدل ودافئ، ما بيثلج فيها، بس ممكن تمطر شوي.
-            يعني مكان مناسب للسباحة تقريبًا طول السنة!
-        </div>
-        <div class="arrow1"><img src="~/images/w2.png" alt="" width="125" height="75"></div>
-    </div>
-
-    <div class="section" onclick="toggleSection(this)">
-        <div class="arrow"><img src="~/images/ep.png" alt=""></div>
-        طعام المدينة
-        <div class="content">
-            <div>
-                من أشهر الأكلات هناك:
-                – السمك من بحيرة طبريا، خصوصًا سمك "البلطي".
-                – بيحبوا كمان الزيتون والخبز الطابون.
-                – وفيه ناس بتبيع تمر ومشروبات باردة للسياح اللي بيمشوا جنب البحيرة.
-
-            </div>
-            <br />
-            <div style="text-align: center;">
-                <img src="~/images/t3.jpg" width="400" height="300">
-            </div>
-        </div>
-        <div class="arrow1"><img src="~/images/w1.png" alt="" width="125" height="75"></div>
-    </div>
-    <div class="draw-jenin-section">
-        <img src="~/images/mdi_paint-outline.png" alt="رسم" class="paint-icon">
-
-        <div class="draw-text">ارسم خريطة طبريا !</div>
-
-        <a href="page-you-want.html" class="draw-button">ارسم الآن !</a>
-    </div>
-
-    <script>
-        function toggleSection(section) {
-          section.classList.toggle('open');
-        }
-    </script>
-
-</body>
-</html>

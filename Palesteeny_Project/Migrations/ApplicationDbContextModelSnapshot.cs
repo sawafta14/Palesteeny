@@ -200,7 +200,7 @@ namespace Palesteeny_Project.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("QusiId")
+                    b.Property<int>("QusId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserPalId")
@@ -208,7 +208,7 @@ namespace Palesteeny_Project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("QusiId");
+                    b.HasIndex("QusId");
 
                     b.HasIndex("UserPalId");
 
@@ -401,12 +401,12 @@ namespace Palesteeny_Project.Migrations
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
-                    b.Property<int>("QusiId")
+                    b.Property<int>("QusId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("QusiId");
+                    b.HasIndex("QusId");
 
                     b.ToTable("QusiImages");
                 });
@@ -444,7 +444,7 @@ namespace Palesteeny_Project.Migrations
                     b.Property<int>("LastImageIndex")
                         .HasColumnType("int");
 
-                    b.Property<int>("QusiId")
+                    b.Property<int>("QusId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserPalId")
@@ -452,7 +452,7 @@ namespace Palesteeny_Project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("QusiId");
+                    b.HasIndex("QusId");
 
                     b.HasIndex("UserPalId");
 
@@ -630,7 +630,7 @@ namespace Palesteeny_Project.Migrations
                 {
                     b.HasOne("Palesteeny_Project.Models.Qusi", "Qusi")
                         .WithMany()
-                        .HasForeignKey("QusiId")
+                        .HasForeignKey("QusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -682,7 +682,7 @@ namespace Palesteeny_Project.Migrations
                 {
                     b.HasOne("Palesteeny_Project.Models.Qusi", "Qusi")
                         .WithMany("Images")
-                        .HasForeignKey("QusiId")
+                        .HasForeignKey("QusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -693,7 +693,7 @@ namespace Palesteeny_Project.Migrations
                 {
                     b.HasOne("Palesteeny_Project.Models.Qusi", "Qusi")
                         .WithMany()
-                        .HasForeignKey("QusiId")
+                        .HasForeignKey("QusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

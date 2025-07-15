@@ -27,7 +27,12 @@ namespace Palesteeny_Project.Controllers
               .Cast<string>()                // نحول من string? إلى string
               .ToList();
 
-            var userId = HttpContext.Session.GetInt32("UserPalId"); // أو حسب طريقة تسجيل الدخول
+            var userId = HttpContext.Session.GetInt32("UserPalId");
+            if (userId == null)
+            {
+                // إذا لم يكن هناك مستخدم مسجل دخول، يمكن إعادة توجيه المستخدم إلى صفحة تسجيل الدخول.
+                return RedirectToAction("Login", "Account");
+            }
             ViewBag.UserPalId = userId;
             var model = new DrawPageViewModel
     {

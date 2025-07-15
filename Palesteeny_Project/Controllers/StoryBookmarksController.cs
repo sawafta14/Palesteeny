@@ -78,7 +78,7 @@ namespace Palesteeny_Project.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", storyBookmark.QusiId);
+            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", storyBookmark.QusId);
             ViewData["UserPalId"] = new SelectList(_context.UsersPal, "Id", "Email", storyBookmark.UserPalId);
             return View(storyBookmark);
         }
@@ -96,7 +96,7 @@ namespace Palesteeny_Project.Controllers
             {
                 return NotFound();
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", storyBookmark.QusiId);
+            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", storyBookmark.QusId);
             ViewData["UserPalId"] = new SelectList(_context.UsersPal, "Id", "Email", storyBookmark.UserPalId);
             return View(storyBookmark);
         }
@@ -133,7 +133,7 @@ namespace Palesteeny_Project.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", storyBookmark.QusiId);
+            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", storyBookmark.QusId);
             ViewData["UserPalId"] = new SelectList(_context.UsersPal, "Id", "Email", storyBookmark.UserPalId);
             return View(storyBookmark);
         }

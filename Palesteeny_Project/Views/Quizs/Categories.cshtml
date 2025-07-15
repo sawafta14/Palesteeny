@@ -35,10 +35,10 @@
             // تعيين الأيقونة المناسبة لكل تصنيف
             var iconPath = category switch
             {
-                "جغرافيا" => Url.Content("~/images/geographyicon.png"),
-                "تاريخ" => Url.Content("~/images/historyicon.png"),
-                "حيوانات" => Url.Content("~/images/animalicon.png"),
-                "ألوان" => Url.Content("~/images/coloricon.png"),
+                "جغرافيا ممتعة" => Url.Content("~/images/geographyicon.png"),
+                "تاريخ زمان" => Url.Content("~/images/historyicon.png"),
+                "حيوانات وأصواتها" => Url.Content("~/images/animalicon.png"),
+                "ألوان وأشكال" => Url.Content("~/images/coloricon.png"),
                 _ => Url.Content("~/images/defaulticon.png") // أيقونة افتراضية
             };
             <a asp-controller="Quizs" asp-action="Index" asp-route-category="@category" class="card">

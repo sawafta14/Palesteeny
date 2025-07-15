@@ -1,1 +1,1 @@
-﻿DELETE FROM QuizQuestions;
+﻿SELECT Id FROM UsersPal WHERE Id = 2;

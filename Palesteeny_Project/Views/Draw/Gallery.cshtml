@@ -1,0 +1,74 @@
+﻿@model List<Palesteeny_Project.Models.Drawing>
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الرسومات</title>
+    <link rel="stylesheet" href="~/css/museum.css" />
+</head>
+
+<body>
+
+    <h2 class="h2decoration">
+        <span class="arrow-text">
+            <img src="~/images/Arrow.png" alt="سهم" />
+            <a asp-controller="Home" asp-action="Honor" class="link-text">معرض اللَّوحات</a>
+        </span>
+    </h2>
+
+    <div class="header-banner">
+        <div class="background-img-wrapper">
+            <img src="~/images/bgherored.svg" alt="ابداعات أبطالنا" />
+        </div>
+        <div class="banner-text">إبداعات أبطالنا</div>
+    </div>
+
+    <section class="students-section">
+        <div class="container">
+            <div class="students-grid">
+
+                @foreach (var drawing in Model)
+                {
+                    <div class="student-card">
+                        <div class="card-frame">
+                            <div class="card-content">
+                                <div class="student-photo-container">
+                                    <div class="student-photo">
+                                        <img src="@drawing.ImageUrl" alt="رسم من @drawing.User?.FirstName" />
+                                    </div>
+                                </div>
+                                <div class="student-info">
+                                    <h3>@drawing.User?.FirstName</h3>
+                                    @if (drawing.Template != null)
+                                    {
+                                        <p>القالب: @drawing.Template.Category</p>
+                                    }
+                                    <p>الفرشاة: @drawing.BrushType</p>
+                                    <p>الوضع: @drawing.Mode</p>
+                                </div>
+                                <div class="sparkle">🎨</div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-container">
+        <div class="cta-content">
+            <h3>بدك نعلّق رسماتك الحلوة في معرضنا؟</h3>
+            <p>ارسم، لوّن، وشاركنا إبداعك عشان يشوفه الكل!</p>
+        </div>
+        <div class="cta-badge">
+            <a asp-controller="Draw" asp-action="Draw" class="link-text">!أرسم الآن</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

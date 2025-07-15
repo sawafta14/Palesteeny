@@ -140,15 +140,15 @@
                     showToast('يجب تسجيل الدخول لحفظ البوك مارك', true);
                     return;
                 }
-                fetch('/Qusiss/SaveBookmark', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        QusiId: qusiId,
-                        UserId: userId,
-                        ImageOrder: order
-                    })
-                })
+                     fetch('/Qusiss/SaveBookmark', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                qusiId: qusiId,
+                imageOrder: order
+            })
+        })
+
                     .then(res => {
                         if (!res.ok) throw new Error('خطأ في حفظ البوك مارك');
                         return res.json();
@@ -200,14 +200,14 @@
                     showToast('يجب تسجيل الدخول لإدارة مكتبتي', true);
                     return;
                 }
-                fetch('/Qusiss/ToggleFavorite', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        QusiId: qusiId,
-                        UserId: userId
-                    })
-                })
+                   fetch('/Qusiss/ToggleFavorite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                qusiId: qusiId
+            })
+        })
+
                     .then(res => {
                         if (!res.ok) throw new Error('فشل في تحديث المكتبة');
                         return res.json();

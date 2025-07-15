@@ -63,8 +63,6 @@ app.UseStaticFiles(new StaticFileOptions
     DefaultContentType = "application/octet-stream"
 });
 
-
-
 app.UseRouting();
 app.UseSession();
 

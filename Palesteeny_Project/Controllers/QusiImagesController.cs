@@ -76,7 +76,7 @@ namespace Palesteeny_Project.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", qusiImage.QusiId);
+            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", qusiImage.QusId);
             return View(qusiImage);
         }
 
@@ -93,7 +93,7 @@ namespace Palesteeny_Project.Controllers
             {
                 return NotFound();
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", qusiImage.QusiId);
+            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", qusiImage.QusId);
             return View(qusiImage);
         }
 
@@ -129,7 +129,7 @@ namespace Palesteeny_Project.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", qusiImage.QusiId);
+            ViewData["QusiId"] = new SelectList(_context.Qusis, "Id", "Title", qusiImage.QusId);
             return View(qusiImage);
         }
 

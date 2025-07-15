@@ -219,6 +219,8 @@ namespace Palesteeny_Project.Controllers
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity),
                 authProperties);
+            HttpContext.Session.SetInt32("UserPalId", user.Id);
+
             HttpContext.Session.SetString("UserId", user.Id.ToString());
             HttpContext.Session.SetString("UserName", $"{user.FirstName} {user.LastName}");
             HttpContext.Session.SetString("UserEmail", user.Email);

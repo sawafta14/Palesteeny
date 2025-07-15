@@ -18,7 +18,7 @@
             <h2>نتيجتك في اختبار "@Model.Category"</h2>
             <p>🧑 الاسم: @Model.User?.FirstName</p>
             <p>📅 التاريخ: @Model.TakenAt.ToString("yyyy/MM/dd hh:mm tt")</p>
-            <p class="score">العلامة: @Model.TotalScore</p>
+            <p class="score">العلامة: @Model.TotalScore /60</p>
 
             <a href="@Url.Action("Categories", "Quizs")" class="btn-back">🔁 العودة لاختيار تصنيف جديد</a>
         </div>

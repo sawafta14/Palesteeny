@@ -37,7 +37,7 @@ body {
     width: 75%;
     height: auto;
     color: #84E849;
-    margin-right: 0;
+    margin-right: 70px;
     margin-left: auto;
     text-align: right;
     justify-content: flex-end;
@@ -170,6 +170,7 @@ select {
     position: relative;
     width: 230px;
     margin: 10px auto;
+   
 }
 
     .search-wrapper input.city-search {

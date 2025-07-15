@@ -76,7 +76,7 @@ namespace Palesteeny_Project.Models
             modelBuilder.Entity<QusiImage>()
                 .HasOne(img => img.Qusi)
                 .WithMany(q => q.Images)
-                .HasForeignKey(img => img.QusiId)
+                .HasForeignKey(img => img.QusId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // علاقة FavoriteStory مع UserPal و Qusi
@@ -89,7 +89,7 @@ namespace Palesteeny_Project.Models
             modelBuilder.Entity<FavoriteStory>()
                 .HasOne(f => f.Qusi)
                 .WithMany()
-                .HasForeignKey(f => f.QusiId)
+                .HasForeignKey(f => f.QusId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // علاقة StoryBookmark مع UserPal و Qusi
@@ -102,7 +102,7 @@ namespace Palesteeny_Project.Models
             modelBuilder.Entity<StoryBookmark>()
                 .HasOne(b => b.Qusi)
                 .WithMany()
-                .HasForeignKey(b => b.QusiId)
+                .HasForeignKey(b => b.QusId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // علاقة Drawing مع UserPal و Template
