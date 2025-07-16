@@ -27,7 +27,13 @@
                             <img src="~/images/camera-icon.png" alt="تغيير الصورة" class="camera-icon" />
                         </div>
                         <input type="file" id="imageUpload" accept="image/*" class="hidden" />
-                        <img id="profileImg" src="@(!string.IsNullOrEmpty(Model.ImagePath) ? Model.ImagePath : Url.Content("~/images/profileDef.png"))" alt="الصورة الشخصية" class="profile-img">
+                        <img id="profileImg"
+                             src="@(string.IsNullOrEmpty(Model.ImagePath)
+                             ? Url.Content("~/images/profileDef.png")
+                             : Url.Content(Model.ImagePath))"
+                             alt="الصورة الشخصية"
+                             class="profile-img">
+
                         <div id="imageMenu" class="image-menu hidden">
                             <div class="image-option" data-action="upload">📂 رفع صورة</div>
                             <div class="image-option" data-action="view">👁️ عرض الصورة</div>
