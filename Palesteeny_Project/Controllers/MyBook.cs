@@ -59,8 +59,11 @@ namespace Palesteeny_Project.Controllers
                 PdfUrl = book?.PdfUrl ?? string.Empty,
                 UserPalId = userPal.Id,
                 SemesterId = userPal.SemesterId,
-                Lessons = lessons
+                Lessons = lessons,
+                BookId = book?.BookId ?? 0,
+                NumberOfLessons = book?.NumberOfLessons ?? lessons.Count
             };
+
 
             return View(viewModel);
         }
@@ -120,6 +123,54 @@ namespace Palesteeny_Project.Controllers
                 return Json(new { success = false });
 
             return Json(new { success = true, page = userLesson.BookmarkPage });
+        }
+        [HttpPost]
+        [IgnoreAntiforgeryToken]
+        public async Task<IActionResult> SaveProgress([FromBody] BookProgressDto progressDto)
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdStr, out int userId))
+                return Unauthorized();
+
+            var existing = await _context.BookProgresses
+                .FirstOrDefaultAsync(p => p.UserPalId == userId && p.BookId == progressDto.BookId);
+
+            if (existing == null)
+            {
+                existing = new BookProgress
+                {
+                    UserPalId = userId,
+                    BookId = progressDto.BookId,
+                    ProgressPercent = progressDto.ProgressPercent
+                };
+                _context.BookProgresses.Add(existing);
+            }
+            else
+            {
+                existing.ProgressPercent = progressDto.ProgressPercent;
+                _context.BookProgresses.Update(existing);
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok(new { success = true });
+        }
+
+        // DTO class (you can put this in a separate file)
+        public class BookProgressDto
+        {
+            public int BookId { get; set; }
+            public int ProgressPercent { get; set; }
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetProgress(int bookId)
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdStr, out int userId)) return Unauthorized();
+
+            var progress = await _context.BookProgresses
+                .FirstOrDefaultAsync(p => p.UserPalId == userId && p.BookId == bookId);
+
+            return Json(new { percent = progress?.ProgressPercent ?? 0 });
         }
 
     }

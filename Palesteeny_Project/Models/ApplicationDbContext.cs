@@ -36,7 +36,7 @@ namespace Palesteeny_Project.Models
         public DbSet<ExerciseQuestion> ExerciseQuestions { get; set; } = null!;
         public DbSet<ExerciseOption> ExerciseOptions { get; set; } = null!;
         public DbSet<UserExerciseAnswer> UserExerciseAnswers { get; set; } = null!;
-
+        public DbSet<BookProgress> BookProgresses { get; set; }
         public DbSet<UserLesson> UserLessons { get; set; } = null!;
         public DbSet<AIAssistant> AIAssistant { get; set; } = null!;
         public DbSet<QuestionGroup> QuestionGroups { get; set; } = null!;

@@ -7,11 +7,17 @@
     const params = new URLSearchParams(window.location.search);
     const lessonVal = params.get("lesson");
     const dataUrl = `/api/ExerciseApi/lesson/${lessonVal}`;
+    const userSemester = params.get("sem");
+    const bookIdFromRazorView = params.get("bookId");
+    const totalLessons = parseInt(params.get("totalLessons"), 10) || 0;
+    const lessonDropdown = document.getElementById('lessonDropdown');
+
 
     let currentExercise = null;
     const groupsPerPage = 2;
     let currentPageIndex = 0;
     const studentAnswers = {};
+    let answersChecked = false;
 
     async function loadExercises() {
         try {
@@ -185,7 +191,10 @@
         initDragDrop();
         restoreSavedAnswers();
         bindAnswerEvents();
-
+        if (answersChecked) {
+            applyEvaluationStyles();
+        } 
+        
         const totalPages = Math.ceil(currentExercise.length / groupsPerPage);
         checkBtn.style.display = (currentPageIndex === totalPages - 1) ? "block" : "none";
     }
@@ -237,6 +246,45 @@
             }
         });
     }
+    function applyEvaluationStyles() {
+        currentExercise.forEach(group => {
+            (group.questions || []).forEach(q => {
+                if (group.type === "true_false") {
+                    (q.options || []).forEach(opt => {
+                        const selector = `[data-name="${q.id}_${opt.id}"]`;
+                        const buttons = document.querySelectorAll(selector);
+                        const userAnswer = studentAnswers[`${q.id}_${opt.id}`];
+                        buttons.forEach(btn => {
+                            btn.classList.remove("correct", "incorrect");
+                            const correctAnswer = opt.isCorrectAnswer === true ? "true" : "false";
+
+                            if (userAnswer === btn.dataset.value) {
+                                if (userAnswer === correctAnswer) {
+                                    btn.classList.add("correct");
+                                } else {
+                                    btn.classList.add("incorrect");
+                                }
+                            }
+
+                        });
+                    });
+                } else if (group.type === "multiple_choice") {
+                    const correctOption = q.options.find(opt => opt.isCorrect === true);
+                    const userAnswer = studentAnswers[q.id];
+                    const buttons = document.querySelectorAll(`.choice-btn[data-name="${q.id}"]`);
+                    buttons.forEach(btn => {
+                        btn.classList.remove("correct", "incorrect");
+                        if (btn.dataset.value === userAnswer) {
+                            btn.classList.add(userAnswer === (correctOption?.text || "") ? "correct" : "incorrect");
+                        }
+                    });
+                } else if (group.type === "drag_drop") {
+                    // Drag-drop evaluation UI depends on your style, implement if needed
+                }
+            });
+        });
+    }
+
     function bindAnswerEvents() {
         document.querySelectorAll(".choice-btn").forEach(btn => {
             btn.addEventListener("click", function () {
@@ -269,43 +317,43 @@
         });
     }
 
+    function saveAllAnswers() {
+        for (let page = 0; page < Math.ceil(currentExercise.length / groupsPerPage); page++) {
+            const start = page * groupsPerPage;
+            const end = start + groupsPerPage;
+            const groupsToSave = currentExercise.slice(start, end);
 
-    function saveCurrentAnswer() {
-        const start = currentPageIndex * groupsPerPage;
-        const end = start + groupsPerPage;
-        const groupsToSave = currentExercise.slice(start, end);
+            groupsToSave.forEach(group => {
+                const questions = Array.isArray(group.questions) && group.questions.length > 0
+                    ? group.questions
+                    : [group];
 
-        groupsToSave.forEach(group => {
-            const questions = Array.isArray(group.questions) && group.questions.length > 0
-                ? group.questions
-                : [group];
-
-            questions.forEach(q => {
-                let answer = null;
-                if (group.type === "multiple_choice") {
-                    const selected = document.querySelector(`.choice-btn[data-name="${q.id}"].selected`);
-                    answer = selected?.dataset.value;
-                } else if (group.type === "true_false") {
-                    (group.questions || []).forEach(q => {
-                        (q.options || []).forEach(opt => {
-                            const selected = document.querySelector(`.tf-btn[data-name="${q.id}_${opt.id}"].selected`);
-                            studentAnswers[`${q.id}_${opt.id}`] = selected?.dataset.value;
+                questions.forEach(q => {
+                    let answer = null;
+                    if (group.type === "multiple_choice") {
+                        const selected = document.querySelector(`.choice-btn[data-name="${q.id}"].selected`);
+                        answer = selected?.dataset.value;
+                    } else if (group.type === "true_false") {
+                        (group.questions || []).forEach(q => {
+                            (q.options || []).forEach(opt => {
+                                const selected = document.querySelector(`.tf-btn[data-name="${q.id}_${opt.id}"].selected`);
+                                studentAnswers[`${q.id}_${opt.id}`] = selected?.dataset.value;
+                            });
                         });
-                    });
-                    return; // already saved all sub-answers
-                }
-                 if (group.type === "drag_drop") {
-                    const zones = document.querySelectorAll(`.drop-zone`);
-                    answer = Array.from(zones).map(z => ({
-                        target: z.dataset.match,
-                        value: z.dataset.current || ""
-                    }));
-                }
-
-                studentAnswers[q.id] = answer;
+                        return; // already saved all sub-answers
+                    } else if (group.type === "drag_drop") {
+                        const zones = document.querySelectorAll(`.drop-zone`);
+                        answer = Array.from(zones).map(z => ({
+                            target: z.dataset.match,
+                            value: z.dataset.current || ""
+                        }));
+                    }
+                    studentAnswers[q.id] = answer;
+                });
             });
-        });
+        }
     }
+
 
     function initDragDrop() {
         const drags = document.querySelectorAll(".drag-item");
@@ -363,7 +411,7 @@
     }
 
     prevBtn.addEventListener("click", () => {
-        saveCurrentAnswer();
+        saveCurrentPageAnswers();
         if (currentPageIndex > 0) {
             currentPageIndex--;
             renderCurrentPage();
@@ -371,33 +419,14 @@
     });
 
     nextBtn.addEventListener("click", () => {
-        saveCurrentAnswer();
+        saveCurrentPageAnswers();
         const totalPages = Math.ceil(currentExercise.length / groupsPerPage);
         if (currentPageIndex < totalPages - 1) {
             currentPageIndex++;
             renderCurrentPage();
         }
     });
-    async function submitAnswersToServer() {
-        const payload = [];
-
-        for (const [key, val] of Object.entries(studentAnswers)) {
-            // drag_drop is array; multiple_choice and true_false are string
-            if (Array.isArray(val)) {
-                val.forEach(v => {
-                    payload.push({
-                        exerciseOptionId: parseInt(key), // Make sure you track which option was selected
-                        userAnswer: v.value
-                    });
-                });
-            } else {
-                payload.push({
-                    exerciseOptionId: parseInt(key),
-                    userAnswer: val
-                });
-            }
-        }
-
+    async function submitAnswersToServer(payload) {
         try {
             const res = await fetch("/api/ExerciseApi/SubmitAnswers", {
                 method: "POST",
@@ -406,6 +435,7 @@
                 },
                 body: JSON.stringify(payload)
             });
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
             const result = await res.json();
             console.log(result.message || "تم الحفظ");
@@ -419,32 +449,109 @@
 
         currentExercise.forEach(group => {
             (group.questions || []).forEach(q => {
-                (q.options || []).forEach(opt => {
-                    const isCorrect = opt.isCorrect === true;
-                    const selector = `[data-name="${q.id}_${opt.id}"]`;
-                    const buttons = document.querySelectorAll(selector);
+                if (group.type === "true_false") {
+                    (q.options || []).forEach(opt => {
+                        const correctAnswer = opt.isCorrectAnswer === true ? "true" : "false";
+                        const userAnswer = (studentAnswers[`${q.id}_${opt.id}`] || "").toLowerCase();
 
-                    buttons.forEach(btn => {
-                        btn.classList.remove("correct", "incorrect");
-
-                        const userAnswer = studentAnswers[`${q.id}_${opt.id}`];
-                        if (userAnswer === btn.dataset.value) {
-                            btn.classList.add(isCorrect ? "correct" : "incorrect");
-                            if (!isCorrect) allCorrect = false;
+                        if (userAnswer !== correctAnswer) {
+                            console.log(`❌ Incorrect: Q${q.id}, Option${opt.id} — Expected: ${correctAnswer}, Got: ${userAnswer}`);
+                            allCorrect = false;
+                        } else {
+                            console.log(`✅ Correct: Q${q.id}, Option${opt.id}`);
                         }
                     });
-                });
+                }
+
+                else if (group.type === "multiple_choice") {
+                    const userAnswer = studentAnswers[q.id];
+                    const correctOption = q.options.find(opt => opt.isCorrect === true);
+                    if (!userAnswer || userAnswer !== (correctOption?.text || "")) {
+                        console.log(`False multiple choice at question ${q.id}: userAnswer=${userAnswer}, correct=${correctOption?.text}`);
+                        allCorrect = false;
+                    }
+                } else if (group.type === "drag_drop") {
+                    const userAnswer = studentAnswers[q.id] || [];
+                    q.matches.forEach(match => {
+                        const userMatch = userAnswer.find(u => u.target === match.matchLabel);
+                        if (!userMatch || userMatch.value !== match.optionText) {
+                            console.log(`False drag-drop at question ${q.id}, match ${match.matchLabel}`);
+                            allCorrect = false;
+                        }
+                    });
+                }
             });
         });
 
+        console.log("evaluateAll result:", allCorrect);
         return allCorrect;
     }
 
 
+    function saveCurrentPageAnswers() {
+        const start = currentPageIndex * groupsPerPage;
+        const end = start + groupsPerPage;
+        const groupsToSave = currentExercise.slice(start, end);
 
+        groupsToSave.forEach(group => {
+            const questions = Array.isArray(group.questions) && group.questions.length > 0
+                ? group.questions
+                : [group];
+
+            questions.forEach(q => {
+                let answer = null;
+                if (group.type === "multiple_choice") {
+                    const selected = document.querySelector(`.choice-btn[data-name="${q.id}"].selected`);
+                    answer = selected?.dataset.value;
+                } else if (group.type === "true_false") {
+                    (group.questions || []).forEach(q => {
+                        (q.options || []).forEach(opt => {
+                            const selected = document.querySelector(`.tf-btn[data-name="${q.id}_${opt.id}"].selected`);
+                            studentAnswers[`${q.id}_${opt.id}`] = selected?.dataset.value;
+                        });
+                    });
+                    return; // sub-answers saved
+                } else if (group.type === "drag_drop") {
+                    const zones = document.querySelectorAll(`.drop-zone`);
+                    answer = Array.from(zones).map(z => ({
+                        target: z.dataset.match,
+                        value: z.dataset.current || ""
+                    }));
+                }
+                studentAnswers[q.id] = answer;
+            });
+        });
+    }
+
+    function syncStudentAnswersFromServer() {
+        // Clear existing answers
+        for (const key in studentAnswers) {
+            delete studentAnswers[key];
+        }
+
+        currentExercise.forEach(group => {
+            (group.questions || []).forEach(q => {
+                if (group.type === "true_false") {
+                    (q.options || []).forEach(opt => {
+                        if (opt.userAnswer !== undefined && opt.userAnswer !== null) {
+                            studentAnswers[`${q.id}_${opt.id}`] = opt.userAnswer.toString();
+                        }
+                    });
+                } else if (group.type === "multiple_choice") {
+                    const userAnswerOption = q.options.find(o => o.userAnswer);
+                    if (userAnswerOption) {
+                        studentAnswers[q.id] = userAnswerOption.text || "";
+                    }
+                } else if (group.type === "drag_drop") {
+                    // Implement if you have user answers for drag & drop
+                    // Usually, you store the array of matches here
+                }
+            });
+        });
+    }
 
     checkBtn.addEventListener("click", async () => {
-        saveCurrentAnswer();
+        saveCurrentPageAnswers();
 
         const dtoList = [];
         for (const key in studentAnswers) {
@@ -465,28 +572,68 @@
             }
         }
 
-        // ✅ Save answers to server
-        const response = await fetch("/api/ExerciseApi/SubmitAnswers", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dtoList)
-        });
+        await submitAnswersToServer(dtoList);
 
-        // ✅ Reload fresh data including isCorrect from backend
+        // Reload verified data
         const res = await fetch(dataUrl);
-        currentExercise = await res.json(); // replaces old data with backend-verified answers
+        currentExercise = await res.json();
 
+        // Sync local answers from server data
+        syncStudentAnswersFromServer();
+
+        // Re-render current page and show evaluation
+        answersChecked = true;
+        renderCurrentPage();
+
+        // Evaluate all answers based on synced answers
         const allCorrect = evaluateAll();
 
-        if (!allCorrect) {
+        if (allCorrect) {
+            // Mark current lesson as completed in localStorage
+            const lessonKey = `progress_sem${userSemester}_lesson${lessonVal}`;
+            const completionKey = `${lessonKey}_completed`;
+
+            if (!localStorage.getItem(completionKey)) {
+                localStorage.setItem(completionKey, "true");
+
+                // Calculate new progress percent
+                let completedCount = 0;
+                for (let option of lessonDropdown.options) {
+                    const lId = option.dataset.lesson;
+                    const key = `progress_sem${userSemester}_lesson${lId}_completed`;
+                    if (localStorage.getItem(key) === "true") {
+                        completedCount++;
+                    }
+                }
+
+                const newProgressPercent = Math.floor((completedCount / totalLessons) * 100);
+
+                // Save progress to server
+                await fetch('/MyBook/SaveProgress', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        bookId: bookIdFromRazorView,
+                        progressPercent: newProgressPercent
+                    })
+                });
+
+                // ✅ NEW: Notify parent to update
+                window.parent.postMessage({ type: "exerciseCompleted" }, "*");
+
+                // Update UI
+                updateProgressBarFromValue(newProgressPercent);
+            }
+
+            checkBtn.disabled = true;
+            checkBtn.textContent = "✔ تم التحقق من الإجابات بنجاح";
+        }
+        else {
             checkBtn.textContent = "✘ بعض الإجابات غير صحيحة، حاول مرة أخرى";
             checkBtn.classList.add("shake");
             setTimeout(() => checkBtn.classList.remove("shake"), 500);
-            return;
         }
 
-        checkBtn.disabled = true;
-        checkBtn.textContent = "✔ تم التحقق من الإجابات بنجاح";
     });
 
 

@@ -14,11 +14,9 @@
             <button class="curved-btn active" data-id="1">
                 <img src="~/images/locationicon.svg" alt="خريطة">
             </button>
-            <form asp-controller="Game" asp-action="Game" method="get">
             <button class="curved-btn below" data-id="2">
                 <img src="~/images/puzzleicon.svg" alt="العب">
             </button>
-            </form>
 
             <button class="curved-btn below" data-id="3">
                 <img src="~/images/paintpaletteicon.svg" alt="رسم">
@@ -37,7 +35,7 @@
 
             <div class="content" id="content-2">
                 <div class="text-above">العب و تعلم معنا عبر العديد من الالعاب المسلية</div>
-                <iframe src="sliderpalmain.html" style="width:100%; height:450px; border:none; margin-top: -60px;"></iframe>
+                <iframe src="@Url.Action("Slider", "Home")" style="width:100%; height:450px; border:none; margin-top: -70px;"></iframe>
             </div>
 
             <div class="content" id="content-3">

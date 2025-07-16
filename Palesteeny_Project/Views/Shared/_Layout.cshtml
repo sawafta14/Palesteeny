@@ -42,7 +42,7 @@
                         }
 
                         <a class="dropdown-item" asp-controller="Settings" asp-action="Settings"><i class="fa fa-cog"></i> الإعدادات والخصوصية</a>
-                        <a asp-controller="Account" asp-action="Logout" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
+                        <a a asp-controller="Help" asp-action="Help" class="dropdown-item"><i class="fa fa-question-circle"></i> مركز المساعدة</a>
 
 
                         @if (User?.Identity != null && User.Identity.IsAuthenticated)

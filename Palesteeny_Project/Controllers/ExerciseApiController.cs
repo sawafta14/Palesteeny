@@ -19,11 +19,9 @@ namespace Palesteeny_Project.Controllers
             _context = context;
         }
 
-        // جلب التمارين حسب الدرس مع إجابات المستخدم (إن وجدت)
         [HttpGet("lesson/{lessonId}")]
         public async Task<IActionResult> GetLessonExercises(int lessonId)
         {
-            // الحصول على معرّف المستخدم الحالي (تأكد أن المستخدم مسجل دخول)
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId == null)
                 return Unauthorized();
@@ -36,7 +34,6 @@ namespace Palesteeny_Project.Controllers
                     .ThenInclude(q => q.Matches)
                 .ToListAsync();
 
-            // جلب إجابات المستخدم المرتبطة بالخيارات المعروضة
             var optionIds = groups.SelectMany(g => g.Questions)
                                   .SelectMany(q => q.Options)
                                   .Select(o => o.ExerciseOptionId)
@@ -60,6 +57,17 @@ namespace Palesteeny_Project.Controllers
                     options = q.Options.Select(o =>
                     {
                         var ua = userAnswers.FirstOrDefault(x => x.ExerciseOptionId == o.ExerciseOptionId);
+                        bool? isCorrectAnswer = null;
+                        if (!string.IsNullOrWhiteSpace(o.Answer))
+                        {
+                            var normalizedCorrectAnswer = o.Answer.Trim().ToLower();
+                            if (normalizedCorrectAnswer == "true" || normalizedCorrectAnswer == "false")
+                            {
+                                isCorrectAnswer = normalizedCorrectAnswer == "true";
+                            }
+                        }
+
+
                         return new
                         {
                             id = o.ExerciseOptionId,
@@ -67,7 +75,8 @@ namespace Palesteeny_Project.Controllers
                             image = o.OptionImageUrl ?? "",
                             answer = o.Answer,
                             userAnswer = ua?.UserAnswer,
-                            isCorrect = ua?.IsCorrect
+                            isUserCorrect = ua?.IsCorrect,
+                            isCorrectAnswer = isCorrectAnswer
                         };
                     }).ToList(),
                     matches = q.Matches.Select(m => new
@@ -82,6 +91,7 @@ namespace Palesteeny_Project.Controllers
 
             return Ok(result);
         }
+
 
         // حفظ إجابات المستخدم على الخيارات (أو تحديثها)
         [HttpPost("SubmitAnswers")]
@@ -99,7 +109,24 @@ namespace Palesteeny_Project.Controllers
                 var userAnswer = await _context.UserExerciseAnswers
                     .FirstOrDefaultAsync(a => a.UserId == userId && a.ExerciseOptionId == item.ExerciseOptionId);
 
-                bool? isCorrect = item.UserAnswer == null ? null : item.UserAnswer.Trim() == correctOption.Answer?.Trim();
+                // ✅ Normalize and compare safely
+                bool? isCorrect = null;
+                if (!string.IsNullOrWhiteSpace(item.UserAnswer) && !string.IsNullOrWhiteSpace(correctOption.Answer))
+                {
+                    var normalizedUserAnswer = item.UserAnswer.Trim().ToLower();
+                    var normalizedCorrectAnswer = correctOption.Answer.Trim().ToLower();
+
+                    if (normalizedCorrectAnswer == "true" || normalizedCorrectAnswer == "false")
+                    {
+                        bool userBool = normalizedUserAnswer == "true";
+                        bool correctBool = normalizedCorrectAnswer == "true";
+                        isCorrect = userBool == correctBool;
+                    }
+                    else
+                    {
+                        isCorrect = normalizedUserAnswer == normalizedCorrectAnswer;
+                    }
+                }
 
                 if (userAnswer == null)
                 {
@@ -122,9 +149,6 @@ namespace Palesteeny_Project.Controllers
             await _context.SaveChangesAsync();
             return Ok(new { message = "تم التحقق من إجاباتك." });
         }
-
-    
-
     }
 
     public class ExerciseOptionUpdateDto

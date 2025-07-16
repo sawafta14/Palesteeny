@@ -12,6 +12,10 @@ namespace Palesteeny_Project.ViewModels
         public string? PdfUrl { get; set; }
         public int? BookmarkPage { get; set; }
         public int? UserPalId { get; set; }
-        
+        public int NumberOfLessons { get; set; }
+        public int BookId { get; set; }
+
+
+
     }
 }

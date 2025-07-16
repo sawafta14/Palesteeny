@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Palesteeny_Project.Models;
 
@@ -11,9 +12,11 @@ using Palesteeny_Project.Models;
 namespace Palesteeny_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250716112943_DbTestBack")]
+    partial class DbTestBack
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,32 +112,6 @@ namespace Palesteeny_Project.Migrations
                     b.HasIndex("SemesterId");
 
                     b.ToTable("Books");
-                });
-
-            modelBuilder.Entity("Palesteeny_Project.Models.BookProgress", b =>
-                {
-                    b.Property<int>("BookProgressId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookProgressId"));
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProgressPercent")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserPalId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BookProgressId");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("UserPalId");
-
-                    b.ToTable("BookProgresses");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.ChatLog", b =>
@@ -826,25 +803,6 @@ namespace Palesteeny_Project.Migrations
                         .IsRequired();
 
                     b.Navigation("Semester");
-                });
-
-            modelBuilder.Entity("Palesteeny_Project.Models.BookProgress", b =>
-                {
-                    b.HasOne("Palesteeny_Project.Models.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Palesteeny_Project.Models.UserPal", "UserPal")
-                        .WithMany()
-                        .HasForeignKey("UserPalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Book");
-
-                    b.Navigation("UserPal");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.ChatLog", b =>

@@ -1,6 +1,7 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded");
     let currentTab = "book";
+    console.log("bookIdFromRazorView:", bookIdFromRazorView);
 
     // userSemester must be set globally in Razor view before this script loads
     if (typeof userSemester === 'undefined') {
@@ -130,7 +131,8 @@
 
         const lessonValue = lessonDropdown.value;
         const lessonNumber = lessonDropdown.selectedOptions[0]?.dataset.lesson;
-        const exercisePage = `/exercises/exercises.html?sem=${userSemester}&lesson=${lessonNumber}&page=${lessonValue}`;
+        // add bookId and totalLessons as query params
+        const exercisePage = `/exercises/exercises.html?sem=${userSemester}&lesson=${lessonNumber}&page=${lessonValue}&bookId=${bookIdFromRazorView}&totalLessons=${totalLessons}`;
 
         const iframe = document.createElement("iframe");
         iframe.src = exercisePage;
@@ -141,6 +143,7 @@
         displayArea.innerHTML = "";
         displayArea.appendChild(iframe);
     }
+
 
     function updateIframeSrc() {
         const lessonValue = lessonDropdown.value;
@@ -202,35 +205,41 @@
     currentTab = "book";
     bookmarkButtonsContainer.style.display = "flex";
     updateIframeSrc();
-    setTimeout(updateProgressBar, 100);
+    setTimeout(() => updateProgressBarFromValue(0), 100);
 
     // -------------------- 6. Progress bar --------------------
-    function getProgressKey() {
-        const lesson = lessonDropdown?.value || "0";
-        return `progress_sem${userSemester}_lesson${lesson}`;
-    }
 
-    function getLessonProgress() {
-        const progressKey = getProgressKey();
-        return parseInt(localStorage.getItem(progressKey) || "0", 10);
-    }
-
-    function setLessonProgress(percent) {
-        const progressKey = getProgressKey();
-        localStorage.setItem(progressKey, percent);
-        updateProgressBar();
-    }
-
-    function updateProgressBar() {
-        const progress = getLessonProgress();
+    function updateProgressBarFromValue(value) {
         const bar = document.getElementById("lesson-progress-bar");
-        bar.style.width = `${progress}%`;
-        bar.textContent = `${progress}%`;
+        bar.style.width = `${value}%`;
+        bar.textContent = `${value}%`;
     }
 
-    lessonDropdown.addEventListener('change', updateProgressBar);
+    function countCompletedLessons() {
+        let count = 0;
+        for (let option of lessonDropdown.options) {
+            const lessonId = option.dataset.lesson;
+            const key = `progress_sem${userSemester}_lesson${lessonId}_completed`;
+            if (localStorage.getItem(key) === "true") {
+                count++;
+            }
+        }
+        return count;
+    }
 
+    lessonDropdown.addEventListener('change', () => {
+        // On lesson change, fetch progress from server to update bar
+        fetch(`/MyBook/GetProgress?bookId=${bookIdFromRazorView}`)
+            .then(res => res.json())
+            .then(data => {
+                updateProgressBarFromValue(data.percent);
+            });
+    });
+
+    // Listen for exercise completion messages
     window.addEventListener("message", function (event) {
+        console.log("📩 Received message:", event.data);
+
         if (event.data?.type === "exerciseCompleted") {
             const lessonKey = `progress_sem${userSemester}_lesson${lessonDropdown.value}`;
             const completionKey = `${lessonKey}_completed`;
@@ -239,11 +248,43 @@
 
             localStorage.setItem(completionKey, "true");
 
-            const currentProgress = getLessonProgress();
-            const newProgress = Math.min(currentProgress + 10, 100);
-            setLessonProgress(newProgress);
-            updateProgressBar();
+            // Calculate new progress percentage
+            let completed = 0;
+            for (let option of lessonDropdown.options) {
+                const lessonId = option.dataset.lesson;
+                const key = `progress_sem${userSemester}_lesson${lessonId}_completed`;
+                if (localStorage.getItem(key) === "true") {
+                    completed++;
+                }
+            }
+
+            const newProgress = Math.floor((completed / totalLessons) * 100);
+
+            // Save progress to server
+            fetch('/MyBook/SaveProgress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    bookId: bookIdFromRazorView,
+                    progressPercent: newProgress
+                })
+            }).then(response => {
+                if (!response.ok) {
+                    console.error("Failed to save progress");
+                }
+            });
+
+            // Update progress bar immediately
+            updateProgressBarFromValue(newProgress);
         }
     });
+
+    // On page load, fetch progress from server and update bar
+    fetch(`/MyBook/GetProgress?bookId=${bookIdFromRazorView}`)
+        .then(res => res.json())
+        .then(data => {
+            updateProgressBarFromValue(data.percent);
+        });
+
 
 });
