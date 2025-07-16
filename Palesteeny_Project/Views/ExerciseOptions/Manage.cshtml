@@ -1,0 +1,22 @@
+﻿@model List<(string Name, string Action, string Controller)>
+@{
+
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/tt.css" />
+<div class="header-with-image">
+    <h1>لوحة التحكم  في اجوبة التمارين</h1>
+    <p class="top-text">هنا يمكنك إدارة قسم التمارين بسهولة من خلال الروابط أدناه.</p>
+</div>
+
+<div class="admin-sections-container">
+    @foreach (var action in Model)
+    {
+        <a href="@Url.Action(action.Action, action.Controller)" class="admin-section-card" tabindex="0">
+            @action.Name
+        </a>
+    }
+</div>
+<div class="back-button-container">
+    <a asp-controller="Admins0" asp-action="Index" class="back-button">العودة لصفحة التحكم</a>
+</div>

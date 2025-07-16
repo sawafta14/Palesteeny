@@ -1,110 +1,169 @@
 ﻿@model IEnumerable<Palesteeny_Project.Models.Qusi>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "قائمة القصص";
     Layout = null;
-      <!-- لاي أوت فارغ -->
 }
 
+<div class="wrapper">
+    <div class="table-box">
+        <h1>📋 @ViewData["Title"]</h1>
+
+        <div class="text-center mb-4">
+            <a class="btn btn-primary" asp-action="Create">➕ إضافة قصة جديد</a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>العنوان</th>
+                    <th>الفئة</th>
+                    <th>رابط الصورة</th>
+                    <th>رابط الاختبار</th>
+                    <th class="text-center">الخيارات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CoverImage)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Link)</td>
+                        <td class="action-links text-center">
+                            <a class="btn btn-sm btn-action" asp-action="Edit" asp-route-id="@item.Id">تعديل</a>
+                            <a class="btn btn-sm btn-action" asp-action="Details" asp-route-id="@item.Id">تفاصيل</a>
+                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">حذف</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <style>
-    body {
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #f4f7f6;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f7f9fc;
-        color: #333;
-        margin: 30px;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        min-height: 100vh;
+    }
+
+    .table-box {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 1000px;
     }
 
     h1 {
-        color: rgb(132, 232, 73); /* اللون المتفق عليه */
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-align: center;
-        text-shadow: 1px 1px 1px #bbb;
-    }
-
-    table.table {
-        width: 100%;
-        border-collapse: collapse;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f9f9f9;
-    }
-
-        table.table thead tr {
-            background-color: rgb(132, 232, 73);
-            color: white;
-            text-align: left;
-        }
-
-        table.table th, table.table td {
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            vertical-align: middle;
-        }
-
-        table.table tbody tr:nth-child(even) {
-            background-color: #ecf0f1;
-        }
-
-        table.table tbody tr:hover {
-            background-color: #d1e7fd;
-        }
-
-    a {
+        font-size: 28px;
         color: rgb(132, 232, 73);
-        text-decoration: none;
-        font-weight: 600;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
-        a:hover {
-            text-decoration: underline;
-            color: #1c5980;
-        }
+    .btn {
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        display: inline-block;
+        transition: background-color 0.3s;
+    }
 
     .btn-primary {
         background-color: rgb(132, 232, 73);
         color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: 600;
-        cursor: pointer;
     }
 
         .btn-primary:hover {
-            background-color: #97d44d;
+            background-color: rgb(100, 190, 50);
         }
+
+    .btn-action {
+        background-color: #e0f5d1;
+        color: #4d7c0f;
+        border: 1px solid #b2e07b;
+        margin: 2px;
+    }
+
+        .btn-action:hover {
+            background-color: #c3ebac;
+        }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        margin: 2px;
+    }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: right;
+            border: 1px solid #ddd;
+        }
+
+        .table thead {
+            background-color: rgb(132, 232, 73);
+            color: white;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #eef9e6;
+        }
+
+    .action-links {
+        white-space: nowrap;
+    }
+
+  
+        .table-box
+
+    {
+        padding: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .action-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    
 </style>
-
-<h1>@ViewData["Title"]</h1>
-
-<p>
-    <a class="btn btn-primary" asp-action="Create">Create New</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Title)</th>
-            <th>@Html.DisplayNameFor(model => model.Category)</th>
-            <th>@Html.DisplayNameFor(model => model.CoverImage)</th>
-            <th>@Html.DisplayNameFor(model => model.Link)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.Title)</td>
-                <td>@Html.DisplayFor(modelItem => item.Category)</td>
-                <td>@Html.DisplayFor(modelItem => item.CoverImage)</td>
-                <td>@Html.DisplayFor(modelItem => item.Link)</td>
-                <td>
-                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>

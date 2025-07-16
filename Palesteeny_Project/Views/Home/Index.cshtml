@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="~/css/mainpagepal.css">
 </head>
 <body>
+    <div class="video-wrapper">
+        <video autoplay muted loop controls style="
+    border: 4px solid black;
+    border-radius: 15px;
+    max-width: 90vw;      /* عرض الفيديو حتى 90% من عرض الشاشة */
+    max-height: 80vh;     /* ارتفاع الفيديو حتى 80% من ارتفاع الشاشة */
+    width: auto;
+    height: auto;
+  ">
+            <source src="images/palesteeny logo for ae.mp4" type="video/mp4" />
+            متصفحك ما بيدعم الفيديو.
+        </video>
+    </div>
+
     <div class="main-container">
 
        
@@ -14,9 +28,17 @@
             <button class="curved-btn active" data-id="1">
                 <img src="~/images/locationicon.svg" alt="خريطة">
             </button>
+<<<<<<< Updated upstream
             <button class="curved-btn below" data-id="2">
                 <img src="~/images/puzzleicon.svg" alt="العب">
             </button>
+=======
+            
+            <button class="curved-btn below" data-id="2">
+                <img src="~/images/puzzleicon.svg" alt="العب">
+            </button>
+          
+>>>>>>> Stashed changes
 
             <button class="curved-btn below" data-id="3">
                 <img src="~/images/paintpaletteicon.svg" alt="رسم">

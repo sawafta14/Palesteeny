@@ -1,0 +1,52 @@
+﻿@model Palesteeny_Project.Models.ExerciseMatch
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ExerciseMatch</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OptionText" class="control-label"></label>
+                <input asp-for="OptionText" class="form-control" />
+                <span asp-validation-for="OptionText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchLabel" class="control-label"></label>
+                <input asp-for="MatchLabel" class="form-control" />
+                <span asp-validation-for="MatchLabel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchImageUrl" class="control-label"></label>
+                <input asp-for="MatchImageUrl" class="form-control" />
+                <span asp-validation-for="MatchImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OptionImageUrl" class="control-label"></label>
+                <input asp-for="OptionImageUrl" class="form-control" />
+                <span asp-validation-for="OptionImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExerciseQuestionId" class="control-label"></label>
+                <select asp-for="ExerciseQuestionId" class ="form-control" asp-items="ViewBag.ExerciseQuestionId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

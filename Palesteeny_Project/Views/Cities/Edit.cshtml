@@ -4,206 +4,216 @@
     ViewData["Title"] = "تعديل المدينة";
     Layout = null;
 }
-<head>
-    <style>
-        body {
-            background-color: #f4f7f6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
-        .container-fluid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+<div class="wrapper">
+    <div class="edit-box">
+        <br />
+        <br /><br />
+        <br />
+         <br />
+        <br /><br />
+        <br />
+        <br />
+        <br /><br />
+        <br /> <br />
+        <br /><br />
+        <br />
+        <h1>✏️ تعديل المدينة</h1>
+        <p class="subtitle">معلومات المدينة</p>
 
-        .edit-form {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(132, 232, 73, 0.2);
-            width: 100%;
-            max-width: 800px;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: rgb(132, 232, 73);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        hr {
-            border: 1px solid rgb(132, 232, 73);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-            .form-group label {
-                font-weight: 600;
-                color: rgb(75, 160, 30);
-                font-size: 16px;
-            }
-
-            .form-group input {
-                font-size: 16px;
-                padding: 10px;
-                border-radius: 8px;
-                border: 1px solid #d1d1d1;
-                transition: border-color 0.3s ease;
-                width: 100%;
-            }
-
-                .form-group input:focus {
-                    border-color: rgb(132, 232, 73);
-                    outline: none;
-                    box-shadow: 0 0 5px rgba(132, 232, 73, 0.3);
-                }
-
-            .form-group .text-danger {
-                font-size: 14px;
-            }
-
-        .btn {
-            font-size: 16px;
-            padding: 12px 20px;
-            font-weight: 600;
-            border-radius: 6px;
-            margin-top: 20px;
-        }
-
-        .btn-primary {
-            background-color: rgb(132, 232, 73);
-            border-color: rgb(132, 232, 73);
-            color: #fff;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-
-            .btn-primary:hover {
-                background-color: rgb(100, 190, 50);
-                border-color: rgb(100, 190, 50);
-            }
-
-        .btn-link {
-            font-size: 16px;
-            color: rgb(132, 232, 73);
-            text-decoration: none;
-        }
-
-            .btn-link:hover {
-                text-decoration: underline;
-                color: rgb(100, 190, 50);
-            }
-
-        /* Responsive Design */
-        .edit-form {
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 26px;
-        }
-
-        .form-group input {
-            font-size: 14px;
-        }
-
-        .btn-primary {
-            font-size: 14px;
-        }
-
-    </style>
-</head>
-
-
-<hr />
-
-<div class="container-fluid d-flex justify-content-center align-items-center">
-    <div class="col-md-8 col-lg-6 edit-form">
-        <h1>تعديل المدينة</h1>
-        <h4>معلومات المدينة</h4>
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+            <div asp-validation-summary="ModelOnly" class="text-danger text-center mb-3"></div>
             <input type="hidden" asp-for="Id" />
 
             <div class="form-group">
-                <label asp-for="Name" class="control-label">اسم المدينة:</label>
+                <label asp-for="Name">اسم المدينة:</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="NameMeaning" class="control-label">معنى اسم المدينة:</label>
+                <label asp-for="NameMeaning">معنى اسم المدينة:</label>
                 <input asp-for="NameMeaning" class="form-control" />
                 <span asp-validation-for="NameMeaning" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="History" class="control-label">التاريخ:</label>
+                <label asp-for="History">التاريخ:</label>
                 <input asp-for="History" class="form-control" />
                 <span asp-validation-for="History" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Climate" class="control-label">المناخ:</label>
+                <label asp-for="Climate">المناخ:</label>
                 <input asp-for="Climate" class="form-control" />
                 <span asp-validation-for="Climate" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Food" class="control-label">الأطعمة:</label>
+                <label asp-for="Food">الأطعمة:</label>
                 <input asp-for="Food" class="form-control" />
                 <span asp-validation-for="Food" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ImageNameMeaning" class="control-label">صورة معنى الاسم:</label>
+                <label asp-for="ImageNameMeaning">صورة معنى الاسم:</label>
                 <input asp-for="ImageNameMeaning" class="form-control" />
                 <span asp-validation-for="ImageNameMeaning" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ImageHistory" class="control-label">صورة التاريخ:</label>
+                <label asp-for="ImageHistory">صورة التاريخ:</label>
                 <input asp-for="ImageHistory" class="form-control" />
                 <span asp-validation-for="ImageHistory" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ImageClimate" class="control-label">صورة المناخ:</label>
+                <label asp-for="ImageClimate">صورة المناخ:</label>
                 <input asp-for="ImageClimate" class="form-control" />
                 <span asp-validation-for="ImageClimate" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ImageFood" class="control-label">صورة الأطعمة:</label>
+                <label asp-for="ImageFood">صورة الأطعمة:</label>
                 <input asp-for="ImageFood" class="form-control" />
                 <span asp-validation-for="ImageFood" class="text-danger"></span>
             </div>
 
             <div class="form-group text-center">
-                <input type="submit" value="حفظ التعديلات" class="btn btn-primary" />
+                <input type="submit" value="💾 حفظ التعديلات" class="btn btn-primary" />
             </div>
         </form>
+
+        <div class="text-center mt-3">
+            <a asp-action="Index" class="btn btn-cancel">العودة إلى القائمة</a>
+        </div>
     </div>
 </div>
 
-<div class="text-center mt-3">
-    <a asp-action="Index" class="btn btn-link">العودة إلى القائمة</a>
-</div>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #f0f2f5;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 20px;
+    }
+
+    .edit-box {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        max-width: 750px;
+        width: 100%;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+        font-size: 28px;
+        color: rgb(132, 232, 73);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        text-align: center;
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: rgb(75, 160, 30);
+            margin-bottom: 8px;
+        }
+
+    .form-control {
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: rgb(132, 232, 73);
+            box-shadow: 0 0 5px rgba(132, 232, 73, 0.4);
+            outline: none;
+        }
+
+    .text-danger {
+        color: #d9534f;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: rgb(132, 232, 73);
+        color: white;
+        width: 100%;
+    }
+
+        .btn-primary:hover {
+            background-color: rgb(105, 190, 60);
+        }
+
+    .btn-cancel {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: transparent;
+        color: rgb(132, 232, 73);
+        border: 2px solid rgb(132, 232, 73);
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgb(240, 255, 230);
+            color: rgb(105, 190, 60);
+            border-color: rgb(105, 190, 60);
+        }
 
    
+        .edit-box
 
+    {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    
+</style>

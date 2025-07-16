@@ -239,7 +239,7 @@ namespace Palesteeny_Project.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Clear();
 
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
 
      

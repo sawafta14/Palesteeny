@@ -18,6 +18,19 @@ namespace Palesteeny_Project.Controllers
             _context = context;
         }
 
+        public IActionResult Manage()
+        {
+            var adminActions = new List<(string Name, string Action, string Controller)>
+    {
+
+        ("إضافة ميزات جديدة", "Create", "AIAssistants"),
+        ("التعديل على البيانات ", "Index", "AIAssistants"),
+        ("حذف مساعد", "Index", "AIAssistants"),
+        ("عرض بيانات المساعدين", "Index", "AIAssistants")
+    };
+
+            return View(adminActions);
+        }
         // GET: AIAssistants
         public async Task<IActionResult> Index()
         {

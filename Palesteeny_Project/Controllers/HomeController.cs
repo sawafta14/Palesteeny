@@ -17,7 +17,7 @@ namespace Palesteeny_Project.Controllers
         {
             return View();
         }
-        public IActionResult Bunny()
+        public IActionResult game()
         {
             return View();
         }

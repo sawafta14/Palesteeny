@@ -154,5 +154,6 @@ namespace Palesteeny_Project.Models
 
                 .OnDelete(DeleteBehavior.Cascade);
         }
+        public DbSet<Palesteeny_Project.Models.ExerciseMatch> ExerciseMatch { get; set; } = default!;
     }
 }
