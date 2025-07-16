@@ -428,21 +428,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AIAssistantsController.cs",
-              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
-              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
-              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
-              "RelativeToolTip": "Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T10:35:10.883Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -452,6 +439,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2025-07-16T09:15:21.099Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AIAssistantsController.cs",
+              "DocumentMoniker": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
+              "RelativeDocumentMoniker": "Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
+              "ToolTip": "C:\\Users\\Safaa Sawafta\\source\\repos\\Palesteeny_Project\\Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
+              "RelativeToolTip": "Palesteeny_Project\\Controllers\\AIAssistantsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T10:35:10.883Z",
               "EditorCaption": ""
             },
             {
