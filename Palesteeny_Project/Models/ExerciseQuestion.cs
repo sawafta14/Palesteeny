@@ -4,16 +4,14 @@
     {
         public int ExerciseQuestionId { get; set; }
 
+        // Question text
         public string? Question { get; set; }
-        public string? Type  { get; set; }
-        public string? ImageUrl { get; set; }
-       
-        public bool? questionOverlay { get; set; }
-        public string? Answer { get; set; }
-        public string? UserAnswer { get; set; }
-        public bool? IsCorrect { get; set; }
 
-        public int LessonId { get; set; }
-        public Lesson? Lesson { get; set; }
+        public int? QuestionGroupId { get; set; }
+        public QuestionGroup? QuestionGroup { get; set; }
+
+        // Navigation collections
+        public ICollection<ExerciseOption> Options { get; set; } = new List<ExerciseOption>();
+        public ICollection<ExerciseMatch> Matches { get; set; } = new List<ExerciseMatch>();
     }
 }

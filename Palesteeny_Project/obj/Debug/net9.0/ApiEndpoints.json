@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "ContainingType": "Palesteeny_Project.Controllers.ExerciseApiController",
+    "Method": "GetLessonExercises",
+    "RelativePath": "api/ExerciseApi/lesson/{lessonId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lessonId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Palesteeny_Project.Controllers.ExerciseApiController",
+    "Method": "SubmitAnswers",
+    "RelativePath": "api/ExerciseApi/SubmitAnswers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "options",
+        "Type": "System.Collections.Generic.List\u00601[[Palesteeny_Project.Controllers.ExerciseOptionUpdateDto, Palesteeny_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

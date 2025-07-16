@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Palesteeny_Project.Models; // For ChatMessage and UserPal
-using Microsoft.EntityFrameworkCore; // For async queries
+using Microsoft.EntityFrameworkCore;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Security.Claims;
+using Palesteeny_Project.Models;
+using System.Threading.Tasks;
 
 namespace Palesteeny_Project.Controllers
 {
@@ -24,12 +24,34 @@ namespace Palesteeny_Project.Controllers
         [HttpGet]
         public IActionResult AiAssistant()
         {
-            return RedirectToAction("Index"); // e.g., "Index", "Lesson1", etc.
-
+            return RedirectToAction("Index");
         }
+        [HttpGet]
+        public async Task<IActionResult> LoadAssistant()
+        {
+            var userEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            var user = await _context.UsersPal
+                .Include(u => u.PreferredAssistant)
+                .FirstOrDefaultAsync(u => u.Email == userEmail);
+
+            if (user == null || user.PreferredAssistant == null)
+            {
+                return Json(new { aiImage = "/images/BlueTallTeeny.svg" });
+            }
+
+            var image = user.PreferredAssistant.ImageUrl
+                ?? $"/images/{user.PreferredAssistant.Color}Tall{(user.PreferredAssistant.Gender == "male" ? "Teeny" : "Teena")}.svg";
+
+            return Json(new { aiImage = image });
+        }
+
+
+
         [HttpPost]
         public async Task<IActionResult> AiAssistant(ChatMessage message)
         {
+            var contents = await _context.SearchableContents.ToListAsync();
             if (string.IsNullOrWhiteSpace(message.UserMessage))
             {
                 ViewBag.Reply = "يرجى إدخال رسالة.";
@@ -37,11 +59,36 @@ namespace Palesteeny_Project.Controllers
             }
 
             var currentUserEmail = User?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            var user = await _context.UsersPal.FirstOrDefaultAsync(u => u.Email == currentUserEmail);
+            var user = await _context.UsersPal
+                .Include(u => u.PreferredAssistant)
+                .Include(u => u.Semester)
+                .FirstOrDefaultAsync(u => u.Email == currentUserEmail);
+
             var userName = string.IsNullOrWhiteSpace(user?.FirstName) ? "الصديق العزيز" : user.FirstName;
 
-            var promptText = $@"تحدث كمساعد ذكي مخصص للأطفال، وأجب على السؤال التالي بأسلوب ممتع، بسيط، ولطيف لطفل صغير.
-                        اسم الطفل هو {userName}.\n\n{message.UserMessage}";
+            var assistantGender = user?.PreferredAssistant?.Gender?.Trim();
+            var assistantName = user?.PreferredAssistant?.Name?.Trim();
+
+            var childGender = user?.Gender?.Trim(); // 👈 make sure this exists in your model
+
+            // Assistant info
+            var characterPronoun = assistantGender == "أنثى" ? "صديقتكِ" : "صديقك";
+            var characterAdj = assistantGender == "أنثى" ? "مساعدة ذكية" : "مساعد ذكي";
+
+            // Get the matched page once
+            var matchedPage = await GetPageFromSearchableContent(message.CurrentPage);
+            string friendlyPageName = matchedPage?.Title ?? message.CurrentPage ?? "غير معروف";
+
+            var promptText = $@"أنت اسمك {assistantName}، وجنسك هو {(assistantGender ?? "غير معروف")}، .
+        ابدأ رسالتك بجملة: ""مرحباً، أنا {assistantName}، {characterPronoun} !"" 
+
+        اسم الطفل هو {userName}. وجنسه: {childGender ?? "غير معروف"}.
+        الصف: {user?.Semester?.GradeName}، الفصل: {user?.Semester?.SemesterName}.
+        الموقع الحالي في المنصة هو: {friendlyPageName}.
+        السؤال:
+        {message.UserMessage}
+
+        أجب بطريقة مشجعة، لطيفة، ومناسبة للأطفال.";
 
             var requestBody = new
             {
@@ -76,7 +123,57 @@ namespace Palesteeny_Project.Controllers
                            .GetString();
 
             ViewBag.Reply = reply;
-            return PartialView("_AiReply"); // ✅ returns only the reply's HTML
+
+            ViewBag.PreferredAssistantImage = user?.PreferredAssistant?.ImageUrl ?? $"/images/{user?.PreferredAssistant?.Color}Tall{(user?.PreferredAssistant?.Gender == "male" ? "Teeny" : "Teena")}.svg";
+
+
+            if (user != null)
+            {
+                var log = new ChatLog
+                {
+                    UserPalId = user.Id,
+                    Message = message.UserMessage!,
+                    Reply = reply,
+                    PageName = matchedPage?.Title ?? message.CurrentPage,
+                    PageId = matchedPage?.Id,
+                    Timestamp = DateTime.Now
+                };
+
+                _context.ChatLogs.Add(log);
+                await _context.SaveChangesAsync();
+            }
+
+            return PartialView("_AiReply");
+        }
+
+
+        // Optional mapping: you can expand logic later
+        private async Task<SearchableContent?> GetPageFromSearchableContent(string? page)
+        {
+            if (string.IsNullOrWhiteSpace(page))
+                return null;
+
+            var lowerPage = page.ToLower().Trim();
+            var contents = await _context.SearchableContents.ToListAsync();
+
+            Console.WriteLine("🔎 Matching page for: " + lowerPage);
+
+            foreach (var c in contents)
+            {
+                var dbUrl = c.Url?.ToLower().Trim();
+                if (!string.IsNullOrWhiteSpace(dbUrl))
+                {
+                    Console.WriteLine($"➡️ Trying DB URL: '{dbUrl}'");
+                    if (lowerPage.Contains(dbUrl))
+                    {
+                        Console.WriteLine("✅ Matched: " + dbUrl);
+                        return c;
+                    }
+                }
+            }
+
+            Console.WriteLine("❌ No match found.");
+            return null;
         }
 
 

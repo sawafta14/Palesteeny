@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Chat Manage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>📊 لوحة تحكم الدردشة</h2>
+
+<h3>👥 أكثر المستخدمين نشاطًا</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>الاسم</th>
+            <th>عدد الرسائل</th>
+            <th>آخر رسالة</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in ViewBag.ActiveUsers)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.MessageCount</td>
+                <td>@user.LastMessage.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>📚 أكثر الصفحات استخدامًا في الدردشة</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>الصفحة</th>
+            <th>عدد الأسئلة</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in ViewBag.PopularPages)
+        {
+            <tr>
+                <td>@(string.IsNullOrEmpty(entry.PageName) ? "غير معروف" : entry.PageName)</td>
+                <td>@entry.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -42,7 +42,7 @@
                     <div class="profile-info">
                         <p><strong>اسمي: </strong> @Model.FirstName @Model.LastName</p>
                         <p><strong>مرحلتي الدراسية: </strong>@Model.Semester?.GradeName</p>
-                        <p><strong>الفصل الدراسي: </strong>@Model.Semester</p>
+                        <p><strong>الفصل الدراسي: </strong>@Model.Semester?.SemesterName</p>
                         <p><strong>بريدي الالكتروني: </strong>@Model.Email</p>
                     </div>
                 </div>
@@ -62,16 +62,10 @@
                     <label for="editGrade">المرحلة الدراسية: </label>
                     <select id="editGrade">
                         <option value="">اختر المرحلة</option>
-                        <option value="الأول ابتدائي">الأول ابتدائي</option>
-                        <option value="الثاني ابتدائي">الثاني ابتدائي</option>
-                        <option value="الثالث ابتدائي">الثالث ابتدائي</option>
-                        <option value="الرابع ابتدائي">الرابع ابتدائي</option>
                     </select>
                     <label for="editSem">الفصل الدراسي: </label>
                     <select id="editSem">
                         <option value="">اختر الفصل</option>
-                        <option value="الفصل الأول">الفصل الأول</option>
-                        <option value="الفصل الثاني">الفصل الثاني</option>
                     </select>
 
                     <div class="dialog-actions">

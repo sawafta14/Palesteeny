@@ -22,10 +22,11 @@ namespace Palesteeny_Project.Models
 
 
 
+        public AIAssistant? PreferredAssistant { get; set; }
         public List<UserLesson> UserLessons { get; set; } = new();
 
 
-   
+
         public List<FavoriteStory> FavoriteStories { get; set; } = new();
         public List<StoryBookmark> StoryBookmarks { get; set; } = new();
         public List<Drawing> Drawings { get; set; } = new();

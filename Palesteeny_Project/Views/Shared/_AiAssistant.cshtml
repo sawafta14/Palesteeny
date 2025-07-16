@@ -3,7 +3,10 @@
 <div id="ai-assistant-container">
     <div id="ai-toggle-wrapper">
         <div id="ai-toggle-area">
-            <img src="~/images/GreenTallTeena.svg" alt="Teeny" class="teeny-icon" />
+            <img src="@Url.Content(ViewBag.PreferredAssistantImage)" alt="Assistant" class="teeny-icon" />
+            <script>
+                console.log("Preferred Assistant Image: " + '@ViewBag.PreferredAssistantImage');
+            </script>
         </div>
         <div class="cloud-suggestion" id="cloud-suggestion">
             <img src="~/images/thinking.png" class="cloud-img" />
@@ -12,6 +15,8 @@
     </div>
     <div id="ai-chat-box" style="display: none;">
         <form method="post" id="ai-form">
+            <input type="hidden" id="currentPageInput" name="CurrentPage" />
+    
             <div class="cloud-wrapper">
                 <img src="~/images/cloud.svg" class="cloud-img" />
                 <div class="cloud-text">شو حابب تسألنا يا شطور؟ 😊</div>

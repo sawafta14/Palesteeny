@@ -27,11 +27,19 @@ namespace Palesteeny_Project.Models
         public DbSet<QuizQuestion> QuizQuestions { get; set; } = null!;
         public DbSet<QuizOption> QuizOptions { get; set; } = null!;
         public DbSet<QuizResult> QuizResults { get; set; } = null!;
+     
+        public DbSet<SearchableContent> SearchableContents { get; set; } = null!;
+        public DbSet<ChatLog> ChatLogs { get; set; } = null!;
         public DbSet<Semester> Semesters { get; set; } = null!;
         public DbSet<Book> Books { get; set; } = null!;
         public DbSet<Lesson> Lessons { get; set; } = null!;
         public DbSet<ExerciseQuestion> ExerciseQuestions { get; set; } = null!;
+        public DbSet<ExerciseOption> ExerciseOptions { get; set; } = null!;
+        public DbSet<UserExerciseAnswer> UserExerciseAnswers { get; set; } = null!;
+
         public DbSet<UserLesson> UserLessons { get; set; } = null!;
+        public DbSet<AIAssistant> AIAssistant { get; set; } = null!;
+        public DbSet<QuestionGroup> QuestionGroups { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,18 +55,18 @@ namespace Palesteeny_Project.Models
                 .HasForeignKey(u => u.SemesterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-          
+
             modelBuilder.Entity<UserLesson>()
-                .HasOne(ul => ul.UserPal)
-                .WithMany(u => u.UserLessons)
-                .HasForeignKey(ul => ul.UserPalId);
+             .HasOne(ul => ul.UserPal)
+             .WithMany(u => u.UserLessons)
+             .HasForeignKey(ul => ul.UserPalId);
 
             modelBuilder.Entity<UserLesson>()
                 .HasOne(ul => ul.Lesson)
                 .WithMany(l => l.UserLessons)
                 .HasForeignKey(ul => ul.LessonId);
 
-           
+
             modelBuilder.Entity<QuizOption>()
                 .HasOne(o => o.QuizQuestion)
                 .WithMany(q => q.Options)
@@ -126,17 +134,24 @@ namespace Palesteeny_Project.Models
                 .OnDelete(DeleteBehavior.Cascade);
 
             
+          
+
+            
+          
+
+
             modelBuilder.Entity<Lesson>()
                 .HasOne(l => l.Book)
                 .WithMany(b => b.Lessons)
                 .HasForeignKey(l => l.BookId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            
-            modelBuilder.Entity<ExerciseQuestion>()
-                .HasOne(eq => eq.Lesson)
-                .WithMany(l => l.ExerciseQuestions)
-                .HasForeignKey(eq => eq.LessonId)
+            // علاقة ExerciseQuestion مع Lesson
+            modelBuilder.Entity<QuestionGroup>()
+                .HasOne(qg => qg.Lesson)
+                .WithMany(l => l.QuestionGroups) // Change if needed
+                .HasForeignKey(qg => qg.LessonId)
+
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

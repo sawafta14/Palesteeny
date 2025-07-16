@@ -20,9 +20,18 @@
             if (results.length === 0) {
                 resultsBox.innerHTML = '<div style="padding: 10px;">لا توجد نتائج</div>';
             } else {
-                resultsBox.innerHTML = results.map(item => `
-                    <a href="${item.url}">${item.title} (${item.type})</a>
+                resultsBox.innerHTML = results.map(group => `
+                    ${group.items.map(item => {
+                                    const firstWord = item.description?.trim().split(/\s+/)[0] || '';
+                                    return `
+                            <a href="${item.url}" class="search-item">
+                                ${firstWord}
+                            </a>
+                        `;
+                                }).join('')}
                 `).join('');
+
+
             }
 
             resultsBox.style.display = 'block';

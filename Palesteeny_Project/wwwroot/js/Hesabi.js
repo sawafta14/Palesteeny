@@ -5,7 +5,7 @@
     const assistantImg = document.querySelector(".assistant-img");
     const assistantName = document.getElementById("assistantName");
 
-    let selectedGender = genderSelect.value;
+    let selectedGender = "male";
     let selectedColor = "Blue";
 
     function getImageName(color, gender) {
@@ -26,10 +26,24 @@
         selectedElement.classList.add("selected-color");
     }
 
+    function sendAssistantPreference() {
+        fetch("/Profile/UpdateAssistantPreference", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                gender: selectedGender,
+                color: selectedColor
+            })
+        }).then(res => {
+            if (!res.ok) console.error("فشل حفظ تفضيل المساعد");
+        });
+    }
+
     genderSelect.addEventListener("change", (e) => {
         selectedGender = e.target.value;
         updateAssistantImage();
         updateAssistantName();
+        sendAssistantPreference();
     });
 
     colorImages.forEach(img => {
@@ -40,15 +54,46 @@
                 selectedColor = colorMatch[1].charAt(0).toUpperCase() + colorMatch[1].slice(1);
                 updateAssistantImage();
                 updateColorHighlight(img);
+                sendAssistantPreference();
             }
         });
     });
 
-    updateAssistantImage();
-    updateColorHighlight(colorImages[0]);
-    updateAssistantName();
+    // Fetch user info initially to set defaults
+    fetch("/Profile/GetUserInfo")
+        .then(res => res.json())
+        .then(user => {
+            if (user.aiGender) {
+                selectedGender = user.aiGender;
+                genderSelect.value = selectedGender;
+            }
+            if (user.aiColor) {
+                selectedColor = user.aiColor;
+                colorImages.forEach(img => {
+                    if (img.src.toLowerCase().includes(user.aiColor.toLowerCase())) {
+                        updateColorHighlight(img);
+                    }
+                });
+            }
+            updateAssistantImage();
+            updateAssistantName();
+
+            // ✅ ADD THIS to show grade & semester on page load
+            if (user.semester?.gradeName) {
+                gradeField.innerHTML = `<strong>مرحلتي الدراسية:</strong> ${user.semester.gradeName}`;
+            }
+            if (user.semester?.semesterName) {
+                semField.innerHTML = `<strong>الفصل الدراسي:</strong> ${user.semester.semesterName}`;
+            }
+        });
 
     // ========== Profile Edit Dialog ==========
+    let semesters = [];
+
+
+
+    loadSemestersFromDB();
+
     const editBtn = document.querySelector(".edit-btn");
     const dialog = document.getElementById("editDialog");
     const applyBtn = document.getElementById("applyBtn");
@@ -64,6 +109,38 @@
     const inputGrade = document.getElementById("editGrade");
     const inputSem = document.getElementById("editSem");
 
+    function loadSemestersFromDB() {
+        fetch("/Profile/GetSemesters")
+            .then(res => res.json())
+            .then(data => {
+                semesters = data;
+
+                const gradeSet = new Set(data.map(s => s.gradeName));
+                inputGrade.innerHTML = '<option value="">اختر المرحلة</option>';
+                gradeSet.forEach(grade => {
+                    if (grade) {
+                        const opt = document.createElement("option");
+                        opt.value = grade;
+                        opt.textContent = grade;
+                        inputGrade.appendChild(opt);
+                    }
+                });
+            });
+    }
+    inputGrade.addEventListener("change", () => {
+        const selectedGrade = inputGrade.value;
+
+        inputSem.innerHTML = '<option value="">اختر الفصل</option>'; // reset
+
+        semesters
+            .filter(s => s.gradeName === selectedGrade)
+            .forEach(s => {
+                const opt = document.createElement("option");
+                opt.value = s.semesterName;
+                opt.textContent = s.semesterName;
+                inputSem.appendChild(opt);
+            });
+    });
     function calculateAge(grade) {
         const map = {
             "الأول ابتدائي": 6,
@@ -80,8 +157,14 @@
             .then(user => {
                 inputFirstName.value = user.firstName || "";
                 inputLastName.value = user.lastName || "";
-                inputGrade.value = user.grade || "";
-                inputSem.value = user.semester || "";
+                inputGrade.value = user.semester?.gradeName || "";
+                inputGrade.dispatchEvent(new Event("change")); // 🟡 trigger semester population
+
+                // Wait a tiny bit so the semesters populate before selecting the correct one
+                setTimeout(() => {
+                    inputSem.value = user.semester?.semesterName || "";
+                }, 100);
+
                 dialog.classList.remove("hidden");
                 errorMsg.textContent = "";
             });
@@ -92,32 +175,43 @@
     });
 
     applyBtn.addEventListener("click", () => {
+        const grade = inputGrade.value;
+        const sem = inputSem.value;
         const firstName = inputFirstName.value.trim();
         const lastName = inputLastName.value.trim();
-        const grade = inputGrade.value;
-        const semester = inputSem.value;
-        const age = calculateAge(grade);
 
-        if (!firstName || !lastName || !grade || !semester) {
+        if (!firstName || !lastName || !grade || !sem) {
             errorMsg.textContent = "الرجاء تعبئة جميع الحقول.";
             return;
         }
 
-        fetch("/Profile/UpdateUserInfo", {
+        // 🔍 Find SemesterId
+        const selectedSemester = semesters.find(s =>
+            s.gradeName === grade && s.semesterName === sem
+        );
+        if (!selectedSemester) {
+            errorMsg.textContent = "الصف والفصل المحددان غير موجودين.";
+            return;
+        }
+
+        const semesterId = selectedSemester.id;
+
+        fetch("/Profile/UpdateProfile", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ firstName, lastName, grade, semester, age })
+            body: JSON.stringify({ firstName, lastName, semesterId })
         })
             .then(response => {
                 if (response.ok) {
                     nameField.innerHTML = `<strong>اسمي:</strong> ${firstName} ${lastName}`;
                     gradeField.innerHTML = `<strong>مرحلتي الدراسية:</strong> ${grade}`;
-                    semField.innerHTML = `<strong>الفصل الدراسي:</strong> ${semester}`;
+                    semField.innerHTML = `<strong>الفصل الدراسي:</strong> ${sem}`;
                     dialog.classList.add("hidden");
                 } else {
                     errorMsg.textContent = "حدث خطأ أثناء التحديث.";
                 }
             });
+
     });
 
     // ========== Profile Image Upload & Lightbox ==========

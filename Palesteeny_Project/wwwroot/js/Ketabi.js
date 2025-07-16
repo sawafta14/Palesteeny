@@ -1,21 +1,21 @@
-﻿let classDropdown, lessonDropdown, semDropdown;
-
-document.addEventListener("DOMContentLoaded", function () {
+﻿document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded");
     let currentTab = "book";
 
-    // -------------------- 1. DOM Elements --------------------
-    classDropdown = document.getElementById('classDropdown');
-    lessonDropdown = document.getElementById('lessonDropdown');
-    semDropdown = document.getElementById('semDropdown');
+    // userSemester must be set globally in Razor view before this script loads
+    if (typeof userSemester === 'undefined') {
+        console.error("userSemester is not defined!");
+        return;
+    }
 
+    // -------------------- 1. DOM Elements --------------------
+    const lessonDropdown = document.getElementById('lessonDropdown');
     const setBookmarkBtn = document.getElementById("set-bookmark-btn");
     const goToBookmarkBtn = document.getElementById("go-to-bookmark-btn");
     const bookmarkModal = document.getElementById("bookmark-modal");
     const saveBookmarkBtn = document.getElementById("save-bookmark-btn");
     const cancelBookmarkBtn = document.getElementById("cancel-bookmark-btn");
     const bookmarkLessonSelect = document.getElementById("bookmarkLessonSelect");
-
     const tabs = document.querySelectorAll(".tab");
     const displayArea = document.querySelector(".display-area");
     const bookmarkButtonsContainer = document.querySelector(".bookmark-buttons");
@@ -31,27 +31,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     saveBookmarkBtn.addEventListener("click", () => {
-        const bookmark = {
-            classValue: classDropdown.value,
-            semValue: semDropdown.value,
-            lessonValue: bookmarkLessonSelect.value
-        };
-        localStorage.setItem("ketabiBookmark", JSON.stringify(bookmark));
-        bookmarkModal.style.display = "none";
+        const selectedLessonId = bookmarkLessonSelect.selectedOptions[0].dataset.lesson;
 
-        // Explicitly activate the Book tab
-        tabs.forEach(t => t.classList.remove("active"));
-        const bookTab = document.querySelector('.tab[data-tab="book"]');
-        bookTab.classList.add("active");
-        currentTab = "book";
-        bookmarkButtonsContainer.style.display = "flex";
-        switchToBook();
+        fetch('/MyBook/SaveBookmark', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ lessonId: parseInt(selectedLessonId) })
+        })
+            .then(response => {
+                if (response.ok) {
+                    bookmarkModal.style.display = "none";
+                    switchToBook();
+                } else {
+                    alert("فشل حفظ العلامة.");
+                }
+            });
     });
+
 
     goToBookmarkBtn.addEventListener("click", () => {
         switchToBookmark();
 
-        // Force Book tab to activate visually and logically
         setTimeout(() => {
             tabs.forEach(t => t.classList.remove("active"));
             const bookTab = document.querySelector('.tab[data-tab="book"]');
@@ -62,46 +64,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function saveBookmark() {
-        const bookmark = {
-            classValue: classDropdown.value,
-            semValue: semDropdown.value,
-            lessonValue: lessonDropdown.value
-        };
+        const bookmark = { lessonValue: lessonDropdown.value };
         localStorage.setItem("ketabiBookmark", JSON.stringify(bookmark));
     }
 
     function switchToBookmark() {
-        const bookmarkData = JSON.parse(localStorage.getItem("ketabiBookmark"));
-        if (!bookmarkData) {
-            alert("لم يتم تحديد علامة من قبل.");
-            return;
-        }
+        fetch('/MyBook/GetBookmarkPage')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    alert("لا توجد علامة محفوظة.");
+                    return;
+                }
 
-        // Temporarily remove listeners to prevent triggering changes
-        [classDropdown, semDropdown, lessonDropdown].forEach(dropdown => {
-            dropdown.removeEventListener('change', dropdownChangeHandler);
-        });
+                const pdfSrc = getPdfPath(data.page);
+                const newIframe = document.createElement('iframe');
+                newIframe.type = "application/pdf";
+                newIframe.src = pdfSrc;
+                newIframe.setAttribute("allowfullscreen", false);
 
-        classDropdown.value = bookmarkData.classValue;
-        semDropdown.value = bookmarkData.semValue;
-        lessonDropdown.value = bookmarkData.lessonValue;
-
-        const pdfSrc = getPdfPath(bookmarkData.classValue, bookmarkData.semValue, bookmarkData.lessonValue);
-        const newIframe = document.createElement('iframe');
-        newIframe.type = "application/pdf";
-        newIframe.src = pdfSrc;
-        newIframe.setAttribute("allowfullscreen", false);
-
-        displayArea.classList.remove("video-mode");
-        displayArea.innerHTML = '';
-        displayArea.appendChild(newIframe);
-        bookmarkButtonsContainer.style.display = "flex";
-
-        // Reattach listeners
-        [classDropdown, semDropdown, lessonDropdown].forEach(dropdown => {
-            dropdown.addEventListener('change', dropdownChangeHandler);
-        });
+                displayArea.classList.remove("video-mode");
+                displayArea.innerHTML = '';
+                displayArea.appendChild(newIframe);
+                bookmarkButtonsContainer.style.display = "flex";
+            });
     }
+
 
     // -------------------- 3. Tab Switching Functions --------------------
     function switchToBook() {
@@ -109,32 +97,40 @@ document.addEventListener("DOMContentLoaded", function () {
         updateIframeSrc();
     }
 
-    function switchToVideo() {
-        const classValue = classDropdown.value;
-        const lessonValue = lessonDropdown.value;
-        const semValue = semDropdown.value;
+    function cleanUrl(url) {
+        return url.replace(/[\r\n]+/g, '').trim();
+    }
 
-        const videoSrc = (
-            videoLinks[classValue]?.[semValue]?.[lessonValue]
-        ) || "https://www.youtube.com/embed/default";
+    function switchToVideo() {
+        const lessonValue = String(lessonDropdown.value);
+        const rawUrl = videoLinks[userSemester]?.[lessonValue] || "";
+        const videoSrc = cleanUrl(rawUrl);
+
+        console.log("Lesson value:", lessonValue);
+        console.log("userSemester:", userSemester);
+        console.log("videoLinks:", videoLinks);
+        console.log("Cleaned Video URL:", videoSrc);
 
         const newIframe = document.createElement("iframe");
-        newIframe.src = videoSrc;
+        newIframe.src = videoSrc || "https://www.youtube.com/embed/default";
         newIframe.setAttribute("allowfullscreen", true);
+        newIframe.style.width = "100%";
+        newIframe.style.height = "100%";
 
         displayArea.innerHTML = "";
         displayArea.appendChild(newIframe);
         displayArea.classList.add("video-mode");
     }
 
+
+
+
     function switchToExercise() {
         displayArea.classList.remove("video-mode");
 
-        const classValue = classDropdown.value;
-        const semValue = semDropdown.value;
-        const lessonPage = lessonDropdown.value;
+        const lessonValue = lessonDropdown.value;
         const lessonNumber = lessonDropdown.selectedOptions[0]?.dataset.lesson;
-        const exercisePage = `/exercises/exercises.html?class=${classValue}&sem=${semValue}&lesson=${lessonNumber}&page=${lessonPage}`;
+        const exercisePage = `/exercises/exercises.html?sem=${userSemester}&lesson=${lessonNumber}&page=${lessonValue}`;
 
         const iframe = document.createElement("iframe");
         iframe.src = exercisePage;
@@ -147,11 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateIframeSrc() {
-        const classValue = classDropdown.value;
         const lessonValue = lessonDropdown.value;
-        const semValue = semDropdown.value;
-
-        const newSrc = getPdfPath(classValue, semValue, lessonValue);
+        const newSrc = getPdfPath(lessonValue);
 
         displayArea.classList.remove("video-mode");
 
@@ -164,8 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
         displayArea.appendChild(newIframe);
     }
 
-    function getPdfPath(classValue, semValue, pageNumber) {
-        return `/books/class${classValue}book${semValue}.pdf#page=${pageNumber}`;
+    function getPdfPath(pageNumber) {
+        return `/books/book${userSemester}.pdf#page=${pageNumber}`;
     }
 
     function getActiveTab() {
@@ -181,9 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         saveBookmark();
     }
 
-    [classDropdown, semDropdown, lessonDropdown].forEach(dropdown => {
-        dropdown.addEventListener('change', dropdownChangeHandler);
-    });
+    lessonDropdown.addEventListener('change', dropdownChangeHandler);
 
     tabs.forEach(tab => {
         tab.addEventListener("click", function () {
@@ -213,31 +204,11 @@ document.addEventListener("DOMContentLoaded", function () {
     updateIframeSrc();
     setTimeout(updateProgressBar, 100);
 
-    // -------------------- 6. Video Links --------------------
-    const videoLinks = {
-        1: {
-            1: {
-                6: "https://www.youtube.com/embed/5sA7lWoIKkg",
-                24: "https://www.youtube.com/embed/bLYM1hAzV1w",
-                35: "https://www.youtube.com/embed/tWTW2RiCzC4"
-            },
-            2: {
-                6: "https://www.youtube.com/embed/VIDEO_ID7",
-                24: "https://www.youtube.com/embed/VIDEO_ID8",
-                35: "https://www.youtube.com/embed/VIDEO_ID9"
-            }
-        }
-
-    };
-    // -------------------- 7. Progress bar --------------------
-
+    // -------------------- 6. Progress bar --------------------
     function getProgressKey() {
-        const cls = classDropdown?.value || "0";
-        const sem = semDropdown?.value || "0";
         const lesson = lessonDropdown?.value || "0";
-        return `progress_class${cls}_sem${sem}_lesson${lesson}`;
+        return `progress_sem${userSemester}_lesson${lesson}`;
     }
-
 
     function getLessonProgress() {
         const progressKey = getProgressKey();
@@ -257,13 +228,11 @@ document.addEventListener("DOMContentLoaded", function () {
         bar.textContent = `${progress}%`;
     }
 
-    // Call this every time dropdowns change
-    [classDropdown, semDropdown, lessonDropdown].forEach(dropdown => {
-        dropdown.addEventListener('change', updateProgressBar);
-    });
+    lessonDropdown.addEventListener('change', updateProgressBar);
+
     window.addEventListener("message", function (event) {
         if (event.data?.type === "exerciseCompleted") {
-            const lessonKey = `progress_class${classDropdown.value}_sem${semDropdown.value}_lesson${lessonDropdown.value}`;
+            const lessonKey = `progress_sem${userSemester}_lesson${lessonDropdown.value}`;
             const completionKey = `${lessonKey}_completed`;
 
             if (localStorage.getItem(completionKey)) return; // already marked done
@@ -274,9 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const newProgress = Math.min(currentProgress + 10, 100);
             setLessonProgress(newProgress);
             updateProgressBar();
-
         }
     });
-
 
 });

@@ -22,6 +22,39 @@ namespace Palesteeny_Project.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Palesteeny_Project.Models.AIAssistant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AIAssistantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AIAssistantId");
+
+                    b.ToTable("AIAssistant");
+                });
+
             modelBuilder.Entity("Palesteeny_Project.Models.Ad", b =>
                 {
                     b.Property<int>("Id")
@@ -76,6 +109,40 @@ namespace Palesteeny_Project.Migrations
                     b.HasIndex("SemesterId");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.ChatLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reply")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserPalId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserPalId");
+
+                    b.ToTable("ChatLogs");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.City", b =>
@@ -153,6 +220,67 @@ namespace Palesteeny_Project.Migrations
                     b.ToTable("Drawings");
                 });
 
+            modelBuilder.Entity("Palesteeny_Project.Models.ExerciseMatch", b =>
+                {
+                    b.Property<int>("ExerciseMatchId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExerciseMatchId"));
+
+                    b.Property<int>("ExerciseQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MatchImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MatchLabel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ExerciseMatchId");
+
+                    b.HasIndex("ExerciseQuestionId");
+
+                    b.ToTable("ExerciseMatch");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.ExerciseOption", b =>
+                {
+                    b.Property<int>("ExerciseOptionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExerciseOptionId"));
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExerciseQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OptionImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionQuestion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ExerciseOptionId");
+
+                    b.HasIndex("ExerciseQuestionId");
+
+                    b.ToTable("ExerciseOptions");
+                });
+
             modelBuilder.Entity("Palesteeny_Project.Models.ExerciseQuestion", b =>
                 {
                     b.Property<int>("ExerciseQuestionId")
@@ -161,33 +289,15 @@ namespace Palesteeny_Project.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExerciseQuestionId"));
 
-                    b.Property<string>("Answer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsCorrect")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LessonId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Question")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserAnswer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("questionOverlay")
-                        .HasColumnType("bit");
+                    b.Property<int?>("QuestionGroupId")
+                        .HasColumnType("int");
 
                     b.HasKey("ExerciseQuestionId");
 
-                    b.HasIndex("LessonId");
+                    b.HasIndex("QuestionGroupId");
 
                     b.ToTable("ExerciseQuestions");
                 });
@@ -281,6 +391,37 @@ namespace Palesteeny_Project.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("Lessons");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.QuestionGroup", b =>
+                {
+                    b.Property<int>("QuestionGroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionGroupId"));
+
+                    b.Property<int?>("LessonId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("QuestionOverlay")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SharedImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("QuestionGroupId");
+
+                    b.HasIndex("LessonId");
+
+                    b.ToTable("QuestionGroups");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.QuizOption", b =>
@@ -411,6 +552,31 @@ namespace Palesteeny_Project.Migrations
                     b.ToTable("QusiImages");
                 });
 
+            modelBuilder.Entity("Palesteeny_Project.Models.SearchableContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SearchableContents");
+                });
+
             modelBuilder.Entity("Palesteeny_Project.Models.Semester", b =>
                 {
                     b.Property<int>("SemesterId")
@@ -519,6 +685,33 @@ namespace Palesteeny_Project.Migrations
                     b.UseTptMappingStrategy();
                 });
 
+            modelBuilder.Entity("Palesteeny_Project.Models.UserExerciseAnswer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ExerciseOptionId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("IsCorrect")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserAnswer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExerciseOptionId");
+
+                    b.ToTable("UserExerciseAnswers");
+                });
+
             modelBuilder.Entity("Palesteeny_Project.Models.UserLesson", b =>
                 {
                     b.Property<int>("Id")
@@ -578,12 +771,24 @@ namespace Palesteeny_Project.Migrations
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PreferredAssistantId")
+                        .HasColumnType("int");
+
                     b.Property<int>("SemesterId")
                         .HasColumnType("int");
+
+                    b.HasIndex("PreferredAssistantId");
 
                     b.HasIndex("SemesterId");
 
                     b.ToTable("UsersPal", (string)null);
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.AIAssistant", b =>
+                {
+                    b.HasOne("Palesteeny_Project.Models.AIAssistant", null)
+                        .WithMany("AIAssistants")
+                        .HasForeignKey("AIAssistantId");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.Book", b =>
@@ -595,6 +800,17 @@ namespace Palesteeny_Project.Migrations
                         .IsRequired();
 
                     b.Navigation("Semester");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.ChatLog", b =>
+                {
+                    b.HasOne("Palesteeny_Project.Models.UserPal", "User")
+                        .WithMany()
+                        .HasForeignKey("UserPalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.Drawing", b =>
@@ -615,15 +831,35 @@ namespace Palesteeny_Project.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Palesteeny_Project.Models.ExerciseQuestion", b =>
+            modelBuilder.Entity("Palesteeny_Project.Models.ExerciseMatch", b =>
                 {
-                    b.HasOne("Palesteeny_Project.Models.Lesson", "Lesson")
-                        .WithMany("ExerciseQuestions")
-                        .HasForeignKey("LessonId")
+                    b.HasOne("Palesteeny_Project.Models.ExerciseQuestion", "ExerciseQuestion")
+                        .WithMany("Matches")
+                        .HasForeignKey("ExerciseQuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Lesson");
+                    b.Navigation("ExerciseQuestion");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.ExerciseOption", b =>
+                {
+                    b.HasOne("Palesteeny_Project.Models.ExerciseQuestion", "ExerciseQuestion")
+                        .WithMany("Options")
+                        .HasForeignKey("ExerciseQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExerciseQuestion");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.ExerciseQuestion", b =>
+                {
+                    b.HasOne("Palesteeny_Project.Models.QuestionGroup", "QuestionGroup")
+                        .WithMany("Questions")
+                        .HasForeignKey("QuestionGroupId");
+
+                    b.Navigation("QuestionGroup");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.FavoriteStory", b =>
@@ -654,6 +890,16 @@ namespace Palesteeny_Project.Migrations
                         .IsRequired();
 
                     b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.QuestionGroup", b =>
+                {
+                    b.HasOne("Palesteeny_Project.Models.Lesson", "Lesson")
+                        .WithMany("QuestionGroups")
+                        .HasForeignKey("LessonId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Lesson");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.QuizOption", b =>
@@ -708,6 +954,17 @@ namespace Palesteeny_Project.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Palesteeny_Project.Models.UserExerciseAnswer", b =>
+                {
+                    b.HasOne("Palesteeny_Project.Models.ExerciseOption", "ExerciseOption")
+                        .WithMany()
+                        .HasForeignKey("ExerciseOptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExerciseOption");
+                });
+
             modelBuilder.Entity("Palesteeny_Project.Models.UserLesson", b =>
                 {
                     b.HasOne("Palesteeny_Project.Models.Lesson", "Lesson")
@@ -744,13 +1001,24 @@ namespace Palesteeny_Project.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Palesteeny_Project.Models.AIAssistant", "PreferredAssistant")
+                        .WithMany()
+                        .HasForeignKey("PreferredAssistantId");
+
                     b.HasOne("Palesteeny_Project.Models.Semester", "Semester")
                         .WithMany("UsersPal")
                         .HasForeignKey("SemesterId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.Navigation("PreferredAssistant");
+
                     b.Navigation("Semester");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.AIAssistant", b =>
+                {
+                    b.Navigation("AIAssistants");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.Book", b =>
@@ -758,11 +1026,23 @@ namespace Palesteeny_Project.Migrations
                     b.Navigation("Lessons");
                 });
 
+            modelBuilder.Entity("Palesteeny_Project.Models.ExerciseQuestion", b =>
+                {
+                    b.Navigation("Matches");
+
+                    b.Navigation("Options");
+                });
+
             modelBuilder.Entity("Palesteeny_Project.Models.Lesson", b =>
                 {
-                    b.Navigation("ExerciseQuestions");
+                    b.Navigation("QuestionGroups");
 
                     b.Navigation("UserLessons");
+                });
+
+            modelBuilder.Entity("Palesteeny_Project.Models.QuestionGroup", b =>
+                {
+                    b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("Palesteeny_Project.Models.QuizQuestion", b =>

@@ -15,7 +15,7 @@
         public int BookId { get; set; }
         public Book? Book { get; set; }
 
-        public ICollection<ExerciseQuestion> ExerciseQuestions { get; set; } = new List<ExerciseQuestion>();
+        public ICollection<QuestionGroup> QuestionGroups { get; set; } = new List<QuestionGroup>();
         public ICollection<UserLesson> UserLessons { get; set; } = new List<UserLesson>();
     }
 }
