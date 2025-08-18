@@ -3,6 +3,6 @@ services:
     name: palesteeny-web
     env: dotnet
     plan: free
-    runtime: "dotnet:8"
+  
     buildCommand: 'dotnet publish -c Release -o ./publish'
     startCommand: 'dotnet ./publish/Palesteeny_Project.dll'
